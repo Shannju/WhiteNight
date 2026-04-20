@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -2298,6 +2298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: basic_skybox_3d_flip
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 99d11778361336e4e813cfe3a0f6977b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 99d11778361336e4e813cfe3a0f6977b,
         type: 3}
