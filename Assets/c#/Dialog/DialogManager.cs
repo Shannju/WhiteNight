@@ -1,88 +1,134 @@
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
+
+public enum CameraViewType
+{
+    None,
+    Mate,
+    Windows,
+    Teacher,
+    Book
+}
+
+public enum DialogTriggerMode
+{
+    Random,
+    ActionPoint,
+    Sequence
+}
 
 public class DialogManager : MonoBehaviour
 {
-    [Header("Dialog Data")]
-    [SerializeField] private TextAsset dialogJsonFile;
+    [Header("Dialog Controllers")]
+    [SerializeField] private RandomDialogController randomDialogController;
+    [SerializeField] private ActionPointDialogController actionPointDialogController;
+    [SerializeField] private SequenceDialogController sequenceDialogController;
 
     [Header("External Systems")]
     [SerializeField] private DaySystem daySystem;
     [SerializeField] private ActionPointSystem actionPointSystem;
 
-    private DialogDatabase dialogDatabase;
-    private readonly Dictionary<string, int> sequenceProgress = new Dictionary<string, int>();
+    [Header("Camera View Detection")]
+    [SerializeField] private CinemachineVirtualCamera camUp;
+    [SerializeField] private CinemachineVirtualCamera camDown;
+    [SerializeField] private CinemachineVirtualCamera camLeft;
+    [SerializeField] private CinemachineVirtualCamera camRight;
+    [SerializeField] private int activePriority = 10;
+
+    [Header("Camera View Types")]
+    [SerializeField] private CameraViewType camUpType = CameraViewType.Windows;
+    [SerializeField] private CameraViewType camDownType = CameraViewType.Book;
+    [SerializeField] private CameraViewType camLeftType = CameraViewType.Teacher;
+    [SerializeField] private CameraViewType camRightType = CameraViewType.Mate;
 
     private void Awake()
     {
-        LoadDialogData();
+        ResolveDialogControllers();
     }
 
-    public void LoadDialogData()
+    public DialogEntry GetDialogForCharacter(string characterId, DialogTriggerMode triggerMode)
     {
-        if (dialogJsonFile == null)
+        switch (triggerMode)
         {
-            Debug.LogError("Dialog json file is not assigned.", this);
-            return;
-        }
-
-        dialogDatabase = JsonUtility.FromJson<DialogDatabase>(dialogJsonFile.text);
-
-        if (dialogDatabase == null || dialogDatabase.characters == null)
-        {
-            Debug.LogError("Failed to parse dialog json data.", this);
-        }
-    }
-
-    public CharacterDialogConfig GetCharacterConfig(string characterId)
-    {
-        if (dialogDatabase == null || dialogDatabase.characters == null)
-        {
-            return null;
-        }
-
-        return dialogDatabase.characters.Find(character => character.characterId == characterId);
-    }
-
-    public DialogEntry GetDialogForCharacter(string characterId, int currentActionPoints = 0)
-    {
-        CharacterDialogConfig character = GetCharacterConfig(characterId);
-
-        if (character == null || character.dialogs == null || character.dialogs.Count == 0)
-        {
-            Debug.LogWarning($"No dialog found for characterId: {characterId}", this);
-            return null;
-        }
-
-        switch (character.mode)
-        {
-            case "random":
-                return GetRandomDialog(character);
-            case "actionPoint":
-                return GetActionPointDialog(character, currentActionPoints);
-            case "sequence":
-                return GetSequenceDialog(character);
+            case DialogTriggerMode.Random:
+                return GetRandomDialogForCharacter(characterId);
+            case DialogTriggerMode.ActionPoint:
+                return GetActionPointDialogForCharacter(characterId);
+            case DialogTriggerMode.Sequence:
+                return GetSequenceDialogForCharacter(characterId);
             default:
-                Debug.LogWarning($"Unsupported dialog mode: {character.mode}", this);
+                Debug.LogWarning($"Unsupported dialog trigger mode: {triggerMode}", this);
                 return null;
         }
     }
 
-    public DialogEntry GetDialogForCharacter(string characterId)
+    public DialogEntry GetRandomDialogForCharacter(string characterId)
     {
-        int currentActionPoints = actionPointSystem != null ? actionPointSystem.CurrentActionPoints : 0;
-        return GetDialogForCharacter(characterId, currentActionPoints);
+        if (randomDialogController == null)
+        {
+            Debug.LogWarning("Random dialog controller is not assigned.", this);
+            return null;
+        }
+
+        return randomDialogController.GetDialogForCharacter(characterId);
     }
 
-    public List<DialogLine> GetDialogLines(string characterId, int currentActionPoints = 0)
+    public DialogEntry GetActionPointDialogForCharacter(string characterId, int currentActionPoints)
     {
-        DialogEntry dialog = GetDialogForCharacter(characterId, currentActionPoints);
+        if (actionPointDialogController == null)
+        {
+            Debug.LogWarning("Action point dialog controller is not assigned.", this);
+            return null;
+        }
+
+        return actionPointDialogController.GetDialogForCharacter(characterId, currentActionPoints);
+    }
+
+    public DialogEntry GetActionPointDialogForCharacter(string characterId)
+    {
+        int currentActionPoints = actionPointSystem != null ? actionPointSystem.CurrentActionPoints : 0;
+        return GetActionPointDialogForCharacter(characterId, currentActionPoints);
+    }
+
+    public DialogEntry GetSequenceDialogForCharacter(string characterId)
+    {
+        if (sequenceDialogController == null)
+        {
+            Debug.LogWarning("Sequence dialog controller is not assigned.", this);
+            return null;
+        }
+
+        return sequenceDialogController.GetDialogForCharacter(characterId);
+    }
+
+    public List<DialogLine> GetDialogLines(string characterId, DialogTriggerMode triggerMode)
+    {
+        DialogEntry dialog = GetDialogForCharacter(characterId, triggerMode);
         return dialog != null ? dialog.lines : null;
     }
 
-    public List<DialogLine> GetDialogLines(string characterId)
+    public List<DialogLine> GetRandomDialogLines(string characterId)
     {
-        DialogEntry dialog = GetDialogForCharacter(characterId);
+        DialogEntry dialog = GetRandomDialogForCharacter(characterId);
+        return dialog != null ? dialog.lines : null;
+    }
+
+    public List<DialogLine> GetActionPointDialogLines(string characterId, int currentActionPoints)
+    {
+        DialogEntry dialog = GetActionPointDialogForCharacter(characterId, currentActionPoints);
+        return dialog != null ? dialog.lines : null;
+    }
+
+    public List<DialogLine> GetActionPointDialogLines(string characterId)
+    {
+        DialogEntry dialog = GetActionPointDialogForCharacter(characterId);
+        return dialog != null ? dialog.lines : null;
+    }
+
+    public List<DialogLine> GetSequenceDialogLines(string characterId)
+    {
+        DialogEntry dialog = GetSequenceDialogForCharacter(characterId);
         return dialog != null ? dialog.lines : null;
     }
 
@@ -96,6 +142,21 @@ public class DialogManager : MonoBehaviour
         actionPointSystem = system;
     }
 
+    public void SetRandomDialogController(RandomDialogController controller)
+    {
+        randomDialogController = controller;
+    }
+
+    public void SetActionPointDialogController(ActionPointDialogController controller)
+    {
+        actionPointDialogController = controller;
+    }
+
+    public void SetSequenceDialogController(SequenceDialogController controller)
+    {
+        sequenceDialogController = controller;
+    }
+
     public int GetCurrentDay()
     {
         return daySystem != null ? daySystem.CurrentDay : 0;
@@ -106,53 +167,46 @@ public class DialogManager : MonoBehaviour
         return actionPointSystem != null ? actionPointSystem.CurrentActionPoints : 0;
     }
 
+    public CameraViewType GetCurrentCameraViewType()
+    {
+        if (camUp != null && camUp.Priority == activePriority)
+            return camUpType;
+
+        if (camDown != null && camDown.Priority == activePriority)
+            return camDownType;
+
+        if (camLeft != null && camLeft.Priority == activePriority)
+            return camLeftType;
+
+        if (camRight != null && camRight.Priority == activePriority)
+            return camRightType;
+
+        return CameraViewType.None;
+    }
+
     public void ResetSequenceProgress(string characterId)
     {
-        if (sequenceProgress.ContainsKey(characterId))
+        if (sequenceDialogController != null)
         {
-            sequenceProgress[characterId] = 0;
+            sequenceDialogController.ResetSequenceProgress(characterId);
         }
     }
 
-    private DialogEntry GetRandomDialog(CharacterDialogConfig character)
+    private void ResolveDialogControllers()
     {
-        int index = Random.Range(0, character.dialogs.Count);
-        return character.dialogs[index];
-    }
-
-    private DialogEntry GetActionPointDialog(CharacterDialogConfig character, int currentActionPoints)
-    {
-        foreach (DialogEntry dialog in character.dialogs)
+        if (randomDialogController == null)
         {
-            if (currentActionPoints >= dialog.actionPointMin && currentActionPoints <= dialog.actionPointMax)
-            {
-                return dialog;
-            }
+            randomDialogController = FindObjectOfType<RandomDialogController>();
         }
 
-        Debug.LogWarning(
-            $"No action point dialog matched for {character.characterId} with action points: {currentActionPoints}",
-            this);
-        return null;
-    }
-
-    private DialogEntry GetSequenceDialog(CharacterDialogConfig character)
-    {
-        if (!sequenceProgress.ContainsKey(character.characterId))
+        if (actionPointDialogController == null)
         {
-            sequenceProgress[character.characterId] = 0;
+            actionPointDialogController = FindObjectOfType<ActionPointDialogController>();
         }
 
-        int index = sequenceProgress[character.characterId];
-        index = Mathf.Clamp(index, 0, character.dialogs.Count - 1);
-
-        DialogEntry dialog = character.dialogs[index];
-
-        if (sequenceProgress[character.characterId] < character.dialogs.Count - 1)
+        if (sequenceDialogController == null)
         {
-            sequenceProgress[character.characterId]++;
+            sequenceDialogController = FindObjectOfType<SequenceDialogController>();
         }
-
-        return dialog;
     }
 }
