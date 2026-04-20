@@ -1,0 +1,163 @@
+{
+  "characters": [
+    {
+      "characterId": "npc_random",
+      "characterName": "路人",
+      "mode": "random",
+      "dialogs": [
+        {
+          "dialogId": "random_001",
+          "lines": [
+            {
+              "speakerId": "npc_random",
+              "text": "今天天气不错。"
+            },
+            {
+              "speakerId": "player",
+              "text": "是啊，不过这里安静得有点奇怪。"
+            }
+          ]
+        },
+        {
+          "dialogId": "random_002",
+          "lines": [
+            {
+              "speakerId": "npc_random",
+              "text": "你也是刚来到这里的吗？"
+            },
+            {
+              "speakerId": "player",
+              "text": "算是，我还在熟悉这里。"
+            }
+          ]
+        },
+        {
+          "dialogId": "random_003",
+          "lines": [
+            {
+              "speakerId": "npc_random",
+              "text": "最近晚上别一个人乱走。"
+            },
+            {
+              "speakerId": "player",
+              "text": "听起来不像是建议，更像是警告。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "characterId": "npc_action",
+      "characterName": "观察者",
+      "mode": "actionPoint",
+      "dialogs": [
+        {
+          "dialogId": "action_003",
+          "actionPointMin": 3,
+          "actionPointMax": 999,
+          "lines": [
+            {
+              "speakerId": "npc_action",
+              "text": "你的状态不错，还能继续前进。"
+            },
+            {
+              "speakerId": "player",
+              "text": "我还撑得住。"
+            }
+          ]
+        },
+        {
+          "dialogId": "action_002",
+          "actionPointMin": 2,
+          "actionPointMax": 2,
+          "lines": [
+            {
+              "speakerId": "npc_action",
+              "text": "你已经开始消耗体力了。"
+            },
+            {
+              "speakerId": "player",
+              "text": "我知道，还没到停下的时候。"
+            }
+          ]
+        },
+        {
+          "dialogId": "action_001",
+          "actionPointMin": 1,
+          "actionPointMax": 1,
+          "lines": [
+            {
+              "speakerId": "npc_action",
+              "text": "你的行动机会不多了。"
+            },
+            {
+              "speakerId": "player",
+              "text": "那我得更谨慎一点。"
+            }
+          ]
+        },
+        {
+          "dialogId": "action_000",
+          "actionPointMin": 0,
+          "actionPointMax": 0,
+          "lines": [
+            {
+              "speakerId": "npc_action",
+              "text": "你已经没有行动点了。"
+            },
+            {
+              "speakerId": "player",
+              "text": "看来现在只能先停下来。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "characterId": "npc_sequence",
+      "characterName": "神秘人",
+      "mode": "sequence",
+      "dialogs": [
+        {
+          "dialogId": "sequence_001",
+          "lines": [
+            {
+              "speakerId": "npc_sequence",
+              "text": "你终于来了。"
+            },
+            {
+              "speakerId": "player",
+              "text": "你在等我？"
+            }
+          ]
+        },
+        {
+          "dialogId": "sequence_002",
+          "lines": [
+            {
+              "speakerId": "npc_sequence",
+              "text": "上一次我还没有把话说完。"
+            },
+            {
+              "speakerId": "player",
+              "text": "那这次你最好直接一点。"
+            }
+          ]
+        },
+        {
+          "dialogId": "sequence_003",
+          "lines": [
+            {
+              "speakerId": "npc_sequence",
+              "text": "现在你已经知道该去哪里了。"
+            },
+            {
+              "speakerId": "player",
+              "text": "我会去，但不是为了你。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
