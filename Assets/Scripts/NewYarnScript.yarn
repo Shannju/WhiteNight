@@ -1,0 +1,252 @@
+﻿// ============================================
+// 白夜 - 暑期补习班 (Fragment-Based Architecture)
+// ============================================
+// 时间轴系统：一堂课45分钟，分为3个阶段
+// 触发器：玩家可自由选择观看方向
+// ============================================
+
+title: GameInit
+position: -128,-54
+---
+<<set $playthrough to $playthrough ?? 1>>
+<<set $timeSpent to $timeSpent ?? 0>>
+<<set $timePhase to $timePhase ?? 1>>
+<<set $timeBudget to 12>>
+
+// 事件追踪
+<<set $seenEvents to $seenEvents ?? {}>>
+<<set $seenEvents["window"] to $seenEvents["window"] ?? 0>>
+<<set $seenEvents["desk"] to $seenEvents["desk"] ?? 0>>
+<<set $seenEvents["friend"] to $seenEvents["friend"] ?? 0>>
+
+// 角色好感度
+<<set $xiaoyuan_affection to $xiaoyuan_affection ?? 0>>
+<<set $teacher_attention to $teacher_attention ?? 0>>
+
+// 分支状态
+<<set $friend_noticed_you to false>>
+<<set $teacher_noticed_you to false>>
+
+[游戏加载完成]
+[[开始上课|ClassroomHub]]
+===
+
+title: ClassroomHub
+position: -132,106
+---
+<<if $timeSpent < 5>>
+  <<set $timePhase to 1>>
+<<elseif $timeSpent < 10>>
+  <<set $timePhase to 2>>
+<<else>>
+  <<set $timePhase to 3>>
+<<endif>>
+
+<<if $timeSpent >= $timeBudget>>
+  下课铃声响起了，时间到。
+
+  [[下课|ClassEnd]]
+<<else>>
+  // ===== 教室主枢纽 =====
+  老师在讲台上继续讲课，教室里的时间由你选择的观察决定。
+  
+  <<if $timePhase == 1>>
+    老师正在讲解“现在完成时”的用法，语速平稳。
+  <<elseif $timePhase == 2>>
+    现在老师进入了“短语动词”章节，内容更密集。
+  <<else>>
+    剩下最后几分钟，老师开始强调考试重点。
+  <<endif>>
+  
+  你身边的小圆正在翻笔记本，窗外传来蝉鸣。
+  你可以继续看哪个方向？
+  
+  [[👀 抬头看黑板|OnLookAt_Board]]
+  [[👤 转头看同桌小圆|OnTalk_Friend]]
+  [[🪟 向窗外看|OnLookAt_Window]]
+  [[📓 低头看自己的桌面|OnLookAt_Desk]]
+<<endif>>
+===
+
+title: OnLookAt_Board
+position: 86,101
+---
+<<set $timeSpent to $timeSpent + 3>>
+黑板上的粉笔字闪闪发光。
+
+<<if $timePhase == 1>>
+  老师："完成时的关键是，动作已经结束，但对现在有影响。"
+  她画了一条时间轴，并举了例句。
+  你开始理解这些细节。
+  <<set $teacher_attention to $teacher_attention + 1>>
+<<elseif $timePhase == 2>>
+  黑板上密密麻麻写满了短语动词。
+  老师："这些搭配经常出现在考试里。"
+  她突然看向你。
+  <<if $teacher_attention >= 2>>
+    她的目光停留了一会儿，似乎对你印象不错。
+    <<set $teacher_noticed_you to true>>
+  <<endif>>
+<<else>>
+  老师总结今天的关键词。
+  "这五个短语一定要记住。"
+  你对这些内容有了更清晰的感觉。
+<<endif>>
+
+[[回到教室|ClassroomHub]]
+===
+
+title: OnTalk_Friend
+position: 300,100
+---
+<<set $timeSpent to $timeSpent + 2>>
+你转向小圆。
+
+<<if $seenEvents["friend"] == 0>>
+  小圆吓了一跳。
+  小圆："你突然看我干嘛？"
+  你："没什么，就是太无聊了。"
+  小圆压低声音："老师这套讲法，我已经听了几遍了。"
+  <<set $seenEvents["friend"] to 1>>
+  <<set $xiaoyuan_affection to $xiaoyuan_affection + 1>>
+  <<set $friend_noticed_you to true>>
+<<elseif $seenEvents["friend"] == 1 and $timePhase > 1>>
+  小圆靠近你。
+  小圆："你说，她什么时候才能讲完啊？"
+  她用笔轻轻戳着桌子。
+  <<set $seenEvents["friend"] to 2>>
+  <<set $xiaoyuan_affection to $xiaoyuan_affection + 1>>
+<<elseif $friend_noticed_you>>
+  小圆递给你一张纸条："下课后我们去楼下买冰淇淋？"
+  <<set $xiaoyuan_affection to $xiaoyuan_affection + 2>>
+<<else>>
+  小圆默默盯着讲台，像在计算时间。
+<<endif>>
+
+[[回到教室|ClassroomHub]]
+===
+
+title: OnLookAt_Window
+position: 553,103
+---
+<<set $timeSpent to $timeSpent + 1>>
+你的眼神飘向了窗外。
+
+<<if $seenEvents["window"] == 0>>
+  蝉鸣声清晰可闻，操场上只有几名工人在浇花。
+  你想：这个暑假就这样过去吗？
+  <<set $seenEvents["window"] to 1>>
+<<elseif $seenEvents["window"] == 1 and $timePhase == 2>>
+  你发现一只麻雀落在对面楼的栏杆上。
+  它歪头看了你一眼，随后飞走了。
+  真自由啊。
+  <<set $seenEvents["window"] to 2>>
+<<elseif $playthrough >= 2 and $seenEvents["window"] >= 2>>
+  这个视角已经不再新鲜。
+  你开始意识到，时间更像是一种流逝的感觉。
+<<else>>
+  只是白色的墙和炎热的空气。
+<<endif>>
+
+[[回到教室|ClassroomHub]]
+===
+
+title: OnLookAt_Desk
+position: 807,97
+---
+<<set $timeSpent to $timeSpent + 2>>
+你低头看了看自己的桌面。
+
+<<if $seenEvents["desk"] == 0>>
+  桌面上有笔、橡皮、一个记事本和纸飞机。
+  你拿起纸飞机，想起这是小圆的恶作剧。
+  <<set $seenEvents["desk"] to 1>>
+<<elseif $seenEvents["desk"] == 1>>
+  你展开纸飞机，看到小圆写道：
+  "其实我也很无聊，但不能让老师看出来 :)"
+  <<set $xiaoyuan_affection to $xiaoyuan_affection + 1>>
+  <<set $seenEvents["desk"] to 2>>
+<<elseif $playthrough >= 2 and $seenEvents["desk"] == 2>>
+  记事本里多了一段新的笔记。
+  你怀疑这是小圆昨天留下的。
+<<else>>
+  只是些笔记和用过的橡皮。
+<<endif>>
+
+[[回到教室|ClassroomHub]]
+===
+
+title: ClassEnd
+position: 550,273
+---
+// ===== 下课 - 周目总结 =====
+
+下课铃声终于响起。
+
+老师合上讲义："好，今天就讲到这里。那五个短语一定要背！"
+
+<<if $teacher_noticed_you>>
+  她临别时朝你点了点头。
+  
+  "你今天听讲确实认真。"
+<<endif>>
+
+<<if $xiaoyuan_affection >= 3>>
+  小圆站了起来，拿起书包。
+  
+  小圆："嘿，记得下课后啊。"
+  
+  她眨了眨眼。
+<<endif>>
+
+---
+
+**本周目统计：**
+- 看窗外：{$seenEvents["window"]} 次特殊发现
+- 看桌面：{$seenEvents["desk"]} 次互动
+- 和小圆：{$seenEvents["friend"]} 级进度
+- 小圆好感度：{$xiaoyuan_affection}
+- 老师关注度：{$teacher_attention}
+
+<<if $seenEvents["window"] < 2 or $seenEvents["desk"] < 2 or $seenEvents["friend"] < 2>>
+  [还有内容你没有发现……]
+  
+  [[再玩一遍|ResetForNewPlaythrough]]
+<<else>>
+  [似乎你已经体验过所有分支了。]
+  
+  [[重新开始新周目|ResetForNewPlaythrough]]
+<<endif>>
+
+[[结束游戏|EndGame]]
+===
+
+title: ResetForNewPlaythrough
+position: 543,494
+---
+// ===== 重置为新周目 =====
+
+<<set $playthrough to $playthrough + 1>>
+<<set $timeSpent to 0>>
+<<set $timePhase to 1>>
+<<set $xiaoyuan_affection to 0>>
+<<set $teacher_attention to 0>>
+<<set $friend_noticed_you to false>>
+<<set $teacher_noticed_you to false>>
+
+下一个周目开始……
+
+[[继续|ClassroomHub]]
+===
+
+title: EndGame
+position: 822,488
+---
+// ===== 游戏结束 =====
+
+感谢游玩。
+
+这个暑期补习班的故事，暂时到这里。
+
+[已完成 {$playthrough} 个周目]
+===

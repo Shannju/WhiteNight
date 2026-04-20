@@ -1,4 +1,4 @@
-using UnityEngine;
+  using UnityEngine;
 using Cinemachine;
 
 public class FourDirectionCameraSwitcher : MonoBehaviour
@@ -13,37 +13,54 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
     public int activePriority = 10;
     public int inactivePriority = 0;
 
+    public InputEventDispatcher inputDispatcher;
+
     void Start()
     {
         // 默认先激活“上”
         SwitchTo(camUp);
     }
 
-    void Update()
+    void OnEnable()
     {
-        // W 或 上箭头 -> 上视角
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            SwitchTo(camUp);
-        }
+        if (inputDispatcher == null)
+            return;
 
-        // S 或 下箭头 -> 下视角
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            SwitchTo(camDown);
-        }
+        inputDispatcher.onBoard.AddListener(OnBoardSelected);
+        inputDispatcher.onFriend.AddListener(OnFriendSelected);
+        inputDispatcher.onWindow.AddListener(OnWindowSelected);
+        inputDispatcher.onDesk.AddListener(OnDeskSelected);
+    }
 
-        // A 或 左箭头 -> 左视角
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            SwitchTo(camLeft);
-        }
+    void OnDisable()
+    {
+        if (inputDispatcher == null)
+            return;
 
-        // D 或 右箭头 -> 右视角
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            SwitchTo(camRight);
-        }
+        inputDispatcher.onBoard.RemoveListener(OnBoardSelected);
+        inputDispatcher.onFriend.RemoveListener(OnFriendSelected);
+        inputDispatcher.onWindow.RemoveListener(OnWindowSelected);
+        inputDispatcher.onDesk.RemoveListener(OnDeskSelected);
+    }
+
+    void OnBoardSelected()
+    {
+        SwitchTo(camLeft);
+    }
+
+    void OnFriendSelected()
+    {
+        SwitchTo(camRight);
+    }
+
+    void OnWindowSelected()
+    {
+        SwitchTo(camUp);
+    }
+
+    void OnDeskSelected()
+    {
+        SwitchTo(camDown);
     }
 
     void SwitchTo(CinemachineVirtualCamera targetCam)
