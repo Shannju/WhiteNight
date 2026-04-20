@@ -1,100 +1,103 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class CanvasBook : MonoBehaviour
+public class CanvasBook : MonoBehaviour, IPointerClickHandler
 {
     [Header("设置")]
-    public float flipDuration = 0.5f; // 翻页耗时
-    public List<RectTransform> pages; // 手动拖入或在Start里获取
+    public float flipDuration = 0.5f;
+    public List<RectTransform> pages; 
     
-    private int _currentPageIndex = 0; // 当前待翻开的页面索引
+    private int _currentPageIndex = 0; 
     private bool _isFliping = false;
 
-    /// <summary>
-    /// 向后翻一页 (从右向左翻)
-    /// </summary>
-    public void FlipForward()
+    void Start()
     {
-        if (_isFliping || _currentPageIndex >= pages.Count) return;
-        
-        StartCoroutine(RoutineFlip(pages[_currentPageIndex], 1f, -1f, true));
-        _currentPageIndex++;
+        Debug.Log($"CanvasBook started, pages count: {(pages != null ? pages.Count : 0)}");
+        if (pages == null || pages.Count == 0)
+        {
+            Debug.LogError("Pages list is empty or not assigned!");
+        }
+        // 初始状态排列：最后一页在最下面(0)，第一页在最上面
+        UpdateSiblingOrder();
     }
 
-    /// <summary>
-    /// 向前翻一页 (从左向右翻)
-    /// </summary>
+    public void FlipForward()
+    {
+        Debug.Log($"FlipForward called, isFliping: {_isFliping}, currentIndex: {_currentPageIndex}, pageCount: {pages.Count}");
+        if (_isFliping || _currentPageIndex >= pages.Count)
+        {
+            Debug.Log("FlipForward blocked: isFliping=" + _isFliping + ", currentIndex >= pageCount=" + (_currentPageIndex >= pages.Count));
+            return;
+        }
+        StartCoroutine(RoutineFlip(pages[_currentPageIndex], 1f, -1f, true));
+    }
+
     public void FlipBackward()
     {
-        if (_isFliping || _currentPageIndex <= 0) return;
-        
-        _currentPageIndex--;
+        Debug.Log($"FlipBackward called, isFliping: {_isFliping}, currentIndex: {_currentPageIndex}");
+        if (_isFliping || _currentPageIndex <= 0)
+        {
+            Debug.Log("FlipBackward blocked: isFliping=" + _isFliping + ", currentIndex <= 0=" + (_currentPageIndex <= 0));
+            return;
+        }
+        _currentPageIndex--; // 往回翻时先减索引
         StartCoroutine(RoutineFlip(pages[_currentPageIndex], -1f, 1f, false));
     }
 
     private IEnumerator RoutineFlip(RectTransform page, float startScale, float endScale, bool isForward)
     {
         _isFliping = true;
-        float elapsed = 0;
-        float previousScale = startScale;
 
-        // 翻转开始前的层级处理：正在翻动的页应该在最上方
+        // 1. 动画开始前：将当前页提到绝对最前方，避免被任何页面遮挡
         page.SetAsLastSibling();
 
+        float elapsed = 0;
         while (elapsed < flipDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / flipDuration;
-            
-            // 使用 Lerp 改变缩放
             float currentScaleX = Mathf.Lerp(startScale, endScale, t);
             page.localScale = new Vector3(currentScaleX, 1, 1);
-
-            // 当 scale 穿过 0 时，page 应该从一个队列移动到另一个队列
-            if ((isForward && previousScale > 0 && currentScaleX <= 0) ||
-                (!isForward && previousScale < 0 && currentScaleX >= 0))
-            {
-                if (isForward)
-                {
-                    // 进入左边队列的顶部位置，但仍然低于右边队列的页面
-                    page.SetSiblingIndex(_currentPageIndex);
-                }
-                else
-                {
-                    // 进入右边队列的顶部位置
-                    page.SetSiblingIndex(pages.Count - 1);
-                }
-            }
-
-            previousScale = currentScaleX;
             yield return null;
         }
 
         page.localScale = new Vector3(endScale, 1, 1);
-        _isFliping = false;
+        
+        // 2. 动画结束后：如果是向后翻，索引增加
+        if (isForward) _currentPageIndex++;
 
-        // 翻转结束后更新所有页面的 sibling index
+        // 3. 核心：重新排列全局层级
         UpdateSiblingOrder();
+        
+        _isFliping = false;
     }
 
     private void UpdateSiblingOrder()
     {
-        // 左侧页面（已翻过去的）：正序，Sibling Index 从 0 开始递增
+        /* 层级目标 (从下往上，即 SiblingIndex 0 -> N):
+           1. 左侧堆栈：最早翻开的页 (pages[0]) 在最底。
+           2. 右侧堆栈：最后一张页 (pages[N-1]) 在中间。
+           3. 右侧堆栈：当前待翻开的页 (pages[_currentPageIndex]) 在最顶。
+        */
+
+        // 第一步：处理左侧已翻开的页面 (0 到 _currentPageIndex - 1)
+        // 它们按顺序排在最下面
         for (int i = 0; i < _currentPageIndex; i++)
         {
             pages[i].SetSiblingIndex(i);
         }
 
-        // 右侧页面（未翻的）：倒序，Sibling Index 从高到低
-        int rightStart = _currentPageIndex;
-        int rightEnd = pages.Count - 1;
-        for (int i = rightStart; i <= rightEnd; i++)
+        // 第二步：处理右侧未翻开的页面 (_currentPageIndex 到 pages.Count - 1)
+        // 为了让“下一页”在最上面，我们需要从后往前设置
+        for (int i = pages.Count - 1; i >= _currentPageIndex; i--)
         {
-            int siblingIndex = rightStart + (rightEnd - i);
-            pages[i].SetSiblingIndex(siblingIndex);
+            pages[i].SetAsLastSibling(); 
+            // 这样循环结束后，pages[_currentPageIndex] 就会是最后的 LastSibling，即最顶层
         }
     }
-
- 
-}
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("CanvasBook pointer clicked!");
+    }}

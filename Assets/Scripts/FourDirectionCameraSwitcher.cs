@@ -1,4 +1,4 @@
-using UnityEngine;
+  using UnityEngine;
 using Cinemachine;
 
 public class FourDirectionCameraSwitcher : MonoBehaviour
