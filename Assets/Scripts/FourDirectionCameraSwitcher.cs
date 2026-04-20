@@ -1,4 +1,4 @@
-  using UnityEngine;
+using UnityEngine;
 using Cinemachine;
 
 public class FourDirectionCameraSwitcher : MonoBehaviour
@@ -43,27 +43,27 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
         inputDispatcher.onDesk.RemoveListener(OnDeskSelected);
     }
 
-    void OnBoardSelected()
+    public void OnBoardSelected()
     {
         SwitchTo(camLeft);
     }
 
-    void OnFriendSelected()
+    public void OnFriendSelected()
     {
         SwitchTo(camRight);
     }
 
-    void OnWindowSelected()
+    public void OnWindowSelected()
     {
         SwitchTo(camUp);
     }
 
-    void OnDeskSelected()
+    public void OnDeskSelected()
     {
         SwitchTo(camDown);
     }
 
-    void SwitchTo(CinemachineVirtualCamera targetCam)
+    public void SwitchTo(CinemachineVirtualCamera targetCam)
     {
         camUp.Priority = inactivePriority;
         camDown.Priority = inactivePriority;
