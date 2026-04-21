@@ -42,16 +42,47 @@ public class UIImageFillController : MonoBehaviour
     /// </summary>
     public void AnimateFill()
     {
+        TryAnimateFill();
+    }
+
+    public bool TryAnimateFill()
+    {
         if (_isFilling)
         {
             Debug.LogWarning("UIImageFillController: 正在进行填充动画，请等待完成后再调用");
-            return;
+            return false;
         }
-        
+
+        if (targetImage == null)
+        {
+            Debug.LogError("UIImageFillController: Image组件未初始化，无法执行填充动画!");
+            return false;
+        }
+
         // 触发状态改变事件，传递自己作为参数
         OnFillStateChanged?.Invoke(this);
-        
+
         StartCoroutine(FillCoroutine());
+        return true;
+    }
+
+    public bool PlayFromZero()
+    {
+        if (targetImage == null)
+        {
+            Debug.LogError("UIImageFillController: Image组件未初始化，无法执行填充动画!");
+            return false;
+        }
+
+        if (_isFilling)
+        {
+            StopAllCoroutines();
+            _isFilling = false;
+        }
+
+        targetImage.fillAmount = 0f;
+        StartCoroutine(FillCoroutine());
+        return true;
     }
     
     /// <summary>
