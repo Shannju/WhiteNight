@@ -1,15 +1,33 @@
-﻿day,characterId,characterName,mode,actionpointOrder,dialogID,text,triggerOrder,pictureId,playerpicture
-1,teacher,Teacher,actionpoint,1,ap_1,上课,0,1,1
-1,player,Me,actionpoint,1,ap_1,好烦,1,1,2
-1,teacher,Teacher,actionpoint,2,ap_2,上课,0,1,1
-1,player,Me,actionpoint,2,ap_2,好烦,1,1,1
-1,player,Me,actionpoint,3,ap_3,3,0,1,2
-1,player,Me,actionpoint,4,ap_4,4,0,1,1
-1,player,Me,actionpoint,5,ap_5,5,0,1,2
-1,player,Me,actionpoint,6,ap_6,6,0,1,2
-1,player,Me,actionpoint,7,ap_7,7,0,1,1
-1,player,Me,actionpoint,8,ap_8,8,0,1,2
-1,player,Me,actionpoint,9,ap_9,9,0,1,2
-1,player,Me,actionpoint,10,ap_10,10,0,1,1
-1,player,Me,actionpoint,11,ap_11,11,0,1,2
-1,player,Me,actionpoint,12,ap_12,12,0,1,2
+﻿day,characterId,characterName,mode,actionpointOrder,dialogID,text,triggerOrder,pictureId,pictureId2,playerpicture,soundId
+1,player,Me,actionpoint,1,1_ap_1,（镜头强行转到讲台侧，伴随声音）,0,,,,
+1,player,Me,actionpoint,1,1_ap_1,(**Julian老师** 推门而入。),1,,,,
+1,player,Me,actionpoint,1,1_ap_1,(他梳着侧分背头，穿着一件剪裁略显紧身的衬衫，眼镜上夹着一个橙色的滤镜片。),2,,,,
+1,player,Me,actionpoint,2,1_ap_2,(前台minna老师跟在他后面，将一沓橙色的书本放在讲台上。),0,,,,
+1,player,Me,actionpoint,2,1_ap_2,(在这个小城市里，她承包了我对都市丽人的一切想象。职业装，黑框眼镜，银色手链，淡淡的职业笑。),1,,,,
+1,teacher,Julian,actionpoint,3,1_ap_3,"hello everyone, welcome to……",0,,,,
+1,teacher,Julian,actionpoint,3,1_ap_3,Beyond english 暑期班,1,,,,
+1,teacher,Julian,actionpoint,3,1_ap_3,Look at me!,2,,,,
+1,player,Me,actionpoint,3,1_ap_3,！,3,,,,
+1,player,Me,actionpoint,3,1_ap_3,(minna老师适时的掩门走了（声音，关门吱~~）),4,,,,
+1,player,Me,actionpoint,4,1_ap_4,（他转身在白板上用马克笔狂草写下巨大的 **JULIAN**）（声音 粉笔）,0,,,,
+1,player,Me,actionpoint,4,1_ap_4,(I'm Julian. 你们暑期班的老师.),1,,,,
+1,player,Me,actionpoint,5,1_ap_5,(你们看这个词——**July**。一年中最好的日子。),0,,,,
+1,player,Me,actionpoint,5,1_ap_5,(在后面加了一个 **'an'**。在拉丁语的语境里，这意味着‘属于七月的’。),1,,,,
+1,player,Me,actionpoint,6,1_ap_6,(我留学的时候，在那边的海滩上，我就告诉自己，Julian，你要像七月的烈日一样，灼烧掉所有的平庸和胆怯！),0,,,,
+1,player,Me,actionpoint,7,1_ap_7,(英语是世界上最简单的语言！只要你敢喊出来，就能够超越它，超越自己。),0,,,,
+1,player,Me,actionpoint,7,1_ap_7,(来，Follow me!),1,,,,
+1,player,Me,actionpoint,7,1_ap_7,(Beyond English),2,,,,
+1,player,Me,actionpoint,7,1_ap_7,Beyond English,3,,,,
+1,player,Me,actionpoint,8,1_ap_8,(Beyond Yourself!),0,,,,
+1,player,Me,actionpoint,8,1_ap_8,Beyond Yourself!,1,,,,
+1,teacher,Julian,actionpoint,9,1_ap_9,我听不到！再来一遍！,0,,,,
+1,teacher,Julian,actionpoint,9,1_ap_9,Beyond English,1,,,,
+1,player,Me,actionpoint,9,1_ap_9,Beyond English,2,,,,
+1,player,Me,actionpoint,10,1_ap_10,(Beyond Yourself!),0,,,,
+1,player,Me,actionpoint,10,1_ap_10,Beyond Yourself!,1,,,,
+1,player,Me,actionpoint,11,1_ap_11,(同学们胆怯地开了口，但显然老师还不满意。),0,,,,
+1,teacher,Julian,actionpoint,11,1_ap_11,（*）,1,,,,
+1,teacher,Julian,actionpoint,11,1_ap_11,Beyond English,2,,,,
+1,player,Me,actionpoint,11,1_ap_11,……,3,,,,
+1,player,Me,actionpoint,12,1_ap_12,(Beyond Yourself!),0,,,,
+1,player,Me,actionpoint,12,1_ap_12,……,1,,,,

@@ -49,8 +49,11 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private KeyCode interactKey = KeyCode.Space;
     [SerializeField] private TMP_Text dialogText;
     [SerializeField] private PlayerPictureDisplay playerPictureDisplay;
+    [SerializeField] private DialogPictureController dialogPictureController;
+    [SerializeField] private SpeakerColorPalette speakerColorPalette;
     [SerializeField] private string mateCharacterId = "mate";
     [SerializeField] private string teacherCharacterId = "teacher";
+    [SerializeField] private string windowsCharacterId = "windows";
     [SerializeField] private bool showSpeakerName = true;
     [SerializeField] private float charactersPerSecond = 30f;
     [SerializeField] private float autoAdvanceDelay = 1.5f;
@@ -64,16 +67,23 @@ public class DialogManager : MonoBehaviour
     private bool isTyping;
     private bool isWaitingForAdvance;
     private bool shouldEndDialogAfterWait;
+    private DialogTriggerMode activeDialogTriggerMode;
+    private DialogEntry pendingRandomDialog;
+    private int lastRandomRefreshActionPoints = -1;
+    private int lastRandomRefreshDay = -1;
 
     private void Awake()
     {
         ResolveDialogControllers();
         ClearDialogText();
         HidePlayerPicture();
+        RefreshPendingRandomDialog(forceRefresh: true);
     }
 
     private void Update()
     {
+        RefreshPendingRandomDialog();
+
         if (Input.GetKeyDown(interactKey))
         {
             AdvanceCurrentDialog();
@@ -186,6 +196,16 @@ public class DialogManager : MonoBehaviour
     {
         daySystem = system;
 
+        if (actionPointDialogController != null)
+        {
+            actionPointDialogController.SetDaySystem(system);
+        }
+
+        if (randomDialogController != null)
+        {
+            randomDialogController.SetDaySystem(system);
+        }
+
         if (sequenceDialogController != null)
         {
             sequenceDialogController.SetDaySystem(system);
@@ -279,6 +299,9 @@ public class DialogManager : MonoBehaviour
             case CameraViewType.Teacher:
                 StartTeacherActionPointDialog();
                 break;
+            case CameraViewType.Windows:
+                StartWindowsRandomDialog();
+                break;
             default:
                 Debug.LogWarning($"No dialog playback is configured for camera view type: {currentViewType}", this);
                 break;
@@ -288,6 +311,17 @@ public class DialogManager : MonoBehaviour
     public void StartMateSequenceDialog()
     {
         StopAutoAdvanceCountdown();
+
+        if (actionPointSystem == null)
+        {
+            Debug.LogWarning("Action point system is not assigned.", this);
+            return;
+        }
+
+        if (!actionPointSystem.CanStartAction())
+        {
+            return;
+        }
 
         DialogEntry dialog = GetSequenceDialogForCharacter(mateCharacterId);
 
@@ -304,8 +338,18 @@ public class DialogManager : MonoBehaviour
 
         activeDialog = dialog;
         activeLineIndex = 0;
+        activeDialogTriggerMode = DialogTriggerMode.Sequence;
         SetCameraSwitchingEnabled(false);
-        TriggerStartActionCommand();
+
+        if (!actionPointSystem.TryStartAction())
+        {
+            activeDialog = null;
+            activeLineIndex = 0;
+            activeDialogTriggerMode = DialogTriggerMode.Sequence;
+            SetCameraSwitchingEnabled(true);
+            return;
+        }
+
         ShowNextActiveDialogLine();
     }
 
@@ -339,17 +383,58 @@ public class DialogManager : MonoBehaviour
 
         activeDialog = dialog;
         activeLineIndex = 0;
+        activeDialogTriggerMode = DialogTriggerMode.ActionPoint;
+        SetCameraSwitchingEnabled(false);
+        ShowNextActiveDialogLine();
+    }
+
+    public void StartWindowsRandomDialog()
+    {
+        StopAutoAdvanceCountdown();
+
+        DialogEntry dialog = pendingRandomDialog;
+
+        if (dialog == null)
+        {
+            return;
+        }
+
+        if (dialog.lines == null || dialog.lines.Count == 0)
+        {
+            Debug.LogWarning($"No playable windows random dialog found for characterId: {windowsCharacterId}", this);
+            return;
+        }
+
+        if (actionPointSystem == null)
+        {
+            Debug.LogWarning("Action point system is not assigned.", this);
+            return;
+        }
+
+        if (!actionPointSystem.TryStartAction())
+        {
+            return;
+        }
+
+        activeDialog = dialog;
+        activeLineIndex = 0;
+        activeDialogTriggerMode = DialogTriggerMode.Random;
+        pendingRandomDialog = null;
+        RefreshPendingRandomDialog(forceRefresh: true, updatePicture: false);
         SetCameraSwitchingEnabled(false);
         ShowNextActiveDialogLine();
     }
 
     public void EndCurrentDialog()
     {
+        DialogTriggerMode endedTriggerMode = activeDialogTriggerMode;
+
         StopTyping();
         StopAutoAdvanceCountdown();
         activeDialog = null;
         activeLineIndex = 0;
         shouldEndDialogAfterWait = false;
+        activeDialogTriggerMode = DialogTriggerMode.Sequence;
         SetCameraSwitchingEnabled(true);
 
         if (clearTextWhenDialogEnds)
@@ -358,6 +443,7 @@ public class DialogManager : MonoBehaviour
         }
 
         HidePlayerPicture();
+        NotifyDialogPictureEnded(endedTriggerMode);
     }
 
     public void ResetSequenceProgress(string characterId)
@@ -390,6 +476,16 @@ public class DialogManager : MonoBehaviour
             sequenceDialogController.SetDaySystem(daySystem);
         }
 
+        if (actionPointDialogController != null && daySystem != null)
+        {
+            actionPointDialogController.SetDaySystem(daySystem);
+        }
+
+        if (randomDialogController != null && daySystem != null)
+        {
+            randomDialogController.SetDaySystem(daySystem);
+        }
+
         if (inputEventDispatcher == null)
         {
             inputEventDispatcher = FindObjectOfType<InputEventDispatcher>();
@@ -398,6 +494,16 @@ public class DialogManager : MonoBehaviour
         if (playerPictureDisplay == null)
         {
             playerPictureDisplay = FindObjectOfType<PlayerPictureDisplay>();
+        }
+
+        if (dialogPictureController == null)
+        {
+            dialogPictureController = FindObjectOfType<DialogPictureController>();
+        }
+
+        if (speakerColorPalette == null)
+        {
+            speakerColorPalette = FindObjectOfType<SpeakerColorPalette>();
         }
     }
 
@@ -440,7 +546,9 @@ public class DialogManager : MonoBehaviour
             : string.Empty;
         string text = line.text ?? string.Empty;
 
+        ApplySpeakerColor(line);
         UpdatePlayerPicture(line);
+        UpdateDialogPictureState(line);
         StartTypingLine(prefix, text);
     }
 
@@ -601,6 +709,72 @@ public class DialogManager : MonoBehaviour
         {
             playerPictureDisplay.Hide();
         }
+    }
+
+    private void UpdateDialogPictureState(DialogLine line)
+    {
+        if (dialogPictureController == null)
+        {
+            return;
+        }
+
+        dialogPictureController.OnDialogLineChanged(activeDialogTriggerMode, line);
+    }
+
+    private void NotifyDialogPictureEnded(DialogTriggerMode endedTriggerMode)
+    {
+        if (dialogPictureController != null)
+        {
+            dialogPictureController.OnDialogEnded(endedTriggerMode);
+
+            if (endedTriggerMode == DialogTriggerMode.Random)
+            {
+                dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
+            }
+        }
+    }
+
+    private void RefreshPendingRandomDialog(bool forceRefresh = false, bool updatePicture = true)
+    {
+        if (randomDialogController == null || dialogPictureController == null)
+        {
+            return;
+        }
+
+        int currentActionPoints = actionPointSystem != null ? actionPointSystem.CurrentActionPoints : 0;
+        int currentDay = daySystem != null ? daySystem.CurrentDay : 0;
+
+        if (!forceRefresh &&
+            currentActionPoints == lastRandomRefreshActionPoints &&
+            currentDay == lastRandomRefreshDay)
+        {
+            return;
+        }
+
+        lastRandomRefreshActionPoints = currentActionPoints;
+        lastRandomRefreshDay = currentDay;
+        pendingRandomDialog = GetRandomDialogForCharacter(windowsCharacterId);
+
+        if (updatePicture)
+        {
+            dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
+        }
+    }
+
+    private void ApplySpeakerColor(DialogLine line)
+    {
+        if (dialogText == null)
+        {
+            return;
+        }
+
+        if (speakerColorPalette == null || line == null)
+        {
+            dialogText.color = Color.white;
+            return;
+        }
+
+        dialogText.color = speakerColorPalette.GetColor(line.speakerId);
     }
 
     private void SetCameraSwitchingEnabled(bool isEnabled)

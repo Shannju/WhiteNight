@@ -11,6 +11,9 @@ public class ActionPointSystem : MonoBehaviour
     [Header("Action State")]
     public bool startActionCommand;
 
+    [Header("External Systems")]
+    [SerializeField] private DaySystem daySystem;
+
     public int MaxActionPoints => maxActionPoints;
     public int CurrentActionPoints => currentActionPoints;
     public int ActionCostPerCommand => actionCostPerCommand;
@@ -22,6 +25,11 @@ public class ActionPointSystem : MonoBehaviour
         actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
         currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
         spentActionPoints = Mathf.Max(0, maxActionPoints - currentActionPoints);
+
+        if (daySystem == null)
+        {
+            daySystem = FindObjectOfType<DaySystem>();
+        }
     }
 
     private void Update()
@@ -50,6 +58,12 @@ public class ActionPointSystem : MonoBehaviour
 
         currentActionPoints -= actionCostPerCommand;
         spentActionPoints += actionCostPerCommand;
+
+        if (currentActionPoints <= 0 && daySystem != null)
+        {
+            daySystem.nextDayCommand = true;
+        }
+
         return true;
     }
 
@@ -89,5 +103,10 @@ public class ActionPointSystem : MonoBehaviour
     public void SetActionCostPerCommand(int amount)
     {
         actionCostPerCommand = Mathf.Max(1, amount);
+    }
+
+    public void SetDaySystem(DaySystem system)
+    {
+        daySystem = system;
     }
 }
