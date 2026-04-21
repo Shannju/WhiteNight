@@ -70,6 +70,7 @@ public class DialogManager : MonoBehaviour
     private DialogTriggerMode activeDialogTriggerMode;
     private DialogEntry pendingRandomDialog;
     private int lastRandomRefreshActionPoints = -1;
+    private int lastRandomRefreshDay = -1;
 
     private void Awake()
     {
@@ -195,6 +196,11 @@ public class DialogManager : MonoBehaviour
     {
         daySystem = system;
 
+        if (actionPointDialogController != null)
+        {
+            actionPointDialogController.SetDaySystem(system);
+        }
+
         if (randomDialogController != null)
         {
             randomDialogController.SetDaySystem(system);
@@ -306,6 +312,17 @@ public class DialogManager : MonoBehaviour
     {
         StopAutoAdvanceCountdown();
 
+        if (actionPointSystem == null)
+        {
+            Debug.LogWarning("Action point system is not assigned.", this);
+            return;
+        }
+
+        if (!actionPointSystem.CanStartAction())
+        {
+            return;
+        }
+
         DialogEntry dialog = GetSequenceDialogForCharacter(mateCharacterId);
 
         if (dialog == null)
@@ -323,7 +340,16 @@ public class DialogManager : MonoBehaviour
         activeLineIndex = 0;
         activeDialogTriggerMode = DialogTriggerMode.Sequence;
         SetCameraSwitchingEnabled(false);
-        TriggerStartActionCommand();
+
+        if (!actionPointSystem.TryStartAction())
+        {
+            activeDialog = null;
+            activeLineIndex = 0;
+            activeDialogTriggerMode = DialogTriggerMode.Sequence;
+            SetCameraSwitchingEnabled(true);
+            return;
+        }
+
         ShowNextActiveDialogLine();
     }
 
@@ -448,6 +474,11 @@ public class DialogManager : MonoBehaviour
         if (sequenceDialogController != null && daySystem != null)
         {
             sequenceDialogController.SetDaySystem(daySystem);
+        }
+
+        if (actionPointDialogController != null && daySystem != null)
+        {
+            actionPointDialogController.SetDaySystem(daySystem);
         }
 
         if (randomDialogController != null && daySystem != null)
@@ -711,13 +742,17 @@ public class DialogManager : MonoBehaviour
         }
 
         int currentActionPoints = actionPointSystem != null ? actionPointSystem.CurrentActionPoints : 0;
+        int currentDay = daySystem != null ? daySystem.CurrentDay : 0;
 
-        if (!forceRefresh && currentActionPoints == lastRandomRefreshActionPoints)
+        if (!forceRefresh &&
+            currentActionPoints == lastRandomRefreshActionPoints &&
+            currentDay == lastRandomRefreshDay)
         {
             return;
         }
 
         lastRandomRefreshActionPoints = currentActionPoints;
+        lastRandomRefreshDay = currentDay;
         pendingRandomDialog = GetRandomDialogForCharacter(windowsCharacterId);
 
         if (updatePicture)

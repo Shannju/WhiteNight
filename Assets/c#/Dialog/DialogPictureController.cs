@@ -8,6 +8,7 @@ public class DialogPictureController : MonoBehaviour
     [SerializeField] private string teacherCharacterId = "teacher";
 
     private int lastSpentActionPoints = -1;
+    private int lastActionPointDay = -1;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class DialogPictureController : MonoBehaviour
         }
 
         lastSpentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : -1;
+        lastActionPointDay = actionPointDialogController != null ? actionPointDialogController.GetCurrentDay() : -1;
     }
 
     private void Update()
@@ -28,7 +30,7 @@ public class DialogPictureController : MonoBehaviour
 
     public void OnDialogLineChanged(DialogTriggerMode triggerMode, DialogLine line)
     {
-        if (dialogPictureRegistry == null || line == null || string.IsNullOrEmpty(line.pictureId))
+        if (dialogPictureRegistry == null)
         {
             return;
         }
@@ -38,11 +40,33 @@ public class DialogPictureController : MonoBehaviour
             return;
         }
 
+        if (triggerMode == DialogTriggerMode.Sequence)
+        {
+            if (line == null || string.IsNullOrEmpty(line.pictureId))
+            {
+                dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.Sequence);
+                return;
+            }
+
+            dialogPictureRegistry.ShowPicture(triggerMode, line.pictureId);
+            return;
+        }
+
+        if (line == null || string.IsNullOrEmpty(line.pictureId))
+        {
+            return;
+        }
+
         dialogPictureRegistry.ShowPicture(triggerMode, line.pictureId);
     }
 
     public void OnDialogEnded(DialogTriggerMode triggerMode)
     {
+        if (triggerMode == DialogTriggerMode.Sequence && dialogPictureRegistry != null)
+        {
+            dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.Sequence);
+        }
+
         if (triggerMode == DialogTriggerMode.ActionPoint)
         {
             RefreshActionPointPictureState(forceRefresh: true);
@@ -75,13 +99,17 @@ public class DialogPictureController : MonoBehaviour
         }
 
         int spentActionPoints = actionPointSystem.SpentActionPoints;
+        int currentDay = actionPointDialogController.GetCurrentDay();
 
-        if (!forceRefresh && spentActionPoints == lastSpentActionPoints)
+        if (!forceRefresh &&
+            spentActionPoints == lastSpentActionPoints &&
+            currentDay == lastActionPointDay)
         {
             return;
         }
 
         lastSpentActionPoints = spentActionPoints;
+        lastActionPointDay = currentDay;
 
         if (spentActionPoints <= 0)
         {
