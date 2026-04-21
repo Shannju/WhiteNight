@@ -1,0 +1,15 @@
+﻿day,characterId,characterName,mode,actionpointOrder,dialogID,text,triggerOrder,pictureId,playerpicture
+1,teacher,Teacher,actionpoint,1,ap_1,上课,0,1,1
+1,player,Me,actionpoint,1,ap_1,好烦,1,1,2
+1,teacher,Teacher,actionpoint,2,ap_2,上课,0,1,1
+1,player,Me,actionpoint,2,ap_2,好烦,1,1,1
+1,player,Me,actionpoint,3,ap_3,3,0,1,2
+1,player,Me,actionpoint,4,ap_4,4,0,1,1
+1,player,Me,actionpoint,5,ap_5,5,0,1,2
+1,player,Me,actionpoint,6,ap_6,6,0,1,2
+1,player,Me,actionpoint,7,ap_7,7,0,1,1
+1,player,Me,actionpoint,8,ap_8,8,0,1,2
+1,player,Me,actionpoint,9,ap_9,9,0,1,2
+1,player,Me,actionpoint,10,ap_10,10,0,1,1
+1,player,Me,actionpoint,11,ap_11,11,0,1,2
+1,player,Me,actionpoint,12,ap_12,12,0,1,2

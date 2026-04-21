@@ -6,11 +6,19 @@ public class SequenceDialogController : MonoBehaviour
     [Header("Sequence Dialog Data")]
     [SerializeField] private TextAsset dialogJsonFile;
 
+    [Header("External Systems")]
+    [SerializeField] private DaySystem daySystem;
+
     private DialogDatabase dialogDatabase;
     private readonly Dictionary<string, int> sequenceProgress = new Dictionary<string, int>();
 
     private void Awake()
     {
+        if (daySystem == null)
+        {
+            daySystem = FindObjectOfType<DaySystem>();
+        }
+
         LoadDialogData();
     }
 
@@ -52,20 +60,33 @@ public class SequenceDialogController : MonoBehaviour
             return null;
         }
 
-        if (!sequenceProgress.ContainsKey(character.characterId))
+        int currentDay = GetCurrentDay();
+        List<DialogEntry> currentDayDialogs = GetDialogsForDay(character, currentDay);
+
+        if (currentDayDialogs.Count == 0)
         {
-            sequenceProgress[character.characterId] = 0;
+            Debug.LogWarning($"No sequence dialog found for characterId: {characterId} on day: {currentDay}", this);
+            return null;
         }
 
-        int index = sequenceProgress[character.characterId];
-        index = Mathf.Clamp(index, 0, character.dialogs.Count - 1);
+        string progressKey = GetProgressKey(character.characterId, currentDay);
 
-        DialogEntry dialog = character.dialogs[index];
-
-        if (sequenceProgress[character.characterId] < character.dialogs.Count - 1)
+        if (!sequenceProgress.ContainsKey(progressKey))
         {
-            sequenceProgress[character.characterId]++;
+            sequenceProgress[progressKey] = 0;
         }
+
+        int index = sequenceProgress[progressKey];
+
+        if (index < 0 || index >= currentDayDialogs.Count)
+        {
+            return null;
+        }
+
+        DialogEntry dialog = currentDayDialogs[index];
+        PrepareDialogForPlayback(dialog);
+
+        sequenceProgress[progressKey]++;
 
         return dialog;
     }
@@ -78,9 +99,63 @@ public class SequenceDialogController : MonoBehaviour
 
     public void ResetSequenceProgress(string characterId)
     {
-        if (sequenceProgress.ContainsKey(characterId))
+        int currentDay = GetCurrentDay();
+        string progressKey = GetProgressKey(characterId, currentDay);
+
+        if (sequenceProgress.ContainsKey(progressKey))
         {
-            sequenceProgress[characterId] = 0;
+            sequenceProgress[progressKey] = 0;
         }
+    }
+
+    public void ResetSequenceProgress(string characterId, int day)
+    {
+        string progressKey = GetProgressKey(characterId, day);
+
+        if (sequenceProgress.ContainsKey(progressKey))
+        {
+            sequenceProgress[progressKey] = 0;
+        }
+    }
+
+    public void SetDaySystem(DaySystem system)
+    {
+        daySystem = system;
+    }
+
+    public int GetCurrentDay()
+    {
+        return daySystem != null ? daySystem.CurrentDay : 1;
+    }
+
+    private List<DialogEntry> GetDialogsForDay(CharacterDialogConfig character, int day)
+    {
+        List<DialogEntry> dialogs = new List<DialogEntry>();
+
+        foreach (DialogEntry dialog in character.dialogs)
+        {
+            if (dialog.day == day)
+            {
+                dialogs.Add(dialog);
+            }
+        }
+
+        dialogs.Sort((left, right) => left.sequenceOrder.CompareTo(right.sequenceOrder));
+        return dialogs;
+    }
+
+    private void PrepareDialogForPlayback(DialogEntry dialog)
+    {
+        if (dialog.lines == null)
+        {
+            return;
+        }
+
+        dialog.lines.Sort((left, right) => left.triggerOrder.CompareTo(right.triggerOrder));
+    }
+
+    private string GetProgressKey(string characterId, int day)
+    {
+        return $"{characterId}:{day}";
     }
 }

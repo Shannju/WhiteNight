@@ -1,0 +1,231 @@
+{
+    "characters": [
+        {
+            "characterId": "teacher",
+            "characterName": "Teacher",
+            "mode": "actionpoint",
+            "dialogs": [
+                {
+                    "dialogId": "ap_1",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 1,
+                    "actionPointMax": 1,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Teacher",
+                            "triggerOrder": 0,
+                            "text": "上课",
+                            "pictureId": "1",
+                            "playerPicture": "1"
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "好烦",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_2",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 2,
+                    "actionPointMax": 2,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Teacher",
+                            "triggerOrder": 0,
+                            "text": "上课",
+                            "pictureId": "1",
+                            "playerPicture": "1"
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "好烦",
+                            "pictureId": "1",
+                            "playerPicture": "1"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_3",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 3,
+                    "actionPointMax": 3,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "3",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_4",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 4,
+                    "actionPointMax": 4,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "4",
+                            "pictureId": "1",
+                            "playerPicture": "1"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_5",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 5,
+                    "actionPointMax": 5,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "5",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_6",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 6,
+                    "actionPointMax": 6,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "6",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_7",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "7",
+                            "pictureId": "1",
+                            "playerPicture": "1"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_8",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "8",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_9",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 9,
+                    "actionPointMax": 9,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "9",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_10",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 10,
+                    "actionPointMax": 10,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "10",
+                            "pictureId": "1",
+                            "playerPicture": "1"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_11",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 11,
+                    "actionPointMax": 11,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "11",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "ap_12",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 12,
+                    "actionPointMax": 12,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "12",
+                            "pictureId": "1",
+                            "playerPicture": "2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

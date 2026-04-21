@@ -41,6 +41,34 @@ public class ActionPointDialogController : MonoBehaviour
 
     public DialogEntry GetDialogForCharacter(string characterId, int currentActionPoints)
     {
+        return GetDialogForCharacterByRange(
+            characterId,
+            currentActionPoints,
+            $"No action point dialog matched for {{0}} with action points: {currentActionPoints}");
+    }
+
+    public DialogEntry GetDialogForCharacterBySpentActionPoints(string characterId, int spentActionPoints)
+    {
+        return GetDialogForCharacterByRange(
+            characterId,
+            spentActionPoints,
+            $"No action point dialog matched for {{0}} with spent action points: {spentActionPoints}");
+    }
+
+    public List<DialogLine> GetDialogLines(string characterId, int currentActionPoints)
+    {
+        DialogEntry dialog = GetDialogForCharacter(characterId, currentActionPoints);
+        return dialog != null ? dialog.lines : null;
+    }
+
+    public List<DialogLine> GetDialogLinesBySpentActionPoints(string characterId, int spentActionPoints)
+    {
+        DialogEntry dialog = GetDialogForCharacterBySpentActionPoints(characterId, spentActionPoints);
+        return dialog != null ? dialog.lines : null;
+    }
+
+    private DialogEntry GetDialogForCharacterByRange(string characterId, int matchValue, string noMatchMessageFormat)
+    {
         CharacterDialogConfig character = GetCharacterConfig(characterId);
 
         if (character == null || character.dialogs == null || character.dialogs.Count == 0)
@@ -51,21 +79,24 @@ public class ActionPointDialogController : MonoBehaviour
 
         foreach (DialogEntry dialog in character.dialogs)
         {
-            if (currentActionPoints >= dialog.actionPointMin && currentActionPoints <= dialog.actionPointMax)
+            if (matchValue >= dialog.actionPointMin && matchValue <= dialog.actionPointMax)
             {
+                PrepareDialogForPlayback(dialog);
                 return dialog;
             }
         }
 
-        Debug.LogWarning(
-            $"No action point dialog matched for {character.characterId} with action points: {currentActionPoints}",
-            this);
+        Debug.LogWarning(string.Format(noMatchMessageFormat, character.characterId), this);
         return null;
     }
 
-    public List<DialogLine> GetDialogLines(string characterId, int currentActionPoints)
+    private void PrepareDialogForPlayback(DialogEntry dialog)
     {
-        DialogEntry dialog = GetDialogForCharacter(characterId, currentActionPoints);
-        return dialog != null ? dialog.lines : null;
+        if (dialog?.lines == null)
+        {
+            return;
+        }
+
+        dialog.lines.Sort((left, right) => left.triggerOrder.CompareTo(right.triggerOrder));
     }
 }

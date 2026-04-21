@@ -6,6 +6,7 @@ public class ActionPointSystem : MonoBehaviour
     [SerializeField] private int maxActionPoints = 3;
     [SerializeField] private int currentActionPoints = 3;
     [SerializeField] private int actionCostPerCommand = 1;
+    [SerializeField] private int spentActionPoints;
 
     [Header("Action State")]
     public bool startActionCommand;
@@ -13,12 +14,14 @@ public class ActionPointSystem : MonoBehaviour
     public int MaxActionPoints => maxActionPoints;
     public int CurrentActionPoints => currentActionPoints;
     public int ActionCostPerCommand => actionCostPerCommand;
+    public int SpentActionPoints => spentActionPoints;
 
     private void Awake()
     {
         maxActionPoints = Mathf.Max(0, maxActionPoints);
         actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
         currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
+        spentActionPoints = Mathf.Max(0, maxActionPoints - currentActionPoints);
     }
 
     private void Update()
@@ -46,6 +49,7 @@ public class ActionPointSystem : MonoBehaviour
         }
 
         currentActionPoints -= actionCostPerCommand;
+        spentActionPoints += actionCostPerCommand;
         return true;
     }
 
@@ -57,6 +61,7 @@ public class ActionPointSystem : MonoBehaviour
     public void ResetActionPoints()
     {
         currentActionPoints = maxActionPoints;
+        spentActionPoints = 0;
     }
 
     public void AddActionPoints(int amount)
@@ -78,6 +83,7 @@ public class ActionPointSystem : MonoBehaviour
     public void SetCurrentActionPoints(int amount)
     {
         currentActionPoints = Mathf.Clamp(amount, 0, maxActionPoints);
+        spentActionPoints = Mathf.Max(0, maxActionPoints - currentActionPoints);
     }
 
     public void SetActionCostPerCommand(int amount)
