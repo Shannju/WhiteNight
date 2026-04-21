@@ -6,15 +6,26 @@ public class RandomDialogController : MonoBehaviour
     [Header("Random Dialog Data")]
     [SerializeField] private TextAsset dialogJsonFile;
 
+    [Header("External Systems")]
+    [SerializeField] private DaySystem daySystem;
+
     private DialogDatabase dialogDatabase;
+    private readonly Dictionary<string, HashSet<string>> playedDialogIdsByDay = new Dictionary<string, HashSet<string>>();
 
     private void Awake()
     {
+        if (daySystem == null)
+        {
+            daySystem = FindObjectOfType<DaySystem>();
+        }
+
         LoadDialogData();
     }
 
     public void LoadDialogData()
     {
+        playedDialogIdsByDay.Clear();
+
         if (dialogJsonFile == null)
         {
             dialogDatabase = null;
@@ -49,13 +60,99 @@ public class RandomDialogController : MonoBehaviour
             return null;
         }
 
-        int index = Random.Range(0, character.dialogs.Count);
-        return character.dialogs[index];
+        int currentDay = GetCurrentDay();
+        List<DialogEntry> availableDialogs = GetAvailableDialogs(character, currentDay);
+
+        if (availableDialogs.Count == 0)
+        {
+            return null;
+        }
+
+        string progressKey = GetProgressKey(character.characterId, currentDay);
+
+        if (!playedDialogIdsByDay.TryGetValue(progressKey, out HashSet<string> playedDialogIds))
+        {
+            playedDialogIds = new HashSet<string>();
+            playedDialogIdsByDay[progressKey] = playedDialogIds;
+        }
+
+        List<DialogEntry> candidates = new List<DialogEntry>();
+
+        foreach (DialogEntry dialog in availableDialogs)
+        {
+            if (!playedDialogIds.Contains(dialog.dialogId))
+            {
+                candidates.Add(dialog);
+            }
+        }
+
+        if (candidates.Count == 0)
+        {
+            return null;
+        }
+
+        DialogEntry selectedDialog = candidates[Random.Range(0, candidates.Count)];
+        playedDialogIds.Add(selectedDialog.dialogId);
+        PrepareDialogForPlayback(selectedDialog);
+        return selectedDialog;
     }
 
     public List<DialogLine> GetDialogLines(string characterId)
     {
         DialogEntry dialog = GetDialogForCharacter(characterId);
         return dialog != null ? dialog.lines : null;
+    }
+
+    public void ResetRandomProgress(string characterId)
+    {
+        int currentDay = GetCurrentDay();
+        string progressKey = GetProgressKey(characterId, currentDay);
+        playedDialogIdsByDay.Remove(progressKey);
+    }
+
+    public void ResetRandomProgress(string characterId, int day)
+    {
+        string progressKey = GetProgressKey(characterId, day);
+        playedDialogIdsByDay.Remove(progressKey);
+    }
+
+    public void SetDaySystem(DaySystem system)
+    {
+        daySystem = system;
+    }
+
+    public int GetCurrentDay()
+    {
+        return daySystem != null ? daySystem.CurrentDay : 1;
+    }
+
+    private List<DialogEntry> GetAvailableDialogs(CharacterDialogConfig character, int currentDay)
+    {
+        List<DialogEntry> dialogs = new List<DialogEntry>();
+
+        foreach (DialogEntry dialog in character.dialogs)
+        {
+            if (dialog.day == 0 || dialog.day == currentDay)
+            {
+                dialogs.Add(dialog);
+            }
+        }
+
+        return dialogs;
+    }
+
+    private void PrepareDialogForPlayback(DialogEntry dialog)
+    {
+        if (dialog?.lines == null)
+        {
+            return;
+        }
+
+        dialog.lines.Sort((left, right) => left.triggerOrder.CompareTo(right.triggerOrder));
+    }
+
+    private string GetProgressKey(string characterId, int day)
+    {
+        return $"{characterId}:{day}";
     }
 }
