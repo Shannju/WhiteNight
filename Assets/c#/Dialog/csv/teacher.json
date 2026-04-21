@@ -6,7 +6,7 @@
             "mode": "actionpoint",
             "dialogs": [
                 {
-                    "dialogId": "ap_1",
+                    "dialogId": "1_ap_1",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 1,
@@ -17,7 +17,7 @@
                             "characterName": "Teacher",
                             "triggerOrder": 0,
                             "text": "上课",
-                            "pictureId": "1",
+                            "pictureId": "2",
                             "playerPicture": "1"
                         },
                         {
@@ -25,7 +25,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "好烦",
-                            "pictureId": "1",
+                            "pictureId": "2",
                             "playerPicture": "2"
                         }
                     ]
@@ -42,7 +42,7 @@
                             "characterName": "Teacher",
                             "triggerOrder": 0,
                             "text": "上课",
-                            "pictureId": "1",
+                            "pictureId": "3",
                             "playerPicture": "1"
                         },
                         {
@@ -50,7 +50,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "好烦",
-                            "pictureId": "1",
+                            "pictureId": "4",
                             "playerPicture": "1"
                         }
                     ]
@@ -67,7 +67,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "3",
-                            "pictureId": "1",
+                            "pictureId": "2",
                             "playerPicture": "2"
                         }
                     ]
@@ -84,7 +84,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "4",
-                            "pictureId": "1",
+                            "pictureId": "3",
                             "playerPicture": "1"
                         }
                     ]
@@ -100,7 +100,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "5",
+                            "text": "看一下第五页的题目",
                             "pictureId": "1",
                             "playerPicture": "2"
                         }
@@ -117,7 +117,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "6",
+                            "text": "看我干嘛，我脸上有字吗",
                             "pictureId": "1",
                             "playerPicture": "2"
                         }
@@ -219,9 +219,25 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "12",
+                            "text": "选a是错的",
                             "pictureId": "1",
                             "playerPicture": "2"
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "选b的原因是xxx",
+                            "pictureId": "2",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "选c的同学压根没学",
+                            "pictureId": "3",
+                            "playerPicture": ""
                         }
                     ]
                 }

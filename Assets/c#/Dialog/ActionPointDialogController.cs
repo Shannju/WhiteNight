@@ -55,6 +55,11 @@ public class ActionPointDialogController : MonoBehaviour
             $"No action point dialog matched for {{0}} with spent action points: {spentActionPoints}");
     }
 
+    public DialogEntry FindDialogForCharacterBySpentActionPoints(string characterId, int spentActionPoints)
+    {
+        return GetDialogForCharacterByRange(characterId, spentActionPoints, null);
+    }
+
     public List<DialogLine> GetDialogLines(string characterId, int currentActionPoints)
     {
         DialogEntry dialog = GetDialogForCharacter(characterId, currentActionPoints);
@@ -86,7 +91,11 @@ public class ActionPointDialogController : MonoBehaviour
             }
         }
 
-        Debug.LogWarning(string.Format(noMatchMessageFormat, character.characterId), this);
+        if (!string.IsNullOrEmpty(noMatchMessageFormat))
+        {
+            Debug.LogWarning(string.Format(noMatchMessageFormat, character.characterId), this);
+        }
+
         return null;
     }
 

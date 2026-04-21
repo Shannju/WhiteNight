@@ -222,13 +222,15 @@ public static class DialogCsvJsonImporter
     private static bool IsSupportedFile(string fileName)
     {
         return string.Equals(fileName, "mate", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(fileName, "teacher", StringComparison.OrdinalIgnoreCase);
+               string.Equals(fileName, "teacher", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(fileName, "windows", StringComparison.OrdinalIgnoreCase);
     }
 
     private static bool IsSupportedMode(string mode)
     {
         return string.Equals(mode, "sequence", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(mode, "actionpoint", StringComparison.OrdinalIgnoreCase);
+               string.Equals(mode, "actionpoint", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(mode, "random", StringComparison.OrdinalIgnoreCase);
     }
 
     private static string BuildDialogKey(
