@@ -290,6 +290,7 @@ MonoBehaviour:
   maxActionPoints: 12
   currentActionPoints: 12
   actionCostPerCommand: 1
+  spentActionPoints: 0
   startActionCommand: 0
 --- !u!114 &31818533
 MonoBehaviour:
@@ -315,6 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 61502298}
+  - component: {fileID: 61502299}
   m_Layer: 0
   m_Name: Windows
   m_TagString: Untagged
@@ -337,6 +339,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 226714704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &61502299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61502297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34b27946ca6475ab007aab497121b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogJsonFile: {fileID: 0}
 --- !u!1 &66302108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,8 +1163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomDialogController: {fileID: 0}
-  actionPointDialogController: {fileID: 0}
-  sequenceDialogController: {fileID: 0}
+  actionPointDialogController: {fileID: 280319662}
+  sequenceDialogController: {fileID: 474678733}
   daySystem: {fileID: 31818533}
   actionPointSystem: {fileID: 31818532}
   camUp: {fileID: 1338305844}
@@ -1160,7 +1175,15 @@ MonoBehaviour:
   camUpType: 3
   camDownType: 4
   camLeftType: 2
-  camRightType: 4
+  camRightType: 1
+  interactKey: 32
+  dialogText: {fileID: 1015993875}
+  mateCharacterId: mate
+  teacherCharacterId: teacher
+  showSpeakerName: 1
+  charactersPerSecond: 30
+  autoAdvanceDelay: 1.5
+  clearTextWhenDialogEnds: 1
 --- !u!1 &239424855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 280319661}
+  - component: {fileID: 280319662}
   m_Layer: 0
   m_Name: teacher
   m_TagString: Untagged
@@ -1338,6 +1362,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 226714704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &280319662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280319660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6ac7c41c0e4026a1ef61c2322369f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogJsonFile: {fileID: 4900000, guid: 1b35f4fe2abfb42628963b21c5b00bb4, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,8 +1462,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.74470764, z: 0, w: 0.6673908}
-  m_LocalPosition: {x: -0.8290081, y: 0.98, z: 4.2259912}
+  m_LocalRotation: {x: -0.039821025, y: 0.7823876, z: 0.050293006, w: 0.6194793}
+  m_LocalPosition: {x: -0.89785767, y: 0.9192438, z: 4.1176157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1809,6 +1846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474678732}
+  - component: {fileID: 474678733}
   m_Layer: 0
   m_Name: mate
   m_TagString: Untagged
@@ -1831,6 +1869,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 226714704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &474678733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474678731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6e8feadf0543f1a464fb0b4c137fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogJsonFile: {fileID: 4900000, guid: ea052099f184240d190d2e353ee59d10, type: 3}
+  daySystem: {fileID: 31818533}
 --- !u!1 &488615645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,8 +2557,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Me: Good Morning'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e9546f772768e4f1d812db2cc639c81c, type: 2}
+  m_sharedMaterial: {fileID: -6049156601428663757, guid: e9546f772768e4f1d812db2cc639c81c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

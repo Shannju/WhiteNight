@@ -20,6 +20,8 @@ public class CharacterDialogConfig
 public class DialogEntry
 {
     public string dialogId;
+    public int day;
+    public int sequenceOrder;
     public int actionPointMin;
     public int actionPointMax;
     public List<DialogLine> lines;
@@ -29,5 +31,9 @@ public class DialogEntry
 public class DialogLine
 {
     public string speakerId;
+    public string characterName;
+    public int triggerOrder;
     public string text;
+    public string pictureId;
+    public string playerPicture;
 }
