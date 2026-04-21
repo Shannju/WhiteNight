@@ -6,10 +6,18 @@ public class ActionPointDialogController : MonoBehaviour
     [Header("Action Point Dialog Data")]
     [SerializeField] private TextAsset dialogJsonFile;
 
+    [Header("External Systems")]
+    [SerializeField] private DaySystem daySystem;
+
     private DialogDatabase dialogDatabase;
 
     private void Awake()
     {
+        if (daySystem == null)
+        {
+            daySystem = FindObjectOfType<DaySystem>();
+        }
+
         LoadDialogData();
     }
 
@@ -75,6 +83,7 @@ public class ActionPointDialogController : MonoBehaviour
     private DialogEntry GetDialogForCharacterByRange(string characterId, int matchValue, string noMatchMessageFormat)
     {
         CharacterDialogConfig character = GetCharacterConfig(characterId);
+        int currentDay = GetCurrentDay();
 
         if (character == null || character.dialogs == null || character.dialogs.Count == 0)
         {
@@ -84,7 +93,9 @@ public class ActionPointDialogController : MonoBehaviour
 
         foreach (DialogEntry dialog in character.dialogs)
         {
-            if (matchValue >= dialog.actionPointMin && matchValue <= dialog.actionPointMax)
+            if (dialog.day == currentDay &&
+                matchValue >= dialog.actionPointMin &&
+                matchValue <= dialog.actionPointMax)
             {
                 PrepareDialogForPlayback(dialog);
                 return dialog;
@@ -107,5 +118,15 @@ public class ActionPointDialogController : MonoBehaviour
         }
 
         dialog.lines.Sort((left, right) => left.triggerOrder.CompareTo(right.triggerOrder));
+    }
+
+    public void SetDaySystem(DaySystem system)
+    {
+        daySystem = system;
+    }
+
+    public int GetCurrentDay()
+    {
+        return daySystem != null ? daySystem.CurrentDay : 1;
     }
 }

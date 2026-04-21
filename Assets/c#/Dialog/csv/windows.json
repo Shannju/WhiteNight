@@ -153,8 +153,8 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "小鸟",
-                            "pictureId": "",
-                            "playerPicture": ""
+                            "pictureId": "1",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -170,8 +170,8 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "蜜蜂",
-                            "pictureId": "",
-                            "playerPicture": ""
+                            "pictureId": "2",
+                            "playerPicture": "2"
                         }
                     ]
                 },

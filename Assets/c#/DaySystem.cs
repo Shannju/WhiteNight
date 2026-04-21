@@ -9,24 +9,39 @@ public class DaySystem : MonoBehaviour
     [Header("Day State")]
     public bool nextDayCommand;
 
+    [Header("External Systems")]
+    [SerializeField] private ActionPointSystem actionPointSystem;
+
     public int StartDay => startDay;
     public int CurrentDay => currentDay;
+
+    private bool isWaitingForDaySummary;
 
     private void Awake()
     {
         startDay = Mathf.Max(1, startDay);
         currentDay = Mathf.Max(1, currentDay);
+
+        if (actionPointSystem == null)
+        {
+            actionPointSystem = FindObjectOfType<ActionPointSystem>();
+        }
     }
 
     private void Update()
     {
-        if (!nextDayCommand)
+        if (nextDayCommand)
+        {
+            isWaitingForDaySummary = true;
+            return;
+        }
+
+        if (!isWaitingForDaySummary)
         {
             return;
         }
 
-        AdvanceDay();
-        nextDayCommand = false;
+        CompleteDayTransition();
     }
 
     public void AdvanceDay()
@@ -52,5 +67,22 @@ public class DaySystem : MonoBehaviour
         {
             currentDay = startDay;
         }
+    }
+
+    public void SetActionPointSystem(ActionPointSystem system)
+    {
+        actionPointSystem = system;
+    }
+
+    private void CompleteDayTransition()
+    {
+        isWaitingForDaySummary = false;
+
+        if (actionPointSystem != null)
+        {
+            actionPointSystem.ResetActionPoints();
+        }
+
+        AdvanceDay();
     }
 }
