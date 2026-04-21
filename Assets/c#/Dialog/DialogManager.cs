@@ -48,6 +48,7 @@ public class DialogManager : MonoBehaviour
     [Header("Dialog Playback")]
     [SerializeField] private KeyCode interactKey = KeyCode.Space;
     [SerializeField] private TMP_Text dialogText;
+    [SerializeField] private PlayerPictureDisplay playerPictureDisplay;
     [SerializeField] private string mateCharacterId = "mate";
     [SerializeField] private string teacherCharacterId = "teacher";
     [SerializeField] private bool showSpeakerName = true;
@@ -68,6 +69,7 @@ public class DialogManager : MonoBehaviour
     {
         ResolveDialogControllers();
         ClearDialogText();
+        HidePlayerPicture();
     }
 
     private void Update()
@@ -354,6 +356,8 @@ public class DialogManager : MonoBehaviour
         {
             ClearDialogText();
         }
+
+        HidePlayerPicture();
     }
 
     public void ResetSequenceProgress(string characterId)
@@ -389,6 +393,11 @@ public class DialogManager : MonoBehaviour
         if (inputEventDispatcher == null)
         {
             inputEventDispatcher = FindObjectOfType<InputEventDispatcher>();
+        }
+
+        if (playerPictureDisplay == null)
+        {
+            playerPictureDisplay = FindObjectOfType<PlayerPictureDisplay>();
         }
     }
 
@@ -431,6 +440,7 @@ public class DialogManager : MonoBehaviour
             : string.Empty;
         string text = line.text ?? string.Empty;
 
+        UpdatePlayerPicture(line);
         StartTypingLine(prefix, text);
     }
 
@@ -566,6 +576,30 @@ public class DialogManager : MonoBehaviour
         if (dialogText != null)
         {
             dialogText.text = string.Empty;
+        }
+    }
+
+    private void UpdatePlayerPicture(DialogLine line)
+    {
+        if (playerPictureDisplay == null)
+        {
+            return;
+        }
+
+        if (line == null || string.IsNullOrEmpty(line.playerPicture))
+        {
+            playerPictureDisplay.Hide();
+            return;
+        }
+
+        playerPictureDisplay.Show(line.playerPicture);
+    }
+
+    private void HidePlayerPicture()
+    {
+        if (playerPictureDisplay != null)
+        {
+            playerPictureDisplay.Hide();
         }
     }
 
