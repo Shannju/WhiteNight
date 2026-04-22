@@ -2,7 +2,7 @@
     "characters": [
         {
             "characterId": "teacher",
-            "characterName": "Teacher",
+            "characterName": "Julian",
             "mode": "actionpoint",
             "dialogs": [
                 {
@@ -13,67 +13,107 @@
                     "actionPointMax": 1,
                     "lines": [
                         {
-                            "speakerId": "teacher",
-                            "characterName": "Teacher",
+                            "speakerId": "player",
+                            "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "上课",
-                            "pictureId": "2",
-                            "playerPicture": "1"
+                            "text": "（镜头强行转到讲台侧，伴随声音）",
+                            "pictureId": "",
+                            "playerPicture": ""
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "好烦",
-                            "pictureId": "2",
-                            "playerPicture": "2"
+                            "text": "(**Julian老师** 推门而入。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(他梳着侧分背头，穿着一件剪裁略显紧身的衬衫，眼镜上夹着一个橙色的滤镜片。)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_2",
+                    "dialogId": "1_ap_2",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 2,
                     "actionPointMax": 2,
                     "lines": [
                         {
-                            "speakerId": "teacher",
-                            "characterName": "Teacher",
+                            "speakerId": "player",
+                            "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "上课",
-                            "pictureId": "3",
-                            "playerPicture": "1"
+                            "text": "(前台minna老师跟在他后面，将一沓橙色的书本放在讲台上。)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "好烦",
-                            "pictureId": "4",
-                            "playerPicture": "1"
+                            "text": "(在这个小城市里，她承包了我对都市丽人的一切想象。职业装，黑框眼镜，银色手链，淡淡的职业笑。)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_3",
+                    "dialogId": "1_ap_3",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 3,
                     "actionPointMax": 3,
                     "lines": [
                         {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 0,
+                            "text": "hello everyone, welcome to……",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Beyond english 暑期班",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Look at me!",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "3",
-                            "pictureId": "2",
-                            "playerPicture": "2"
+                            "triggerOrder": 3,
+                            "text": "！",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "(minna老师适时的掩门走了（声音，关门吱~~）)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_4",
+                    "dialogId": "1_ap_4",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 4,
@@ -83,14 +123,22 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "4",
-                            "pictureId": "3",
-                            "playerPicture": "1"
+                            "text": "（他转身在白板上用马克笔狂草写下巨大的 **JULIAN**）（声音 粉笔）",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(I'm Julian. 你们暑期班的老师.)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_5",
+                    "dialogId": "1_ap_5",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 5,
@@ -100,14 +148,22 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "看一下第五页的题目",
-                            "pictureId": "1",
-                            "playerPicture": "2"
+                            "text": "(你们看这个词——**July**。一年中最好的日子。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(在后面加了一个 **'an'**。在拉丁语的语境里，这意味着‘属于七月的’。)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_6",
+                    "dialogId": "1_ap_6",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 6,
@@ -117,14 +173,14 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "看我干嘛，我脸上有字吗",
-                            "pictureId": "1",
-                            "playerPicture": "2"
+                            "text": "(我留学的时候，在那边的海滩上，我就告诉自己，Julian，你要像七月的烈日一样，灼烧掉所有的平庸和胆怯！)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_7",
+                    "dialogId": "1_ap_7",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 7,
@@ -134,14 +190,38 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "7",
-                            "pictureId": "1",
-                            "playerPicture": "1"
+                            "text": "(英语是世界上最简单的语言！只要你敢喊出来，就能够超越它，超越自己。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(来，Follow me!)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(Beyond English)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "Beyond English",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_8",
+                    "dialogId": "1_ap_8",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 8,
@@ -151,31 +231,55 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "8",
-                            "pictureId": "1",
-                            "playerPicture": "2"
+                            "text": "(Beyond Yourself!)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Beyond Yourself!",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_9",
+                    "dialogId": "1_ap_9",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 9,
                     "actionPointMax": 9,
                     "lines": [
                         {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 0,
+                            "text": "我听不到！再来一遍！",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Beyond English",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "9",
-                            "pictureId": "1",
-                            "playerPicture": "2"
+                            "triggerOrder": 2,
+                            "text": "Beyond English",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_10",
+                    "dialogId": "1_ap_10",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 10,
@@ -185,14 +289,22 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "10",
-                            "pictureId": "1",
-                            "playerPicture": "1"
+                            "text": "(Beyond Yourself!)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Beyond Yourself!",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_11",
+                    "dialogId": "1_ap_11",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 11,
@@ -202,14 +314,38 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "11",
-                            "pictureId": "1",
-                            "playerPicture": "2"
+                            "text": "(同学们胆怯地开了口，但显然老师还不满意。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "（*）",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Beyond English",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "……",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "ap_12",
+                    "dialogId": "1_ap_12",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 12,
@@ -219,24 +355,16 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "选a是错的",
-                            "pictureId": "1",
-                            "playerPicture": "2"
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 1,
-                            "text": "选b的原因是xxx",
-                            "pictureId": "2",
+                            "text": "(Beyond Yourself!)",
+                            "pictureId": "",
                             "playerPicture": ""
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 2,
-                            "text": "选c的同学压根没学",
-                            "pictureId": "3",
+                            "triggerOrder": 1,
+                            "text": "……",
+                            "pictureId": "",
                             "playerPicture": ""
                         }
                     ]

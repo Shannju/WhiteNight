@@ -16,14 +16,14 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "md啥时候下课",
+                            "text": "(什么时候才能下课呢？)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "0_ra_10",
+                    "dialogId": "0_ra_12",
                     "day": 0,
                     "sequenceOrder": 0,
                     "actionPointMin": 0,
@@ -33,24 +33,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "test_10",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "0_ra_11",
-                    "day": 0,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "test_11",
+                            "text": "(如果Y城也有白夜就好了，这里的人晚上20点就要回家，22点就要睡觉，23点，街上只有孤魂野鬼在游荡。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -67,7 +50,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "test_2",
+                            "text": "(一只迷路的蜜蜂在窗子上撞击，有学生被吸引过去了。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -84,7 +67,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "test_3",
+                            "text": "(窗外的树荫里有鸟闪过，已经到了日落的时刻。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -101,7 +84,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "test_4",
+                            "text": "(如果重力反转，我们站在天花板上。坐在房梁上上课呢？)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -118,7 +101,15 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "test_5",
+                            "text": "(窗外)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(夏天的光线密集的像是固体，教室躲在墙后尚且是阴凉的，而暴露在阳光下的一切都炫目地闭上了眼。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -135,7 +126,23 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "test_6",
+                            "text": "(都说夏天是最好的季节，童年是最好的人生。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(是的，我万分同意。我已经确凿可见我在苍老的冬日，陷入沉思，一万次想要回到当下。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(可现在，在这阳光最热烈的一天，我们该做什么，才算不虚度光阴呢。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -152,9 +159,9 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "小鸟",
-                            "pictureId": "1",
-                            "playerPicture": "1"
+                            "text": "(窗帘的缝隙出现了丁达尔效应，平日不可见的灰尘在光柱里起舞。)",
+                            "pictureId": "",
+                            "playerPicture": ""
                         }
                     ]
                 },
@@ -169,31 +176,14 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "蜜蜂",
-                            "pictureId": "2",
-                            "playerPicture": "2"
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "0_ra_9",
-                    "day": 0,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "test_9",
+                            "text": "(老师讲课的声音渐渐模糊了。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "1_ra_1",
+                    "dialogId": "1_ra_10",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 0,
@@ -203,14 +193,14 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "day1_1",
+                            "text": "(要是Julian老师真的像他说的那样在国外混得那么开，为什么会回我们这个二线城市教初中英语呢。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "1_ra_2",
+                    "dialogId": "1_ra_11",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 0,
@@ -220,14 +210,38 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "day1_2",
+                            "text": "(*Beyond English, Beyond Yourself.*)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(超越英语，超越自己。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(可当我们真的超越了英语，该用什么来表达情绪？)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(当我们真的超越了自己，那我们会变成了，自己之外的，什么呢。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "1_ra_3",
+                    "dialogId": "1_ra_13",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 0,
@@ -237,14 +251,38 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "day1_3",
+                            "text": "(圆圆还在背单词，似乎沉迷在这个活动中了。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(其实会不会单词根本不重要，阅读的时候，用首字母替代就可以了。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(J老师在Y城教书，Y老师在J城教书，世界上大部分的名词几乎无所谓，用图形代替都可以。)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(形容词和副词，是能起到关键的作用，可多数时候，没有也行。（）的J老师在（）的Y城（）地教书。也不会有人关心。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "1_ra_4",
+                    "dialogId": "1_ra_9",
                     "day": 1,
                     "sequenceOrder": 0,
                     "actionPointMin": 0,
@@ -254,177 +292,15 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "day1_4",
+                            "text": "(Minna是前台的招牌，穿着总是恰到好处的精致。)",
                             "pictureId": "",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "1_ra_5",
-                    "day": 1,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day1_5",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "1_ra_6",
-                    "day": 1,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day1_6",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "1_ra_7",
-                    "day": 1,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day1_7",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ra_1",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day2_1",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ra_2",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day2_2",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ra_3",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day2_3",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ra_4",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day2_4",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ra_5",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day2_5",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ra_6",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day2_6",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ra_7",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "day2_7",
+                            "triggerOrder": 1,
+                            "text": "(今天Julian和她滔滔不绝的时候，Minna老师只是在礼貌的笑，她眼神其实在看走廊尽头的饮水机。)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
