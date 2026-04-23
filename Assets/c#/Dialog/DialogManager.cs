@@ -3,6 +3,7 @@ using System.Collections;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum CameraViewType
 {
@@ -18,6 +19,13 @@ public enum DialogTriggerMode
     Random,
     ActionPoint,
     Sequence
+}
+
+[System.Serializable]
+public class DialogIdEventBinding
+{
+    public string dialogId;
+    public UnityEvent onDialogStarted;
 }
 
 public class DialogManager : MonoBehaviour
@@ -58,6 +66,9 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private float charactersPerSecond = 30f;
     [SerializeField] private float autoAdvanceDelay = 1.5f;
     [SerializeField] private bool clearTextWhenDialogEnds = true;
+
+    [Header("Dialog ID Events")]
+    [SerializeField] private List<DialogIdEventBinding> dialogIdEvents = new List<DialogIdEventBinding>();
 
     private DialogEntry activeDialog;
     private int activeLineIndex;
@@ -350,6 +361,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -385,6 +397,7 @@ public class DialogManager : MonoBehaviour
         activeLineIndex = 0;
         activeDialogTriggerMode = DialogTriggerMode.ActionPoint;
         SetCameraSwitchingEnabled(false);
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -422,6 +435,7 @@ public class DialogManager : MonoBehaviour
         pendingRandomDialog = null;
         RefreshPendingRandomDialog(forceRefresh: true, updatePicture: false);
         SetCameraSwitchingEnabled(false);
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -525,6 +539,25 @@ public class DialogManager : MonoBehaviour
         activeLineIndex++;
         shouldEndDialogAfterWait = activeLineIndex >= activeDialog.lines.Count;
         SetDialogText(line);
+    }
+
+    private void InvokeDialogStartedEvents(DialogEntry dialog)
+    {
+        if (dialog == null || string.IsNullOrEmpty(dialog.dialogId) || dialogIdEvents == null)
+        {
+            return;
+        }
+
+        foreach (DialogIdEventBinding binding in dialogIdEvents)
+        {
+            if (binding == null ||
+                !string.Equals(binding.dialogId, dialog.dialogId, System.StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            binding.onDialogStarted?.Invoke();
+        }
     }
 
     private void SetDialogText(DialogLine line)
