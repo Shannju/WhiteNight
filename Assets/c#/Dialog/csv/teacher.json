@@ -15,16 +15,8 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "(The camera pans forcibly to the side of the lectern, with sound.)",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(**Julian** pushes the door open and walks in.)",
+                            "text": "Press space to start",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -32,7 +24,23 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "(He wears his hair in a side-parted slick-back, in a shirt tailored maybe a little too tight, with orange filter clips on his glasses.)",
+                            "text": "(After the final exams, you get a report card.)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(Some people are affected by it, filled with anxiety, frustration, or relief.)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "(But some people...)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -48,16 +56,8 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
-                            "text": "(Minna, the receptionist, follows him and places a stack of orange books on the lectern.)",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(In this small town, she was everything I imagined a professional city woman to be: a business suit, black-rimmed glasses, a silver bracelet, and a faint professional smile.)",
+                            "text": "Press the left arrow key to turn your head",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -73,7 +73,7 @@
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "hello everyone, welcome to……",
                             "pictureId": "",
                             "playerPicture": ""
@@ -81,7 +81,7 @@
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "Beyond English Summer Course.",
                             "pictureId": "",
                             "playerPicture": ""
@@ -89,7 +89,7 @@
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 2,
+                            "triggerOrder": 3,
                             "text": "Look at me!",
                             "pictureId": "",
                             "playerPicture": ""
@@ -97,7 +97,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 3,
+                            "triggerOrder": 4,
                             "text": "!",
                             "pictureId": "",
                             "playerPicture": ""
@@ -105,7 +105,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 4,
+                            "triggerOrder": 5,
                             "text": "(Minna timely closes the door and leaves. Sound: door creaks shut~~)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -122,7 +122,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(He turns and scrawls a huge **JULIAN** on the whiteboard with a marker. Sound: marker squeaking.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -130,7 +130,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "(I'm Julian. Your teacher for this summer course.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -147,7 +147,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(Look at this word—**July**. The best month of the year.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -155,7 +155,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "(Add an **'an'** at the end. In Latin, this means 'belonging to July'.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -172,7 +172,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(When I was studying abroad, on a beach over there, I told myself: Julian, you must be like the scorching sun of July, burning away all mediocrity and cowardice!)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -189,7 +189,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(English is the easiest language in the world! As long as you dare to shout it out, you can overcome it, and overcome yourself.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -197,7 +197,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "(Come on, follow me!)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -205,7 +205,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 2,
+                            "triggerOrder": 3,
                             "text": "(Beyond English)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -213,7 +213,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 3,
+                            "triggerOrder": 4,
                             "text": "Beyond English",
                             "pictureId": "",
                             "playerPicture": ""
@@ -230,7 +230,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(Beyond Yourself!)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -238,7 +238,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "Beyond Yourself!",
                             "pictureId": "",
                             "playerPicture": ""
@@ -255,7 +255,7 @@
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "I can't hear you! Again!",
                             "pictureId": "",
                             "playerPicture": ""
@@ -263,7 +263,7 @@
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "Beyond English!",
                             "pictureId": "",
                             "playerPicture": ""
@@ -271,7 +271,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 2,
+                            "triggerOrder": 3,
                             "text": "Beyond English...",
                             "pictureId": "",
                             "playerPicture": ""
@@ -288,7 +288,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(Beyond Yourself!)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -296,7 +296,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "Beyond Yourself...",
                             "pictureId": "",
                             "playerPicture": ""
@@ -313,7 +313,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(The students begin to speak timidly, but it's clear the teacher is still not satisfied.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -321,7 +321,7 @@
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "(*)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -329,7 +329,7 @@
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 2,
+                            "triggerOrder": 3,
                             "text": "Beyond English!",
                             "pictureId": "",
                             "playerPicture": ""
@@ -337,7 +337,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 3,
+                            "triggerOrder": 4,
                             "text": "……",
                             "pictureId": "",
                             "playerPicture": ""
@@ -354,7 +354,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 0,
+                            "triggerOrder": 1,
                             "text": "(Beyond Yourself!)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -362,7 +362,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 2,
                             "text": "……",
                             "pictureId": "",
                             "playerPicture": ""

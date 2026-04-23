@@ -33,7 +33,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(After the final exams, you get a report card.)",
+                            "text": "Who cares about grades? Summer vacation has already started!",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -41,7 +41,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(Some people are affected by it, filled with anxiety, frustration, or relief.)",
+                            "text": "If you don't see the teachers and classmates, it's like they don't exist, right?",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -49,7 +49,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "(But some people...)",
+                            "text": "",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -57,7 +57,7 @@
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 3,
-                            "text": "Who cares about grades? Summer vacation has already started!",
+                            "text": "",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -65,7 +65,7 @@
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 4,
-                            "text": "If you don't see the teachers and classmates, it's like they don't exist, right?",
+                            "text": "",
                             "pictureId": "",
                             "playerPicture": ""
                         },

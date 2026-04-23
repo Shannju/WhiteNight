@@ -22,7 +22,7 @@ public class InputEventDispatcher : MonoBehaviour
 
     void Update()
     {
-        if (!boardInputLocked && Input.GetKeyDown(KeyCode.LeftArrow))
+        if (!boardInputLocked && Input.GetKeyDown(KeyCode.UpArrow))
         {
             onBoard?.Invoke();
         }
@@ -32,7 +32,7 @@ public class InputEventDispatcher : MonoBehaviour
             onFriend?.Invoke();
         }
 
-        if (!windowInputLocked && Input.GetKeyDown(KeyCode.UpArrow))
+        if (!windowInputLocked && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             onWindow?.Invoke();
         }

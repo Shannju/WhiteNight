@@ -48,9 +48,9 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private int activePriority = 10;
 
     [Header("Camera View Types")]
-    [SerializeField] private CameraViewType camUpType = CameraViewType.Windows;
+    [SerializeField] private CameraViewType camUpType = CameraViewType.Teacher;
     [SerializeField] private CameraViewType camDownType = CameraViewType.Book;
-    [SerializeField] private CameraViewType camLeftType = CameraViewType.Teacher;
+    [SerializeField] private CameraViewType camLeftType = CameraViewType.Windows;
     [SerializeField] private CameraViewType camRightType = CameraViewType.Mate;
 
     [Header("Dialog Playback")]

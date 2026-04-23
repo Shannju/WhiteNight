@@ -1569,20 +1569,20 @@ MonoBehaviour:
   autoAdvanceDelay: 1.5
   clearTextWhenDialogEnds: 1
   dialogIdEvents:
-  - dialogId: 1_ap_1
+  - dialogId: 1_ap_2
     onDialogStarted:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1349097412}
-          m_TargetAssemblyTypeName: DialogDebugEventReceiver, Assembly-CSharp
-          m_MethodName: Log
-          m_Mode: 5
+        - m_Target: {fileID: 1678551074}
+          m_TargetAssemblyTypeName: InputEventDispatcher, Assembly-CSharp
+          m_MethodName: UnlockFriendInput
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: ap111
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &239424855
@@ -1999,8 +1999,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.74470764, z: 0, w: 0.6673908}
-  m_LocalPosition: {x: -0.8290081, y: 0.98, z: 4.2259912}
+  m_LocalRotation: {x: -0.039821025, y: 0.7823876, z: 0.050293006, w: 0.6194793}
+  m_LocalPosition: {x: -0.89785767, y: 0.9192438, z: 4.1176157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
