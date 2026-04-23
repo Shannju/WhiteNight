@@ -16,7 +16,23 @@
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 0,
-                            "text": "Julian seems a bit... like a mix of East and West.",
+                            "text": "Who cares about grades? Summer vacation has already started!",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "If you don't see the teachers and classmates, it's like they don't exist, right?",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "It sounds like self-deception.",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -30,49 +46,9 @@
                     "actionPointMax": 0,
                     "lines": [
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "mate",
+                            "characterName": "Cici",
                             "triggerOrder": 0,
-                            "text": "Who cares about grades? Summer vacation has already started!",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 1,
-                            "text": "If you don't see the teachers and classmates, it's like they don't exist, right?",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 2,
-                            "text": "",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 3,
-                            "text": "",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 4,
-                            "text": "",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 5,
                             "text": "Forget them, Wenwen.",
                             "pictureId": "",
                             "playerPicture": ""
@@ -80,8 +56,40 @@
                         {
                             "speakerId": "mate",
                             "characterName": "Cici",
-                            "triggerOrder": 6,
+                            "triggerOrder": 1,
                             "text": "Come to my place and play games. Let's relax!",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "I wish I could, but holiday is basically we catching up on English.",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 3,
+                            "text": "Worst luck ever. We sre the ones who have to deal with Julian this term.",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 4,
+                            "text": "His teaching style is... insane.",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 4,
+                            "text": "Press the up key to look at the blackboard.",
                             "pictureId": "",
                             "playerPicture": ""
                         }

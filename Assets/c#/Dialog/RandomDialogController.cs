@@ -97,6 +97,41 @@ public class RandomDialogController : MonoBehaviour
         return selectedDialog;
     }
 
+    public DialogEntry GetDialogForCharacterByDialogId(string characterId, string dialogId, bool markAsPlayed = true)
+    {
+        if (string.IsNullOrEmpty(dialogId))
+        {
+            Debug.LogWarning("Random dialog id is empty.", this);
+            return null;
+        }
+
+        CharacterDialogConfig character = GetCharacterConfig(characterId);
+
+        if (character == null || character.dialogs == null || character.dialogs.Count == 0)
+        {
+            Debug.LogWarning($"No random dialog found for characterId: {characterId}", this);
+            return null;
+        }
+
+        int currentDay = GetCurrentDay();
+        List<DialogEntry> availableDialogs = GetAvailableDialogs(character, currentDay);
+        DialogEntry selectedDialog = availableDialogs.Find(dialog => dialog.dialogId == dialogId);
+
+        if (selectedDialog == null)
+        {
+            Debug.LogWarning($"No available random dialog matched dialogId: {dialogId}", this);
+            return null;
+        }
+
+        if (markAsPlayed)
+        {
+            MarkDialogAsPlayed(character.characterId, currentDay, selectedDialog.dialogId);
+        }
+
+        PrepareDialogForPlayback(selectedDialog);
+        return selectedDialog;
+    }
+
     public List<DialogLine> GetDialogLines(string characterId)
     {
         DialogEntry dialog = GetDialogForCharacter(characterId);
@@ -149,6 +184,19 @@ public class RandomDialogController : MonoBehaviour
         }
 
         dialog.lines.Sort((left, right) => left.triggerOrder.CompareTo(right.triggerOrder));
+    }
+
+    private void MarkDialogAsPlayed(string characterId, int day, string dialogId)
+    {
+        string progressKey = GetProgressKey(characterId, day);
+
+        if (!playedDialogIdsByDay.TryGetValue(progressKey, out HashSet<string> playedDialogIds))
+        {
+            playedDialogIds = new HashSet<string>();
+            playedDialogIdsByDay[progressKey] = playedDialogIds;
+        }
+
+        playedDialogIds.Add(dialogId);
     }
 
     private string GetProgressKey(string characterId, int day)

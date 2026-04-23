@@ -197,6 +197,53 @@ public class DialogManager : MonoBehaviour
         return dialog != null ? dialog.lines : null;
     }
 
+    public void SetNextWindowsRandomDialog(string dialogId)
+    {
+        TrySetNextRandomDialog(windowsCharacterId, dialogId);
+    }
+
+    public void SetNextRandomDialog(string characterId, string dialogId)
+    {
+        TrySetNextRandomDialog(characterId, dialogId);
+    }
+
+    private bool TrySetNextRandomDialog(string characterId, string dialogId)
+    {
+        if (randomDialogController == null)
+        {
+            Debug.LogWarning("Random dialog controller is not assigned.", this);
+            return false;
+        }
+
+        DialogEntry dialog = randomDialogController.GetDialogForCharacterByDialogId(characterId, dialogId);
+
+        if (dialog == null)
+        {
+            return false;
+        }
+
+        pendingRandomDialog = dialog;
+        RememberCurrentRandomRefreshState();
+
+        if (dialogPictureController != null)
+        {
+            dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
+        }
+
+        return true;
+    }
+
+    public void ClearNextRandomDialog()
+    {
+        pendingRandomDialog = null;
+        RememberCurrentRandomRefreshState();
+
+        if (dialogPictureController != null)
+        {
+            dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
+        }
+    }
+
     public List<DialogLine> GetActionPointDialogLines(string characterId, int currentActionPoints)
     {
         DialogEntry dialog = GetActionPointDialogForCharacter(characterId, currentActionPoints);
@@ -944,6 +991,12 @@ public class DialogManager : MonoBehaviour
         {
             dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
         }
+    }
+
+    private void RememberCurrentRandomRefreshState()
+    {
+        lastRandomRefreshActionPoints = actionPointSystem != null ? actionPointSystem.CurrentActionPoints : 0;
+        lastRandomRefreshDay = daySystem != null ? daySystem.CurrentDay : 0;
     }
 
     private void ApplySpeakerColor(DialogLine line)

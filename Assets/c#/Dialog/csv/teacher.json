@@ -65,7 +65,7 @@
                             "speakerId": "tutorial",
                             "characterName": "",
                             "triggerOrder": 0,
-                            "text": "1ap2",
+                            "text": "empty (you should not seen this text)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -98,23 +98,23 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 3,
-                            "text": "Look at me!",
+                            "text": "I am your teacher Julian",
                             "pictureId": "",
                             "playerPicture": ""
                         },
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
                             "triggerOrder": 4,
-                            "text": "!",
+                            "text": "What's up Miss minna?",
                             "pictureId": "",
                             "playerPicture": ""
                         },
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "tutorial",
+                            "characterName": "",
                             "triggerOrder": 5,
-                            "text": "(Minna timely closes the door and leaves. Sound: door creaks shut~~)",
+                            "text": "Press left to see the window.",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -128,18 +128,10 @@
                     "actionPointMax": 4,
                     "lines": [
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "tutorial",
+                            "characterName": "",
                             "triggerOrder": 1,
-                            "text": "(He turns and scrawls a huge **JULIAN** on the whiteboard with a marker. Sound: marker squeaking.)",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 2,
-                            "text": "(I'm Julian. Your teacher for this summer course.)",
+                            "text": "empty (you should not seen this text)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -154,9 +146,17 @@
                     "lines": [
                         {
                             "speakerId": "player",
-                            "characterName": "Me",
+                            "characterName": "Julian",
+                            "triggerOrder": 0,
+                            "text": "Okay, thank you.",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "(Look at this word—**July**. The best month of the year.)",
+                            "text": "Let's continue. Everyone knows the word \"July,\" right?",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -165,6 +165,22 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(Add an **'an'** at the end. In Latin, this means 'belonging to July'.)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(When I was studying abroad, on a beach over there, I told myself: Julian, you must be like the scorching sun of July, burning away all mediocrity and cowardice!)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 5,
+                            "text": "Actually, you can also use the up, down, left, and right arrow keys to view freely……",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -178,10 +194,10 @@
                     "actionPointMax": 6,
                     "lines": [
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 1,
-                            "text": "(When I was studying abroad, on a beach over there, I told myself: Julian, you must be like the scorching sun of July, burning away all mediocrity and cowardice!)",
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 0,
+                            "text": "Julian kept talking",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -195,24 +211,24 @@
                     "actionPointMax": 7,
                     "lines": [
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "(English is the easiest language in the world! As long as you dare to shout it out, you can overcome it, and overcome yourself.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "(Come on, follow me!)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
                             "triggerOrder": 3,
                             "text": "(Beyond English)",
                             "pictureId": "",
@@ -236,8 +252,8 @@
                     "actionPointMax": 8,
                     "lines": [
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "(Beyond Yourself!)",
                             "pictureId": "",

@@ -13,17 +13,20 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
     public int activePriority = 10;
     public int inactivePriority = 0;
 
+    [Header("Initial Camera")]
+    [SerializeField] private bool randomizeInitialCamera = true;
+
     public InputEventDispatcher inputDispatcher;
     [SerializeField] private DialogManager dialogManager;
 
-    void Start()
+    void Awake()
     {
         if (dialogManager == null)
         {
             dialogManager = FindObjectOfType<DialogManager>();
         }
 
-        SwitchToLeft();
+        SetInitialCamera();
     }
 
     void OnEnable()
@@ -86,6 +89,57 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
     public void SwitchToRight()
     {
         SwitchTo(camRight);
+    }
+
+    public void SetInitialCamera()
+    {
+        if (!randomizeInitialCamera)
+        {
+            SwitchToDown();
+            return;
+        }
+
+        CinemachineVirtualCamera[] availableCameras =
+        {
+            camUp,
+            camDown,
+            camLeft,
+            camRight
+        };
+
+        int availableCount = 0;
+
+        foreach (CinemachineVirtualCamera camera in availableCameras)
+        {
+            if (camera != null)
+            {
+                availableCount++;
+            }
+        }
+
+        if (availableCount == 0)
+        {
+            return;
+        }
+
+        int targetIndex = Random.Range(0, availableCount);
+        int currentIndex = 0;
+
+        foreach (CinemachineVirtualCamera camera in availableCameras)
+        {
+            if (camera == null)
+            {
+                continue;
+            }
+
+            if (currentIndex == targetIndex)
+            {
+                SwitchTo(camera);
+                return;
+            }
+
+            currentIndex++;
+        }
     }
 
     public void SwitchTo(CinemachineVirtualCamera targetCam)

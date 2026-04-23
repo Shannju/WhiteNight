@@ -989,6 +989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7273c895940ed1c428a8a17b1699826f,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7273c895940ed1c428a8a17b1699826f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1557,6 +1562,7 @@ MonoBehaviour:
   camLeftType: 2
   camRightType: 1
   interactKey: 32
+  interactCooldownAfterCameraSwitch: 0.5
   dialogText: {fileID: 1015993875}
   playerPictureDisplay: {fileID: 2045032199}
   dialogPictureController: {fileID: 2045032202}
@@ -1584,6 +1590,44 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onLastLineShown:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogId: 1_ap_3
+    onDialogStarted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 226714705}
+          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+          m_MethodName: SetNextWindowsRandomDialog
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 1_ra_1
+            m_BoolArgument: 0
+          m_CallState: 2
+    onLastLineShown:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogId: 1_ap_3
+    onDialogStarted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 226714705}
+          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+          m_MethodName: SetNextWindowsRandomDialog
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 1_ra_1
             m_BoolArgument: 0
           m_CallState: 2
     onLastLineShown:
@@ -1624,7 +1668,9 @@ MonoBehaviour:
   camRight: {fileID: 489942175}
   activePriority: 10
   inactivePriority: 0
+  randomizeInitialCamera: 1
   inputDispatcher: {fileID: 1678551074}
+  dialogManager: {fileID: 0}
 --- !u!4 &239424857
 Transform:
   m_ObjectHideFlags: 0
@@ -2003,8 +2049,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.74470764, z: 0, w: 0.6673908}
-  m_LocalPosition: {x: -0.8290081, y: 0.98, z: 4.2259912}
+  m_LocalRotation: {x: -0.039821025, y: 0.7823876, z: 0.050293006, w: 0.6194793}
+  m_LocalPosition: {x: -0.89785767, y: 0.9192438, z: 4.1176157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3303,6 +3349,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &986171961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986171962}
+  - component: {fileID: 986171963}
+  m_Layer: 0
+  m_Name: Teacher_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &986171962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986171961}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4940001, y: 0.21799996, z: 3.8200002}
+  m_LocalScale: {x: 0.0892832, y: 0.08928318, z: 0.08928319}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1338305845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &986171963
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986171961}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8.4, y: 17.29}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1015993873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,13 +4298,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 245850192}
-  - {fileID: 1443205902}
+  - {fileID: 986171962}
   - {fileID: 2567529702646194898}
   - {fileID: 4436990813000397944}
   - {fileID: 5269956951240646633}
   - {fileID: 4826219112879830770}
   - {fileID: 1825677026778660091}
   - {fileID: 9049947179382829016}
+  - {fileID: 1443205902}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 5.249, y: 172.288, z: 0}
 --- !u!1 &1349097410
@@ -4409,7 +4540,7 @@ GameObject:
   - component: {fileID: 1443205902}
   - component: {fileID: 1443205903}
   m_Layer: 0
-  m_Name: Teacher_0
+  m_Name: Teacher_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4424,8 +4555,8 @@ Transform:
   m_GameObject: {fileID: 1443205901}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4940001, y: 0.21799996, z: 3.8200002}
-  m_LocalScale: {x: 0.0892832, y: 0.08928318, z: 0.08928319}
+  m_LocalPosition: {x: -0.4940002, y: 0.21799996, z: 3.8200004}
+  m_LocalScale: {x: 0.08928321, y: 0.08928318, z: 0.0892832}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1338305845}
@@ -4856,7 +4987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1625037730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5494,11 +5625,13 @@ MonoBehaviour:
   - characterId: teacher
     color: {r: 1, g: 0.7554123, b: 0.31132066, a: 1}
   - characterId: player
-    color: {r: 0.5251572, g: 0.8200193, b: 1, a: 1}
+    color: {r: 0.57547164, g: 0.7877358, b: 1, a: 1}
   - characterId: mate
     color: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
   - characterId: tutorial
     color: {r: 1, g: 1, b: 1, a: 1}
+  - characterId: minna
+    color: {r: 0.7635633, g: 0.64465404, b: 1, a: 1}
 --- !u!114 &2045032202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5858,7 +5991,7 @@ Transform:
   m_GameObject: {fileID: 2328187241787999336}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.34, y: 0.20699999, z: 3.707}
+  m_LocalPosition: {x: -0.654, y: 0.219, z: 3.841}
   m_LocalScale: {x: 0.0892832, y: 0.08928318, z: 0.08928319}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5890,7 +6023,7 @@ Transform:
   m_GameObject: {fileID: 1760974945494016549}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.54999995, y: 0.20000003, z: 3.68}
+  m_LocalPosition: {x: -0.372, y: 0.211, z: 3.804}
   m_LocalScale: {x: 0.0892832, y: 0.08928318, z: 0.08928319}
   m_ConstrainProportionsScale: 0
   m_Children: []
