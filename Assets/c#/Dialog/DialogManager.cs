@@ -91,6 +91,11 @@ public class DialogManager : MonoBehaviour
         RefreshPendingRandomDialog(forceRefresh: true);
     }
 
+    private void Start()
+    {
+        ShowInitialTeacherPrompt();
+    }
+
     private void Update()
     {
         RefreshPendingRandomDialog();
@@ -394,7 +399,7 @@ public class DialogManager : MonoBehaviour
         }
 
         activeDialog = dialog;
-        activeLineIndex = 0;
+        activeLineIndex = GetFirstPlayableTeacherLineIndex(dialog);
         activeDialogTriggerMode = DialogTriggerMode.ActionPoint;
         SetCameraSwitchingEnabled(false);
         InvokeDialogStartedEvents(activeDialog);
@@ -560,6 +565,62 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    private void ShowInitialTeacherPrompt()
+    {
+        if (dialogText == null || activeDialog != null || actionPointDialogController == null)
+        {
+            return;
+        }
+
+        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(teacherCharacterId, 1);
+        DialogLine promptLine = GetFirstLineWithTriggerOrder(dialog, 0);
+
+        if (promptLine == null)
+        {
+            return;
+        }
+
+        SetStaticDialogText(promptLine);
+    }
+
+    private int GetFirstPlayableTeacherLineIndex(DialogEntry dialog)
+    {
+        if (dialog?.lines == null)
+        {
+            return 0;
+        }
+
+        for (int index = 0; index < dialog.lines.Count; index++)
+        {
+            DialogLine line = dialog.lines[index];
+
+            if (line != null && line.triggerOrder > 0)
+            {
+                return index;
+            }
+        }
+
+        return 0;
+    }
+
+    private DialogLine GetFirstLineWithTriggerOrder(DialogEntry dialog, int triggerOrder)
+    {
+        if (dialog?.lines == null)
+        {
+            return null;
+        }
+
+        foreach (DialogLine line in dialog.lines)
+        {
+            if (line != null && line.triggerOrder == triggerOrder)
+            {
+                return line;
+            }
+        }
+
+        return null;
+    }
+
     private void SetDialogText(DialogLine line)
     {
         if (dialogText == null)
@@ -583,6 +644,23 @@ public class DialogManager : MonoBehaviour
         UpdatePlayerPicture(line);
         UpdateDialogPictureState(line);
         StartTypingLine(prefix, text);
+    }
+
+    private void SetStaticDialogText(DialogLine line)
+    {
+        if (dialogText == null || line == null)
+        {
+            return;
+        }
+
+        string prefix = showSpeakerName && !string.IsNullOrEmpty(line.characterName)
+            ? $"{line.characterName}: "
+            : string.Empty;
+
+        ApplySpeakerColor(line);
+        UpdatePlayerPicture(line);
+        dialogText.text = prefix + (line.text ?? string.Empty);
+        fullLineText = dialogText.text;
     }
 
     private void StartTypingLine(string prefix, string text)
@@ -694,7 +772,7 @@ public class DialogManager : MonoBehaviour
 
         if (shouldEndDialogAfterWait)
         {
-            EndCurrentDialog();
+            // EndCurrentDialog();
             return;
         }
 
@@ -705,7 +783,7 @@ public class DialogManager : MonoBehaviour
     {
         if (shouldEndDialogAfterWait)
         {
-            EndCurrentDialog();
+            // EndCurrentDialog();
             return;
         }
 

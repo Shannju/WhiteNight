@@ -15,7 +15,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 0,
                             "text": "Press space to start",
                             "pictureId": "",
                             "playerPicture": ""
@@ -56,7 +56,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 1,
+                            "triggerOrder": 0,
                             "text": "Press the left arrow key to turn your head",
                             "pictureId": "",
                             "playerPicture": ""

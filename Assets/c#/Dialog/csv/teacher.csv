@@ -1,9 +1,9 @@
 ﻿day,characterId,characterName,mode,actionpointOrder,dialogID,text,triggerOrder,pictureId,pictureId2,playerpicture,soundId
-1,player,Me,actionpoint,1,1_ap_1,Press space to start,1,,,,
+1,player,Me,actionpoint,1,1_ap_1,Press space to start,0,,,,
 1,player,Me,actionpoint,1,1_ap_1,"(After the final exams, you get a report card.)",2,,,,
 1,player,Me,actionpoint,1,1_ap_1,"(Some people are affected by it, filled with anxiety, frustration, or relief.)",3,,,,
 1,player,Me,actionpoint,1,1_ap_1,(But some people...),4,,,,
-1,player,Me,actionpoint,2,1_ap_2,Press the left arrow key to turn your head,1,,,,
+1,player,Me,actionpoint,2,1_ap_2,Press the left arrow key to turn your head,0,,,,
 1,teacher,Julian,actionpoint,3,1_ap_3,"hello everyone, welcome to……",1,,,,
 1,teacher,Julian,actionpoint,3,1_ap_3,Beyond English Summer Course.,2,,,,
 1,teacher,Julian,actionpoint,3,1_ap_3,Look at me!,3,,,,
