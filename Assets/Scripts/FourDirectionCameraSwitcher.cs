@@ -3,13 +3,13 @@ using Cinemachine;
 
 public class FourDirectionCameraSwitcher : MonoBehaviour
 {
-    [Header("四个虚拟相机")]
+    [Header("Virtual Cameras")]
     public CinemachineVirtualCamera camUp;
     public CinemachineVirtualCamera camDown;
     public CinemachineVirtualCamera camLeft;
     public CinemachineVirtualCamera camRight;
 
-    [Header("优先级设置")]
+    [Header("Priority Settings")]
     public int activePriority = 10;
     public int inactivePriority = 0;
 
@@ -17,8 +17,7 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
 
     void Start()
     {
-        // 默认先激活“上”
-        SwitchTo(camUp);
+        SwitchToLeft();
     }
 
     void OnEnable()
@@ -45,34 +44,62 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
 
     public void OnBoardSelected()
     {
-        SwitchTo(camLeft);
+        SwitchToUp();
     }
 
     public void OnFriendSelected()
     {
-        SwitchTo(camRight);
+        SwitchToRight();
     }
 
     public void OnWindowSelected()
     {
-        SwitchTo(camUp);
+        SwitchToLeft();
     }
 
     public void OnDeskSelected()
     {
+        SwitchToDown();
+    }
+
+    public void SwitchToUp()
+    {
+        SwitchTo(camUp);
+    }
+
+    public void SwitchToDown()
+    {
         SwitchTo(camDown);
+    }
+
+    public void SwitchToLeft()
+    {
+        SwitchTo(camLeft);
+    }
+
+    public void SwitchToRight()
+    {
+        SwitchTo(camRight);
     }
 
     public void SwitchTo(CinemachineVirtualCamera targetCam)
     {
-        camUp.Priority = inactivePriority;
-        camDown.Priority = inactivePriority;
-        camLeft.Priority = inactivePriority;
-        camRight.Priority = inactivePriority;
+        SetPriority(camUp, inactivePriority);
+        SetPriority(camDown, inactivePriority);
+        SetPriority(camLeft, inactivePriority);
+        SetPriority(camRight, inactivePriority);
 
         if (targetCam != null)
         {
             targetCam.Priority = activePriority;
+        }
+    }
+
+    private void SetPriority(CinemachineVirtualCamera targetCam, int priority)
+    {
+        if (targetCam != null)
+        {
+            targetCam.Priority = priority;
         }
     }
 }

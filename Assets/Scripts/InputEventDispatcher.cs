@@ -9,27 +9,66 @@ public class InputEventDispatcher : MonoBehaviour
     public UnityEvent onWindow;
     public UnityEvent onDesk;
 
+    [Header("Directional Input Locks")]
+    [SerializeField] private bool boardInputLocked = true;
+    [SerializeField] private bool friendInputLocked = true;
+    [SerializeField] private bool windowInputLocked = true;
+    [SerializeField] private bool deskInputLocked = true;
+
+    void Awake()
+    {
+        LockAllDirectionalInputs();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (!boardInputLocked && Input.GetKeyDown(KeyCode.UpArrow))
         {
             onBoard?.Invoke();
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (!friendInputLocked && Input.GetKeyDown(KeyCode.RightArrow))
         {
             onFriend?.Invoke();
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (!windowInputLocked && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             onWindow?.Invoke();
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (!deskInputLocked && Input.GetKeyDown(KeyCode.DownArrow))
         {
             onDesk?.Invoke();
         }
+    }
+
+    public void LockAllDirectionalInputs()
+    {
+        boardInputLocked = true;
+        friendInputLocked = true;
+        windowInputLocked = true;
+        deskInputLocked = true;
+    }
+
+    public void UnlockBoardInput()
+    {
+        boardInputLocked = false;
+    }
+
+    public void UnlockFriendInput()
+    {
+        friendInputLocked = false;
+    }
+
+    public void UnlockWindowInput()
+    {
+        windowInputLocked = false;
+    }
+
+    public void UnlockDeskInput()
+    {
+        deskInputLocked = false;
     }
 
     public void TriggerBoard()

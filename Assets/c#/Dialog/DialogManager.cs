@@ -3,6 +3,7 @@ using System.Collections;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum CameraViewType
 {
@@ -18,6 +19,13 @@ public enum DialogTriggerMode
     Random,
     ActionPoint,
     Sequence
+}
+
+[System.Serializable]
+public class DialogIdEventBinding
+{
+    public string dialogId;
+    public UnityEvent onDialogStarted;
 }
 
 public class DialogManager : MonoBehaviour
@@ -40,9 +48,9 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private int activePriority = 10;
 
     [Header("Camera View Types")]
-    [SerializeField] private CameraViewType camUpType = CameraViewType.Windows;
+    [SerializeField] private CameraViewType camUpType = CameraViewType.Teacher;
     [SerializeField] private CameraViewType camDownType = CameraViewType.Book;
-    [SerializeField] private CameraViewType camLeftType = CameraViewType.Teacher;
+    [SerializeField] private CameraViewType camLeftType = CameraViewType.Windows;
     [SerializeField] private CameraViewType camRightType = CameraViewType.Mate;
 
     [Header("Dialog Playback")]
@@ -58,6 +66,9 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private float charactersPerSecond = 30f;
     [SerializeField] private float autoAdvanceDelay = 1.5f;
     [SerializeField] private bool clearTextWhenDialogEnds = true;
+
+    [Header("Dialog ID Events")]
+    [SerializeField] private List<DialogIdEventBinding> dialogIdEvents = new List<DialogIdEventBinding>();
 
     private DialogEntry activeDialog;
     private int activeLineIndex;
@@ -78,6 +89,11 @@ public class DialogManager : MonoBehaviour
         ClearDialogText();
         HidePlayerPicture();
         RefreshPendingRandomDialog(forceRefresh: true);
+    }
+
+    private void Start()
+    {
+        ShowInitialTeacherPrompt();
     }
 
     private void Update()
@@ -350,6 +366,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -382,9 +399,10 @@ public class DialogManager : MonoBehaviour
         }
 
         activeDialog = dialog;
-        activeLineIndex = 0;
+        activeLineIndex = GetFirstPlayableTeacherLineIndex(dialog);
         activeDialogTriggerMode = DialogTriggerMode.ActionPoint;
         SetCameraSwitchingEnabled(false);
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -422,6 +440,7 @@ public class DialogManager : MonoBehaviour
         pendingRandomDialog = null;
         RefreshPendingRandomDialog(forceRefresh: true, updatePicture: false);
         SetCameraSwitchingEnabled(false);
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -527,6 +546,81 @@ public class DialogManager : MonoBehaviour
         SetDialogText(line);
     }
 
+    private void InvokeDialogStartedEvents(DialogEntry dialog)
+    {
+        if (dialog == null || string.IsNullOrEmpty(dialog.dialogId) || dialogIdEvents == null)
+        {
+            return;
+        }
+
+        foreach (DialogIdEventBinding binding in dialogIdEvents)
+        {
+            if (binding == null ||
+                !string.Equals(binding.dialogId, dialog.dialogId, System.StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            binding.onDialogStarted?.Invoke();
+        }
+    }
+
+    private void ShowInitialTeacherPrompt()
+    {
+        if (dialogText == null || activeDialog != null || actionPointDialogController == null)
+        {
+            return;
+        }
+
+        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(teacherCharacterId, 1);
+        DialogLine promptLine = GetFirstLineWithTriggerOrder(dialog, 0);
+
+        if (promptLine == null)
+        {
+            return;
+        }
+
+        SetStaticDialogText(promptLine);
+    }
+
+    private int GetFirstPlayableTeacherLineIndex(DialogEntry dialog)
+    {
+        if (dialog?.lines == null)
+        {
+            return 0;
+        }
+
+        for (int index = 0; index < dialog.lines.Count; index++)
+        {
+            DialogLine line = dialog.lines[index];
+
+            if (line != null && line.triggerOrder > 0)
+            {
+                return index;
+            }
+        }
+
+        return 0;
+    }
+
+    private DialogLine GetFirstLineWithTriggerOrder(DialogEntry dialog, int triggerOrder)
+    {
+        if (dialog?.lines == null)
+        {
+            return null;
+        }
+
+        foreach (DialogLine line in dialog.lines)
+        {
+            if (line != null && line.triggerOrder == triggerOrder)
+            {
+                return line;
+            }
+        }
+
+        return null;
+    }
+
     private void SetDialogText(DialogLine line)
     {
         if (dialogText == null)
@@ -550,6 +644,23 @@ public class DialogManager : MonoBehaviour
         UpdatePlayerPicture(line);
         UpdateDialogPictureState(line);
         StartTypingLine(prefix, text);
+    }
+
+    private void SetStaticDialogText(DialogLine line)
+    {
+        if (dialogText == null || line == null)
+        {
+            return;
+        }
+
+        string prefix = showSpeakerName && !string.IsNullOrEmpty(line.characterName)
+            ? $"{line.characterName}: "
+            : string.Empty;
+
+        ApplySpeakerColor(line);
+        UpdatePlayerPicture(line);
+        dialogText.text = prefix + (line.text ?? string.Empty);
+        fullLineText = dialogText.text;
     }
 
     private void StartTypingLine(string prefix, string text)
@@ -661,7 +772,7 @@ public class DialogManager : MonoBehaviour
 
         if (shouldEndDialogAfterWait)
         {
-            EndCurrentDialog();
+            // EndCurrentDialog();
             return;
         }
 
@@ -672,7 +783,7 @@ public class DialogManager : MonoBehaviour
     {
         if (shouldEndDialogAfterWait)
         {
-            EndCurrentDialog();
+            // EndCurrentDialog();
             return;
         }
 
