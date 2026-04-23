@@ -11,6 +11,7 @@ public class DaySystem : MonoBehaviour
 
     [Header("External Systems")]
     [SerializeField] private ActionPointSystem actionPointSystem;
+    [SerializeField] private DialogManager dialogManager;
 
     public int StartDay => startDay;
     public int CurrentDay => currentDay;
@@ -26,6 +27,11 @@ public class DaySystem : MonoBehaviour
         {
             actionPointSystem = FindObjectOfType<ActionPointSystem>();
         }
+
+        if (dialogManager == null)
+        {
+            dialogManager = FindObjectOfType<DialogManager>();
+        }
     }
 
     private void Update()
@@ -33,10 +39,15 @@ public class DaySystem : MonoBehaviour
         if (nextDayCommand)
         {
             isWaitingForDaySummary = true;
-            return;
+            nextDayCommand = false;
         }
 
         if (!isWaitingForDaySummary)
+        {
+            return;
+        }
+
+        if (dialogManager != null && dialogManager.IsDialogActive)
         {
             return;
         }
@@ -72,6 +83,11 @@ public class DaySystem : MonoBehaviour
     public void SetActionPointSystem(ActionPointSystem system)
     {
         actionPointSystem = system;
+    }
+
+    public void SetDialogManager(DialogManager manager)
+    {
+        dialogManager = manager;
     }
 
     private void CompleteDayTransition()

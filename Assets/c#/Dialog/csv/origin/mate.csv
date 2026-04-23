@@ -1,7 +1,0 @@
-﻿day,characterId,characterName,mode,dialogID,sequenceOrder,triggerOrder,text,pictureId,playerpicture,soundId
-1,mate,Yuan,sequence,1_seq_1,1,0,你好,,1,
-1,player,Me,sequence,1_seq_1,1,1,别烦我,,,
-1,mate,Yuan,sequence,1_seq_2,2,0,第二次对话,,1,
-1,player,Me,sequence,1_seq_2,2,1,第二次对话,,2,
-1,mate,Yuan,sequence,1_seq_3,3,0,第三次对话,,1,
-1,player,Me,sequence,1_seq_3,3,1,第三次对话,,2,

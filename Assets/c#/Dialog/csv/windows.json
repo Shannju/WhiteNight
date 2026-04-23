@@ -183,6 +183,31 @@
                     ]
                 },
                 {
+                    "dialogId": "1_ra_1",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "minna",
+                            "characterName": "Minna",
+                            "triggerOrder": 0,
+                            "text": "The textbooks have arrived; I'll bring them over later.",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 1,
+                            "text": "Press the up key to look at the blackboard.",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "1_ra_10",
                     "day": 1,
                     "sequenceOrder": 0,
@@ -292,14 +317,6 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(Minna is the face of the front desk, always dressed with perfect elegance.)",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 1,
                             "text": "(Today, while Julian was talking her ear off, Minna just kept a polite smile. Her eyes were actually on the water cooler at the end of the hallway.)",
                             "pictureId": "",
                             "playerPicture": ""
