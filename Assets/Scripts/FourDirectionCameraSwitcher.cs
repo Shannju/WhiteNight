@@ -14,9 +14,15 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
     public int inactivePriority = 0;
 
     public InputEventDispatcher inputDispatcher;
+    [SerializeField] private DialogManager dialogManager;
 
     void Start()
     {
+        if (dialogManager == null)
+        {
+            dialogManager = FindObjectOfType<DialogManager>();
+        }
+
         SwitchToLeft();
     }
 
@@ -84,6 +90,11 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
 
     public void SwitchTo(CinemachineVirtualCamera targetCam)
     {
+        if (dialogManager != null)
+        {
+            dialogManager.DisableInteractForCameraSwitch();
+        }
+
         SetPriority(camUp, inactivePriority);
         SetPriority(camDown, inactivePriority);
         SetPriority(camLeft, inactivePriority);
