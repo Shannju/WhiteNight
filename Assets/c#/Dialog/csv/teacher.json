@@ -16,7 +16,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "（镜头强行转到讲台侧，伴随声音）",
+                            "text": "(The camera pans forcibly to the side of the lectern, with sound.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -24,7 +24,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(**Julian老师** 推门而入。)",
+                            "text": "(**Julian** pushes the door open and walks in.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -32,7 +32,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "(他梳着侧分背头，穿着一件剪裁略显紧身的衬衫，眼镜上夹着一个橙色的滤镜片。)",
+                            "text": "(He wears his hair in a side-parted slick-back, in a shirt tailored maybe a little too tight, with orange filter clips on his glasses.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -49,7 +49,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(前台minna老师跟在他后面，将一沓橙色的书本放在讲台上。)",
+                            "text": "(Minna, the receptionist, follows him and places a stack of orange books on the lectern.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -57,7 +57,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(在这个小城市里，她承包了我对都市丽人的一切想象。职业装，黑框眼镜，银色手链，淡淡的职业笑。)",
+                            "text": "(In this small town, she was everything I imagined a professional city woman to be: a business suit, black-rimmed glasses, a silver bracelet, and a faint professional smile.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -82,7 +82,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "Beyond english 暑期班",
+                            "text": "Beyond English Summer Course.",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -98,7 +98,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 3,
-                            "text": "！",
+                            "text": "!",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -106,7 +106,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 4,
-                            "text": "(minna老师适时的掩门走了（声音，关门吱~~）)",
+                            "text": "(Minna timely closes the door and leaves. Sound: door creaks shut~~)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -123,7 +123,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "（他转身在白板上用马克笔狂草写下巨大的 **JULIAN**）（声音 粉笔）",
+                            "text": "(He turns and scrawls a huge **JULIAN** on the whiteboard with a marker. Sound: marker squeaking.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -131,7 +131,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(I'm Julian. 你们暑期班的老师.)",
+                            "text": "(I'm Julian. Your teacher for this summer course.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -148,7 +148,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(你们看这个词——**July**。一年中最好的日子。)",
+                            "text": "(Look at this word—**July**. The best month of the year.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -156,7 +156,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(在后面加了一个 **'an'**。在拉丁语的语境里，这意味着‘属于七月的’。)",
+                            "text": "(Add an **'an'** at the end. In Latin, this means 'belonging to July'.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -173,7 +173,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(我留学的时候，在那边的海滩上，我就告诉自己，Julian，你要像七月的烈日一样，灼烧掉所有的平庸和胆怯！)",
+                            "text": "(When I was studying abroad, on a beach over there, I told myself: Julian, you must be like the scorching sun of July, burning away all mediocrity and cowardice!)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -190,7 +190,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(英语是世界上最简单的语言！只要你敢喊出来，就能够超越它，超越自己。)",
+                            "text": "(English is the easiest language in the world! As long as you dare to shout it out, you can overcome it, and overcome yourself.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -198,7 +198,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(来，Follow me!)",
+                            "text": "(Come on, follow me!)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -256,7 +256,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 0,
-                            "text": "我听不到！再来一遍！",
+                            "text": "I can't hear you! Again!",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -264,7 +264,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "Beyond English",
+                            "text": "Beyond English!",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -272,7 +272,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "Beyond English",
+                            "text": "Beyond English...",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -297,7 +297,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "Beyond Yourself!",
+                            "text": "Beyond Yourself...",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -314,7 +314,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(同学们胆怯地开了口，但显然老师还不满意。)",
+                            "text": "(The students begin to speak timidly, but it's clear the teacher is still not satisfied.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -322,7 +322,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "（*）",
+                            "text": "(*)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -330,7 +330,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 2,
-                            "text": "Beyond English",
+                            "text": "Beyond English!",
                             "pictureId": "",
                             "playerPicture": ""
                         },
