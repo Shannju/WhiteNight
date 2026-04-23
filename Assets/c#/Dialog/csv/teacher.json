@@ -13,8 +13,8 @@
                     "actionPointMax": 1,
                     "lines": [
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "tutorial",
+                            "characterName": "",
                             "triggerOrder": 0,
                             "text": "Press space to start",
                             "pictureId": "",
@@ -23,7 +23,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 2,
+                            "triggerOrder": 1,
                             "text": "(After the final exams, you get a report card.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -31,7 +31,7 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 3,
+                            "triggerOrder": 2,
                             "text": "(Some people are affected by it, filled with anxiety, frustration, or relief.)",
                             "pictureId": "",
                             "playerPicture": ""
@@ -39,8 +39,16 @@
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 4,
+                            "triggerOrder": 3,
                             "text": "(But some people...)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 4,
+                            "text": "Press the right arrow key to turn your head",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -54,10 +62,10 @@
                     "actionPointMax": 2,
                     "lines": [
                         {
-                            "speakerId": "player",
-                            "characterName": "Me",
+                            "speakerId": "tutorial",
+                            "characterName": "",
                             "triggerOrder": 0,
-                            "text": "Press the left arrow key to turn your head",
+                            "text": "1ap2",
                             "pictureId": "",
                             "playerPicture": ""
                         }

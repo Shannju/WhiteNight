@@ -26,6 +26,7 @@ public class DialogIdEventBinding
 {
     public string dialogId;
     public UnityEvent onDialogStarted;
+    public UnityEvent onLastLineShown;
 }
 
 public class DialogManager : MonoBehaviour
@@ -55,6 +56,7 @@ public class DialogManager : MonoBehaviour
 
     [Header("Dialog Playback")]
     [SerializeField] private KeyCode interactKey = KeyCode.Space;
+    [SerializeField] private float interactCooldownAfterCameraSwitch = 0.5f;
     [SerializeField] private TMP_Text dialogText;
     [SerializeField] private PlayerPictureDisplay playerPictureDisplay;
     [SerializeField] private DialogPictureController dialogPictureController;
@@ -66,6 +68,9 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private float charactersPerSecond = 30f;
     [SerializeField] private float autoAdvanceDelay = 1.5f;
     [SerializeField] private bool clearTextWhenDialogEnds = true;
+
+    [Header("Between Dialogs")]
+    [SerializeField] private GameObject blackFrame;
 
     [Header("Dialog ID Events")]
     [SerializeField] private List<DialogIdEventBinding> dialogIdEvents = new List<DialogIdEventBinding>();
@@ -82,12 +87,14 @@ public class DialogManager : MonoBehaviour
     private DialogEntry pendingRandomDialog;
     private int lastRandomRefreshActionPoints = -1;
     private int lastRandomRefreshDay = -1;
+    private float interactDisabledUntilTime;
 
     private void Awake()
     {
         ResolveDialogControllers();
         ClearDialogText();
         HidePlayerPicture();
+        HideBlackFrames();
         RefreshPendingRandomDialog(forceRefresh: true);
     }
 
@@ -282,6 +289,11 @@ public class DialogManager : MonoBehaviour
 
     public void AdvanceCurrentDialog()
     {
+        if (Time.time < interactDisabledUntilTime)
+        {
+            return;
+        }
+
         if (isTyping)
         {
             CompleteCurrentLine();
@@ -305,6 +317,8 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialogForCurrentCameraView()
     {
+        HideBlackFrames();
+
         CameraViewType currentViewType = GetCurrentCameraViewType();
 
         switch (currentViewType)
@@ -356,6 +370,7 @@ public class DialogManager : MonoBehaviour
         activeLineIndex = 0;
         activeDialogTriggerMode = DialogTriggerMode.Sequence;
         SetCameraSwitchingEnabled(false);
+        ShowBlackFrame();
 
         if (!actionPointSystem.TryStartAction())
         {
@@ -363,6 +378,7 @@ public class DialogManager : MonoBehaviour
             activeLineIndex = 0;
             activeDialogTriggerMode = DialogTriggerMode.Sequence;
             SetCameraSwitchingEnabled(true);
+            HideBlackFrames();
             return;
         }
 
@@ -402,6 +418,7 @@ public class DialogManager : MonoBehaviour
         activeLineIndex = GetFirstPlayableTeacherLineIndex(dialog);
         activeDialogTriggerMode = DialogTriggerMode.ActionPoint;
         SetCameraSwitchingEnabled(false);
+        ShowBlackFrame();
         InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
@@ -440,6 +457,7 @@ public class DialogManager : MonoBehaviour
         pendingRandomDialog = null;
         RefreshPendingRandomDialog(forceRefresh: true, updatePicture: false);
         SetCameraSwitchingEnabled(false);
+        ShowBlackFrame();
         InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
@@ -462,6 +480,7 @@ public class DialogManager : MonoBehaviour
         }
 
         HidePlayerPicture();
+        HideBlackFrames();
         NotifyDialogPictureEnded(endedTriggerMode);
     }
 
@@ -471,6 +490,21 @@ public class DialogManager : MonoBehaviour
         {
             sequenceDialogController.ResetSequenceProgress(characterId);
         }
+    }
+
+    public void DisableInteractForCameraSwitch()
+    {
+        DisableInteractForSeconds(interactCooldownAfterCameraSwitch);
+    }
+
+    public void DisableInteractForSeconds(float seconds)
+    {
+        if (seconds <= 0f)
+        {
+            return;
+        }
+
+        interactDisabledUntilTime = Mathf.Max(interactDisabledUntilTime, Time.time + seconds);
     }
 
     private void ResolveDialogControllers()
@@ -544,6 +578,11 @@ public class DialogManager : MonoBehaviour
         activeLineIndex++;
         shouldEndDialogAfterWait = activeLineIndex >= activeDialog.lines.Count;
         SetDialogText(line);
+
+        if (shouldEndDialogAfterWait)
+        {
+            InvokeDialogLastLineShownEvents(activeDialog);
+        }
     }
 
     private void InvokeDialogStartedEvents(DialogEntry dialog)
@@ -562,6 +601,25 @@ public class DialogManager : MonoBehaviour
             }
 
             binding.onDialogStarted?.Invoke();
+        }
+    }
+
+    private void InvokeDialogLastLineShownEvents(DialogEntry dialog)
+    {
+        if (dialog == null || string.IsNullOrEmpty(dialog.dialogId) || dialogIdEvents == null)
+        {
+            return;
+        }
+
+        foreach (DialogIdEventBinding binding in dialogIdEvents)
+        {
+            if (binding == null ||
+                !string.Equals(binding.dialogId, dialog.dialogId, System.StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            binding.onLastLineShown?.Invoke();
         }
     }
 
@@ -772,7 +830,7 @@ public class DialogManager : MonoBehaviour
 
         if (shouldEndDialogAfterWait)
         {
-            // EndCurrentDialog();
+            EndCurrentDialog();
             return;
         }
 
@@ -783,7 +841,7 @@ public class DialogManager : MonoBehaviour
     {
         if (shouldEndDialogAfterWait)
         {
-            // EndCurrentDialog();
+            EndCurrentDialog();
             return;
         }
 
@@ -795,6 +853,22 @@ public class DialogManager : MonoBehaviour
         if (dialogText != null)
         {
             dialogText.text = string.Empty;
+        }
+    }
+
+    public void HideBlackFrames()
+    {
+        if (blackFrame != null)
+        {
+            blackFrame.SetActive(false);
+        }
+    }
+
+    public void ShowBlackFrame()
+    {
+        if (blackFrame != null)
+        {
+            blackFrame.SetActive(true);
         }
     }
 
