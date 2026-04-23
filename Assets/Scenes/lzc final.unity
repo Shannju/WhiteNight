@@ -309,6 +309,7 @@ MonoBehaviour:
   currentDay: 1
   nextDayCommand: 0
   actionPointSystem: {fileID: 31818532}
+  dialogManager: {fileID: 0}
 --- !u!1 &61502297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1573,7 @@ MonoBehaviour:
   windowsCharacterId: windows
   showSpeakerName: 1
   charactersPerSecond: 30
+  autoAdvanceEnabled: 0
   autoAdvanceDelay: 1.5
   clearTextWhenDialogEnds: 1
   blackFrame: {fileID: 707747586}
@@ -1611,23 +1613,35 @@ MonoBehaviour:
             m_StringArgument: 1_ra_1
             m_BoolArgument: 0
           m_CallState: 2
-    onLastLineShown:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogId: 1_ap_3
-    onDialogStarted:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 226714705}
-          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
-          m_MethodName: SetNextWindowsRandomDialog
-          m_Mode: 5
+        - m_Target: {fileID: 1678551074}
+          m_TargetAssemblyTypeName: InputEventDispatcher, Assembly-CSharp
+          m_MethodName: UnlockWindowInput
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 1_ra_1
+            m_BoolArgument: 0
+          m_CallState: 2
+    onLastLineShown:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogId: 1_ap_11
+    onDialogStarted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1678551074}
+          m_TargetAssemblyTypeName: InputEventDispatcher, Assembly-CSharp
+          m_MethodName: UnlockDeskInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
     onLastLineShown:
@@ -3490,7 +3504,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Me: Good Morning'
+  m_text: "Actually, you can also use the up, down, left, and right arrow keys to
+    view freely\u2026\u2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e9546f772768e4f1d812db2cc639c81c, type: 2}
   m_sharedMaterial: {fileID: -6049156601428663757, guid: e9546f772768e4f1d812db2cc639c81c,
@@ -3525,7 +3540,7 @@ MonoBehaviour:
   m_fontSizeMin: 0
   m_fontSizeMax: 0
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3534,7 +3549,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -3554,7 +3569,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 122.089935, y: 0, z: 47.276093, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5431,7 +5446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.58167815}
   m_AnchorMax: {x: 0.54875, y: 0.675}
-  m_AnchoredPosition: {x: -282.1, y: -329}
+  m_AnchoredPosition: {x: -345, y: -329}
   m_SizeDelta: {x: 61, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855943828
@@ -5661,11 +5676,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequencePictures:
-  - pictureId: 
+  - pictureId: 0
     target: {fileID: 0}
+  - pictureId: 1
+    target: {fileID: 488615645}
+  - pictureId: 2
+    target: {fileID: 1513593854}
+  - pictureId: 3
+    target: {fileID: 1490302692}
+  - pictureId: 4
+    target: {fileID: 66302108}
   actionPointPictures:
   - pictureId: 0
-    target: {fileID: 1443205901}
+    target: {fileID: 0}
   - pictureId: 1
     target: {fileID: 4671871126983804618}
   - pictureId: 2
@@ -5678,6 +5701,8 @@ MonoBehaviour:
     target: {fileID: 4062948362812385069}
   - pictureId: 6
     target: {fileID: 3776565889357633743}
+  - pictureId: 7
+    target: {fileID: 1443205901}
   randomPictures:
   - pictureId: 0
     target: {fileID: 0}

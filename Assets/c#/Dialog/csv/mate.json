@@ -17,72 +17,31 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Who cares about grades? Summer vacation has already started!",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 1,
-                            "text": "If you don't see the teachers and classmates, it's like they don't exist, right?",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
-                            "triggerOrder": 2,
-                            "text": "It sounds like self-deception.",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "1_seq_1",
-                    "day": 1,
-                    "sequenceOrder": 1,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "Forget them, Wenwen.",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
                             "triggerOrder": 1,
-                            "text": "Come to my place and play games. Let's relax!",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 2,
                             "text": "I wish I could, but holiday is basically we catching up on English.",
-                            "pictureId": "",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "Worst luck ever. We sre the ones who have to deal with Julian this term.",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 3,
-                            "text": "Worst luck ever. We sre the ones who have to deal with Julian this term.",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 4,
                             "text": "His teaching style is... insane.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -90,7 +49,7 @@
                             "characterName": "",
                             "triggerOrder": 4,
                             "text": "Press the up key to look at the blackboard.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -107,7 +66,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Cici is my only and best friend.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -115,7 +74,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(She's the type to be affected by grades too, but she doesn't dwell on it.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -123,7 +82,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(I can talk to other classmates, of course. We say hi when we see each other.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -131,7 +90,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(But if I can see my dearest Cici at school every day...)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -139,7 +98,7 @@
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "(partner with her in P.E. class and line up with her without a second thought...)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -147,7 +106,7 @@
                             "characterName": "Me",
                             "triggerOrder": 5,
                             "text": "(and go home with her after school...)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -155,7 +114,7 @@
                             "characterName": "Me",
                             "triggerOrder": 6,
                             "text": "(and just do homework the rest of the time...)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -163,7 +122,7 @@
                             "characterName": "Me",
                             "triggerOrder": 7,
                             "text": "(Life is so blissful that I have no time to think about anything else.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -180,7 +139,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Of course! Let me play Aoi Prism!",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -188,7 +147,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Last time I opened a music game at home, my mom told me I might as well be playing the piano.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -196,7 +155,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "Haha, that's totally different.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -204,7 +163,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 3,
                             "text": "Maybe she just doesn't like seeing you play games.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -221,7 +180,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "My mom says I should study abroad in the future.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -229,7 +188,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Julian is the founder of this school.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -237,7 +196,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "It wasn't easy to get you into his class.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -245,7 +204,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "I know. Thank you!",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -253,7 +212,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 4,
                             "text": "His teaching style is... insane.",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -270,7 +229,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(When Cici chants along, only her mouth moves.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -278,7 +237,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(It's more like a silent film performance.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -286,7 +245,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(Her mouth shapes are exaggerated, but her voice lacks the enthusiasm Julian expects.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -303,7 +262,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "I want to drop this class!",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -311,7 +270,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Would your mom agree to that?",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -319,7 +278,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(Cici looks out the window, dejected.)",
-                            "pictureId": "",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]

@@ -62,15 +62,8 @@ public class DialogPictureController : MonoBehaviour
 
     public void OnDialogEnded(DialogTriggerMode triggerMode)
     {
-        if (triggerMode == DialogTriggerMode.Sequence && dialogPictureRegistry != null)
-        {
-            dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.Sequence);
-        }
-
-        if (triggerMode == DialogTriggerMode.ActionPoint)
-        {
-            RefreshActionPointPictureState(forceRefresh: true);
-        }
+        // Keep the last visible picture after a dialog ends.
+        // The picture will change later when a new state explicitly updates it.
     }
 
     public void OnPendingRandomDialogChanged(DialogEntry dialog)
@@ -84,7 +77,6 @@ public class DialogPictureController : MonoBehaviour
 
         if (string.IsNullOrEmpty(pictureId))
         {
-            dialogPictureRegistry.HidePictures(DialogTriggerMode.Random);
             return;
         }
 

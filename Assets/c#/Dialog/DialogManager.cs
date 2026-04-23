@@ -66,6 +66,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private string windowsCharacterId = "windows";
     [SerializeField] private bool showSpeakerName = true;
     [SerializeField] private float charactersPerSecond = 30f;
+    [SerializeField] private bool autoAdvanceEnabled = false;
     [SerializeField] private float autoAdvanceDelay = 1.5f;
     [SerializeField] private bool clearTextWhenDialogEnds = true;
 
@@ -88,6 +89,8 @@ public class DialogManager : MonoBehaviour
     private int lastRandomRefreshActionPoints = -1;
     private int lastRandomRefreshDay = -1;
     private float interactDisabledUntilTime;
+
+    public bool IsDialogActive => activeDialog != null || isTyping || isWaitingForAdvance;
 
     private void Awake()
     {
@@ -366,6 +369,13 @@ public class DialogManager : MonoBehaviour
     {
         HideBlackFrames();
 
+        if (ShouldForceTeacherHomeworkForLastAction())
+        {
+            ForceCameraView(CameraViewType.Teacher);
+            StartTeacherActionPointDialog();
+            return;
+        }
+
         CameraViewType currentViewType = GetCurrentCameraViewType();
 
         switch (currentViewType)
@@ -526,7 +536,6 @@ public class DialogManager : MonoBehaviour
             ClearDialogText();
         }
 
-        HidePlayerPicture();
         HideBlackFrames();
         NotifyDialogPictureEnded(endedTriggerMode);
     }
@@ -774,10 +783,22 @@ public class DialogManager : MonoBehaviour
         StopAutoAdvanceCountdown();
 
         fullLineText = prefix + text;
-        dialogText.text = prefix;
-        typingCoroutine = StartCoroutine(TypeLine(prefix, text));
+
+        if (dialogText == null)
+        {
+            return;
+        }
+
+        dialogText.text = fullLineText;
+
+        if (autoAdvanceEnabled)
+        {
+            BeginAutoAdvanceCountdown();
+        }
     }
 
+    // Typewriter playback is intentionally disabled for now.
+    // Kept here so we can restore the feature later without rebuilding it from scratch.
     private IEnumerator TypeLine(string prefix, string text)
     {
         isTyping = true;
@@ -787,7 +808,12 @@ public class DialogManager : MonoBehaviour
             dialogText.text = fullLineText;
             isTyping = false;
             typingCoroutine = null;
-            BeginAutoAdvanceCountdown();
+
+            if (autoAdvanceEnabled)
+            {
+                BeginAutoAdvanceCountdown();
+            }
+
             yield break;
         }
 
@@ -801,7 +827,11 @@ public class DialogManager : MonoBehaviour
 
         isTyping = false;
         typingCoroutine = null;
-        BeginAutoAdvanceCountdown();
+
+        if (autoAdvanceEnabled)
+        {
+            BeginAutoAdvanceCountdown();
+        }
     }
 
     private void CompleteCurrentLine()
@@ -813,7 +843,10 @@ public class DialogManager : MonoBehaviour
             dialogText.text = fullLineText;
         }
 
-        BeginAutoAdvanceCountdown();
+        if (autoAdvanceEnabled)
+        {
+            BeginAutoAdvanceCountdown();
+        }
     }
 
     private void StopTyping()
@@ -928,7 +961,6 @@ public class DialogManager : MonoBehaviour
 
         if (line == null || string.IsNullOrEmpty(line.playerPicture))
         {
-            playerPictureDisplay.Hide();
             return;
         }
 
@@ -958,11 +990,6 @@ public class DialogManager : MonoBehaviour
         if (dialogPictureController != null)
         {
             dialogPictureController.OnDialogEnded(endedTriggerMode);
-
-            if (endedTriggerMode == DialogTriggerMode.Random)
-            {
-                dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
-            }
         }
     }
 
@@ -1020,6 +1047,52 @@ public class DialogManager : MonoBehaviour
         if (inputEventDispatcher != null)
         {
             inputEventDispatcher.enabled = isEnabled;
+        }
+    }
+
+    private bool ShouldForceTeacherHomeworkForLastAction()
+    {
+        if (actionPointSystem == null)
+        {
+            return false;
+        }
+
+        if (actionPointSystem.CurrentActionPoints != actionPointSystem.ActionCostPerCommand)
+        {
+            return false;
+        }
+
+        if (GetCurrentCameraViewType() == CameraViewType.Teacher)
+        {
+            return false;
+        }
+
+        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(
+            teacherCharacterId,
+            actionPointSystem.SpentActionPoints + actionPointSystem.ActionCostPerCommand);
+
+        if (dialog == null || dialog.lines == null || dialog.lines.Count == 0)
+        {
+            return false;
+        }
+
+        return GetFirstPlayableTeacherLineIndex(dialog) < dialog.lines.Count;
+    }
+
+    private void ForceCameraView(CameraViewType targetViewType)
+    {
+        SetCameraPriority(camUp, camUpType == targetViewType ? activePriority : 0);
+        SetCameraPriority(camDown, camDownType == targetViewType ? activePriority : 0);
+        SetCameraPriority(camLeft, camLeftType == targetViewType ? activePriority : 0);
+        SetCameraPriority(camRight, camRightType == targetViewType ? activePriority : 0);
+        DisableInteractForCameraSwitch();
+    }
+
+    private void SetCameraPriority(CinemachineVirtualCamera camera, int priority)
+    {
+        if (camera != null)
+        {
+            camera.Priority = priority;
         }
     }
 }
