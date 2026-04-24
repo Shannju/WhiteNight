@@ -287,10 +287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e915bb75ffb4b5382686b68d7e0550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxActionPoints: 20
-  currentActionPoints: 20
+  maxActionPoints: 12
+  currentActionPoints: 12
   actionCostPerCommand: 1
-  spentActionPoints: 0
+  teacherSpentActionPoints: 0
+  mateSpentActionPoints: 0
   startActionCommand: 0
   daySystem: {fileID: 0}
 --- !u!114 &31818533
@@ -311,7 +312,18 @@ MonoBehaviour:
   - day: 1
     actionPoints: 20
   nextDayCommand: 0
+  autoStartNextDayWhenReady: 1
+  onDayStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onDayEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  onDayPhaseChanged:
+    m_PersistentCalls:
+      m_Calls: []
   actionPointSystem: {fileID: 0}
+  dialogManager: {fileID: 0}
 --- !u!1 &50512215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1650,7 @@ MonoBehaviour:
   windowsCharacterId: windows
   showSpeakerName: 1
   charactersPerSecond: 30
+  autoAdvanceEnabled: 0
   autoAdvanceDelay: 1.5
   clearTextWhenDialogEnds: 1
   blackFrame: {fileID: 0}
@@ -1677,6 +1690,7 @@ MonoBehaviour:
   camRight: {fileID: 489942175}
   activePriority: 10
   inactivePriority: 0
+  randomizeInitialCamera: 1
   inputDispatcher: {fileID: 1678551074}
   dialogManager: {fileID: 0}
 --- !u!4 &239424857
@@ -1812,8 +1826,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9005314, z: -0.434791, w: 0}
-  m_LocalPosition: {x: -0.821, y: 1.134, z: 4.33}
+  m_LocalRotation: {x: 0.0030793466, y: 0.9966897, z: -0.045686465, w: 0.06717861}
+  m_LocalPosition: {x: -0.8288685, y: 1.0720816, z: 4.226022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
