@@ -3,8 +3,8 @@ using UnityEngine;
 public class ActionPointSystem : MonoBehaviour
 {
     [Header("Action Point Settings")]
-    [SerializeField] private int maxActionPoints = 3;
-    [SerializeField] private int currentActionPoints = 3;
+    [SerializeField] private int maxActionPoints = 20;
+    [SerializeField] private int currentActionPoints = 20;
     [SerializeField] private int actionCostPerCommand = 1;
     [SerializeField] private int spentActionPoints;
 

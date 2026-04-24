@@ -51,6 +51,14 @@ public class InputEventDispatcher : MonoBehaviour
         deskInputLocked = true;
     }
 
+    public void UnlockAllDirectionalInputs()
+    {
+        boardInputLocked = false;
+        friendInputLocked = false;
+        windowInputLocked = false;
+        deskInputLocked = false;
+    }
+
     public void UnlockBoardInput()
     {
         boardInputLocked = false;
