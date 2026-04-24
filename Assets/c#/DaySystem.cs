@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public enum DayPhase
 {
@@ -36,6 +37,10 @@ public class DaySystem : MonoBehaviour
     [SerializeField] private DayNumberEvent onDayEnded = new DayNumberEvent();
     [SerializeField] private DayPhaseEvent onDayPhaseChanged = new DayPhaseEvent();
 
+    [Header("Transition")]
+    [SerializeField] private DayNightFadeTransition fadeTransition;
+    [SerializeField] private bool useFadeTransition = true;
+
     [Header("External Systems")]
     [SerializeField] private ActionPointSystem actionPointSystem;
     [SerializeField] private DialogManager dialogManager;
@@ -56,6 +61,7 @@ public class DaySystem : MonoBehaviour
     private bool isWaitingForDaySummary;
     private bool hasEnteredNightForPendingEndDay;
     private bool hasPreparedEndDayCamera;
+    private bool isTransitioningPhase;
     private float endDayCameraReadyTime;
     private DayPhase currentPhase = DayPhase.Day;
 
@@ -79,6 +85,11 @@ public class DaySystem : MonoBehaviour
             cameraSwitcher = FindObjectOfType<FourDirectionCameraSwitcher>();
         }
 
+        if (fadeTransition == null)
+        {
+            fadeTransition = FindObjectOfType<DayNightFadeTransition>();
+        }
+
     }
 
     private void Start()
@@ -96,6 +107,11 @@ public class DaySystem : MonoBehaviour
         }
 
         if (!isWaitingForDaySummary)
+        {
+            return;
+        }
+
+        if (isTransitioningPhase)
         {
             return;
         }
@@ -199,11 +215,26 @@ public class DaySystem : MonoBehaviour
 
     private void CompleteDayTransition()
     {
+        if (isTransitioningPhase)
+        {
+            return;
+        }
+
+        if (ShouldUseFadeTransition())
+        {
+            StartCoroutine(RunTransitionWithFade(CompleteDayTransitionInstant));
+            return;
+        }
+
+        CompleteDayTransitionInstant();
+    }
+
+    private void CompleteDayTransitionInstant()
+    {
         isWaitingForDaySummary = false;
         hasEnteredNightForPendingEndDay = false;
         hasPreparedEndDayCamera = false;
         endDayCameraReadyTime = 0f;
-
         AdvanceDay();
     }
 
@@ -220,9 +251,42 @@ public class DaySystem : MonoBehaviour
         }
 
         hasEnteredNightForPendingEndDay = true;
-        SetPhase(DayPhase.Night);
-        InvokeDayEnded();
+
+        if (ShouldUseFadeTransition())
+        {
+            StartCoroutine(RunTransitionWithFade(() =>
+            {
+                SetPhase(DayPhase.Night);
+                InvokeDayEnded();
+            }));
+        }
+        else
+        {
+            SetPhase(DayPhase.Night);
+            InvokeDayEnded();
+        }
+
         return true;
+    }
+
+    private IEnumerator RunTransitionWithFade(System.Action midpointAction)
+    {
+        isTransitioningPhase = true;
+
+        fadeTransition.FadeIn();
+        yield return new WaitWhile(() => fadeTransition != null && fadeTransition.IsFading);
+
+        midpointAction?.Invoke();
+
+        fadeTransition.FadeOut();
+        yield return new WaitWhile(() => fadeTransition != null && fadeTransition.IsFading);
+
+        isTransitioningPhase = false;
+    }
+
+    private bool ShouldUseFadeTransition()
+    {
+        return useFadeTransition && fadeTransition != null;
     }
 
     private bool TryPrepareEndDayCamera()
