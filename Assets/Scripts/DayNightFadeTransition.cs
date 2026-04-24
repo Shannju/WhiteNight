@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
 public class DayNightFadeTransition : MonoBehaviour
 {
     [Header("Reference")]
+    [SerializeField] private GameObject fadeCanvasRoot;
     [SerializeField] private Image fadeImage;
 
     [Header("Fade Settings")]
@@ -14,6 +14,7 @@ public class DayNightFadeTransition : MonoBehaviour
     [SerializeField] private float fadeOutDuration = 1f;
     [SerializeField] private bool useUnscaledTime = true;
     [SerializeField] private bool startBlack = false;
+    [SerializeField] private bool disableCanvasAfterFadeOut = true;
 
     [Header("Fade Events")]
     [SerializeField] private UnityEvent onFadeInComplete;
@@ -32,6 +33,11 @@ public class DayNightFadeTransition : MonoBehaviour
         ResolveReferences();
         SetAlpha(startBlack ? 1f : 0f);
         SetCanvasBlocking(startBlack);
+
+        if (!startBlack && disableCanvasAfterFadeOut)
+        {
+            SetCanvasActive(false);
+        }
     }
 
     private void OnDisable()
@@ -41,22 +47,28 @@ public class DayNightFadeTransition : MonoBehaviour
 
     public void FadeIn()
     {
+        SetCanvasActive(true);
         StartFade(1f, fadeInDuration, true, onFadeInComplete);
     }
 
     public void FadeOut()
     {
-        StartFade(0f, fadeOutDuration, false, onFadeOutComplete);
+        StartFade(0f, fadeOutDuration, false, onFadeOutComplete, disableCanvasAfterFadeOut);
     }
 
     public void FadeInThenOut()
     {
         StopFade();
+        SetCanvasActive(true);
 
-        if (!gameObject.activeInHierarchy)
+        if (!isActiveAndEnabled)
         {
             SetAlpha(0f);
             SetCanvasBlocking(false);
+            if (disableCanvasAfterFadeOut)
+            {
+                SetCanvasActive(false);
+            }
             onFadeInThenOutComplete?.Invoke();
             return;
         }
@@ -67,6 +79,7 @@ public class DayNightFadeTransition : MonoBehaviour
     public void SetBlackInstant()
     {
         StopFade();
+        SetCanvasActive(true);
         SetAlpha(1f);
         SetCanvasBlocking(true);
     }
@@ -76,35 +89,70 @@ public class DayNightFadeTransition : MonoBehaviour
         StopFade();
         SetAlpha(0f);
         SetCanvasBlocking(false);
+        if (disableCanvasAfterFadeOut)
+        {
+            SetCanvasActive(false);
+        }
     }
 
     private void ResolveReferences()
     {
         if (fadeImage == null)
         {
-            fadeImage = GetComponent<Image>();
+            fadeImage = GetComponentInChildren<Image>(true);
+        }
+
+        if (fadeCanvasRoot == null && fadeImage != null)
+        {
+            Canvas canvas = fadeImage.GetComponentInParent<Canvas>(true);
+            fadeCanvasRoot = canvas != null ? canvas.gameObject : fadeImage.gameObject;
         }
     }
 
-    private void StartFade(float targetAlpha, float duration, bool blockAfterFade, UnityEvent completedEvent)
+    private void StartFade(
+        float targetAlpha,
+        float duration,
+        bool blockAfterFade,
+        UnityEvent completedEvent,
+        bool disableCanvasWhenComplete = false)
     {
         StopFade();
+        SetCanvasActive(true);
 
-        if (!gameObject.activeInHierarchy)
+        if (!isActiveAndEnabled)
         {
             SetAlpha(targetAlpha);
             SetCanvasBlocking(blockAfterFade);
+            if (disableCanvasWhenComplete)
+            {
+                SetCanvasActive(false);
+            }
             completedEvent?.Invoke();
             return;
         }
 
-        fadeCoroutine = StartCoroutine(FadeAndClearRoutine(targetAlpha, duration, blockAfterFade, completedEvent));
+        fadeCoroutine = StartCoroutine(FadeAndClearRoutine(
+            targetAlpha,
+            duration,
+            blockAfterFade,
+            completedEvent,
+            disableCanvasWhenComplete));
     }
 
-    private IEnumerator FadeAndClearRoutine(float targetAlpha, float duration, bool blockAfterFade, UnityEvent completedEvent)
+    private IEnumerator FadeAndClearRoutine(
+        float targetAlpha,
+        float duration,
+        bool blockAfterFade,
+        UnityEvent completedEvent,
+        bool disableCanvasWhenComplete)
     {
         yield return FadeRoutine(targetAlpha, duration, blockAfterFade, completedEvent);
         fadeCoroutine = null;
+
+        if (disableCanvasWhenComplete)
+        {
+            SetCanvasActive(false);
+        }
     }
 
     private IEnumerator FadeInThenOutRoutine()
@@ -114,6 +162,11 @@ public class DayNightFadeTransition : MonoBehaviour
 
         fadeCoroutine = null;
         onFadeInThenOutComplete?.Invoke();
+
+        if (disableCanvasAfterFadeOut)
+        {
+            SetCanvasActive(false);
+        }
     }
 
     private IEnumerator FadeRoutine(float targetAlpha, float duration, bool blockAfterFade, UnityEvent completedEvent)
@@ -174,6 +227,16 @@ public class DayNightFadeTransition : MonoBehaviour
         }
 
         fadeImage.raycastTarget = isBlocking;
+    }
+
+    private void SetCanvasActive(bool isActive)
+    {
+        ResolveReferences();
+
+        if (fadeCanvasRoot != null)
+        {
+            fadeCanvasRoot.SetActive(isActive);
+        }
     }
 
     private float GetCurrentAlpha()
