@@ -38,6 +38,8 @@ public class DaySystem : MonoBehaviour
     [Header("Day State")]
     public bool nextDayCommand;
     [SerializeField] private bool autoStartNextDayWhenReady = true;
+    [SerializeField] private bool switchToDeskBeforeDayEnd = true;
+    [SerializeField] private float deskCameraSwitchDelay = 0.5f;
 
     [Header("Day Events")]
     [SerializeField] private DayNumberEvent onDayStarted = new DayNumberEvent();
@@ -47,6 +49,7 @@ public class DaySystem : MonoBehaviour
     [Header("External Systems")]
     [SerializeField] private ActionPointSystem actionPointSystem;
     [SerializeField] private DialogManager dialogManager;
+    [SerializeField] private FourDirectionCameraSwitcher cameraSwitcher;
 
     public int StartDay => startDay;
     public int CurrentDay => currentDay;
@@ -61,6 +64,9 @@ public class DaySystem : MonoBehaviour
     public event System.Action<DayPhase> DayPhaseChanged;
 
     private bool isWaitingForDaySummary;
+    private bool hasEnteredNightForPendingEndDay;
+    private bool hasPreparedEndDayCamera;
+    private float endDayCameraReadyTime;
     private int defaultActionPoints;
     private DayPhase currentPhase = DayPhase.Day;
 
@@ -77,6 +83,11 @@ public class DaySystem : MonoBehaviour
         if (dialogManager == null)
         {
             dialogManager = FindObjectOfType<DialogManager>();
+        }
+
+        if (cameraSwitcher == null)
+        {
+            cameraSwitcher = FindObjectOfType<FourDirectionCameraSwitcher>();
         }
 
         defaultActionPoints = actionPointSystem != null ? actionPointSystem.MaxActionPoints : 0;
@@ -101,7 +112,12 @@ public class DaySystem : MonoBehaviour
             return;
         }
 
-        if (!autoStartNextDayWhenReady || (dialogManager != null && dialogManager.IsDialogActive))
+        if (!hasEnteredNightForPendingEndDay && !TryBeginNightTransition())
+        {
+            return;
+        }
+
+        if (!autoStartNextDayWhenReady)
         {
             return;
         }
@@ -156,6 +172,11 @@ public class DaySystem : MonoBehaviour
         dialogManager = manager;
     }
 
+    public void SetCameraSwitcher(FourDirectionCameraSwitcher switcher)
+    {
+        cameraSwitcher = switcher;
+    }
+
     public void RequestEndDay()
     {
         if (isWaitingForDaySummary)
@@ -164,8 +185,7 @@ public class DaySystem : MonoBehaviour
         }
 
         isWaitingForDaySummary = true;
-        SetPhase(DayPhase.Night);
-        InvokeDayEnded();
+        TryBeginNightTransition();
     }
 
     public void ReceiveEndDayCommand()
@@ -182,14 +202,61 @@ public class DaySystem : MonoBehaviour
             return;
         }
 
+        if (!hasEnteredNightForPendingEndDay && !TryBeginNightTransition())
+        {
+            return;
+        }
+
         CompleteDayTransition();
     }
 
     private void CompleteDayTransition()
     {
         isWaitingForDaySummary = false;
+        hasEnteredNightForPendingEndDay = false;
+        hasPreparedEndDayCamera = false;
+        endDayCameraReadyTime = 0f;
 
         AdvanceDay();
+    }
+
+    private bool TryBeginNightTransition()
+    {
+        if (dialogManager != null && dialogManager.IsDialogActive)
+        {
+            return false;
+        }
+
+        if (!TryPrepareEndDayCamera())
+        {
+            return false;
+        }
+
+        hasEnteredNightForPendingEndDay = true;
+        SetPhase(DayPhase.Night);
+        InvokeDayEnded();
+        return true;
+    }
+
+    private bool TryPrepareEndDayCamera()
+    {
+        if (!switchToDeskBeforeDayEnd)
+        {
+            return true;
+        }
+
+        if (!hasPreparedEndDayCamera)
+        {
+            hasPreparedEndDayCamera = true;
+            endDayCameraReadyTime = Time.time + Mathf.Max(0f, deskCameraSwitchDelay);
+
+            if (cameraSwitcher != null)
+            {
+                cameraSwitcher.SwitchToDown();
+            }
+        }
+
+        return Time.time >= endDayCameraReadyTime;
     }
 
     private void SetPhase(DayPhase phase)

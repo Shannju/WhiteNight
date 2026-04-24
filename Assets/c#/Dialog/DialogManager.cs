@@ -89,6 +89,7 @@ public class DialogManager : MonoBehaviour
     private int lastRandomRefreshActionPoints = -1;
     private int lastRandomRefreshDay = -1;
     private float interactDisabledUntilTime;
+    private bool isSubscribedToDaySystem;
 
     public bool IsDialogActive => activeDialog != null || isTyping || isWaitingForAdvance;
 
@@ -101,6 +102,21 @@ public class DialogManager : MonoBehaviour
         RefreshPendingRandomDialog(forceRefresh: true);
     }
 
+    private void OnEnable()
+    {
+        if (daySystem == null)
+        {
+            daySystem = FindObjectOfType<DaySystem>();
+        }
+
+        SubscribeDaySystemEvents();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeDaySystemEvents();
+    }
+
     private void Start()
     {
         ShowInitialTeacherPrompt();
@@ -110,7 +126,7 @@ public class DialogManager : MonoBehaviour
     {
         RefreshPendingRandomDialog();
 
-        if (Input.GetKeyDown(interactKey))
+        if (!IsNightInputBlocked() && Input.GetKeyDown(interactKey))
         {
             AdvanceCurrentDialog();
         }
@@ -267,7 +283,9 @@ public class DialogManager : MonoBehaviour
 
     public void SetDaySystem(DaySystem system)
     {
+        UnsubscribeDaySystemEvents();
         daySystem = system;
+        SubscribeDaySystemEvents();
 
         if (actionPointDialogController != null)
         {
@@ -339,6 +357,11 @@ public class DialogManager : MonoBehaviour
 
     public void AdvanceCurrentDialog()
     {
+        if (IsNightInputBlocked())
+        {
+            return;
+        }
+
         if (Time.time < interactDisabledUntilTime)
         {
             return;
@@ -614,6 +637,45 @@ public class DialogManager : MonoBehaviour
         {
             speakerColorPalette = FindObjectOfType<SpeakerColorPalette>();
         }
+    }
+
+    private void SubscribeDaySystemEvents()
+    {
+        if (daySystem == null || isSubscribedToDaySystem)
+        {
+            return;
+        }
+
+        daySystem.DayStarted += HandleDayStarted;
+        isSubscribedToDaySystem = true;
+    }
+
+    private void UnsubscribeDaySystemEvents()
+    {
+        if (daySystem == null || !isSubscribedToDaySystem)
+        {
+            return;
+        }
+
+        daySystem.DayStarted -= HandleDayStarted;
+        isSubscribedToDaySystem = false;
+    }
+
+    private void HandleDayStarted(int day)
+    {
+        if (activeDialog != null || isTyping || isWaitingForAdvance)
+        {
+            return;
+        }
+
+        HideBlackFrames();
+        RefreshPendingRandomDialog(forceRefresh: true);
+        ShowInitialTeacherPrompt();
+    }
+
+    private bool IsNightInputBlocked()
+    {
+        return daySystem != null && daySystem.CurrentPhase == DayPhase.Night;
     }
 
     private void ShowNextActiveDialogLine()
