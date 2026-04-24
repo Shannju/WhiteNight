@@ -394,7 +394,15 @@
                             "speakerId": "tutorial",
                             "characterName": "",
                             "triggerOrder": 3,
-                            "text": "Press the down key to look down.",
+                            "text": "Feel free to explore in any of the four directions.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 4,
+                            "text": "Don't forget to press the down arrow key to collect your textbooks.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }

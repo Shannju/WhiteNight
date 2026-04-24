@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e915bb75ffb4b5382686b68d7e0550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxActionPoints: 12
-  currentActionPoints: 12
+  maxActionPoints: 20
+  currentActionPoints: 20
   actionCostPerCommand: 1
   spentActionPoints: 0
   startActionCommand: 0
@@ -307,6 +307,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startDay: 1
   currentDay: 1
+  dayActionPointSettings:
+  - day: 1
+    actionPoints: 20
   nextDayCommand: 0
   actionPointSystem: {fileID: 0}
 --- !u!1 &61502297

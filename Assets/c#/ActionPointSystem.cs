@@ -3,10 +3,9 @@ using UnityEngine;
 public class ActionPointSystem : MonoBehaviour
 {
     [Header("Action Point Settings")]
-    [SerializeField] private int maxActionPoints = 3;
-    [SerializeField] private int currentActionPoints = 3;
+    [SerializeField] private int maxActionPoints = 20;
+    public int currentActionPoints = 20;
     [SerializeField] private int actionCostPerCommand = 1;
-    [SerializeField] private int spentActionPoints;
 
     [Header("Action State")]
     public bool startActionCommand;
@@ -17,19 +16,21 @@ public class ActionPointSystem : MonoBehaviour
     public int MaxActionPoints => maxActionPoints;
     public int CurrentActionPoints => currentActionPoints;
     public int ActionCostPerCommand => actionCostPerCommand;
-    public int SpentActionPoints => spentActionPoints;
+    public int SpentActionPoints => Mathf.Max(0, maxActionPoints - currentActionPoints);
 
     private void Awake()
     {
-        maxActionPoints = Mathf.Max(0, maxActionPoints);
-        actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
-        currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
-        spentActionPoints = Mathf.Max(0, maxActionPoints - currentActionPoints);
+        NormalizeActionPointState();
 
         if (daySystem == null)
         {
             daySystem = FindObjectOfType<DaySystem>();
         }
+    }
+
+    private void OnValidate()
+    {
+        NormalizeActionPointState();
     }
 
     private void Update()
@@ -57,7 +58,6 @@ public class ActionPointSystem : MonoBehaviour
         }
 
         currentActionPoints -= actionCostPerCommand;
-        spentActionPoints += actionCostPerCommand;
 
         if (currentActionPoints <= 0 && daySystem != null)
         {
@@ -75,7 +75,6 @@ public class ActionPointSystem : MonoBehaviour
     public void ResetActionPoints()
     {
         currentActionPoints = maxActionPoints;
-        spentActionPoints = 0;
     }
 
     public void AddActionPoints(int amount)
@@ -97,7 +96,6 @@ public class ActionPointSystem : MonoBehaviour
     public void SetCurrentActionPoints(int amount)
     {
         currentActionPoints = Mathf.Clamp(amount, 0, maxActionPoints);
-        spentActionPoints = Mathf.Max(0, maxActionPoints - currentActionPoints);
     }
 
     public void SetActionCostPerCommand(int amount)
@@ -108,5 +106,12 @@ public class ActionPointSystem : MonoBehaviour
     public void SetDaySystem(DaySystem system)
     {
         daySystem = system;
+    }
+
+    private void NormalizeActionPointState()
+    {
+        maxActionPoints = Mathf.Max(0, maxActionPoints);
+        actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
+        currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
     }
 }
