@@ -282,6 +282,39 @@
                             "playerPicture": ""
                         }
                     ]
+                },
+                {
+                    "dialogId": "2_seq_0",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
                 }
             ]
         }

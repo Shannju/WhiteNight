@@ -409,8 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e915bb75ffb4b5382686b68d7e0550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxActionPoints: 20
-  currentActionPoints: 20
+  maxActionPoints: 16
+  currentActionPoints: 1
   actionCostPerCommand: 1
   teacherSpentActionPoints: 0
   mateSpentActionPoints: 0
@@ -428,13 +428,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f7d5c2135d4d7bb6f4c38574b4412e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDay: 1
+  startDay: 2
   currentDay: 1
-  dayActionPointSettings:
-  - day: 1
-    actionPoints: 16
   nextDayCommand: 0
   autoStartNextDayWhenReady: 0
+  switchToDeskBeforeDayEnd: 1
+  deskCameraSwitchDelay: 0.5
   onDayStarted:
     m_PersistentCalls:
       m_Calls:
@@ -489,6 +488,30 @@ MonoBehaviour:
   onDayEnded:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 613944919}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 613944919}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1084730775}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -537,23 +560,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 613944919}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   onDayPhaseChanged:
     m_PersistentCalls:
       m_Calls: []
   actionPointSystem: {fileID: 31818532}
   dialogManager: {fileID: 226714705}
+  cameraSwitcher: {fileID: 0}
 --- !u!1 &34586689
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +658,21 @@ MonoBehaviour:
     examScoreCheck: 0
     examScoreValue: 0
   fallbackEndingIndex: 0
-  beforeEndingEvents: []
+  beforeEndingEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 987724642}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: ShowOnlyEndCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &51788818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4413,8 +4439,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 815320802}
   - {fileID: 1372331055}
+  - {fileID: 815320802}
   - {fileID: 1840729754}
   - {fileID: 1925765612}
   m_Father: {fileID: 0}
@@ -7814,6 +7840,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_start
       objectReference: {fileID: 0}
+    - target: {fileID: 4371722879790428198, guid: cc980620a324151478daa6d180fde76a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6037638788242157748, guid: cc980620a324151478daa6d180fde76a,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7914,6 +7945,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8162154485776323895, guid: cc980620a324151478daa6d180fde76a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162154485776323895, guid: cc980620a324151478daa6d180fde76a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534604092730000635, guid: cc980620a324151478daa6d180fde76a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -218
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534604092730000635, guid: cc980620a324151478daa6d180fde76a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7931,6 +7982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas_end
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096943794514430410, guid: b599c4e8b97cfb549806e92496986c07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5433020344097641971, guid: b599c4e8b97cfb549806e92496986c07,
         type: 3}
@@ -8348,17 +8404,17 @@ PrefabInstance:
     - target: {fileID: 753309133758441389, guid: 3d751d6b1f46f514db5cc820d977309a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 753309133758441389, guid: 3d751d6b1f46f514db5cc820d977309a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 753309133758441389, guid: 3d751d6b1f46f514db5cc820d977309a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 753309133758441389, guid: 3d751d6b1f46f514db5cc820d977309a,
         type: 3}
@@ -8385,10 +8441,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4003600325357588084, guid: 3d751d6b1f46f514db5cc820d977309a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4494105236936182052, guid: 3d751d6b1f46f514db5cc820d977309a,
         type: 3}
       propertyPath: m_Name
       value: Canvas_subtitle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494105236936182052, guid: 3d751d6b1f46f514db5cc820d977309a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8403,6 +8469,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 987724641}
     m_Modifications:
+    - target: {fileID: 653540661078879729, guid: 7a76fe6c831a1a642a0496e01d3ef01d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -230
+      objectReference: {fileID: 0}
+    - target: {fileID: 653540661078879729, guid: 7a76fe6c831a1a642a0496e01d3ef01d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 1339586571357947285, guid: 7a76fe6c831a1a642a0496e01d3ef01d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -8512,6 +8588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas_debug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677836967434657619, guid: 7a76fe6c831a1a642a0496e01d3ef01d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

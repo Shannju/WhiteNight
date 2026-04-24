@@ -89,6 +89,7 @@ public class DialogManager : MonoBehaviour
     private int lastRandomRefreshActionPoints = -1;
     private int lastRandomRefreshDay = -1;
     private float interactDisabledUntilTime;
+    private bool isSubscribedToDaySystem;
 
     public bool IsDialogActive => activeDialog != null || isTyping || isWaitingForAdvance;
 
@@ -101,6 +102,21 @@ public class DialogManager : MonoBehaviour
         RefreshPendingRandomDialog(forceRefresh: true);
     }
 
+    private void OnEnable()
+    {
+        if (daySystem == null)
+        {
+            daySystem = FindObjectOfType<DaySystem>();
+        }
+
+        SubscribeDaySystemEvents();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeDaySystemEvents();
+    }
+
     private void Start()
     {
         ShowInitialTeacherPrompt();
@@ -110,7 +126,7 @@ public class DialogManager : MonoBehaviour
     {
         RefreshPendingRandomDialog();
 
-        if (Input.GetKeyDown(interactKey))
+        if (!IsNightInputBlocked() && Input.GetKeyDown(interactKey))
         {
             AdvanceCurrentDialog();
         }
@@ -267,7 +283,9 @@ public class DialogManager : MonoBehaviour
 
     public void SetDaySystem(DaySystem system)
     {
+        UnsubscribeDaySystemEvents();
         daySystem = system;
+        SubscribeDaySystemEvents();
 
         if (actionPointDialogController != null)
         {
@@ -339,6 +357,11 @@ public class DialogManager : MonoBehaviour
 
     public void AdvanceCurrentDialog()
     {
+        if (IsNightInputBlocked())
+        {
+            return;
+        }
+
         if (Time.time < interactDisabledUntilTime)
         {
             return;
@@ -417,7 +440,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        if (dialog.lines == null || dialog.lines.Count == 0)
+        if (!HasPlayableDialogLines(dialog))
         {
             Debug.LogWarning($"No playable mate sequence dialog found for characterId: {mateCharacterId}", this);
             return;
@@ -453,21 +476,28 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        if (!actionPointSystem.TryStartAction(ActionPointSpendTarget.Teacher))
+        if (!actionPointSystem.CanStartAction())
         {
             return;
         }
 
-        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(teacherCharacterId);
+        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(
+            teacherCharacterId,
+            actionPointSystem.SpentActionPoints + actionPointSystem.ActionCostPerCommand);
 
         if (dialog == null)
         {
             return;
         }
 
-        if (dialog.lines == null || dialog.lines.Count == 0)
+        if (!HasPlayableDialogLines(dialog))
         {
             Debug.LogWarning($"No playable teacher action point dialog found for characterId: {teacherCharacterId}", this);
+            return;
+        }
+
+        if (!actionPointSystem.TryStartAction(ActionPointSpendTarget.Teacher))
+        {
             return;
         }
 
@@ -491,7 +521,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        if (dialog.lines == null || dialog.lines.Count == 0)
+        if (!HasPlayableDialogLines(dialog))
         {
             Debug.LogWarning($"No playable windows random dialog found for characterId: {windowsCharacterId}", this);
             return;
@@ -616,12 +646,56 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    private void SubscribeDaySystemEvents()
+    {
+        if (daySystem == null || isSubscribedToDaySystem)
+        {
+            return;
+        }
+
+        daySystem.DayStarted += HandleDayStarted;
+        isSubscribedToDaySystem = true;
+    }
+
+    private void UnsubscribeDaySystemEvents()
+    {
+        if (daySystem == null || !isSubscribedToDaySystem)
+        {
+            return;
+        }
+
+        daySystem.DayStarted -= HandleDayStarted;
+        isSubscribedToDaySystem = false;
+    }
+
+    private void HandleDayStarted(int day)
+    {
+        if (activeDialog != null || isTyping || isWaitingForAdvance)
+        {
+            return;
+        }
+
+        HideBlackFrames();
+        RefreshPendingRandomDialog(forceRefresh: true);
+        ShowInitialTeacherPrompt();
+    }
+
+    private bool IsNightInputBlocked()
+    {
+        return daySystem != null && daySystem.CurrentPhase == DayPhase.Night;
+    }
+
     private void ShowNextActiveDialogLine()
     {
         if (activeDialog == null || activeDialog.lines == null)
         {
             EndCurrentDialog();
             return;
+        }
+
+        while (activeLineIndex < activeDialog.lines.Count && !IsPlayableDialogLine(activeDialog.lines[activeLineIndex]))
+        {
+            activeLineIndex++;
         }
 
         if (activeLineIndex >= activeDialog.lines.Count)
@@ -708,13 +782,36 @@ public class DialogManager : MonoBehaviour
         {
             DialogLine line = dialog.lines[index];
 
-            if (line != null && line.triggerOrder > 0)
+            if (IsPlayableDialogLine(line) && line.triggerOrder > 0)
             {
                 return index;
             }
         }
 
         return 0;
+    }
+
+    private bool HasPlayableDialogLines(DialogEntry dialog)
+    {
+        if (dialog?.lines == null)
+        {
+            return false;
+        }
+
+        foreach (DialogLine line in dialog.lines)
+        {
+            if (IsPlayableDialogLine(line))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool IsPlayableDialogLine(DialogLine line)
+    {
+        return line != null && !string.IsNullOrWhiteSpace(line.text);
     }
 
     private DialogLine GetFirstLineWithTriggerOrder(DialogEntry dialog, int triggerOrder)
@@ -1071,7 +1168,7 @@ public class DialogManager : MonoBehaviour
             teacherCharacterId,
             actionPointSystem.SpentActionPoints + actionPointSystem.ActionCostPerCommand);
 
-        if (dialog == null || dialog.lines == null || dialog.lines.Count == 0)
+        if (dialog == null || !HasPlayableDialogLines(dialog))
         {
             return false;
         }
