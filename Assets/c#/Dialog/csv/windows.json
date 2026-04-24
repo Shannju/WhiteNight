@@ -16,7 +16,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(什么时候才能下课呢？)",
+                            "text": "(When will this class ever end?)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -33,7 +33,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(如果Y城也有白夜就好了，这里的人晚上20点就要回家，22点就要睡觉，23点，街上只有孤魂野鬼在游荡。)",
+                            "text": "(I wish Y-City had white nights. Here, people have to go home by 8 PM, be in bed by 10 PM, and by 11 PM the streets are empty except for lonely wandering souls.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -50,7 +50,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(一只迷路的蜜蜂在窗子上撞击，有学生被吸引过去了。)",
+                            "text": "(A lost bee is bumping against the windowpane, and some students are distracted by it.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -67,7 +67,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(窗外的树荫里有鸟闪过，已经到了日落的时刻。)",
+                            "text": "(A bird flashes through the shade of the trees outside. The sun is beginning to set.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -84,7 +84,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(如果重力反转，我们站在天花板上。坐在房梁上上课呢？)",
+                            "text": "(What if gravity was reversed? We would be standing on the ceiling, having class while sitting on the rafters.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -101,7 +101,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(窗外)",
+                            "text": "(Outside the window)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -109,7 +109,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(夏天的光线密集的像是固体，教室躲在墙后尚且是阴凉的，而暴露在阳光下的一切都炫目地闭上了眼。)",
+                            "text": "(The summer light is so dense it almost seems solid. The classroom is still cool, hiding behind the walls, but everything exposed to the sun is so dazzling you have to close your eyes.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -126,7 +126,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(都说夏天是最好的季节，童年是最好的人生。)",
+                            "text": "(They say summer is the best season, and childhood is the best time of life.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -134,7 +134,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(是的，我万分同意。我已经确凿可见我在苍老的冬日，陷入沉思，一万次想要回到当下。)",
+                            "text": "(Yes, I agree completely. I can already see myself as a frail old person in the winter of my life, lost in thought, wishing a million times I could come back to this very moment.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -142,7 +142,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "(可现在，在这阳光最热烈的一天，我们该做什么，才算不虚度光阴呢。)",
+                            "text": "(But right now, on this day when the sun is at its most fierce, what should we do, so as not to have wasted our time?)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -159,7 +159,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(窗帘的缝隙出现了丁达尔效应，平日不可见的灰尘在光柱里起舞。)",
+                            "text": "(The Tyndall effect appears in the gap of the curtains. Dust motes, usually invisible, dance in the column of light.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -176,7 +176,32 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(老师讲课的声音渐渐模糊了。)",
+                            "text": "(The teacher's voice is gradually fading.)",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "1_ra_1",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "minna",
+                            "characterName": "Minna",
+                            "triggerOrder": 0,
+                            "text": "The textbooks have arrived; I'll bring them over later.",
+                            "pictureId": "",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 1,
+                            "text": "Press the up key to look at the blackboard.",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -193,7 +218,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(要是Julian老师真的像他说的那样在国外混得那么开，为什么会回我们这个二线城市教初中英语呢。)",
+                            "text": "(If Julian was really as successful abroad as he claims, why would he come back to our second-tier city to teach middle school English?)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -218,7 +243,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(超越英语，超越自己。)",
+                            "text": "(Transcend English, transcend yourself.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -226,7 +251,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "(可当我们真的超越了英语，该用什么来表达情绪？)",
+                            "text": "(But when we truly transcend English, what will we use to express our emotions?)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -234,7 +259,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 3,
-                            "text": "(当我们真的超越了自己，那我们会变成了，自己之外的，什么呢。)",
+                            "text": "(And when we truly transcend ourselves, what do we become? Something other than ourselves?)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -251,7 +276,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(圆圆还在背单词，似乎沉迷在这个活动中了。)",
+                            "text": "(Yuanyuan is still memorizing vocabulary, completely absorbed.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -259,7 +284,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "(其实会不会单词根本不重要，阅读的时候，用首字母替代就可以了。)",
+                            "text": "(Actually, vocabulary might not even be that important. When you read, you can just substitute words with their first letter.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -267,7 +292,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "(J老师在Y城教书，Y老师在J城教书，世界上大部分的名词几乎无所谓，用图形代替都可以。)",
+                            "text": "(Mr. J teaches in Y-City, and Ms. Y teaches in J-City. Most nouns in the world are irrelevant. You could replace them with pictures.)",
                             "pictureId": "",
                             "playerPicture": ""
                         },
@@ -275,7 +300,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 3,
-                            "text": "(形容词和副词，是能起到关键的作用，可多数时候，没有也行。（）的J老师在（）的Y城（）地教书。也不会有人关心。)",
+                            "text": "(Adjectives and adverbs can play a key role, but most of the time, you can do without them. The () Mr. J teaches () in the () Y-City. No one would care.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }
@@ -292,15 +317,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(Minna是前台的招牌，穿着总是恰到好处的精致。)",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 1,
-                            "text": "(今天Julian和她滔滔不绝的时候，Minna老师只是在礼貌的笑，她眼神其实在看走廊尽头的饮水机。)",
+                            "text": "(Today, while Julian was talking her ear off, Minna just kept a polite smile. Her eyes were actually on the water cooler at the end of the hallway.)",
                             "pictureId": "",
                             "playerPicture": ""
                         }

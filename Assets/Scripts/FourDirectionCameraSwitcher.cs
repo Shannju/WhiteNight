@@ -3,22 +3,30 @@ using Cinemachine;
 
 public class FourDirectionCameraSwitcher : MonoBehaviour
 {
-    [Header("四个虚拟相机")]
+    [Header("Virtual Cameras")]
     public CinemachineVirtualCamera camUp;
     public CinemachineVirtualCamera camDown;
     public CinemachineVirtualCamera camLeft;
     public CinemachineVirtualCamera camRight;
 
-    [Header("优先级设置")]
+    [Header("Priority Settings")]
     public int activePriority = 10;
     public int inactivePriority = 0;
 
-    public InputEventDispatcher inputDispatcher;
+    [Header("Initial Camera")]
+    [SerializeField] private bool randomizeInitialCamera = true;
 
-    void Start()
+    public InputEventDispatcher inputDispatcher;
+    [SerializeField] private DialogManager dialogManager;
+
+    void Awake()
     {
-        // 默认先激活“上”
-        SwitchTo(camUp);
+        if (dialogManager == null)
+        {
+            dialogManager = FindObjectOfType<DialogManager>();
+        }
+
+        SetInitialCamera();
     }
 
     void OnEnable()
@@ -45,34 +53,118 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
 
     public void OnBoardSelected()
     {
-        SwitchTo(camLeft);
+        SwitchToUp();
     }
 
     public void OnFriendSelected()
     {
-        SwitchTo(camRight);
+        SwitchToRight();
     }
 
     public void OnWindowSelected()
     {
-        SwitchTo(camUp);
+        SwitchToLeft();
     }
 
     public void OnDeskSelected()
     {
+        SwitchToDown();
+    }
+
+    public void SwitchToUp()
+    {
+        SwitchTo(camUp);
+    }
+
+    public void SwitchToDown()
+    {
         SwitchTo(camDown);
+    }
+
+    public void SwitchToLeft()
+    {
+        SwitchTo(camLeft);
+    }
+
+    public void SwitchToRight()
+    {
+        SwitchTo(camRight);
+    }
+
+    public void SetInitialCamera()
+    {
+        if (!randomizeInitialCamera)
+        {
+            SwitchToDown();
+            return;
+        }
+
+        CinemachineVirtualCamera[] availableCameras =
+        {
+            camUp,
+            camDown,
+            camLeft,
+            camRight
+        };
+
+        int availableCount = 0;
+
+        foreach (CinemachineVirtualCamera camera in availableCameras)
+        {
+            if (camera != null)
+            {
+                availableCount++;
+            }
+        }
+
+        if (availableCount == 0)
+        {
+            return;
+        }
+
+        int targetIndex = Random.Range(0, availableCount);
+        int currentIndex = 0;
+
+        foreach (CinemachineVirtualCamera camera in availableCameras)
+        {
+            if (camera == null)
+            {
+                continue;
+            }
+
+            if (currentIndex == targetIndex)
+            {
+                SwitchTo(camera);
+                return;
+            }
+
+            currentIndex++;
+        }
     }
 
     public void SwitchTo(CinemachineVirtualCamera targetCam)
     {
-        camUp.Priority = inactivePriority;
-        camDown.Priority = inactivePriority;
-        camLeft.Priority = inactivePriority;
-        camRight.Priority = inactivePriority;
+        if (dialogManager != null)
+        {
+            dialogManager.DisableInteractForCameraSwitch();
+        }
+
+        SetPriority(camUp, inactivePriority);
+        SetPriority(camDown, inactivePriority);
+        SetPriority(camLeft, inactivePriority);
+        SetPriority(camRight, inactivePriority);
 
         if (targetCam != null)
         {
             targetCam.Priority = activePriority;
+        }
+    }
+
+    private void SetPriority(CinemachineVirtualCamera targetCam, int priority)
+    {
+        if (targetCam != null)
+        {
+            targetCam.Priority = priority;
         }
     }
 }

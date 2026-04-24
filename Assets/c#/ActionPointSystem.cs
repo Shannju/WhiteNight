@@ -1,12 +1,22 @@
 using UnityEngine;
 
+public enum ActionPointSpendTarget
+{
+    None,
+    Teacher,
+    Mate
+}
+
 public class ActionPointSystem : MonoBehaviour
 {
     [Header("Action Point Settings")]
-    [SerializeField] private int maxActionPoints = 3;
-    [SerializeField] private int currentActionPoints = 3;
+    [SerializeField] private int maxActionPoints = 20;
+    public int currentActionPoints = 20;
     [SerializeField] private int actionCostPerCommand = 1;
-    [SerializeField] private int spentActionPoints;
+
+    [Header("Global Action Spend Stats")]
+    public int teacherSpentActionPoints;
+    public int mateSpentActionPoints;
 
     [Header("Action State")]
     public bool startActionCommand;
@@ -17,19 +27,23 @@ public class ActionPointSystem : MonoBehaviour
     public int MaxActionPoints => maxActionPoints;
     public int CurrentActionPoints => currentActionPoints;
     public int ActionCostPerCommand => actionCostPerCommand;
-    public int SpentActionPoints => spentActionPoints;
+    public int SpentActionPoints => Mathf.Max(0, maxActionPoints - currentActionPoints);
+    public int TeacherSpentActionPoints => teacherSpentActionPoints;
+    public int MateSpentActionPoints => mateSpentActionPoints;
 
     private void Awake()
     {
-        maxActionPoints = Mathf.Max(0, maxActionPoints);
-        actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
-        currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
-        spentActionPoints = Mathf.Max(0, maxActionPoints - currentActionPoints);
+        NormalizeActionPointState();
 
         if (daySystem == null)
         {
             daySystem = FindObjectOfType<DaySystem>();
         }
+    }
+
+    private void OnValidate()
+    {
+        NormalizeActionPointState();
     }
 
     private void Update()
@@ -48,7 +62,7 @@ public class ActionPointSystem : MonoBehaviour
         return currentActionPoints >= actionCostPerCommand;
     }
 
-    public bool TryStartAction()
+    public bool TryStartAction(ActionPointSpendTarget spendTarget = ActionPointSpendTarget.None)
     {
         if (!CanStartAction())
         {
@@ -56,8 +70,9 @@ public class ActionPointSystem : MonoBehaviour
             return false;
         }
 
-        currentActionPoints -= actionCostPerCommand;
-        spentActionPoints += actionCostPerCommand;
+        int spentAmount = actionCostPerCommand;
+        currentActionPoints -= spentAmount;
+        RecordActionPointSpend(spendTarget, spentAmount);
 
         if (currentActionPoints <= 0 && daySystem != null)
         {
@@ -72,10 +87,15 @@ public class ActionPointSystem : MonoBehaviour
         TryStartAction();
     }
 
+    public void ResetActionPointSpendStats()
+    {
+        teacherSpentActionPoints = 0;
+        mateSpentActionPoints = 0;
+    }
+
     public void ResetActionPoints()
     {
         currentActionPoints = maxActionPoints;
-        spentActionPoints = 0;
     }
 
     public void AddActionPoints(int amount)
@@ -97,7 +117,6 @@ public class ActionPointSystem : MonoBehaviour
     public void SetCurrentActionPoints(int amount)
     {
         currentActionPoints = Mathf.Clamp(amount, 0, maxActionPoints);
-        spentActionPoints = Mathf.Max(0, maxActionPoints - currentActionPoints);
     }
 
     public void SetActionCostPerCommand(int amount)
@@ -108,5 +127,32 @@ public class ActionPointSystem : MonoBehaviour
     public void SetDaySystem(DaySystem system)
     {
         daySystem = system;
+    }
+
+    private void NormalizeActionPointState()
+    {
+        maxActionPoints = Mathf.Max(0, maxActionPoints);
+        actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
+        currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
+        teacherSpentActionPoints = Mathf.Max(0, teacherSpentActionPoints);
+        mateSpentActionPoints = Mathf.Max(0, mateSpentActionPoints);
+    }
+
+    private void RecordActionPointSpend(ActionPointSpendTarget spendTarget, int amount)
+    {
+        if (amount <= 0)
+        {
+            return;
+        }
+
+        switch (spendTarget)
+        {
+            case ActionPointSpendTarget.Teacher:
+                teacherSpentActionPoints += amount;
+                break;
+            case ActionPointSpendTarget.Mate:
+                mateSpentActionPoints += amount;
+                break;
+        }
     }
 }

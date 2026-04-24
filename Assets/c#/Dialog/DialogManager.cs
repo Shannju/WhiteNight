@@ -3,6 +3,7 @@ using System.Collections;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum CameraViewType
 {
@@ -18,6 +19,14 @@ public enum DialogTriggerMode
     Random,
     ActionPoint,
     Sequence
+}
+
+[System.Serializable]
+public class DialogIdEventBinding
+{
+    public string dialogId;
+    public UnityEvent onDialogStarted;
+    public UnityEvent onLastLineShown;
 }
 
 public class DialogManager : MonoBehaviour
@@ -40,13 +49,14 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private int activePriority = 10;
 
     [Header("Camera View Types")]
-    [SerializeField] private CameraViewType camUpType = CameraViewType.Windows;
+    [SerializeField] private CameraViewType camUpType = CameraViewType.Teacher;
     [SerializeField] private CameraViewType camDownType = CameraViewType.Book;
-    [SerializeField] private CameraViewType camLeftType = CameraViewType.Teacher;
+    [SerializeField] private CameraViewType camLeftType = CameraViewType.Windows;
     [SerializeField] private CameraViewType camRightType = CameraViewType.Mate;
 
     [Header("Dialog Playback")]
     [SerializeField] private KeyCode interactKey = KeyCode.Space;
+    [SerializeField] private float interactCooldownAfterCameraSwitch = 0.5f;
     [SerializeField] private TMP_Text dialogText;
     [SerializeField] private PlayerPictureDisplay playerPictureDisplay;
     [SerializeField] private DialogPictureController dialogPictureController;
@@ -56,8 +66,15 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private string windowsCharacterId = "windows";
     [SerializeField] private bool showSpeakerName = true;
     [SerializeField] private float charactersPerSecond = 30f;
+    [SerializeField] private bool autoAdvanceEnabled = false;
     [SerializeField] private float autoAdvanceDelay = 1.5f;
     [SerializeField] private bool clearTextWhenDialogEnds = true;
+
+    [Header("Between Dialogs")]
+    [SerializeField] private GameObject blackFrame;
+
+    [Header("Dialog ID Events")]
+    [SerializeField] private List<DialogIdEventBinding> dialogIdEvents = new List<DialogIdEventBinding>();
 
     private DialogEntry activeDialog;
     private int activeLineIndex;
@@ -71,20 +88,45 @@ public class DialogManager : MonoBehaviour
     private DialogEntry pendingRandomDialog;
     private int lastRandomRefreshActionPoints = -1;
     private int lastRandomRefreshDay = -1;
+    private float interactDisabledUntilTime;
+    private bool isSubscribedToDaySystem;
+
+    public bool IsDialogActive => activeDialog != null || isTyping || isWaitingForAdvance;
 
     private void Awake()
     {
         ResolveDialogControllers();
         ClearDialogText();
         HidePlayerPicture();
+        HideBlackFrames();
         RefreshPendingRandomDialog(forceRefresh: true);
+    }
+
+    private void OnEnable()
+    {
+        if (daySystem == null)
+        {
+            daySystem = FindObjectOfType<DaySystem>();
+        }
+
+        SubscribeDaySystemEvents();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeDaySystemEvents();
+    }
+
+    private void Start()
+    {
+        ShowInitialTeacherPrompt();
     }
 
     private void Update()
     {
         RefreshPendingRandomDialog();
 
-        if (Input.GetKeyDown(interactKey))
+        if (!IsNightInputBlocked() && Input.GetKeyDown(interactKey))
         {
             AdvanceCurrentDialog();
         }
@@ -174,6 +216,53 @@ public class DialogManager : MonoBehaviour
         return dialog != null ? dialog.lines : null;
     }
 
+    public void SetNextWindowsRandomDialog(string dialogId)
+    {
+        TrySetNextRandomDialog(windowsCharacterId, dialogId);
+    }
+
+    public void SetNextRandomDialog(string characterId, string dialogId)
+    {
+        TrySetNextRandomDialog(characterId, dialogId);
+    }
+
+    private bool TrySetNextRandomDialog(string characterId, string dialogId)
+    {
+        if (randomDialogController == null)
+        {
+            Debug.LogWarning("Random dialog controller is not assigned.", this);
+            return false;
+        }
+
+        DialogEntry dialog = randomDialogController.GetDialogForCharacterByDialogId(characterId, dialogId);
+
+        if (dialog == null)
+        {
+            return false;
+        }
+
+        pendingRandomDialog = dialog;
+        RememberCurrentRandomRefreshState();
+
+        if (dialogPictureController != null)
+        {
+            dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
+        }
+
+        return true;
+    }
+
+    public void ClearNextRandomDialog()
+    {
+        pendingRandomDialog = null;
+        RememberCurrentRandomRefreshState();
+
+        if (dialogPictureController != null)
+        {
+            dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
+        }
+    }
+
     public List<DialogLine> GetActionPointDialogLines(string characterId, int currentActionPoints)
     {
         DialogEntry dialog = GetActionPointDialogForCharacter(characterId, currentActionPoints);
@@ -194,7 +283,9 @@ public class DialogManager : MonoBehaviour
 
     public void SetDaySystem(DaySystem system)
     {
+        UnsubscribeDaySystemEvents();
         daySystem = system;
+        SubscribeDaySystemEvents();
 
         if (actionPointDialogController != null)
         {
@@ -266,6 +357,16 @@ public class DialogManager : MonoBehaviour
 
     public void AdvanceCurrentDialog()
     {
+        if (IsNightInputBlocked())
+        {
+            return;
+        }
+
+        if (Time.time < interactDisabledUntilTime)
+        {
+            return;
+        }
+
         if (isTyping)
         {
             CompleteCurrentLine();
@@ -289,6 +390,15 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialogForCurrentCameraView()
     {
+        HideBlackFrames();
+
+        if (ShouldForceTeacherHomeworkForLastAction())
+        {
+            ForceCameraView(CameraViewType.Teacher);
+            StartTeacherActionPointDialog();
+            return;
+        }
+
         CameraViewType currentViewType = GetCurrentCameraViewType();
 
         switch (currentViewType)
@@ -330,7 +440,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        if (dialog.lines == null || dialog.lines.Count == 0)
+        if (!HasPlayableDialogLines(dialog))
         {
             Debug.LogWarning($"No playable mate sequence dialog found for characterId: {mateCharacterId}", this);
             return;
@@ -340,16 +450,19 @@ public class DialogManager : MonoBehaviour
         activeLineIndex = 0;
         activeDialogTriggerMode = DialogTriggerMode.Sequence;
         SetCameraSwitchingEnabled(false);
+        ShowBlackFrame();
 
-        if (!actionPointSystem.TryStartAction())
+        if (!actionPointSystem.TryStartAction(ActionPointSpendTarget.Mate))
         {
             activeDialog = null;
             activeLineIndex = 0;
             activeDialogTriggerMode = DialogTriggerMode.Sequence;
             SetCameraSwitchingEnabled(true);
+            HideBlackFrames();
             return;
         }
 
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -363,28 +476,37 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        if (!actionPointSystem.TryStartAction())
+        if (!actionPointSystem.CanStartAction())
         {
             return;
         }
 
-        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(teacherCharacterId);
+        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(
+            teacherCharacterId,
+            actionPointSystem.SpentActionPoints + actionPointSystem.ActionCostPerCommand);
 
         if (dialog == null)
         {
             return;
         }
 
-        if (dialog.lines == null || dialog.lines.Count == 0)
+        if (!HasPlayableDialogLines(dialog))
         {
             Debug.LogWarning($"No playable teacher action point dialog found for characterId: {teacherCharacterId}", this);
             return;
         }
 
+        if (!actionPointSystem.TryStartAction(ActionPointSpendTarget.Teacher))
+        {
+            return;
+        }
+
         activeDialog = dialog;
-        activeLineIndex = 0;
+        activeLineIndex = GetFirstPlayableTeacherLineIndex(dialog);
         activeDialogTriggerMode = DialogTriggerMode.ActionPoint;
         SetCameraSwitchingEnabled(false);
+        ShowBlackFrame();
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -399,7 +521,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        if (dialog.lines == null || dialog.lines.Count == 0)
+        if (!HasPlayableDialogLines(dialog))
         {
             Debug.LogWarning($"No playable windows random dialog found for characterId: {windowsCharacterId}", this);
             return;
@@ -422,6 +544,8 @@ public class DialogManager : MonoBehaviour
         pendingRandomDialog = null;
         RefreshPendingRandomDialog(forceRefresh: true, updatePicture: false);
         SetCameraSwitchingEnabled(false);
+        ShowBlackFrame();
+        InvokeDialogStartedEvents(activeDialog);
         ShowNextActiveDialogLine();
     }
 
@@ -442,7 +566,7 @@ public class DialogManager : MonoBehaviour
             ClearDialogText();
         }
 
-        HidePlayerPicture();
+        HideBlackFrames();
         NotifyDialogPictureEnded(endedTriggerMode);
     }
 
@@ -452,6 +576,21 @@ public class DialogManager : MonoBehaviour
         {
             sequenceDialogController.ResetSequenceProgress(characterId);
         }
+    }
+
+    public void DisableInteractForCameraSwitch()
+    {
+        DisableInteractForSeconds(interactCooldownAfterCameraSwitch);
+    }
+
+    public void DisableInteractForSeconds(float seconds)
+    {
+        if (seconds <= 0f)
+        {
+            return;
+        }
+
+        interactDisabledUntilTime = Mathf.Max(interactDisabledUntilTime, Time.time + seconds);
     }
 
     private void ResolveDialogControllers()
@@ -507,12 +646,56 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    private void SubscribeDaySystemEvents()
+    {
+        if (daySystem == null || isSubscribedToDaySystem)
+        {
+            return;
+        }
+
+        daySystem.DayStarted += HandleDayStarted;
+        isSubscribedToDaySystem = true;
+    }
+
+    private void UnsubscribeDaySystemEvents()
+    {
+        if (daySystem == null || !isSubscribedToDaySystem)
+        {
+            return;
+        }
+
+        daySystem.DayStarted -= HandleDayStarted;
+        isSubscribedToDaySystem = false;
+    }
+
+    private void HandleDayStarted(int day)
+    {
+        if (activeDialog != null || isTyping || isWaitingForAdvance)
+        {
+            return;
+        }
+
+        HideBlackFrames();
+        RefreshPendingRandomDialog(forceRefresh: true);
+        ShowInitialTeacherPrompt();
+    }
+
+    private bool IsNightInputBlocked()
+    {
+        return daySystem != null && daySystem.CurrentPhase == DayPhase.Night;
+    }
+
     private void ShowNextActiveDialogLine()
     {
         if (activeDialog == null || activeDialog.lines == null)
         {
             EndCurrentDialog();
             return;
+        }
+
+        while (activeLineIndex < activeDialog.lines.Count && !IsPlayableDialogLine(activeDialog.lines[activeLineIndex]))
+        {
+            activeLineIndex++;
         }
 
         if (activeLineIndex >= activeDialog.lines.Count)
@@ -525,6 +708,128 @@ public class DialogManager : MonoBehaviour
         activeLineIndex++;
         shouldEndDialogAfterWait = activeLineIndex >= activeDialog.lines.Count;
         SetDialogText(line);
+
+        if (shouldEndDialogAfterWait)
+        {
+            InvokeDialogLastLineShownEvents(activeDialog);
+        }
+    }
+
+    private void InvokeDialogStartedEvents(DialogEntry dialog)
+    {
+        if (dialog == null || string.IsNullOrEmpty(dialog.dialogId) || dialogIdEvents == null)
+        {
+            return;
+        }
+
+        foreach (DialogIdEventBinding binding in dialogIdEvents)
+        {
+            if (binding == null ||
+                !string.Equals(binding.dialogId, dialog.dialogId, System.StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            binding.onDialogStarted?.Invoke();
+        }
+    }
+
+    private void InvokeDialogLastLineShownEvents(DialogEntry dialog)
+    {
+        if (dialog == null || string.IsNullOrEmpty(dialog.dialogId) || dialogIdEvents == null)
+        {
+            return;
+        }
+
+        foreach (DialogIdEventBinding binding in dialogIdEvents)
+        {
+            if (binding == null ||
+                !string.Equals(binding.dialogId, dialog.dialogId, System.StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            binding.onLastLineShown?.Invoke();
+        }
+    }
+
+    private void ShowInitialTeacherPrompt()
+    {
+        if (dialogText == null || activeDialog != null || actionPointDialogController == null)
+        {
+            return;
+        }
+
+        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(teacherCharacterId, 1);
+        DialogLine promptLine = GetFirstLineWithTriggerOrder(dialog, 0);
+
+        if (promptLine == null)
+        {
+            return;
+        }
+
+        SetStaticDialogText(promptLine);
+    }
+
+    private int GetFirstPlayableTeacherLineIndex(DialogEntry dialog)
+    {
+        if (dialog?.lines == null)
+        {
+            return 0;
+        }
+
+        for (int index = 0; index < dialog.lines.Count; index++)
+        {
+            DialogLine line = dialog.lines[index];
+
+            if (IsPlayableDialogLine(line) && line.triggerOrder > 0)
+            {
+                return index;
+            }
+        }
+
+        return 0;
+    }
+
+    private bool HasPlayableDialogLines(DialogEntry dialog)
+    {
+        if (dialog?.lines == null)
+        {
+            return false;
+        }
+
+        foreach (DialogLine line in dialog.lines)
+        {
+            if (IsPlayableDialogLine(line))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool IsPlayableDialogLine(DialogLine line)
+    {
+        return line != null && !string.IsNullOrWhiteSpace(line.text);
+    }
+
+    private DialogLine GetFirstLineWithTriggerOrder(DialogEntry dialog, int triggerOrder)
+    {
+        if (dialog?.lines == null)
+        {
+            return null;
+        }
+
+        foreach (DialogLine line in dialog.lines)
+        {
+            if (line != null && line.triggerOrder == triggerOrder)
+            {
+                return line;
+            }
+        }
+
+        return null;
     }
 
     private void SetDialogText(DialogLine line)
@@ -552,16 +857,45 @@ public class DialogManager : MonoBehaviour
         StartTypingLine(prefix, text);
     }
 
+    private void SetStaticDialogText(DialogLine line)
+    {
+        if (dialogText == null || line == null)
+        {
+            return;
+        }
+
+        string prefix = showSpeakerName && !string.IsNullOrEmpty(line.characterName)
+            ? $"{line.characterName}: "
+            : string.Empty;
+
+        ApplySpeakerColor(line);
+        UpdatePlayerPicture(line);
+        dialogText.text = prefix + (line.text ?? string.Empty);
+        fullLineText = dialogText.text;
+    }
+
     private void StartTypingLine(string prefix, string text)
     {
         StopTyping();
         StopAutoAdvanceCountdown();
 
         fullLineText = prefix + text;
-        dialogText.text = prefix;
-        typingCoroutine = StartCoroutine(TypeLine(prefix, text));
+
+        if (dialogText == null)
+        {
+            return;
+        }
+
+        dialogText.text = fullLineText;
+
+        if (autoAdvanceEnabled)
+        {
+            BeginAutoAdvanceCountdown();
+        }
     }
 
+    // Typewriter playback is intentionally disabled for now.
+    // Kept here so we can restore the feature later without rebuilding it from scratch.
     private IEnumerator TypeLine(string prefix, string text)
     {
         isTyping = true;
@@ -571,7 +905,12 @@ public class DialogManager : MonoBehaviour
             dialogText.text = fullLineText;
             isTyping = false;
             typingCoroutine = null;
-            BeginAutoAdvanceCountdown();
+
+            if (autoAdvanceEnabled)
+            {
+                BeginAutoAdvanceCountdown();
+            }
+
             yield break;
         }
 
@@ -585,7 +924,11 @@ public class DialogManager : MonoBehaviour
 
         isTyping = false;
         typingCoroutine = null;
-        BeginAutoAdvanceCountdown();
+
+        if (autoAdvanceEnabled)
+        {
+            BeginAutoAdvanceCountdown();
+        }
     }
 
     private void CompleteCurrentLine()
@@ -597,7 +940,10 @@ public class DialogManager : MonoBehaviour
             dialogText.text = fullLineText;
         }
 
-        BeginAutoAdvanceCountdown();
+        if (autoAdvanceEnabled)
+        {
+            BeginAutoAdvanceCountdown();
+        }
     }
 
     private void StopTyping()
@@ -687,6 +1033,22 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    public void HideBlackFrames()
+    {
+        if (blackFrame != null)
+        {
+            blackFrame.SetActive(false);
+        }
+    }
+
+    public void ShowBlackFrame()
+    {
+        if (blackFrame != null)
+        {
+            blackFrame.SetActive(true);
+        }
+    }
+
     private void UpdatePlayerPicture(DialogLine line)
     {
         if (playerPictureDisplay == null)
@@ -696,7 +1058,6 @@ public class DialogManager : MonoBehaviour
 
         if (line == null || string.IsNullOrEmpty(line.playerPicture))
         {
-            playerPictureDisplay.Hide();
             return;
         }
 
@@ -726,11 +1087,6 @@ public class DialogManager : MonoBehaviour
         if (dialogPictureController != null)
         {
             dialogPictureController.OnDialogEnded(endedTriggerMode);
-
-            if (endedTriggerMode == DialogTriggerMode.Random)
-            {
-                dialogPictureController.OnPendingRandomDialogChanged(pendingRandomDialog);
-            }
         }
     }
 
@@ -761,6 +1117,12 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    private void RememberCurrentRandomRefreshState()
+    {
+        lastRandomRefreshActionPoints = actionPointSystem != null ? actionPointSystem.CurrentActionPoints : 0;
+        lastRandomRefreshDay = daySystem != null ? daySystem.CurrentDay : 0;
+    }
+
     private void ApplySpeakerColor(DialogLine line)
     {
         if (dialogText == null)
@@ -782,6 +1144,52 @@ public class DialogManager : MonoBehaviour
         if (inputEventDispatcher != null)
         {
             inputEventDispatcher.enabled = isEnabled;
+        }
+    }
+
+    private bool ShouldForceTeacherHomeworkForLastAction()
+    {
+        if (actionPointSystem == null)
+        {
+            return false;
+        }
+
+        if (actionPointSystem.CurrentActionPoints != actionPointSystem.ActionCostPerCommand)
+        {
+            return false;
+        }
+
+        if (GetCurrentCameraViewType() == CameraViewType.Teacher)
+        {
+            return false;
+        }
+
+        DialogEntry dialog = GetActionPointDialogForCharacterBySpentActionPoints(
+            teacherCharacterId,
+            actionPointSystem.SpentActionPoints + actionPointSystem.ActionCostPerCommand);
+
+        if (dialog == null || !HasPlayableDialogLines(dialog))
+        {
+            return false;
+        }
+
+        return GetFirstPlayableTeacherLineIndex(dialog) < dialog.lines.Count;
+    }
+
+    private void ForceCameraView(CameraViewType targetViewType)
+    {
+        SetCameraPriority(camUp, camUpType == targetViewType ? activePriority : 0);
+        SetCameraPriority(camDown, camDownType == targetViewType ? activePriority : 0);
+        SetCameraPriority(camLeft, camLeftType == targetViewType ? activePriority : 0);
+        SetCameraPriority(camRight, camRightType == targetViewType ? activePriority : 0);
+        DisableInteractForCameraSwitch();
+    }
+
+    private void SetCameraPriority(CinemachineVirtualCamera camera, int priority)
+    {
+        if (camera != null)
+        {
+            camera.Priority = priority;
         }
     }
 }
