@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
 
 public enum DayPhase
 {
@@ -20,20 +19,11 @@ public class DayPhaseEvent : UnityEvent<DayPhase>
 
 public class DaySystem : MonoBehaviour
 {
-    [System.Serializable]
-    private struct DayActionPointSetting
-    {
-        public int day;
-        public int actionPoints;
-    }
+    private const int DailyActionPoints = 16;
 
     [Header("Day Settings")]
     [SerializeField] private int startDay = 1;
     [SerializeField] private int currentDay = 1;
-    [SerializeField] private List<DayActionPointSetting> dayActionPointSettings = new List<DayActionPointSetting>
-    {
-        new DayActionPointSetting { day = 1, actionPoints = 20 }
-    };
 
     [Header("Day State")]
     public bool nextDayCommand;
@@ -67,7 +57,6 @@ public class DaySystem : MonoBehaviour
     private bool hasEnteredNightForPendingEndDay;
     private bool hasPreparedEndDayCamera;
     private float endDayCameraReadyTime;
-    private int defaultActionPoints;
     private DayPhase currentPhase = DayPhase.Day;
 
     private void Awake()
@@ -90,7 +79,6 @@ public class DaySystem : MonoBehaviour
             cameraSwitcher = FindObjectOfType<FourDirectionCameraSwitcher>();
         }
 
-        defaultActionPoints = actionPointSystem != null ? actionPointSystem.MaxActionPoints : 0;
     }
 
     private void Start()
@@ -163,7 +151,6 @@ public class DaySystem : MonoBehaviour
     public void SetActionPointSystem(ActionPointSystem system)
     {
         actionPointSystem = system;
-        defaultActionPoints = actionPointSystem != null ? actionPointSystem.MaxActionPoints : 0;
         ApplyActionPointSettingsForCurrentDay();
     }
 
@@ -290,26 +277,7 @@ public class DaySystem : MonoBehaviour
             return;
         }
 
-        int actionPoints = GetActionPointsForDay(currentDay);
-        actionPointSystem.SetMaxActionPoints(actionPoints);
+        actionPointSystem.SetMaxActionPoints(DailyActionPoints);
         actionPointSystem.ResetActionPoints();
-    }
-
-    private int GetActionPointsForDay(int day)
-    {
-        if (dayActionPointSettings != null)
-        {
-            for (int i = 0; i < dayActionPointSettings.Count; i++)
-            {
-                DayActionPointSetting setting = dayActionPointSettings[i];
-
-                if (setting.day == day)
-                {
-                    return Mathf.Max(0, setting.actionPoints);
-                }
-            }
-        }
-
-        return defaultActionPoints;
     }
 }

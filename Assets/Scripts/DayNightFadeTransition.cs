@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(CanvasGroup))]
+[RequireComponent(typeof(Image))]
 public class DayNightFadeTransition : MonoBehaviour
 {
     [Header("Reference")]
-    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private Image fadeImage;
 
     [Header("Fade Settings")]
     [SerializeField] private float fadeInDuration = 1f;
@@ -17,14 +18,14 @@ public class DayNightFadeTransition : MonoBehaviour
     [Header("Fade Events")]
     [SerializeField] private UnityEvent onFadeInComplete;
     [SerializeField] private UnityEvent onFadeOutComplete;
-    [SerializeField] private UnityEvent onFadeOutThenInComplete;
+    [SerializeField] private UnityEvent onFadeInThenOutComplete;
 
     private Coroutine fadeCoroutine;
 
     public bool IsFading => fadeCoroutine != null;
     public UnityEvent OnFadeInComplete => onFadeInComplete;
     public UnityEvent OnFadeOutComplete => onFadeOutComplete;
-    public UnityEvent OnFadeOutThenInComplete => onFadeOutThenInComplete;
+    public UnityEvent OnFadeInThenOutComplete => onFadeInThenOutComplete;
 
     private void Awake()
     {
@@ -48,19 +49,19 @@ public class DayNightFadeTransition : MonoBehaviour
         StartFade(0f, fadeOutDuration, false, onFadeOutComplete);
     }
 
-    public void FadeOutThenIn()
+    public void FadeInThenOut()
     {
         StopFade();
 
         if (!gameObject.activeInHierarchy)
         {
-            SetAlpha(1f);
-            SetCanvasBlocking(true);
-            onFadeOutThenInComplete?.Invoke();
+            SetAlpha(0f);
+            SetCanvasBlocking(false);
+            onFadeInThenOutComplete?.Invoke();
             return;
         }
 
-        fadeCoroutine = StartCoroutine(FadeOutThenInRoutine());
+        fadeCoroutine = StartCoroutine(FadeInThenOutRoutine());
     }
 
     public void SetBlackInstant()
@@ -79,9 +80,9 @@ public class DayNightFadeTransition : MonoBehaviour
 
     private void ResolveReferences()
     {
-        if (canvasGroup == null)
+        if (fadeImage == null)
         {
-            canvasGroup = GetComponent<CanvasGroup>();
+            fadeImage = GetComponent<Image>();
         }
     }
 
@@ -106,20 +107,20 @@ public class DayNightFadeTransition : MonoBehaviour
         fadeCoroutine = null;
     }
 
-    private IEnumerator FadeOutThenInRoutine()
+    private IEnumerator FadeInThenOutRoutine()
     {
-        yield return FadeRoutine(0f, fadeOutDuration, false, onFadeOutComplete);
         yield return FadeRoutine(1f, fadeInDuration, true, onFadeInComplete);
+        yield return FadeRoutine(0f, fadeOutDuration, false, onFadeOutComplete);
 
         fadeCoroutine = null;
-        onFadeOutThenInComplete?.Invoke();
+        onFadeInThenOutComplete?.Invoke();
     }
 
     private IEnumerator FadeRoutine(float targetAlpha, float duration, bool blockAfterFade, UnityEvent completedEvent)
     {
         SetCanvasBlocking(true);
 
-        float startAlpha = canvasGroup != null ? canvasGroup.alpha : 0f;
+        float startAlpha = GetCurrentAlpha();
 
         if (duration <= 0f)
         {
@@ -157,20 +158,31 @@ public class DayNightFadeTransition : MonoBehaviour
 
     private void SetAlpha(float alpha)
     {
-        if (canvasGroup != null)
+        if (fadeImage != null)
         {
-            canvasGroup.alpha = Mathf.Clamp01(alpha);
+            Color color = fadeImage.color;
+            color.a = Mathf.Clamp01(alpha);
+            fadeImage.color = color;
         }
     }
 
     private void SetCanvasBlocking(bool isBlocking)
     {
-        if (canvasGroup == null)
+        if (fadeImage == null)
         {
             return;
         }
 
-        canvasGroup.blocksRaycasts = isBlocking;
-        canvasGroup.interactable = isBlocking;
+        fadeImage.raycastTarget = isBlocking;
+    }
+
+    private float GetCurrentAlpha()
+    {
+        if (fadeImage == null)
+        {
+            return 0f;
+        }
+
+        return fadeImage.color.a;
     }
 }
