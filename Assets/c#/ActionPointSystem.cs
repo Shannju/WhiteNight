@@ -1,11 +1,22 @@
 using UnityEngine;
 
+public enum ActionPointSpendTarget
+{
+    None,
+    Teacher,
+    Mate
+}
+
 public class ActionPointSystem : MonoBehaviour
 {
     [Header("Action Point Settings")]
     [SerializeField] private int maxActionPoints = 20;
     public int currentActionPoints = 20;
     [SerializeField] private int actionCostPerCommand = 1;
+
+    [Header("Global Action Spend Stats")]
+    public int teacherSpentActionPoints;
+    public int mateSpentActionPoints;
 
     [Header("Action State")]
     public bool startActionCommand;
@@ -17,6 +28,8 @@ public class ActionPointSystem : MonoBehaviour
     public int CurrentActionPoints => currentActionPoints;
     public int ActionCostPerCommand => actionCostPerCommand;
     public int SpentActionPoints => Mathf.Max(0, maxActionPoints - currentActionPoints);
+    public int TeacherSpentActionPoints => teacherSpentActionPoints;
+    public int MateSpentActionPoints => mateSpentActionPoints;
 
     private void Awake()
     {
@@ -49,7 +62,7 @@ public class ActionPointSystem : MonoBehaviour
         return currentActionPoints >= actionCostPerCommand;
     }
 
-    public bool TryStartAction()
+    public bool TryStartAction(ActionPointSpendTarget spendTarget = ActionPointSpendTarget.None)
     {
         if (!CanStartAction())
         {
@@ -57,7 +70,9 @@ public class ActionPointSystem : MonoBehaviour
             return false;
         }
 
-        currentActionPoints -= actionCostPerCommand;
+        int spentAmount = actionCostPerCommand;
+        currentActionPoints -= spentAmount;
+        RecordActionPointSpend(spendTarget, spentAmount);
 
         if (currentActionPoints <= 0 && daySystem != null)
         {
@@ -70,6 +85,12 @@ public class ActionPointSystem : MonoBehaviour
     public void ReceiveStartActionCommand()
     {
         TryStartAction();
+    }
+
+    public void ResetActionPointSpendStats()
+    {
+        teacherSpentActionPoints = 0;
+        mateSpentActionPoints = 0;
     }
 
     public void ResetActionPoints()
@@ -113,5 +134,25 @@ public class ActionPointSystem : MonoBehaviour
         maxActionPoints = Mathf.Max(0, maxActionPoints);
         actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
         currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
+        teacherSpentActionPoints = Mathf.Max(0, teacherSpentActionPoints);
+        mateSpentActionPoints = Mathf.Max(0, mateSpentActionPoints);
+    }
+
+    private void RecordActionPointSpend(ActionPointSpendTarget spendTarget, int amount)
+    {
+        if (amount <= 0)
+        {
+            return;
+        }
+
+        switch (spendTarget)
+        {
+            case ActionPointSpendTarget.Teacher:
+                teacherSpentActionPoints += amount;
+                break;
+            case ActionPointSpendTarget.Mate:
+                mateSpentActionPoints += amount;
+                break;
+        }
     }
 }

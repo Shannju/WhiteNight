@@ -7,6 +7,8 @@ using UnityEngine.Events;
 /// </summary>
 public class MultiQuestionUIController : MonoBehaviour
 {
+    public static float GlobalExamScore { get; private set; }
+
     [SerializeField] private List<UIImageFillControllerManager> managers = new List<UIImageFillControllerManager>();
     [SerializeField] private string correctAnswers = ""; // 正确答案，使用标签组合如"ABC"或"A-C"（-表示空）
 
@@ -20,12 +22,14 @@ public class MultiQuestionUIController : MonoBehaviour
         if (managers == null || managers.Count == 0)
         {
             Debug.LogError("MultiQuestionUIController: 没有配置任何管理器!");
+            SetGlobalExamScore(0f);
             return new QuizResult { totalQuestions = 0, correctCount = 0, score = 0f };
         }
 
         if (string.IsNullOrEmpty(correctAnswers))
         {
             Debug.LogError("MultiQuestionUIController: 没有设置正确答案!");
+            SetGlobalExamScore(0f);
             return new QuizResult { totalQuestions = 0, correctCount = 0, score = 0f };
         }
 
@@ -67,9 +71,16 @@ public class MultiQuestionUIController : MonoBehaviour
             correctAnswers = correctAnswersList
         };
 
+        SetGlobalExamScore(score);
         Debug.Log($"MultiQuestionUIController: 测试完成 - 正确 {correct}/{total}, 分数 {score:F1}%");
 
         return lastResult;
+    }
+
+    public static void SetGlobalExamScore(float score)
+    {
+        GlobalExamScore = Mathf.Clamp(score, 0f, 100f);
+        ExamScoreGlobal.SetGlobalScore(GlobalExamScore);
     }
 
     /// <summary>

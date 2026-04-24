@@ -429,7 +429,7 @@ public class DialogManager : MonoBehaviour
         SetCameraSwitchingEnabled(false);
         ShowBlackFrame();
 
-        if (!actionPointSystem.TryStartAction())
+        if (!actionPointSystem.TryStartAction(ActionPointSpendTarget.Mate))
         {
             activeDialog = null;
             activeLineIndex = 0;
@@ -453,7 +453,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        if (!actionPointSystem.TryStartAction())
+        if (!actionPointSystem.TryStartAction(ActionPointSpendTarget.Teacher))
         {
             return;
         }
