@@ -290,7 +290,8 @@ MonoBehaviour:
   maxActionPoints: 16
   currentActionPoints: 16
   actionCostPerCommand: 1
-  spentActionPoints: 0
+  teacherSpentActionPoints: 0
+  mateSpentActionPoints: 0
   startActionCommand: 0
   daySystem: {fileID: 0}
 --- !u!114 &31818533
@@ -308,7 +309,21 @@ MonoBehaviour:
   startDay: 1
   currentDay: 1
   nextDayCommand: 0
+  autoStartNextDayWhenReady: 1
+  switchToDeskBeforeDayEnd: 1
+  deskCameraSwitchDelay: 0.5
+  onDayStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onDayEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  onDayPhaseChanged:
+    m_PersistentCalls:
+      m_Calls: []
   actionPointSystem: {fileID: 0}
+  dialogManager: {fileID: 0}
+  cameraSwitcher: {fileID: 0}
 --- !u!1 &50512215
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &50512216
 Transform:
   m_ObjectHideFlags: 0
@@ -1635,6 +1650,7 @@ MonoBehaviour:
   windowsCharacterId: windows
   showSpeakerName: 1
   charactersPerSecond: 30
+  autoAdvanceEnabled: 0
   autoAdvanceDelay: 1.5
   clearTextWhenDialogEnds: 1
   blackFrame: {fileID: 0}
@@ -1674,6 +1690,7 @@ MonoBehaviour:
   camRight: {fileID: 489942175}
   activePriority: 10
   inactivePriority: 0
+  randomizeInitialCamera: 1
   inputDispatcher: {fileID: 1678551074}
   dialogManager: {fileID: 0}
 --- !u!4 &239424857
@@ -1809,8 +1826,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9005314, z: -0.434791, w: 0}
-  m_LocalPosition: {x: -0.821, y: 1.134, z: 4.33}
+  m_LocalRotation: {x: -0.039821025, y: 0.7823876, z: 0.050293006, w: 0.6194793}
+  m_LocalPosition: {x: -0.89785767, y: 0.9192438, z: 4.1176157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2231,7 +2248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &489942175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2311,7 +2328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &551923480
 Transform:
   m_ObjectHideFlags: 0
@@ -2824,7 +2841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &809636009
 Transform:
   m_ObjectHideFlags: 0
@@ -3451,7 +3468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &904542722
 Transform:
   m_ObjectHideFlags: 0
@@ -3619,7 +3636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &988331771
 Transform:
   m_ObjectHideFlags: 0
@@ -5195,7 +5212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1369652260
 MonoBehaviour:
   m_ObjectHideFlags: 0
