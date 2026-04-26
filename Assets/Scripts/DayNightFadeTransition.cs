@@ -7,6 +7,7 @@ public class DayNightFadeTransition : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] private GameObject fadeCanvasRoot;
+    [SerializeField] private Canvas fadeCanvas;
     [SerializeField] private Image fadeImage;
 
     [Header("Fade Settings")]
@@ -106,6 +107,13 @@ public class DayNightFadeTransition : MonoBehaviour
         {
             Canvas canvas = fadeImage.GetComponentInParent<Canvas>(true);
             fadeCanvasRoot = canvas != null ? canvas.gameObject : fadeImage.gameObject;
+        }
+
+        if (fadeCanvas == null)
+        {
+            fadeCanvas = fadeImage != null
+                ? fadeImage.GetComponentInParent<Canvas>(true)
+                : GetComponentInChildren<Canvas>(true);
         }
     }
 
@@ -236,6 +244,11 @@ public class DayNightFadeTransition : MonoBehaviour
         if (fadeCanvasRoot != null)
         {
             fadeCanvasRoot.SetActive(isActive);
+        }
+
+        if (fadeCanvas != null)
+        {
+            fadeCanvas.enabled = isActive;
         }
     }
 

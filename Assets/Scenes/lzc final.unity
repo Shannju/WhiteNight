@@ -504,18 +504,6 @@ MonoBehaviour:
   onDayEnded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 277023987}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1582714889}
         m_TargetAssemblyTypeName: DayNightFadeTransition, Assembly-CSharp
         m_MethodName: FadeInThenOut
@@ -7062,7 +7050,7 @@ PrefabInstance:
     - target: {fileID: 2032669886913899052, guid: 7a76fe6c831a1a642a0496e01d3ef01d,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2032669886913899052, guid: 7a76fe6c831a1a642a0496e01d3ef01d,
         type: 3}
@@ -7082,7 +7070,7 @@ PrefabInstance:
     - target: {fileID: 6677836967434657619, guid: 7a76fe6c831a1a642a0496e01d3ef01d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -87,7 +87,7 @@ public class DaySystem : MonoBehaviour
 
         if (fadeTransition == null)
         {
-            fadeTransition = FindObjectOfType<DayNightFadeTransition>();
+            fadeTransition = FindObjectOfType<DayNightFadeTransition>(true);
         }
 
     }
