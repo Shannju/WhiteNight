@@ -282,6 +282,2182 @@
                             "playerPicture": ""
                         }
                     ]
+                },
+                {
+                    "dialogId": "2_seq_1",
+                    "day": 2,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_2",
+                    "day": 2,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_3",
+                    "day": 2,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_4",
+                    "day": 2,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_5",
+                    "day": 2,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_6",
+                    "day": 2,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_7",
+                    "day": 2,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_8",
+                    "day": 2,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_9",
+                    "day": 2,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_10",
+                    "day": 2,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_11",
+                    "day": 2,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_12",
+                    "day": 2,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_13",
+                    "day": 2,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_14",
+                    "day": 2,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_15",
+                    "day": 2,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_seq_16",
+                    "day": 2,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "2_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_1",
+                    "day": 3,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_2",
+                    "day": 3,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_3",
+                    "day": 3,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_4",
+                    "day": 3,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_5",
+                    "day": 3,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_6",
+                    "day": 3,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_7",
+                    "day": 3,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_8",
+                    "day": 3,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_9",
+                    "day": 3,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_10",
+                    "day": 3,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_11",
+                    "day": 3,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_12",
+                    "day": 3,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_13",
+                    "day": 3,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_14",
+                    "day": 3,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_15",
+                    "day": 3,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_seq_16",
+                    "day": 3,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "3_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_1",
+                    "day": 4,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_2",
+                    "day": 4,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_3",
+                    "day": 4,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_4",
+                    "day": 4,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_5",
+                    "day": 4,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_6",
+                    "day": 4,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_7",
+                    "day": 4,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_8",
+                    "day": 4,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_9",
+                    "day": 4,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_10",
+                    "day": 4,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_11",
+                    "day": 4,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_12",
+                    "day": 4,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_13",
+                    "day": 4,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_14",
+                    "day": 4,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_15",
+                    "day": 4,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_seq_16",
+                    "day": 4,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "4_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_1",
+                    "day": 5,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_2",
+                    "day": 5,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_3",
+                    "day": 5,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_4",
+                    "day": 5,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_5",
+                    "day": 5,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_6",
+                    "day": 5,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_7",
+                    "day": 5,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_8",
+                    "day": 5,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_9",
+                    "day": 5,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_10",
+                    "day": 5,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_11",
+                    "day": 5,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_12",
+                    "day": 5,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_13",
+                    "day": 5,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_14",
+                    "day": 5,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_15",
+                    "day": 5,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_seq_16",
+                    "day": 5,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "5_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_1",
+                    "day": 6,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_2",
+                    "day": 6,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_3",
+                    "day": 6,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_4",
+                    "day": 6,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_5",
+                    "day": 6,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_6",
+                    "day": 6,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_7",
+                    "day": 6,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_8",
+                    "day": 6,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_9",
+                    "day": 6,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_10",
+                    "day": 6,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_11",
+                    "day": 6,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_12",
+                    "day": 6,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_13",
+                    "day": 6,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_14",
+                    "day": 6,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_15",
+                    "day": 6,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_seq_16",
+                    "day": 6,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "6_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_1",
+                    "day": 7,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_2",
+                    "day": 7,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_3",
+                    "day": 7,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_4",
+                    "day": 7,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_5",
+                    "day": 7,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_6",
+                    "day": 7,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_7",
+                    "day": 7,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_8",
+                    "day": 7,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_9",
+                    "day": 7,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_10",
+                    "day": 7,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_11",
+                    "day": 7,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_12",
+                    "day": 7,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_13",
+                    "day": 7,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_14",
+                    "day": 7,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_15",
+                    "day": 7,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_seq_16",
+                    "day": 7,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "7_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_1",
+                    "day": 8,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_2",
+                    "day": 8,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_3",
+                    "day": 8,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_4",
+                    "day": 8,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_5",
+                    "day": 8,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_6",
+                    "day": 8,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_7",
+                    "day": 8,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_8",
+                    "day": 8,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_9",
+                    "day": 8,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_10",
+                    "day": 8,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_11",
+                    "day": 8,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_12",
+                    "day": 8,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_13",
+                    "day": 8,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_14",
+                    "day": 8,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_15",
+                    "day": 8,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_seq_16",
+                    "day": 8,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "8_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_1",
+                    "day": 9,
+                    "sequenceOrder": 1,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_1",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_2",
+                    "day": 9,
+                    "sequenceOrder": 2,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_2",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_3",
+                    "day": 9,
+                    "sequenceOrder": 3,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_3",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_4",
+                    "day": 9,
+                    "sequenceOrder": 4,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_4",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_5",
+                    "day": 9,
+                    "sequenceOrder": 5,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_5",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_6",
+                    "day": 9,
+                    "sequenceOrder": 6,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_6",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_7",
+                    "day": 9,
+                    "sequenceOrder": 7,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_7",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_8",
+                    "day": 9,
+                    "sequenceOrder": 8,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_8",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_9",
+                    "day": 9,
+                    "sequenceOrder": 9,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_9",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_10",
+                    "day": 9,
+                    "sequenceOrder": 10,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_10",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_11",
+                    "day": 9,
+                    "sequenceOrder": 11,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_11",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_12",
+                    "day": 9,
+                    "sequenceOrder": 12,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_12",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_13",
+                    "day": 9,
+                    "sequenceOrder": 13,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_13",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_14",
+                    "day": 9,
+                    "sequenceOrder": 14,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_14",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_15",
+                    "day": 9,
+                    "sequenceOrder": 15,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_15",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "9_seq_16",
+                    "day": 9,
+                    "sequenceOrder": 16,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "9_seq_16",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
                 }
             ]
         }

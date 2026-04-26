@@ -290,7 +290,8 @@ MonoBehaviour:
   maxActionPoints: 12
   currentActionPoints: 12
   actionCostPerCommand: 1
-  spentActionPoints: 0
+  teacherSpentActionPoints: 0
+  mateSpentActionPoints: 0
   startActionCommand: 0
   daySystem: {fileID: 0}
 --- !u!114 &31818533
@@ -308,7 +309,23 @@ MonoBehaviour:
   startDay: 1
   currentDay: 1
   nextDayCommand: 0
+  autoStartNextDayWhenReady: 1
+  switchToDeskBeforeDayEnd: 1
+  deskCameraSwitchDelay: 0.5
+  onDayStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onDayEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  onDayPhaseChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  fadeTransition: {fileID: 0}
+  useFadeTransition: 1
   actionPointSystem: {fileID: 0}
+  dialogManager: {fileID: 0}
+  cameraSwitcher: {fileID: 0}
 --- !u!1 &50512215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,6 +1553,7 @@ MonoBehaviour:
   camLeftType: 2
   camRightType: 4
   interactKey: 32
+  interactCooldownAfterCameraSwitch: 0.5
   dialogText: {fileID: 0}
   playerPictureDisplay: {fileID: 0}
   dialogPictureController: {fileID: 0}
@@ -1545,8 +1563,11 @@ MonoBehaviour:
   windowsCharacterId: windows
   showSpeakerName: 1
   charactersPerSecond: 30
+  autoAdvanceEnabled: 0
   autoAdvanceDelay: 1.5
   clearTextWhenDialogEnds: 1
+  blackFrame: {fileID: 0}
+  dialogIdEvents: []
 --- !u!1 &239424855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,7 +1603,9 @@ MonoBehaviour:
   camRight: {fileID: 489942175}
   activePriority: 10
   inactivePriority: 0
+  randomizeInitialCamera: 1
   inputDispatcher: {fileID: 1678551074}
+  dialogManager: {fileID: 0}
 --- !u!4 &239424857
 Transform:
   m_ObjectHideFlags: 0
@@ -1716,8 +1739,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.74470764, z: 0, w: 0.6673908}
-  m_LocalPosition: {x: -0.8290081, y: 0.98, z: 4.2259912}
+  m_LocalRotation: {x: -0.039821025, y: 0.7823876, z: 0.050293006, w: 0.6194793}
+  m_LocalPosition: {x: -0.89785767, y: 0.9192438, z: 4.1176157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3615,6 +3638,10 @@ MonoBehaviour:
   onDesk:
     m_PersistentCalls:
       m_Calls: []
+  boardInputLocked: 1
+  friendInputLocked: 1
+  windowInputLocked: 1
+  deskInputLocked: 1
 --- !u!4 &1678551075
 Transform:
   m_ObjectHideFlags: 0
