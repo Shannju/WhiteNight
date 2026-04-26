@@ -160,6 +160,36 @@ public class FourDirectionCameraSwitcher : MonoBehaviour
         }
     }
 
+    public void SetVirtualCameraChildrenActive(bool isActive)
+    {
+        if (!isActive)
+        {
+            HideVirtualCameraChildren();
+        }
+    }
+
+    public void HideVirtualCameraChildren()
+    {
+        SetCameraChildrenActive(camUp, false);
+        SetCameraChildrenActive(camDown, false);
+        SetCameraChildrenActive(camLeft, false);
+        SetCameraChildrenActive(camRight, false);
+    }
+
+    private void SetCameraChildrenActive(CinemachineVirtualCamera targetCam, bool isActive)
+    {
+        if (targetCam == null)
+        {
+            return;
+        }
+
+        Transform cameraTransform = targetCam.transform;
+        for (int i = 0; i < cameraTransform.childCount; i++)
+        {
+            cameraTransform.GetChild(i).gameObject.SetActive(isActive);
+        }
+    }
+
     private void SetPriority(CinemachineVirtualCamera targetCam, int priority)
     {
         if (targetCam != null)

@@ -131,6 +131,18 @@ public class DaySystem : MonoBehaviour
 
     public void AdvanceDay()
     {
+        if (ShouldUseFadeTransition() && currentPhase == DayPhase.Night && !isTransitioningPhase)
+        {
+            StartCoroutine(RunTransitionWithFade(AdvanceDayInstant));
+            return;
+        }
+
+        AdvanceDayInstant();
+    }
+
+    private void AdvanceDayInstant()
+    {
+        ClearPendingEndDayState();
         currentDay++;
         ApplyActionPointSettingsForCurrentDay();
         SetPhase(DayPhase.Day);
@@ -231,11 +243,15 @@ public class DaySystem : MonoBehaviour
 
     private void CompleteDayTransitionInstant()
     {
+        AdvanceDayInstant();
+    }
+
+    private void ClearPendingEndDayState()
+    {
         isWaitingForDaySummary = false;
         hasEnteredNightForPendingEndDay = false;
         hasPreparedEndDayCamera = false;
         endDayCameraReadyTime = 0f;
-        AdvanceDay();
     }
 
     private bool TryBeginNightTransition()
@@ -318,6 +334,14 @@ public class DaySystem : MonoBehaviour
         }
 
         currentPhase = phase;
+        if (cameraSwitcher != null)
+        {
+            if (currentPhase == DayPhase.Night)
+            {
+                cameraSwitcher.HideVirtualCameraChildren();
+            }
+        }
+
         DayPhaseChanged?.Invoke(currentPhase);
         onDayPhaseChanged.Invoke(currentPhase);
     }
