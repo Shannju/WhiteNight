@@ -105,18 +105,18 @@ public class ActionPointSystem : MonoBehaviour
             return;
         }
 
-        currentActionPoints = Mathf.Clamp(currentActionPoints + amount, 0, maxActionPoints);
+        currentActionPoints = Mathf.Max(0, currentActionPoints + amount);
     }
 
     public void SetMaxActionPoints(int amount)
     {
         maxActionPoints = Mathf.Max(0, amount);
-        currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
+        currentActionPoints = Mathf.Max(0, currentActionPoints);
     }
 
     public void SetCurrentActionPoints(int amount)
     {
-        currentActionPoints = Mathf.Clamp(amount, 0, maxActionPoints);
+        currentActionPoints = Mathf.Max(0, amount);
     }
 
     public void SetActionCostPerCommand(int amount)
@@ -133,7 +133,7 @@ public class ActionPointSystem : MonoBehaviour
     {
         maxActionPoints = Mathf.Max(0, maxActionPoints);
         actionCostPerCommand = Mathf.Max(1, actionCostPerCommand);
-        currentActionPoints = Mathf.Clamp(currentActionPoints, 0, maxActionPoints);
+        currentActionPoints = Mathf.Max(0, currentActionPoints);
         teacherSpentActionPoints = Mathf.Max(0, teacherSpentActionPoints);
         mateSpentActionPoints = Mathf.Max(0, mateSpentActionPoints);
     }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum DayPhase
 {
@@ -16,6 +17,21 @@ public class DayNumberEvent : UnityEvent<int>
 [System.Serializable]
 public class DayPhaseEvent : UnityEvent<DayPhase>
 {
+}
+
+[System.Serializable]
+public class SpecificDayStartedEvent
+{
+    [SerializeField] private int day = 1;
+    [SerializeField] private UnityEvent onStarted = new UnityEvent();
+
+    public int Day => day;
+    public UnityEvent OnStarted => onStarted;
+
+    public void Normalize()
+    {
+        day = Mathf.Max(1, day);
+    }
 }
 
 public class DaySystem : MonoBehaviour
@@ -36,6 +52,7 @@ public class DaySystem : MonoBehaviour
     [SerializeField] private DayNumberEvent onDayStarted = new DayNumberEvent();
     [SerializeField] private DayNumberEvent onDayEnded = new DayNumberEvent();
     [SerializeField] private DayPhaseEvent onDayPhaseChanged = new DayPhaseEvent();
+    [SerializeField] private List<SpecificDayStartedEvent> specificDayStartedEvents = new List<SpecificDayStartedEvent>();
 
     [Header("Transition")]
     [SerializeField] private DayNightFadeTransition fadeTransition;
@@ -52,6 +69,7 @@ public class DaySystem : MonoBehaviour
     public DayNumberEvent OnDayStartedEvent => onDayStarted;
     public DayNumberEvent OnDayEndedEvent => onDayEnded;
     public DayPhaseEvent OnDayPhaseChangedEvent => onDayPhaseChanged;
+    public IReadOnlyList<SpecificDayStartedEvent> SpecificDayStartedEvents => specificDayStartedEvents;
     public bool IsWaitingForDaySummary => isWaitingForDaySummary;
 
     public event System.Action<int> DayStarted;
@@ -69,6 +87,7 @@ public class DaySystem : MonoBehaviour
     {
         startDay = Mathf.Max(1, startDay);
         currentDay = Mathf.Max(1, currentDay);
+        NormalizeSpecificDayStartedEvents();
 
         if (actionPointSystem == null)
         {
@@ -90,6 +109,13 @@ public class DaySystem : MonoBehaviour
             fadeTransition = FindObjectOfType<DayNightFadeTransition>(true);
         }
 
+    }
+
+    private void OnValidate()
+    {
+        startDay = Mathf.Max(1, startDay);
+        currentDay = Mathf.Max(1, currentDay);
+        NormalizeSpecificDayStartedEvents();
     }
 
     private void Start()
@@ -350,6 +376,7 @@ public class DaySystem : MonoBehaviour
     {
         DayStarted?.Invoke(currentDay);
         onDayStarted.Invoke(currentDay);
+        InvokeSpecificDayStartedEvents(currentDay);
     }
 
     private void InvokeDayEnded()
@@ -367,5 +394,36 @@ public class DaySystem : MonoBehaviour
 
         actionPointSystem.SetMaxActionPoints(DailyActionPoints);
         actionPointSystem.ResetActionPoints();
+    }
+
+    private void InvokeSpecificDayStartedEvents(int day)
+    {
+        if (specificDayStartedEvents == null)
+        {
+            return;
+        }
+
+        foreach (SpecificDayStartedEvent dayStartedEvent in specificDayStartedEvents)
+        {
+            if (dayStartedEvent == null || dayStartedEvent.Day != day)
+            {
+                continue;
+            }
+
+            dayStartedEvent.OnStarted.Invoke();
+        }
+    }
+
+    private void NormalizeSpecificDayStartedEvents()
+    {
+        if (specificDayStartedEvents == null)
+        {
+            return;
+        }
+
+        foreach (SpecificDayStartedEvent dayStartedEvent in specificDayStartedEvents)
+        {
+            dayStartedEvent?.Normalize();
+        }
     }
 }
