@@ -543,6 +543,35 @@ MonoBehaviour:
   onDayPhaseChanged:
     m_PersistentCalls:
       m_Calls: []
+  specificDayStartedEvents:
+  - day: 8
+    onStarted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 31818532}
+          m_TargetAssemblyTypeName: ActionPointSystem, Assembly-CSharp
+          m_MethodName: SetCurrentActionPoints
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2147483647
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 31818532}
+          m_TargetAssemblyTypeName: ActionPointSystem, Assembly-CSharp
+          m_MethodName: SetCurrentActionPoints
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2147483647
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   fadeTransition: {fileID: 0}
   useFadeTransition: 1
   actionPointSystem: {fileID: 31818532}
@@ -778,6 +807,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6023862305398562556, guid: 24609b85a06a86a4895ed694d390cd68,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 34586691}
     - target: {fileID: 8405793351860670497, guid: 24609b85a06a86a4895ed694d390cd68,
         type: 3}
       propertyPath: m_Name
@@ -5611,7 +5645,7 @@ PrefabInstance:
     - target: {fileID: 1152277601650250194, guid: 5a2d77d754a950747841811201bb8473,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1631906183724790970, guid: 5a2d77d754a950747841811201bb8473,
         type: 3}
