@@ -97,7 +97,36 @@ public class CanvasBook : MonoBehaviour, IPointerClickHandler
             // 这样循环结束后，pages[_currentPageIndex] 就会是最后的 LastSibling，即最顶层
         }
     }
+
+    public void ResetToFirstPage()
+    {
+        _currentPageIndex = 0;
+        _isFliping = false;
+
+        if (pages == null)
+        {
+            return;
+        }
+
+        foreach (RectTransform page in pages)
+        {
+            if (page == null)
+            {
+                continue;
+            }
+
+            Vector3 scale = page.localScale;
+            page.localScale = new Vector3(Mathf.Abs(scale.x), scale.y, scale.z);
+        }
+
+        if (pages.Count > 0)
+        {
+            UpdateSiblingOrder();
+        }
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("CanvasBook pointer clicked!");
-    }}
+    }
+}

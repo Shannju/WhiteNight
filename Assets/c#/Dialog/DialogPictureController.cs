@@ -9,6 +9,7 @@ public class DialogPictureController : MonoBehaviour
 
     private int lastSpentActionPoints = -1;
     private int lastActionPointDay = -1;
+    private bool isNonActionPointDialogActive;
 
     private void Start()
     {
@@ -19,12 +20,16 @@ public class DialogPictureController : MonoBehaviour
             dialogPictureRegistry.ActivateAllDefaultPictures();
         }
 
-        lastSpentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : -1;
-        lastActionPointDay = actionPointDialogController != null ? actionPointDialogController.GetCurrentDay() : -1;
+        RememberCurrentActionPointState();
     }
 
     private void Update()
     {
+        if (isNonActionPointDialogActive)
+        {
+            return;
+        }
+
         RefreshActionPointPictureState();
     }
 
@@ -37,8 +42,11 @@ public class DialogPictureController : MonoBehaviour
 
         if (triggerMode == DialogTriggerMode.ActionPoint)
         {
+            isNonActionPointDialogActive = false;
             return;
         }
+
+        isNonActionPointDialogActive = true;
 
         if (triggerMode == DialogTriggerMode.Sequence)
         {
@@ -64,6 +72,11 @@ public class DialogPictureController : MonoBehaviour
     {
         // Keep the last visible picture after a dialog ends.
         // The picture will change later when a new state explicitly updates it.
+        if (triggerMode != DialogTriggerMode.ActionPoint)
+        {
+            RememberCurrentActionPointState();
+            isNonActionPointDialogActive = false;
+        }
     }
 
     public void OnPendingRandomDialogChanged(DialogEntry dialog)
@@ -164,5 +177,11 @@ public class DialogPictureController : MonoBehaviour
         }
 
         return string.Empty;
+    }
+
+    private void RememberCurrentActionPointState()
+    {
+        lastSpentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : -1;
+        lastActionPointDay = actionPointDialogController != null ? actionPointDialogController.GetCurrentDay() : -1;
     }
 }

@@ -41,6 +41,7 @@ public class DaySystem : MonoBehaviour
     [Header("Day Settings")]
     [SerializeField] private int startDay = 1;
     [SerializeField] private int currentDay = 1;
+    [SerializeField] private int finalDay = 8;
 
     [Header("Day State")]
     public bool nextDayCommand;
@@ -65,6 +66,7 @@ public class DaySystem : MonoBehaviour
 
     public int StartDay => startDay;
     public int CurrentDay => currentDay;
+    public int FinalDay => finalDay;
     public DayPhase CurrentPhase => currentPhase;
     public DayNumberEvent OnDayStartedEvent => onDayStarted;
     public DayNumberEvent OnDayEndedEvent => onDayEnded;
@@ -87,6 +89,7 @@ public class DaySystem : MonoBehaviour
     {
         startDay = Mathf.Max(1, startDay);
         currentDay = Mathf.Max(1, currentDay);
+        finalDay = Mathf.Max(startDay, finalDay);
         NormalizeSpecificDayStartedEvents();
 
         if (actionPointSystem == null)
@@ -115,6 +118,7 @@ public class DaySystem : MonoBehaviour
     {
         startDay = Mathf.Max(1, startDay);
         currentDay = Mathf.Max(1, currentDay);
+        finalDay = Mathf.Max(startDay, finalDay);
         NormalizeSpecificDayStartedEvents();
     }
 
@@ -191,9 +195,15 @@ public class DaySystem : MonoBehaviour
         InvokeDayStarted();
     }
 
+    public void SetFinalDay(int day)
+    {
+        finalDay = Mathf.Max(startDay, day);
+    }
+
     public void SetStartDay(int day)
     {
         startDay = Mathf.Max(1, day);
+        finalDay = Mathf.Max(startDay, finalDay);
 
         if (currentDay < startDay)
         {
@@ -251,6 +261,54 @@ public class DaySystem : MonoBehaviour
         CompleteDayTransition();
     }
 
+    public void TestSkipDayNight()
+    {
+        SkipDayNightForTest();
+    }
+
+    public void SkipDayNightForTest()
+    {
+        if (isTransitioningPhase)
+        {
+            return;
+        }
+
+        if (currentPhase == DayPhase.Day)
+        {
+            if (ShouldUseFadeTransition())
+            {
+                StartCoroutine(RunTransitionWithFade(SkipToNightInstantForTest));
+                return;
+            }
+
+            SkipToNightInstantForTest();
+            return;
+        }
+
+        AdvanceDay();
+    }
+
+    public void TestSkipToFinalDay()
+    {
+        SkipToFinalDayForTest();
+    }
+
+    public void SkipToFinalDayForTest()
+    {
+        if (isTransitioningPhase)
+        {
+            return;
+        }
+
+        if (ShouldUseFadeTransition())
+        {
+            StartCoroutine(RunTransitionWithFade(SkipToFinalDayInstantForTest));
+            return;
+        }
+
+        SkipToFinalDayInstantForTest();
+    }
+
     private void CompleteDayTransition()
     {
         if (isTransitioningPhase)
@@ -270,6 +328,50 @@ public class DaySystem : MonoBehaviour
     private void CompleteDayTransitionInstant()
     {
         AdvanceDayInstant();
+    }
+
+    private void SkipToNightInstantForTest()
+    {
+        ClearPendingEndDayState();
+        SetPhase(DayPhase.Night);
+        InvokeDayEnded();
+    }
+
+    private void SkipToFinalDayInstantForTest()
+    {
+        ClearPendingEndDayState();
+
+        int targetDay = Mathf.Max(1, finalDay);
+        if (currentDay >= targetDay)
+        {
+            currentDay = targetDay;
+            ApplyActionPointSettingsForCurrentDay();
+            SetPhase(DayPhase.Day);
+            InvokeDayStarted();
+            return;
+        }
+
+        if (currentPhase == DayPhase.Day)
+        {
+            SetPhase(DayPhase.Night);
+            InvokeDayEnded();
+        }
+
+        while (currentDay < targetDay)
+        {
+            currentDay++;
+            ApplyActionPointSettingsForCurrentDay();
+            SetPhase(DayPhase.Day);
+            InvokeDayStarted();
+
+            if (currentDay < targetDay)
+            {
+                SetPhase(DayPhase.Night);
+                InvokeDayEnded();
+            }
+        }
+
+        SetPhase(DayPhase.Day);
     }
 
     private void ClearPendingEndDayState()

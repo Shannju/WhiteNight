@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,9 +33,15 @@ public class EndingManager : MonoBehaviour
 {
     [Header("Data Sources")]
     [SerializeField] private ActionPointSystem actionPointSystem;
+    [SerializeField] private MultiQuestionUIController examController;
+    [SerializeField] private bool checkExamAnswersBeforeEnding = true;
 
     [Header("Ending Canvas")]
     [SerializeField] private EndingCanvasManager endingCanvasManager;
+
+    [Header("Ending Fade")]
+    [SerializeField] private DayNightFadeTransition endingFadeTransition;
+    [SerializeField] private bool useBlackFadeBeforeEnding = true;
 
     [Header("Default Thresholds")]
     [SerializeField] private int highDialogCount = 10;
@@ -48,6 +55,7 @@ public class EndingManager : MonoBehaviour
     public List<UnityEvent> beforeEndingEvents = new List<UnityEvent>();
 
     private int currentEndingIndex = -1;
+    private Coroutine playEndingCoroutine;
 
     public int CurrentEndingIndex => currentEndingIndex;
     public int TeacherDialogCount => actionPointSystem != null ? actionPointSystem.TeacherSpentActionPoints : 0;
@@ -69,8 +77,9 @@ public class EndingManager : MonoBehaviour
     [ContextMenu("Play Ending")]
     public void PlayEnding()
     {
+        RefreshExamScoreBeforeEnding();
         int endingIndex = PickEndingIndex();
-        PlayEndingIndex(endingIndex);
+        PlayEndingIndex(endingIndex, false);
     }
 
     [ContextMenu("Play Ending Index 0")]
@@ -81,9 +90,36 @@ public class EndingManager : MonoBehaviour
 
     public void PlayEndingIndex(int endingIndex)
     {
+        PlayEndingIndex(endingIndex, true);
+    }
+
+    private void PlayEndingIndex(int endingIndex, bool refreshExamScore)
+    {
         ResolveReferences();
+        if (refreshExamScore)
+        {
+            RefreshExamScoreBeforeEnding();
+        }
+
         currentEndingIndex = endingIndex;
 
+        if (playEndingCoroutine != null)
+        {
+            StopCoroutine(playEndingCoroutine);
+            playEndingCoroutine = null;
+        }
+
+        if (useBlackFadeBeforeEnding && endingFadeTransition != null && isActiveAndEnabled)
+        {
+            playEndingCoroutine = StartCoroutine(PlayEndingWithFadeRoutine(endingIndex));
+            return;
+        }
+
+        ShowEndingNow(endingIndex);
+    }
+
+    private void ShowEndingNow(int endingIndex)
+    {
         InvokeBeforeEndingEvents();
 
         if (endingCanvasManager == null)
@@ -93,7 +129,28 @@ public class EndingManager : MonoBehaviour
         }
 
         endingCanvasManager.gameObject.SetActive(true);
-        endingCanvasManager.ShowEnding(endingIndex);
+        endingCanvasManager.ShowEnding(endingIndex, ExamScore);
+    }
+
+    private IEnumerator PlayEndingWithFadeRoutine(int endingIndex)
+    {
+        endingFadeTransition.FadeIn();
+        yield return WaitForEndingFade();
+
+        ShowEndingNow(endingIndex);
+
+        endingFadeTransition.FadeOut();
+        yield return WaitForEndingFade();
+
+        playEndingCoroutine = null;
+    }
+
+    private IEnumerator WaitForEndingFade()
+    {
+        while (endingFadeTransition != null && endingFadeTransition.IsFading)
+        {
+            yield return null;
+        }
     }
 
     public int PickEndingIndex()
@@ -140,6 +197,11 @@ public class EndingManager : MonoBehaviour
             actionPointSystem = FindObjectOfType<ActionPointSystem>();
         }
 
+        if (examController == null)
+        {
+            examController = FindObjectOfType<MultiQuestionUIController>();
+        }
+
         if (endingCanvasManager == null)
         {
             endingCanvasManager = FindObjectOfType<EndingCanvasManager>();
@@ -151,6 +213,20 @@ public class EndingManager : MonoBehaviour
             if (canvasManagers.Length > 0)
             {
                 endingCanvasManager = canvasManagers[0];
+            }
+        }
+
+        if (endingFadeTransition == null)
+        {
+            endingFadeTransition = FindObjectOfType<DayNightFadeTransition>();
+        }
+
+        if (endingFadeTransition == null)
+        {
+            DayNightFadeTransition[] fadeTransitions = FindObjectsOfType<DayNightFadeTransition>(true);
+            if (fadeTransitions.Length > 0)
+            {
+                endingFadeTransition = fadeTransitions[0];
             }
         }
     }
@@ -179,6 +255,18 @@ public class EndingManager : MonoBehaviour
         {
             endingEvent?.Invoke();
         }
+    }
+
+    private void RefreshExamScoreBeforeEnding()
+    {
+        ResolveReferences();
+
+        if (!checkExamAnswersBeforeEnding || examController == null)
+        {
+            return;
+        }
+
+        examController.CheckAnswers();
     }
 
     private bool IsRuleMatched(EndingRule rule, int teacherDialogCount, int mateDialogCount, float examScore)

@@ -52,6 +52,16 @@ public class RandomDialogController : MonoBehaviour
 
     public DialogEntry GetDialogForCharacter(string characterId)
     {
+        return GetDialogForCharacter(characterId, true);
+    }
+
+    public DialogEntry PeekDialogForCharacter(string characterId)
+    {
+        return GetDialogForCharacter(characterId, false);
+    }
+
+    private DialogEntry GetDialogForCharacter(string characterId, bool markAsPlayed)
+    {
         CharacterDialogConfig character = GetCharacterConfig(characterId);
 
         if (character == null || character.dialogs == null || character.dialogs.Count == 0)
@@ -88,11 +98,17 @@ public class RandomDialogController : MonoBehaviour
 
         if (candidates.Count == 0)
         {
-            return null;
+            playedDialogIds.Clear();
+            candidates.AddRange(availableDialogs);
         }
 
         DialogEntry selectedDialog = candidates[Random.Range(0, candidates.Count)];
-        playedDialogIds.Add(selectedDialog.dialogId);
+
+        if (markAsPlayed)
+        {
+            playedDialogIds.Add(selectedDialog.dialogId);
+        }
+
         PrepareDialogForPlayback(selectedDialog);
         return selectedDialog;
     }

@@ -98,7 +98,6 @@ public class DialogManager : MonoBehaviour
         ResolveDialogControllers();
         ClearDialogText();
         HidePlayerPicture();
-        HideBlackFrames();
         RefreshPendingRandomDialog(forceRefresh: true);
     }
 
@@ -390,8 +389,6 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialogForCurrentCameraView()
     {
-        HideBlackFrames();
-
         if (ShouldForceTeacherHomeworkForLastAction())
         {
             ForceCameraView(CameraViewType.Teacher);
@@ -458,7 +455,6 @@ public class DialogManager : MonoBehaviour
             activeLineIndex = 0;
             activeDialogTriggerMode = DialogTriggerMode.Sequence;
             SetCameraSwitchingEnabled(true);
-            HideBlackFrames();
             return;
         }
 
@@ -538,6 +534,15 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
+        DialogEntry playedDialog = randomDialogController.GetDialogForCharacterByDialogId(
+            windowsCharacterId,
+            dialog.dialogId);
+
+        if (playedDialog != null)
+        {
+            dialog = playedDialog;
+        }
+
         activeDialog = dialog;
         activeLineIndex = 0;
         activeDialogTriggerMode = DialogTriggerMode.Random;
@@ -566,7 +571,6 @@ public class DialogManager : MonoBehaviour
             ClearDialogText();
         }
 
-        HideBlackFrames();
         NotifyDialogPictureEnded(endedTriggerMode);
     }
 
@@ -675,7 +679,6 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        HideBlackFrames();
         RefreshPendingRandomDialog(forceRefresh: true);
         ShowInitialTeacherPrompt();
     }
@@ -1033,14 +1036,6 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void HideBlackFrames()
-    {
-        if (blackFrame != null)
-        {
-            blackFrame.SetActive(false);
-        }
-    }
-
     public void ShowBlackFrame()
     {
         if (blackFrame != null)
@@ -1109,7 +1104,7 @@ public class DialogManager : MonoBehaviour
 
         lastRandomRefreshActionPoints = currentActionPoints;
         lastRandomRefreshDay = currentDay;
-        pendingRandomDialog = GetRandomDialogForCharacter(windowsCharacterId);
+        pendingRandomDialog = randomDialogController.PeekDialogForCharacter(windowsCharacterId);
 
         if (updatePicture)
         {

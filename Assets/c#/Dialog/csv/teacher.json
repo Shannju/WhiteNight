@@ -26,7 +26,7 @@
                             "triggerOrder": 1,
                             "text": "(After the final exams.)",
                             "pictureId": "0",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -34,7 +34,7 @@
                             "triggerOrder": 2,
                             "text": "(You get a report card.)",
                             "pictureId": "0",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "player",
@@ -42,7 +42,7 @@
                             "triggerOrder": 3,
                             "text": "(Some people are affected by it.)",
                             "pictureId": "0",
-                            "playerPicture": ""
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
@@ -50,7 +50,7 @@
                             "triggerOrder": 4,
                             "text": "(They feel anxious or frustrated.)",
                             "pictureId": "0",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -58,7 +58,7 @@
                             "triggerOrder": 5,
                             "text": "(Some feel relieved.)",
                             "pictureId": "0",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "player",
@@ -66,7 +66,7 @@
                             "triggerOrder": 6,
                             "text": "(But some people...)",
                             "pictureId": "0",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "tutorial",

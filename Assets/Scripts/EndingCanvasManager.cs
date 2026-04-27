@@ -19,6 +19,10 @@ public class EndingCanvasManager : MonoBehaviour
     public Transform imageRoot;
     public TMP_Text titleTMPText;
     public TMP_Text contentTMPText;
+    public TMP_Text scoreTMPText;
+
+    [Header("Score Text")]
+    [SerializeField] private string scoreFormat = "Score: {0:0}/100";
 
     [Header("Ending Data")]
     public List<EndingCanvasEntry> endings = new List<EndingCanvasEntry>();
@@ -127,7 +131,14 @@ public class EndingCanvasManager : MonoBehaviour
 
         SetTitle(entry.title);
         SetContent(entry.content);
+        UpdateScoreText(ExamScoreGlobal.CurrentScore);
         currentEndingIndex = entry.index;
+    }
+
+    public void ShowEnding(int endingIndex, float examScore)
+    {
+        ShowEnding(endingIndex);
+        UpdateScoreText(examScore);
     }
 
     public void ShowEndingByListPosition(int listPosition)
@@ -182,7 +193,13 @@ public class EndingCanvasManager : MonoBehaviour
         HideAllImages();
         SetTitle(string.Empty);
         SetContent(string.Empty);
+        SetScoreText(string.Empty);
         currentEndingIndex = -1;
+    }
+
+    public void UpdateScoreText(float examScore)
+    {
+        SetScoreText(string.Format(scoreFormat, Mathf.Clamp(examScore, 0f, 100f)));
     }
 
     public EndingCanvasEntry GetEnding(int endingIndex)
@@ -224,6 +241,14 @@ public class EndingCanvasManager : MonoBehaviour
         if (contentTMPText != null)
         {
             contentTMPText.text = value;
+        }
+    }
+
+    private void SetScoreText(string value)
+    {
+        if (scoreTMPText != null)
+        {
+            scoreTMPText.text = value;
         }
     }
 }
