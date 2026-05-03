@@ -60,12 +60,13 @@ public class ActionPointDialogController : MonoBehaviour
         return GetDialogForCharacterByRange(
             characterId,
             spentActionPoints,
-            $"No action point dialog matched for {{0}} with spent action points: {spentActionPoints}");
+            $"No action point dialog matched for {{0}} with spent action points: {spentActionPoints}",
+            true);
     }
 
     public DialogEntry FindDialogForCharacterBySpentActionPoints(string characterId, int spentActionPoints)
     {
-        return GetDialogForCharacterByRange(characterId, spentActionPoints, null);
+        return GetDialogForCharacterByRange(characterId, spentActionPoints, null, false);
     }
 
     public List<DialogLine> GetDialogLines(string characterId, int currentActionPoints)
@@ -80,14 +81,22 @@ public class ActionPointDialogController : MonoBehaviour
         return dialog != null ? dialog.lines : null;
     }
 
-    private DialogEntry GetDialogForCharacterByRange(string characterId, int matchValue, string noMatchMessageFormat)
+    private DialogEntry GetDialogForCharacterByRange(
+        string characterId,
+        int matchValue,
+        string noMatchMessageFormat,
+        bool warnWhenCharacterMissing = true)
     {
         CharacterDialogConfig character = GetCharacterConfig(characterId);
         int currentDay = GetCurrentDay();
 
         if (character == null || character.dialogs == null || character.dialogs.Count == 0)
         {
-            Debug.LogWarning($"No action point dialog found for characterId: {characterId}", this);
+            if (warnWhenCharacterMissing)
+            {
+                Debug.LogWarning($"No action point dialog found for characterId: {characterId}", this);
+            }
+
             return null;
         }
 

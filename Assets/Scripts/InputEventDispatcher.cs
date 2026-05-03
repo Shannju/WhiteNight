@@ -14,33 +14,66 @@ public class InputEventDispatcher : MonoBehaviour
     [SerializeField] private bool friendInputLocked = true;
     [SerializeField] private bool windowInputLocked = true;
     [SerializeField] private bool deskInputLocked = true;
+    [SerializeField] private bool unlockAllInputsOnStart = true;
+    [SerializeField] private bool rightMouseTriggersFriend = true;
+
+    [Header("Debug")]
+    [SerializeField] private bool debugDirectionalInput = true;
 
     void Awake()
     {
         LockAllDirectionalInputs();
     }
 
+    void Start()
+    {
+        if (unlockAllInputsOnStart)
+        {
+            UnlockAllDirectionalInputs();
+        }
+    }
+
     void Update()
     {
-        if (!boardInputLocked && Input.GetKeyDown(KeyCode.UpArrow))
+        bool boardPressed = Input.GetKeyDown(KeyCode.UpArrow);
+        bool friendPressed = IsFriendInputPressed();
+        bool windowPressed = Input.GetKeyDown(KeyCode.LeftArrow);
+        bool deskPressed = Input.GetKeyDown(KeyCode.DownArrow);
+
+        LogPressedInput("Board", boardPressed, boardInputLocked);
+        LogPressedInput("Friend", friendPressed, friendInputLocked);
+        LogPressedInput("Window", windowPressed, windowInputLocked);
+        LogPressedInput("Desk", deskPressed, deskInputLocked);
+
+        if (!boardInputLocked && boardPressed)
         {
             onBoard?.Invoke();
         }
 
-        if (!friendInputLocked && Input.GetKeyDown(KeyCode.RightArrow))
+        if (!friendInputLocked && friendPressed)
         {
             onFriend?.Invoke();
         }
 
-        if (!windowInputLocked && Input.GetKeyDown(KeyCode.LeftArrow))
+        if (!windowInputLocked && windowPressed)
         {
             onWindow?.Invoke();
         }
 
-        if (!deskInputLocked && Input.GetKeyDown(KeyCode.DownArrow))
+        if (!deskInputLocked && deskPressed)
         {
             onDesk?.Invoke();
         }
+    }
+
+    void OnEnable()
+    {
+        LogLockState("enabled");
+    }
+
+    void OnDisable()
+    {
+        LogLockState("disabled");
     }
 
     public void LockAllDirectionalInputs()
@@ -49,6 +82,7 @@ public class InputEventDispatcher : MonoBehaviour
         friendInputLocked = true;
         windowInputLocked = true;
         deskInputLocked = true;
+        LogLockState("LockAllDirectionalInputs");
     }
 
     public void UnlockAllDirectionalInputs()
@@ -57,26 +91,31 @@ public class InputEventDispatcher : MonoBehaviour
         friendInputLocked = false;
         windowInputLocked = false;
         deskInputLocked = false;
+        LogLockState("UnlockAllDirectionalInputs");
     }
 
     public void UnlockBoardInput()
     {
         boardInputLocked = false;
+        LogLockState("UnlockBoardInput");
     }
 
     public void UnlockFriendInput()
     {
         friendInputLocked = false;
+        LogLockState("UnlockFriendInput");
     }
 
     public void UnlockWindowInput()
     {
         windowInputLocked = false;
+        LogLockState("UnlockWindowInput");
     }
 
     public void UnlockDeskInput()
     {
         deskInputLocked = false;
+        LogLockState("UnlockDeskInput");
     }
 
     public void TriggerBoard()
@@ -97,5 +136,33 @@ public class InputEventDispatcher : MonoBehaviour
     public void TriggerDesk()
     {
         onDesk?.Invoke();
+    }
+
+    private bool IsFriendInputPressed()
+    {
+        return Input.GetKeyDown(KeyCode.RightArrow) ||
+               (rightMouseTriggersFriend && Input.GetMouseButtonDown(1));
+    }
+
+    private void LogPressedInput(string inputName, bool pressed, bool locked)
+    {
+        if (!debugDirectionalInput || !pressed)
+        {
+            return;
+        }
+
+        Debug.Log($"[InputEventDispatcher] {inputName} input pressed. locked={locked}, enabled={enabled}", this);
+    }
+
+    private void LogLockState(string source)
+    {
+        if (!debugDirectionalInput)
+        {
+            return;
+        }
+
+        Debug.Log(
+            $"[InputEventDispatcher] {source}: boardLocked={boardInputLocked}, friendLocked={friendInputLocked}, windowLocked={windowInputLocked}, deskLocked={deskInputLocked}, enabled={enabled}",
+            this);
     }
 }

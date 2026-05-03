@@ -14,10 +14,12 @@ public class ActionStatsTextUpdater : MonoBehaviour
     [SerializeField] private string dayLabel = "Day";
     [SerializeField] private string teacherLabel = "Teacher";
     [SerializeField] private string mateLabel = "Mate";
+    [SerializeField] private string windowsLabel = "Windows";
 
     private int lastDay = int.MinValue;
     private int lastTeacherSpent = int.MinValue;
     private int lastMateSpent = int.MinValue;
+    private int lastWindowsSpent = int.MinValue;
 
     private void Awake()
     {
@@ -64,10 +66,12 @@ public class ActionStatsTextUpdater : MonoBehaviour
         int currentDay = daySystem != null ? daySystem.CurrentDay : 0;
         int teacherSpent = actionPointSystem != null ? actionPointSystem.TeacherSpentActionPoints : 0;
         int mateSpent = actionPointSystem != null ? actionPointSystem.MateSpentActionPoints : 0;
+        int windowsSpent = actionPointSystem != null ? actionPointSystem.WindowsSpentActionPoints : 0;
 
         if (currentDay == lastDay &&
             teacherSpent == lastTeacherSpent &&
-            mateSpent == lastMateSpent)
+            mateSpent == lastMateSpent &&
+            windowsSpent == lastWindowsSpent)
         {
             return;
         }
@@ -75,10 +79,12 @@ public class ActionStatsTextUpdater : MonoBehaviour
         lastDay = currentDay;
         lastTeacherSpent = teacherSpent;
         lastMateSpent = mateSpent;
+        lastWindowsSpent = windowsSpent;
 
         targetText.text =
             $"{dayLabel}: {currentDay}\n" +
             $"{teacherLabel}: {teacherSpent}\n" +
-            $"{mateLabel}: {mateSpent}";
+            $"{mateLabel}: {mateSpent}\n" +
+            $"{windowsLabel}: {windowsSpent}";
     }
 }

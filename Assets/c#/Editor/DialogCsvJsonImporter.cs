@@ -35,6 +35,11 @@ public static class DialogCsvJsonImporter
             }
         }
 
+        if (GenerateCombinedActionPointJson(csvPaths))
+        {
+            generatedCount++;
+        }
+
         AssetDatabase.Refresh();
         Debug.Log($"Generated dialog json files from {generatedCount} csv file(s).");
     }
@@ -64,7 +69,9 @@ public static class DialogCsvJsonImporter
             return false;
         }
 
-        CharacterDialogConfig character = BuildCharacterConfig(fileName, rows);
+        string mode = GetValue(rows[0], "mode");
+        List<Dictionary<string, string>> modeRows = FilterRowsByMode(rows, mode);
+        CharacterDialogConfig character = BuildCharacterConfig(fileName, modeRows, mode);
 
         if (character == null)
         {
@@ -94,9 +101,70 @@ public static class DialogCsvJsonImporter
         return true;
     }
 
-    private static CharacterDialogConfig BuildCharacterConfig(string fileName, List<Dictionary<string, string>> rows)
+    private static bool GenerateCombinedActionPointJson(string[] csvPaths)
     {
-        string mode = GetValue(rows[0], "mode");
+        DialogDatabase database = new DialogDatabase
+        {
+            characters = new List<CharacterDialogConfig>()
+        };
+
+        foreach (string csvPath in csvPaths)
+        {
+            string fileName = Path.GetFileNameWithoutExtension(csvPath);
+
+            if (!IsSupportedFile(fileName))
+            {
+                continue;
+            }
+
+            string csvText = File.ReadAllText(csvPath, Encoding.UTF8);
+            List<Dictionary<string, string>> rows = ParseCsv(csvText);
+            List<Dictionary<string, string>> actionPointRows = FilterRowsByMode(rows, "actionpoint");
+
+            if (actionPointRows.Count == 0)
+            {
+                continue;
+            }
+
+            CharacterDialogConfig character = BuildCharacterConfig(fileName, actionPointRows, "actionpoint");
+
+            if (character != null)
+            {
+                database.characters.Add(character);
+            }
+        }
+
+        if (database.characters.Count == 0)
+        {
+            return false;
+        }
+
+        string jsonPath = Path.Combine(CsvFolderPath, "actionpoint.json");
+        string jsonText = JsonUtility.ToJson(database, true) + Environment.NewLine;
+
+        if (File.Exists(jsonPath))
+        {
+            string existingText = File.ReadAllText(jsonPath, Encoding.UTF8);
+
+            if (existingText == jsonText)
+            {
+                return true;
+            }
+        }
+
+        File.WriteAllText(jsonPath, jsonText, new UTF8Encoding(false));
+        return true;
+    }
+
+    private static CharacterDialogConfig BuildCharacterConfig(
+        string fileName,
+        List<Dictionary<string, string>> rows,
+        string mode)
+    {
+        if (rows == null || rows.Count == 0)
+        {
+            return null;
+        }
 
         if (!IsSupportedMode(mode))
         {
@@ -115,6 +183,26 @@ public static class DialogCsvJsonImporter
         };
 
         return character;
+    }
+
+    private static List<Dictionary<string, string>> FilterRowsByMode(List<Dictionary<string, string>> rows, string mode)
+    {
+        List<Dictionary<string, string>> filteredRows = new List<Dictionary<string, string>>();
+
+        if (rows == null || string.IsNullOrEmpty(mode))
+        {
+            return filteredRows;
+        }
+
+        foreach (Dictionary<string, string> row in rows)
+        {
+            if (string.Equals(GetValue(row, "mode"), mode, StringComparison.OrdinalIgnoreCase))
+            {
+                filteredRows.Add(row);
+            }
+        }
+
+        return filteredRows;
     }
 
     private static string GetTopLevelCharacterName(

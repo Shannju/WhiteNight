@@ -4,7 +4,8 @@ public enum ActionPointSpendTarget
 {
     None,
     Teacher,
-    Mate
+    Mate,
+    Windows
 }
 
 public class ActionPointSystem : MonoBehaviour
@@ -17,6 +18,7 @@ public class ActionPointSystem : MonoBehaviour
     [Header("Global Action Spend Stats")]
     public int teacherSpentActionPoints;
     public int mateSpentActionPoints;
+    public int windowsSpentActionPoints;
 
     [Header("Action State")]
     public bool startActionCommand;
@@ -30,6 +32,7 @@ public class ActionPointSystem : MonoBehaviour
     public int SpentActionPoints => Mathf.Max(0, maxActionPoints - currentActionPoints);
     public int TeacherSpentActionPoints => teacherSpentActionPoints;
     public int MateSpentActionPoints => mateSpentActionPoints;
+    public int WindowsSpentActionPoints => windowsSpentActionPoints;
 
     private void Awake()
     {
@@ -91,6 +94,7 @@ public class ActionPointSystem : MonoBehaviour
     {
         teacherSpentActionPoints = 0;
         mateSpentActionPoints = 0;
+        windowsSpentActionPoints = 0;
     }
 
     public void ResetActionPoints()
@@ -136,6 +140,7 @@ public class ActionPointSystem : MonoBehaviour
         currentActionPoints = Mathf.Max(0, currentActionPoints);
         teacherSpentActionPoints = Mathf.Max(0, teacherSpentActionPoints);
         mateSpentActionPoints = Mathf.Max(0, mateSpentActionPoints);
+        windowsSpentActionPoints = Mathf.Max(0, windowsSpentActionPoints);
     }
 
     private void RecordActionPointSpend(ActionPointSpendTarget spendTarget, int amount)
@@ -152,6 +157,9 @@ public class ActionPointSystem : MonoBehaviour
                 break;
             case ActionPointSpendTarget.Mate:
                 mateSpentActionPoints += amount;
+                break;
+            case ActionPointSpendTarget.Windows:
+                windowsSpentActionPoints += amount;
                 break;
         }
     }
