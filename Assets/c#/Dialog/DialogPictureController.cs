@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogPictureController : MonoBehaviour
@@ -12,7 +13,6 @@ public class DialogPictureController : MonoBehaviour
 
     private int lastSpentActionPoints = -1;
     private int lastActionPointDay = -1;
-    private CameraViewType lastCameraViewType = CameraViewType.None;
     private bool isNonActionPointDialogActive;
 
     private void Start()
@@ -47,14 +47,7 @@ public class DialogPictureController : MonoBehaviour
         if (triggerMode == DialogTriggerMode.ActionPoint)
         {
             isNonActionPointDialogActive = true;
-
-            if (line == null || string.IsNullOrEmpty(line.pictureId))
-            {
-                dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
-                return;
-            }
-
-            dialogPictureRegistry.ShowPicture(triggerMode, line.pictureId);
+            ShowActionPointPictureForCurrentView(line);
             return;
         }
 
@@ -119,26 +112,16 @@ public class DialogPictureController : MonoBehaviour
 
         int spentActionPoints = actionPointSystem.SpentActionPoints;
         int currentDay = actionPointDialogController.GetCurrentDay();
-        CameraViewType currentViewType = GetCurrentCameraViewType();
 
         if (!forceRefresh &&
             spentActionPoints == lastSpentActionPoints &&
-            currentDay == lastActionPointDay &&
-            currentViewType == lastCameraViewType)
+            currentDay == lastActionPointDay)
         {
             return;
         }
 
         lastSpentActionPoints = spentActionPoints;
         lastActionPointDay = currentDay;
-        lastCameraViewType = currentViewType;
-
-        string characterId = GetCharacterIdForView(currentViewType);
-
-        if (string.IsNullOrEmpty(characterId))
-        {
-            return;
-        }
 
         if (spentActionPoints <= 0)
         {
@@ -146,25 +129,12 @@ public class DialogPictureController : MonoBehaviour
             return;
         }
 
-        DialogEntry dialog = actionPointDialogController.FindDialogForCharacterBySpentActionPoints(
-            characterId,
-            spentActionPoints);
-
-        if (dialog == null)
+        if (ShowActionPointPictures(null))
         {
-            dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
             return;
         }
 
-        string pictureId = GetFirstPictureId(dialog);
-
-        if (string.IsNullOrEmpty(pictureId))
-        {
-            dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
-            return;
-        }
-
-        dialogPictureRegistry.ShowPicture(DialogTriggerMode.ActionPoint, pictureId);
+        dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
     }
 
     private void ResolveReferences()
@@ -208,11 +178,110 @@ public class DialogPictureController : MonoBehaviour
         return string.Empty;
     }
 
+    private void ShowActionPointPictureForCurrentView(DialogLine activeLine)
+    {
+        if (ShowActionPointPictures(activeLine))
+        {
+            return;
+        }
+
+        dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
+    }
+
+    private bool ShowActionPointPictures(DialogLine activeLine)
+    {
+        List<DialogPictureRequest> pictureRequests = GetActionPointPictureRequests(activeLine);
+        return dialogPictureRegistry.ShowPictures(DialogTriggerMode.ActionPoint, pictureRequests);
+    }
+
+    private List<DialogPictureRequest> GetActionPointPictureRequests(DialogLine activeLine)
+    {
+        List<DialogPictureRequest> pictureRequests = new List<DialogPictureRequest>();
+        int spentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : 0;
+
+        if (spentActionPoints > 0 && actionPointDialogController != null)
+        {
+            AddActionPointPictureRequestForCharacter(pictureRequests, teacherCharacterId, spentActionPoints, activeLine);
+            AddActionPointPictureRequestForCharacter(pictureRequests, mateCharacterId, spentActionPoints, activeLine);
+            AddActionPointPictureRequestForCharacter(pictureRequests, windowsCharacterId, spentActionPoints, activeLine);
+        }
+
+        AddPictureRequestIfMissing(
+            pictureRequests,
+            activeLine != null ? activeLine.speakerId : string.Empty,
+            activeLine != null ? activeLine.pictureId : string.Empty);
+        return pictureRequests;
+    }
+
+    private void AddActionPointPictureRequestForCharacter(
+        List<DialogPictureRequest> pictureRequests,
+        string characterId,
+        int spentActionPoints,
+        DialogLine activeLine)
+    {
+        if (string.IsNullOrEmpty(characterId))
+        {
+            return;
+        }
+
+        DialogEntry dialog = actionPointDialogController.FindDialogForCharacterBySpentActionPoints(
+            characterId,
+            spentActionPoints);
+        string pictureId = GetPictureIdForTriggerOrder(dialog, activeLine);
+        AddPictureRequestIfMissing(pictureRequests, characterId, pictureId);
+    }
+
+    private void AddPictureRequestIfMissing(List<DialogPictureRequest> pictureRequests, string characterId, string pictureId)
+    {
+        if (string.IsNullOrEmpty(pictureId))
+        {
+            return;
+        }
+
+        foreach (DialogPictureRequest request in pictureRequests)
+        {
+            if (request != null &&
+                request.characterId == characterId &&
+                request.pictureId == pictureId)
+            {
+                return;
+            }
+        }
+
+        pictureRequests.Add(new DialogPictureRequest
+        {
+            characterId = characterId,
+            pictureId = pictureId
+        });
+    }
+
+    private string GetPictureIdForTriggerOrder(DialogEntry dialog, DialogLine activeLine)
+    {
+        if (dialog?.lines == null)
+        {
+            return string.Empty;
+        }
+
+        if (activeLine != null)
+        {
+            foreach (DialogLine line in dialog.lines)
+            {
+                if (line != null &&
+                    line.triggerOrder == activeLine.triggerOrder &&
+                    !string.IsNullOrEmpty(line.pictureId))
+                {
+                    return line.pictureId;
+                }
+            }
+        }
+
+        return GetFirstPictureId(dialog);
+    }
+
     private void RememberCurrentActionPointState()
     {
         lastSpentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : -1;
         lastActionPointDay = actionPointDialogController != null ? actionPointDialogController.GetCurrentDay() : -1;
-        lastCameraViewType = GetCurrentCameraViewType();
     }
 
     private CameraViewType GetCurrentCameraViewType()

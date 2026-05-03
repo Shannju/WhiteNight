@@ -5,8 +5,15 @@ using UnityEngine;
 [Serializable]
 public class DialogPictureEntry
 {
+    public string characterId;
     public string pictureId;
     public GameObject target;
+}
+
+public class DialogPictureRequest
+{
+    public string characterId;
+    public string pictureId;
 }
 
 public class DialogPictureRegistry : MonoBehaviour
@@ -66,6 +73,143 @@ public class DialogPictureRegistry : MonoBehaviour
 
         HideAllPictures();
         targetEntry.target.SetActive(true);
+        return true;
+    }
+
+    public bool ShowPictures(DialogTriggerMode triggerMode, IEnumerable<string> pictureIds)
+    {
+        if (pictureIds == null)
+        {
+            return false;
+        }
+
+        List<DialogPictureEntry> pictures = GetPictures(triggerMode);
+
+        if (pictures == null)
+        {
+            return false;
+        }
+
+        HashSet<string> normalizedPictureIds = new HashSet<string>();
+
+        foreach (string pictureId in pictureIds)
+        {
+            string normalizedPictureId = NormalizePictureId(pictureId);
+
+            if (!string.IsNullOrEmpty(normalizedPictureId))
+            {
+                normalizedPictureIds.Add(normalizedPictureId);
+            }
+        }
+
+        if (normalizedPictureIds.Count == 0)
+        {
+            return false;
+        }
+
+        List<GameObject> targets = new List<GameObject>();
+
+        foreach (DialogPictureEntry entry in pictures)
+        {
+            if (entry?.target == null)
+            {
+                continue;
+            }
+
+            if (normalizedPictureIds.Contains(NormalizePictureId(entry.pictureId)))
+            {
+                targets.Add(entry.target);
+            }
+        }
+
+        if (targets.Count == 0)
+        {
+            return false;
+        }
+
+        HideAllPictures();
+
+        foreach (GameObject target in targets)
+        {
+            target.SetActive(true);
+        }
+
+        return true;
+    }
+
+    public bool ShowPictures(DialogTriggerMode triggerMode, IEnumerable<DialogPictureRequest> pictureRequests)
+    {
+        if (pictureRequests == null)
+        {
+            return false;
+        }
+
+        List<DialogPictureEntry> pictures = GetPictures(triggerMode);
+
+        if (pictures == null)
+        {
+            return false;
+        }
+
+        List<DialogPictureRequest> normalizedRequests = new List<DialogPictureRequest>();
+
+        foreach (DialogPictureRequest request in pictureRequests)
+        {
+            if (request == null)
+            {
+                continue;
+            }
+
+            string pictureId = NormalizePictureId(request.pictureId);
+
+            if (string.IsNullOrEmpty(pictureId))
+            {
+                continue;
+            }
+
+            normalizedRequests.Add(new DialogPictureRequest
+            {
+                characterId = NormalizeCharacterId(request.characterId),
+                pictureId = pictureId
+            });
+        }
+
+        if (normalizedRequests.Count == 0)
+        {
+            return false;
+        }
+
+        List<GameObject> targets = new List<GameObject>();
+
+        foreach (DialogPictureEntry entry in pictures)
+        {
+            if (entry?.target == null)
+            {
+                continue;
+            }
+
+            foreach (DialogPictureRequest request in normalizedRequests)
+            {
+                if (DoesEntryMatchRequest(entry, request))
+                {
+                    targets.Add(entry.target);
+                    break;
+                }
+            }
+        }
+
+        if (targets.Count == 0)
+        {
+            return false;
+        }
+
+        HideAllPictures();
+
+        foreach (GameObject target in targets)
+        {
+            target.SetActive(true);
+        }
+
         return true;
     }
 
@@ -147,5 +291,24 @@ public class DialogPictureRegistry : MonoBehaviour
     private string NormalizePictureId(string pictureId)
     {
         return string.IsNullOrEmpty(pictureId) ? string.Empty : pictureId.Trim();
+    }
+
+    private string NormalizeCharacterId(string characterId)
+    {
+        return string.IsNullOrEmpty(characterId) ? string.Empty : characterId.Trim().ToLowerInvariant();
+    }
+
+    private bool DoesEntryMatchRequest(DialogPictureEntry entry, DialogPictureRequest request)
+    {
+        if (NormalizePictureId(entry.pictureId) != request.pictureId)
+        {
+            return false;
+        }
+
+        string entryCharacterId = NormalizeCharacterId(entry.characterId);
+
+        return string.IsNullOrEmpty(entryCharacterId) ||
+               string.IsNullOrEmpty(request.characterId) ||
+               entryCharacterId == request.characterId;
     }
 }

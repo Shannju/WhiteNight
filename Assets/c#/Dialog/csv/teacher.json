@@ -564,7 +564,7 @@
                             "characterName": "",
                             "triggerOrder": 0,
                             "text": "Press space to continue",
-                            "pictureId": "0",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -1097,7 +1097,7 @@
                             "characterName": "",
                             "triggerOrder": 5,
                             "text": "Press the down arrow key to lower your head and look at the text.",
-                            "pictureId": "0",
+                            "pictureId": "3",
                             "playerPicture": ""
                         },
                         {
@@ -1105,7 +1105,7 @@
                             "characterName": "",
                             "triggerOrder": 6,
                             "text": "Click on the textbook to select the answer.",
-                            "pictureId": "0",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -1300,7 +1300,7 @@
                             "characterName": "",
                             "triggerOrder": 2,
                             "text": "Click on the textbook to select the answer.",
-                            "pictureId": "0",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -1495,7 +1495,7 @@
                             "characterName": "",
                             "triggerOrder": 2,
                             "text": "Click on the textbook to select the answer.",
-                            "pictureId": "0",
+                            "pictureId": "3",
                             "playerPicture": ""
                         }
                     ]
@@ -1587,7 +1587,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(Silence. Cici is zoning out.)",
-                            "pictureId": "0",
+                            "pictureId": "3",
                             "playerPicture": "1"
                         }
                     ]
@@ -1824,7 +1824,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "Because he forgot to close the curtains.",
-                            "pictureId": "0",
+                            "pictureId": "3",
                             "playerPicture": "1"
                         }
                     ]
