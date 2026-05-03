@@ -84,9 +84,11 @@ public class DialogManager : MonoBehaviour
 
     private DialogEntry activeDialog;
     private int activeLineIndex;
+    private Coroutine lineStartCoroutine;
     private Coroutine typingCoroutine;
     private Coroutine autoAdvanceCoroutine;
     private string fullLineText;
+    private bool isPreparingLineStart;
     private bool isTyping;
     private bool isWaitingForAdvance;
     private bool shouldEndDialogAfterWait;
@@ -100,7 +102,7 @@ public class DialogManager : MonoBehaviour
     private float interactDisabledUntilTime;
     private bool isSubscribedToDaySystem;
 
-    public bool IsDialogActive => activeDialog != null || isTyping || isWaitingForAdvance;
+    public bool IsDialogActive => activeDialog != null || isPreparingLineStart || isTyping || isWaitingForAdvance;
 
     private void Awake()
     {
@@ -381,6 +383,11 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
+        if (isPreparingLineStart)
+        {
+            return;
+        }
+
         if (isWaitingForAdvance)
         {
             AdvanceFromWaitingState();
@@ -599,6 +606,7 @@ public class DialogManager : MonoBehaviour
     {
         DialogTriggerMode endedTriggerMode = activeDialogTriggerMode;
 
+        StopLineStartDelay();
         StopTyping();
         StopAutoAdvanceCountdown();
         activeDialog = null;
@@ -777,12 +785,7 @@ public class DialogManager : MonoBehaviour
         DialogLine line = activeDialog.lines[activeLineIndex];
         activeLineIndex++;
         shouldEndDialogAfterWait = activeLineIndex >= activeDialog.lines.Count;
-        SetDialogText(line);
-
-        if (shouldEndDialogAfterWait)
-        {
-            InvokeDialogLastLineShownEvents(activeDialog);
-        }
+        PrepareDialogLine(line);
     }
 
     private void InvokeDialogStartedEvents(DialogEntry dialog)
@@ -909,7 +912,7 @@ public class DialogManager : MonoBehaviour
         return null;
     }
 
-    private void SetDialogText(DialogLine line)
+    private void PrepareDialogLine(DialogLine line)
     {
         if (dialogText == null)
         {
@@ -931,7 +934,7 @@ public class DialogManager : MonoBehaviour
         ApplySpeakerColor(line);
         UpdatePlayerPicture(line);
         UpdateDialogPictureState(line);
-        StartTypingLine(prefix, text);
+        StartLineTextNextFrame(prefix, text, shouldEndDialogAfterWait);
     }
 
     private void SetStaticDialogText(DialogLine line)
@@ -947,6 +950,7 @@ public class DialogManager : MonoBehaviour
 
         ApplySpeakerColor(line);
         UpdatePlayerPicture(line);
+        UpdateDialogPictureState(line);
         dialogText.text = prefix + (line.text ?? string.Empty);
         fullLineText = dialogText.text;
     }
@@ -971,6 +975,42 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    private void StartLineTextNextFrame(string prefix, string text, bool invokeLastLineShown)
+    {
+        StopLineStartDelay();
+        StopTyping();
+        StopAutoAdvanceCountdown();
+
+        fullLineText = prefix + text;
+        isPreparingLineStart = true;
+        lineStartCoroutine = StartCoroutine(ShowPreparedLineNextFrame(prefix, text, invokeLastLineShown));
+    }
+
+    private IEnumerator ShowPreparedLineNextFrame(string prefix, string text, bool invokeLastLineShown)
+    {
+        yield return null;
+
+        lineStartCoroutine = null;
+        isPreparingLineStart = false;
+        StartTypingLine(prefix, text);
+
+        if (invokeLastLineShown)
+        {
+            InvokeDialogLastLineShownEvents(activeDialog);
+        }
+    }
+
+    private void StopLineStartDelay()
+    {
+        if (lineStartCoroutine != null)
+        {
+            StopCoroutine(lineStartCoroutine);
+            lineStartCoroutine = null;
+        }
+
+        isPreparingLineStart = false;
+    }
+
     private bool DoesActionPointEventBindingMatch(DialogIdEventBinding binding, DialogEntry dialog)
     {
         if (binding == null)
@@ -980,19 +1020,8 @@ public class DialogManager : MonoBehaviour
 
         if (binding.day > 0 || binding.actionPointOrder > 0)
         {
-            if (binding.day != activeDialogDay ||
-                binding.actionPointOrder != activeDialogActionPointOrder)
-            {
-                return false;
-            }
-
-            if (!string.IsNullOrEmpty(binding.dialogId))
-            {
-                return dialog != null &&
-                       string.Equals(binding.dialogId, dialog.dialogId, System.StringComparison.OrdinalIgnoreCase);
-            }
-
-            return true;
+            return binding.day == activeDialogDay &&
+                   binding.actionPointOrder == activeDialogActionPointOrder;
         }
 
         return dialog != null &&

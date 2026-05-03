@@ -6,7 +6,6 @@ public class ActionPointClockHandUpdater : MonoBehaviour
     [SerializeField] private ActionPointSystem actionPointSystem;
 
     [Header("Clock Settings")]
-    [SerializeField] private int totalActionPoints = 12;
     [SerializeField] private float fullActionPointsZ = 180f;
     [SerializeField] private float emptyActionPointsZ = -180f;
 
@@ -44,7 +43,7 @@ public class ActionPointClockHandUpdater : MonoBehaviour
             return;
         }
 
-        int actionPointCount = Mathf.Max(1, totalActionPoints);
+        int actionPointCount = Mathf.Max(1, actionPointSystem.MaxActionPoints);
         int currentActionPoints = Mathf.Clamp(actionPointSystem.CurrentActionPoints, 0, actionPointCount);
 
         if (currentActionPoints == lastActionPoints)

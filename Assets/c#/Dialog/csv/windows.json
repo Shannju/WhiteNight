@@ -17,7 +17,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(When will this class ever end?)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -34,7 +34,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(I wish Y-City had white nights. Here, people have to go home by 8 PM, be in bed by 10 PM, and by 11 PM the streets are empty except for lonely wandering souls.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -51,7 +51,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(A lost bee is bumping against the windowpane, and some students are distracted by it.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -68,7 +68,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(A bird flashes through the shade of the trees outside. The sun is beginning to set.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -85,7 +85,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(What if gravity was reversed? We would be standing on the ceiling, having class while sitting on the rafters.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -102,7 +102,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Outside the window)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -110,7 +110,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(The summer light is so dense it almost seems solid. The classroom is still cool, hiding behind the walls, but everything exposed to the sun is so dazzling you have to close your eyes.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -127,7 +127,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(They say summer is the best season, and childhood is the best time of life.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -135,7 +135,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(Yes, I agree completely. I can already see myself as a frail old person in the winter of my life, lost in thought, wishing a million times I could come back to this very moment.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -143,7 +143,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(But right now, on this day when the sun is at its most fierce, what should we do, so as not to have wasted our time?)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -160,7 +160,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(The Tyndall effect appears in the gap of the curtains. Dust motes, usually invisible, dance in the column of light.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -177,32 +177,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(The teacher's voice is gradually fading.)",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "1_ra_1",
-                    "day": 1,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "minna",
-                            "characterName": "Minna",
-                            "triggerOrder": 0,
-                            "text": "The textbooks have arrived; I'll bring them over later.",
-                            "pictureId": "",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "tutorial",
-                            "characterName": "",
-                            "triggerOrder": 1,
-                            "text": "Press the up key to look at the blackboard.",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -219,7 +194,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(If Julian was really as successful abroad as he claims, why would he come back to our second-tier city to teach middle school English?)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -236,7 +211,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(*Beyond English, Beyond Yourself.*)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -244,7 +219,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(Transcend English, transcend yourself.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -252,7 +227,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(But when we truly transcend English, what will we use to express our emotions?)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -260,7 +235,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(And when we truly transcend ourselves, what do we become? Something other than ourselves?)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -277,7 +252,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Yuanyuan is still memorizing vocabulary, completely absorbed.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -285,7 +260,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(Actually, vocabulary might not even be that important. When you read, you can just substitute words with their first letter.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -293,7 +268,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(Mr. J teaches in Y-City, and Ms. Y teaches in J-City. Most nouns in the world are irrelevant. You could replace them with pictures.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -301,7 +276,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(Adjectives and adverbs can play a key role, but most of the time, you can do without them. The () Mr. J teaches () in the () Y-City. No one would care.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -318,7 +293,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Today, while Julian was talking her ear off, Minna just kept a polite smile. Her eyes were actually on the water cooler at the end of the hallway.)",
-                            "pictureId": "",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]

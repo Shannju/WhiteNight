@@ -5,10 +5,14 @@ public class DialogPictureController : MonoBehaviour
     [SerializeField] private DialogPictureRegistry dialogPictureRegistry;
     [SerializeField] private ActionPointSystem actionPointSystem;
     [SerializeField] private ActionPointDialogController actionPointDialogController;
+    [SerializeField] private DialogManager dialogManager;
     [SerializeField] private string teacherCharacterId = "teacher";
+    [SerializeField] private string mateCharacterId = "mate";
+    [SerializeField] private string windowsCharacterId = "windows";
 
     private int lastSpentActionPoints = -1;
     private int lastActionPointDay = -1;
+    private CameraViewType lastCameraViewType = CameraViewType.None;
     private bool isNonActionPointDialogActive;
 
     private void Start()
@@ -42,7 +46,15 @@ public class DialogPictureController : MonoBehaviour
 
         if (triggerMode == DialogTriggerMode.ActionPoint)
         {
-            isNonActionPointDialogActive = false;
+            isNonActionPointDialogActive = true;
+
+            if (line == null || string.IsNullOrEmpty(line.pictureId))
+            {
+                dialogPictureRegistry.ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
+                return;
+            }
+
+            dialogPictureRegistry.ShowPicture(triggerMode, line.pictureId);
             return;
         }
 
@@ -72,16 +84,18 @@ public class DialogPictureController : MonoBehaviour
     {
         // Keep the last visible picture after a dialog ends.
         // The picture will change later when a new state explicitly updates it.
-        if (triggerMode != DialogTriggerMode.ActionPoint)
-        {
-            RememberCurrentActionPointState();
-            isNonActionPointDialogActive = false;
-        }
+        RememberCurrentActionPointState();
+        isNonActionPointDialogActive = false;
     }
 
     public void OnPendingRandomDialogChanged(DialogEntry dialog)
     {
         if (dialogPictureRegistry == null)
+        {
+            return;
+        }
+
+        if (GetCurrentCameraViewType() != CameraViewType.Windows)
         {
             return;
         }
@@ -105,16 +119,26 @@ public class DialogPictureController : MonoBehaviour
 
         int spentActionPoints = actionPointSystem.SpentActionPoints;
         int currentDay = actionPointDialogController.GetCurrentDay();
+        CameraViewType currentViewType = GetCurrentCameraViewType();
 
         if (!forceRefresh &&
             spentActionPoints == lastSpentActionPoints &&
-            currentDay == lastActionPointDay)
+            currentDay == lastActionPointDay &&
+            currentViewType == lastCameraViewType)
         {
             return;
         }
 
         lastSpentActionPoints = spentActionPoints;
         lastActionPointDay = currentDay;
+        lastCameraViewType = currentViewType;
+
+        string characterId = GetCharacterIdForView(currentViewType);
+
+        if (string.IsNullOrEmpty(characterId))
+        {
+            return;
+        }
 
         if (spentActionPoints <= 0)
         {
@@ -123,7 +147,7 @@ public class DialogPictureController : MonoBehaviour
         }
 
         DialogEntry dialog = actionPointDialogController.FindDialogForCharacterBySpentActionPoints(
-            teacherCharacterId,
+            characterId,
             spentActionPoints);
 
         if (dialog == null)
@@ -159,6 +183,11 @@ public class DialogPictureController : MonoBehaviour
         {
             actionPointDialogController = FindObjectOfType<ActionPointDialogController>();
         }
+
+        if (dialogManager == null)
+        {
+            dialogManager = FindObjectOfType<DialogManager>();
+        }
     }
 
     private string GetFirstPictureId(DialogEntry dialog)
@@ -183,5 +212,26 @@ public class DialogPictureController : MonoBehaviour
     {
         lastSpentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : -1;
         lastActionPointDay = actionPointDialogController != null ? actionPointDialogController.GetCurrentDay() : -1;
+        lastCameraViewType = GetCurrentCameraViewType();
+    }
+
+    private CameraViewType GetCurrentCameraViewType()
+    {
+        return dialogManager != null ? dialogManager.GetCurrentCameraViewType() : CameraViewType.None;
+    }
+
+    private string GetCharacterIdForView(CameraViewType viewType)
+    {
+        switch (viewType)
+        {
+            case CameraViewType.Teacher:
+                return teacherCharacterId;
+            case CameraViewType.Mate:
+                return mateCharacterId;
+            case CameraViewType.Windows:
+                return windowsCharacterId;
+            default:
+                return string.Empty;
+        }
     }
 }

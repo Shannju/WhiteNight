@@ -1,25 +1,25 @@
-﻿"day","characterId","characterName","mode","actionpointOrder","dialogID","sequenceOrder","triggerOrder","text","pictureId","playerpicture","soundId"
-"0","player","Me","random","","0_ra_1","","0","(When will this class ever end?)","","",""
-"0","player","Me","random","","0_ra_2","","0","(A lost bee is bumping against the windowpane, and some students are distracted by it.)","","",""
-"0","player","Me","random","","0_ra_3","","0","(A bird flashes through the shade of the trees outside. The sun is beginning to set.)","","",""
-"0","player","Me","random","","0_ra_4","","0","(What if gravity was reversed? We would be standing on the ceiling, having class while sitting on the rafters.)","","",""
-"0","player","Me","random","","0_ra_5","","0","(Outside the window)","","",""
-"0","player","Me","random","","0_ra_5","","1","(The summer light is so dense it almost seems solid. The classroom is still cool, hiding behind the walls, but everything exposed to the sun is so dazzling you have to close your eyes.)","","",""
-"0","player","Me","random","","0_ra_6","","0","(They say summer is the best season, and childhood is the best time of life.)","","",""
-"0","player","Me","random","","0_ra_6","","1","(Yes, I agree completely. I can already see myself as a frail old person in the winter of my life, lost in thought, wishing a million times I could come back to this very moment.)","","",""
-"0","player","Me","random","","0_ra_6","","2","(But right now, on this day when the sun is at its most fierce, what should we do, so as not to have wasted our time?)","","",""
-"0","player","Me","random","","0_ra_7","","0","(The Tyndall effect appears in the gap of the curtains. Dust motes, usually invisible, dance in the column of light.)","","",""
-"0","player","Me","random","","0_ra_8","","0","(The teacher's voice is gradually fading.)","","",""
-"0","player","Me","random","","0_ra_12","","0","(I wish Y-City had white nights. Here, people have to go home by 8 PM, be in bed by 10 PM, and by 11 PM the streets are empty except for lonely wandering souls.)","","",""
-"1","minna","Minna","random","","1_ra_1","","0","The textbooks have arrived; I'll bring them over later.","","",""
-"1","tutorial","","random","","1_ra_1","","1","Press the up key to look at the blackboard.","","",""
-"1","player","Me","random","","1_ra_9","","0","(Today, while Julian was talking her ear off, Minna just kept a polite smile. Her eyes were actually on the water cooler at the end of the hallway.)","","",""
-"1","player","Me","random","","1_ra_10","","0","(If Julian was really as successful abroad as he claims, why would he come back to our second-tier city to teach middle school English?)","","",""
-"1","player","Me","random","","1_ra_11","","0","(*Beyond English, Beyond Yourself.*)","","",""
-"1","player","Me","random","","1_ra_11","","1","(Transcend English, transcend yourself.)","","",""
-"1","player","Me","random","","1_ra_11","","2","(But when we truly transcend English, what will we use to express our emotions?)","","",""
-"1","player","Me","random","","1_ra_11","","3","(And when we truly transcend ourselves, what do we become? Something other than ourselves?)","","",""
-"1","player","Me","random","","1_ra_13","","0","(Yuanyuan is still memorizing vocabulary, completely absorbed.)","","",""
-"1","player","Me","random","","1_ra_13","","1","(Actually, vocabulary might not even be that important. When you read, you can just substitute words with their first letter.)","","",""
-"1","player","Me","random","","1_ra_13","","2","(Mr. J teaches in Y-City, and Ms. Y teaches in J-City. Most nouns in the world are irrelevant. You could replace them with pictures.)","","",""
-"1","player","Me","random","","1_ra_13","","3","(Adjectives and adverbs can play a key role, but most of the time, you can do without them. The () Mr. J teaches () in the () Y-City. No one would care.)","","",""
+﻿day,characterId,characterName,mode,actionpointOrder,dialogID,sequenceOrder,triggerOrder,text,pictureId,playerpicture,soundId
+0,player,Me,random,,0_ra_1,,0,(When will this class ever end?),1,,
+0,player,Me,random,,0_ra_2,,0,"(A lost bee is bumping against the windowpane, and some students are distracted by it.)",1,,
+0,player,Me,random,,0_ra_3,,0,(A bird flashes through the shade of the trees outside. The sun is beginning to set.),1,,
+0,player,Me,random,,0_ra_4,,0,"(What if gravity was reversed? We would be standing on the ceiling, having class while sitting on the rafters.)",1,,
+0,player,Me,random,,0_ra_5,,0,(Outside the window),1,,
+0,player,Me,random,,0_ra_5,,1,"(The summer light is so dense it almost seems solid. The classroom is still cool, hiding behind the walls, but everything exposed to the sun is so dazzling you have to close your eyes.)",1,,
+0,player,Me,random,,0_ra_6,,0,"(They say summer is the best season, and childhood is the best time of life.)",1,,
+0,player,Me,random,,0_ra_6,,1,"(Yes, I agree completely. I can already see myself as a frail old person in the winter of my life, lost in thought, wishing a million times I could come back to this very moment.)",1,,
+0,player,Me,random,,0_ra_6,,2,"(But right now, on this day when the sun is at its most fierce, what should we do, so as not to have wasted our time?)",1,,
+0,player,Me,random,,0_ra_7,,0,"(The Tyndall effect appears in the gap of the curtains. Dust motes, usually invisible, dance in the column of light.)",1,,
+0,player,Me,random,,0_ra_8,,0,(The teacher's voice is gradually fading.),1,,
+0,player,Me,random,,0_ra_12,,0,"(I wish Y-City had white nights. Here, people have to go home by 8 PM, be in bed by 10 PM, and by 11 PM the streets are empty except for lonely wandering souls.)",1,,
+1,minna,Minna,actionpoint,4,1_ap_4,,0,The textbooks have arrived; I'll bring them over later.,1,,
+1,tutorial,,actionpoint,4,1_ap_4,,1,Press the up key to look at the blackboard.,1,,
+1,player,Me,random,,1_ra_9,,0,"(Today, while Julian was talking her ear off, Minna just kept a polite smile. Her eyes were actually on the water cooler at the end of the hallway.)",1,,
+1,player,Me,random,,1_ra_10,,0,"(If Julian was really as successful abroad as he claims, why would he come back to our second-tier city to teach middle school English?)",1,,
+1,player,Me,random,,1_ra_11,,0,"(*Beyond English, Beyond Yourself.*)",1,,
+1,player,Me,random,,1_ra_11,,1,"(Transcend English, transcend yourself.)",1,,
+1,player,Me,random,,1_ra_11,,2,"(But when we truly transcend English, what will we use to express our emotions?)",1,,
+1,player,Me,random,,1_ra_11,,3,"(And when we truly transcend ourselves, what do we become? Something other than ourselves?)",1,,
+1,player,Me,random,,1_ra_13,,0,"(Yuanyuan is still memorizing vocabulary, completely absorbed.)",1,,
+1,player,Me,random,,1_ra_13,,1,"(Actually, vocabulary might not even be that important. When you read, you can just substitute words with their first letter.)",1,,
+1,player,Me,random,,1_ra_13,,2,"(Mr. J teaches in Y-City, and Ms. Y teaches in J-City. Most nouns in the world are irrelevant. You could replace them with pictures.)",1,,
+1,player,Me,random,,1_ra_13,,3,"(Adjectives and adverbs can play a key role, but most of the time, you can do without them. The () Mr. J teaches () in the () Y-City. No one would care.)",1,,

@@ -1,9 +1,4 @@
 ﻿day,characterId,characterName,mode,actionpointOrder,dialogID,sequenceOrder,triggerOrder,text,pictureId,playerpicture,soundId
-1,mate,Cici,sequence,,1_seq_0,0,0,Who cares about grades? Summer vacation has already started!,3,,
-1,player,Me,sequence,,1_seq_0,0,1,"I wish I could, but holiday is basically we catching up on English.",3,,
-1,mate,Cici,sequence,,1_seq_0,0,2,Worst luck ever. We sre the ones who have to deal with Julian this term.,3,,
-1,mate,Cici,sequence,,1_seq_0,0,3,His teaching style is... insane.,3,,
-1,tutorial,,sequence,,1_seq_0,0,4,Press the up key to look at the blackboard.,3,,
 1,player,Me,sequence,,1_seq_2,2,0,(Cici is my only and best friend.),3,,
 1,player,Me,sequence,,1_seq_2,2,1,"(She's the type to be affected by grades too, but she doesn't dwell on it.)",3,,
 1,player,Me,sequence,,1_seq_2,2,2,"(I can talk to other classmates, of course. We say hi when we see each other.)",3,,
@@ -37,7 +32,7 @@
 1,player,Me,actionpoint,2,1_ap_2,,7,(But...),3,,
 1,mate,Cici,actionpoint,2,1_ap_2,,8,Julian is here.,3,,
 1,mate,Cici,actionpoint,2,1_ap_2,,9,"He is pretty interesting, but his teaching style is a little... insane.",3,,
-,tutorial,,,2,,,,按下上方向键抬头,,,
+1,tutorial,,actionpoint,2,1_ap_2,,10,Press the up key to look at the blackboard.,3,,
 1,mate,Cici,actionpoint,11,1_ap_11,,0,...,3,,
 1,player,Me,actionpoint,11,1_ap_11,,1,"Cici, the teacher called on you.",3,,
 1,mate,Cici,actionpoint,11,1_ap_11,,2,"White night... uh, the sun is working overtime?",3,,

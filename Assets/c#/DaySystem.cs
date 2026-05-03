@@ -36,8 +36,6 @@ public class SpecificDayStartedEvent
 
 public class DaySystem : MonoBehaviour
 {
-    private const int DailyActionPoints = 16;
-
     [Header("Day Settings")]
     [SerializeField] private int startDay = 1;
     [SerializeField] private int currentDay = 1;
@@ -494,7 +492,6 @@ public class DaySystem : MonoBehaviour
             return;
         }
 
-        actionPointSystem.SetMaxActionPoints(DailyActionPoints);
         actionPointSystem.ResetActionPoints();
     }
 

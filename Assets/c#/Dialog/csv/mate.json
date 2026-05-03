@@ -6,55 +6,6 @@
             "mode": "sequence",
             "dialogs": [
                 {
-                    "dialogId": "1_seq_0",
-                    "day": 1,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "Who cares about grades? Summer vacation has already started!",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "player",
-                            "characterName": "Me",
-                            "triggerOrder": 1,
-                            "text": "I wish I could, but holiday is basically we catching up on English.",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 2,
-                            "text": "Worst luck ever. We sre the ones who have to deal with Julian this term.",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 3,
-                            "text": "His teaching style is... insane.",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "tutorial",
-                            "characterName": "",
-                            "triggerOrder": 4,
-                            "text": "Press the up key to look at the blackboard.",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "1_seq_2",
                     "day": 1,
                     "sequenceOrder": 2,

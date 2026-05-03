@@ -27,20 +27,20 @@ public class DialogPictureRegistry : MonoBehaviour
         ActivateAllDefaultPictures();
     }
 
-    public void ShowPicture(DialogTriggerMode triggerMode, string pictureId)
+    public bool ShowPicture(DialogTriggerMode triggerMode, string pictureId)
     {
         pictureId = NormalizePictureId(pictureId);
 
         if (string.IsNullOrEmpty(pictureId))
         {
-            return;
+            return false;
         }
 
         List<DialogPictureEntry> pictures = GetPictures(triggerMode);
 
         if (pictures == null)
         {
-            return;
+            return false;
         }
 
         DialogPictureEntry targetEntry = null;
@@ -59,21 +59,23 @@ public class DialogPictureRegistry : MonoBehaviour
             }
         }
 
-        HideAllPictures();
-
-        if (targetEntry?.target != null)
+        if (targetEntry?.target == null)
         {
-            targetEntry.target.SetActive(true);
+            return false;
         }
+
+        HideAllPictures();
+        targetEntry.target.SetActive(true);
+        return true;
     }
 
-    public void ActivateDefaultPicture(DialogTriggerMode triggerMode)
+    public bool ActivateDefaultPicture(DialogTriggerMode triggerMode)
     {
         List<DialogPictureEntry> pictures = GetPictures(triggerMode);
 
         if (pictures == null)
         {
-            return;
+            return false;
         }
 
         DialogPictureEntry defaultEntry = null;
@@ -89,12 +91,12 @@ public class DialogPictureRegistry : MonoBehaviour
 
         if (defaultEntry == null || defaultEntry.target == null)
         {
-            HideAllPictures();
-            return;
+            return false;
         }
 
         HideAllPictures();
         defaultEntry.target.SetActive(true);
+        return true;
     }
 
     public void ActivateAllDefaultPictures()

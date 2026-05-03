@@ -1,6 +1,159 @@
 {
     "characters": [
         {
+            "characterId": "mate",
+            "characterName": "Cici",
+            "mode": "actionpoint",
+            "dialogs": [
+                {
+                    "dialogId": "1_ap_2",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 2,
+                    "actionPointMax": 2,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "Forget about that. Summer vacation has already started!",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Why are we here?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "Because English will not improve by itself.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(Cici is my only and best friend.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "(She's the type to be affected by grades too, but she doesn't dwell on it.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 5,
+                            "text": "(It is so nice that I get to attend cram school with her this year.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 6,
+                            "text": "(I will not have to spend summer vacation alone.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 7,
+                            "text": "(But...)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 8,
+                            "text": "Julian is here.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 9,
+                            "text": "He is pretty interesting, but his teaching style is a little... insane.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 10,
+                            "text": "Press the up key to look at the blackboard.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "1_ap_11",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 11,
+                    "actionPointMax": 11,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "...",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Cici, the teacher called on you.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "White night... uh, the sun is working overtime?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "B.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 4,
+                            "text": "Pick B.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "characterId": "teacher",
             "characterName": "Julian",
             "mode": "actionpoint",
@@ -2453,6 +2606,38 @@
                             "triggerOrder": 1,
                             "text": "8_ap_16",
                             "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "characterId": "windows",
+            "characterName": "Minna",
+            "mode": "actionpoint",
+            "dialogs": [
+                {
+                    "dialogId": "1_ap_4",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 4,
+                    "actionPointMax": 4,
+                    "lines": [
+                        {
+                            "speakerId": "minna",
+                            "characterName": "Minna",
+                            "triggerOrder": 0,
+                            "text": "The textbooks have arrived; I'll bring them over later.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 1,
+                            "text": "Press the up key to look at the blackboard.",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
