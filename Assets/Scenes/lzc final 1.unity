@@ -4392,7 +4392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &460702941
 Transform:
   m_ObjectHideFlags: 0
@@ -6892,7 +6892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927465503}
   - component: {fileID: 927465504}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Bird_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8362,7 +8362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1244813768}
   - component: {fileID: 1244813769}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Bird_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9215,7 +9215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1443205902
 Transform:
   m_ObjectHideFlags: 0
@@ -10673,13 +10673,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1629143835}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1629143835
 Transform:
   m_ObjectHideFlags: 0
@@ -12043,7 +12043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822109777}
   - component: {fileID: 1822109778}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Bee_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12668,7 +12668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1902503871}
   - component: {fileID: 1902503872}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Bird_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

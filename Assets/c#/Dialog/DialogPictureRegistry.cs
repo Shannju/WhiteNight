@@ -71,8 +71,8 @@ public class DialogPictureRegistry : MonoBehaviour
             return false;
         }
 
-        HideAllPictures();
-        targetEntry.target.SetActive(true);
+        ApplyPictureEntries(triggerMode, new[] { targetEntry });
+        NormalizePictureGroups(triggerMode);
         return true;
     }
 
@@ -107,7 +107,7 @@ public class DialogPictureRegistry : MonoBehaviour
             return false;
         }
 
-        List<GameObject> targets = new List<GameObject>();
+        List<DialogPictureEntry> targetEntries = new List<DialogPictureEntry>();
 
         foreach (DialogPictureEntry entry in pictures)
         {
@@ -118,21 +118,17 @@ public class DialogPictureRegistry : MonoBehaviour
 
             if (normalizedPictureIds.Contains(NormalizePictureId(entry.pictureId)))
             {
-                targets.Add(entry.target);
+                targetEntries.Add(entry);
             }
         }
 
-        if (targets.Count == 0)
+        if (targetEntries.Count == 0)
         {
             return false;
         }
 
-        HideAllPictures();
-
-        foreach (GameObject target in targets)
-        {
-            target.SetActive(true);
-        }
+        ApplyPictureEntries(triggerMode, targetEntries);
+        NormalizePictureGroups(triggerMode);
 
         return true;
     }
@@ -179,7 +175,7 @@ public class DialogPictureRegistry : MonoBehaviour
             return false;
         }
 
-        List<GameObject> targets = new List<GameObject>();
+        List<DialogPictureEntry> targetEntries = new List<DialogPictureEntry>();
 
         foreach (DialogPictureEntry entry in pictures)
         {
@@ -192,23 +188,19 @@ public class DialogPictureRegistry : MonoBehaviour
             {
                 if (DoesEntryMatchRequest(entry, request))
                 {
-                    targets.Add(entry.target);
+                    targetEntries.Add(entry);
                     break;
                 }
             }
         }
 
-        if (targets.Count == 0)
+        if (targetEntries.Count == 0)
         {
             return false;
         }
 
-        HideAllPictures();
-
-        foreach (GameObject target in targets)
-        {
-            target.SetActive(true);
-        }
+        ApplyPictureEntriesForRequests(triggerMode, targetEntries, normalizedRequests);
+        NormalizePictureGroups(triggerMode);
 
         return true;
     }
@@ -222,33 +214,133 @@ public class DialogPictureRegistry : MonoBehaviour
             return false;
         }
 
-        DialogPictureEntry defaultEntry = null;
+        List<DialogPictureEntry> defaultEntries = new List<DialogPictureEntry>();
 
         foreach (DialogPictureEntry entry in pictures)
         {
-            if (entry != null && NormalizePictureId(entry.pictureId) == DefaultPictureId)
+            if (entry?.target != null && NormalizePictureId(entry.pictureId) == DefaultPictureId)
             {
-                defaultEntry = entry;
-                break;
+                defaultEntries.Add(entry);
             }
         }
 
-        if (defaultEntry == null || defaultEntry.target == null)
+        if (defaultEntries.Count == 0)
         {
             return false;
         }
 
-        HideAllPictures();
-        defaultEntry.target.SetActive(true);
+        ApplyPictureEntries(triggerMode, defaultEntries);
+        NormalizePictureGroups(triggerMode);
         return true;
     }
 
     public void ActivateAllDefaultPictures()
     {
         ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
+        NormalizePictureGroups(DialogTriggerMode.ActionPoint);
     }
 
     public void HidePictures(DialogTriggerMode triggerMode)
+    {
+        // Pictures should never be fully cleared during normal play; they only swap
+        // when a new line asks for a different picture.
+    }
+
+    public void HideAllPictures()
+    {
+        // Intentionally left blank for the same reason as HidePictures.
+    }
+
+    private void ApplyPictureEntries(
+        DialogTriggerMode triggerMode,
+        IEnumerable<DialogPictureEntry> activeEntries)
+    {
+        HashSet<GameObject> activeTargetSet = new HashSet<GameObject>();
+        HashSet<string> updatedCharacterIds = new HashSet<string>();
+        bool updatesAllCharacters = false;
+
+        foreach (DialogPictureEntry entry in activeEntries)
+        {
+            if (entry?.target == null)
+            {
+                continue;
+            }
+
+            activeTargetSet.Add(entry.target);
+
+            string characterId = NormalizeCharacterId(entry.characterId);
+
+            if (string.IsNullOrEmpty(characterId))
+            {
+                updatesAllCharacters = true;
+                continue;
+            }
+
+            updatedCharacterIds.Add(characterId);
+        }
+
+        ApplyPictureVisibilityForCharacterGroups(triggerMode, activeTargetSet, updatedCharacterIds, updatesAllCharacters);
+    }
+
+    private void ApplyPictureEntriesForRequests(
+        DialogTriggerMode triggerMode,
+        IEnumerable<DialogPictureEntry> activeEntries,
+        IEnumerable<DialogPictureRequest> requests)
+    {
+        HashSet<GameObject> activeTargetSet = new HashSet<GameObject>();
+        HashSet<string> matchedCharacterIds = new HashSet<string>();
+        HashSet<string> requestedCharacterIds = new HashSet<string>();
+        bool updatesAllCharacters = false;
+
+        foreach (DialogPictureEntry entry in activeEntries)
+        {
+            if (entry?.target == null)
+            {
+                continue;
+            }
+
+            activeTargetSet.Add(entry.target);
+
+            string characterId = NormalizeCharacterId(entry.characterId);
+
+            if (string.IsNullOrEmpty(characterId))
+            {
+                updatesAllCharacters = true;
+                continue;
+            }
+
+            matchedCharacterIds.Add(characterId);
+        }
+
+        foreach (DialogPictureRequest request in requests)
+        {
+            if (request == null || string.IsNullOrEmpty(request.pictureId))
+            {
+                continue;
+            }
+
+            if (string.IsNullOrEmpty(request.characterId))
+            {
+                updatesAllCharacters = true;
+                continue;
+            }
+
+            requestedCharacterIds.Add(request.characterId);
+        }
+
+        if (!updatesAllCharacters)
+        {
+            matchedCharacterIds.IntersectWith(requestedCharacterIds);
+        }
+
+        ApplyPictureVisibilityForCharacterGroups(triggerMode, activeTargetSet, matchedCharacterIds, updatesAllCharacters);
+    }
+
+    private void ApplyPictureVisibilityForCharacterGroups(
+        DialogTriggerMode triggerMode,
+        HashSet<GameObject> activeTargetSet,
+        HashSet<string> updatedCharacterIds,
+        bool updatesAllCharacters)
     {
         List<DialogPictureEntry> pictures = GetPictures(triggerMode);
 
@@ -257,20 +349,155 @@ public class DialogPictureRegistry : MonoBehaviour
             return;
         }
 
+        foreach (GameObject target in activeTargetSet)
+        {
+            SetActiveIfChanged(target, true);
+        }
+
         foreach (DialogPictureEntry entry in pictures)
         {
-            if (entry?.target != null)
+            if (entry?.target == null)
             {
-                entry.target.SetActive(false);
+                continue;
+            }
+
+            string entryCharacterId = NormalizeCharacterId(entry.characterId);
+
+            if (!updatesAllCharacters &&
+                string.IsNullOrEmpty(entryCharacterId))
+            {
+                continue;
+            }
+
+            if (!updatesAllCharacters &&
+                !updatedCharacterIds.Contains(entryCharacterId))
+            {
+                continue;
+            }
+
+            if (!activeTargetSet.Contains(entry.target))
+            {
+                SetActiveIfChanged(entry.target, false);
+            }
+        }
+
+        NormalizePictureGroups(triggerMode, activeTargetSet);
+    }
+
+    private void SetActiveIfChanged(GameObject target, bool isActive)
+    {
+        if (target.activeSelf != isActive)
+        {
+            target.SetActive(isActive);
+        }
+    }
+
+    private void NormalizePictureGroups(DialogTriggerMode triggerMode, HashSet<GameObject> preferredTargetSet = null)
+    {
+        List<DialogPictureEntry> pictures = GetPictures(triggerMode);
+
+        if (pictures == null)
+        {
+            return;
+        }
+
+        HashSet<string> characterIds = new HashSet<string>();
+
+        foreach (DialogPictureEntry entry in pictures)
+        {
+            if (entry?.target == null)
+            {
+                continue;
+            }
+
+            characterIds.Add(NormalizeCharacterId(entry.characterId));
+        }
+
+        foreach (string characterId in characterIds)
+        {
+            DialogPictureEntry activeEntry = GetActivePictureForCharacter(pictures, characterId, preferredTargetSet);
+            DialogPictureEntry fallbackEntry = activeEntry ?? GetFallbackPictureForCharacter(pictures, characterId);
+
+            if (fallbackEntry?.target != null)
+            {
+                SetActiveIfChanged(fallbackEntry.target, true);
+            }
+
+            CloseOtherPicturesForCharacter(pictures, characterId, fallbackEntry);
+        }
+    }
+
+    private DialogPictureEntry GetActivePictureForCharacter(
+        List<DialogPictureEntry> pictures,
+        string characterId,
+        HashSet<GameObject> preferredTargetSet)
+    {
+        foreach (DialogPictureEntry entry in pictures)
+        {
+            if (entry?.target != null &&
+                NormalizeCharacterId(entry.characterId) == characterId &&
+                preferredTargetSet != null &&
+                preferredTargetSet.Contains(entry.target))
+            {
+                return entry;
+            }
+        }
+
+        foreach (DialogPictureEntry entry in pictures)
+        {
+            if (entry?.target != null &&
+                NormalizeCharacterId(entry.characterId) == characterId &&
+                entry.target.activeSelf)
+            {
+                return entry;
+            }
+        }
+
+        return null;
+    }
+
+    private void CloseOtherPicturesForCharacter(
+        List<DialogPictureEntry> pictures,
+        string characterId,
+        DialogPictureEntry activeEntry)
+    {
+        foreach (DialogPictureEntry entry in pictures)
+        {
+            if (entry?.target == null || NormalizeCharacterId(entry.characterId) != characterId)
+            {
+                continue;
+            }
+
+            if (entry != activeEntry)
+            {
+                SetActiveIfChanged(entry.target, false);
             }
         }
     }
 
-    public void HideAllPictures()
+    private DialogPictureEntry GetFallbackPictureForCharacter(List<DialogPictureEntry> pictures, string characterId)
     {
-        HidePictures(DialogTriggerMode.Sequence);
-        HidePictures(DialogTriggerMode.ActionPoint);
-        HidePictures(DialogTriggerMode.Random);
+        DialogPictureEntry firstEntry = null;
+
+        foreach (DialogPictureEntry entry in pictures)
+        {
+            if (entry?.target == null || NormalizeCharacterId(entry.characterId) != characterId)
+            {
+                continue;
+            }
+
+            if (firstEntry == null)
+            {
+                firstEntry = entry;
+            }
+
+            if (NormalizePictureId(entry.pictureId) == DefaultPictureId)
+            {
+                return entry;
+            }
+        }
+
+        return firstEntry;
     }
 
     private List<DialogPictureEntry> GetPictures(DialogTriggerMode triggerMode)
