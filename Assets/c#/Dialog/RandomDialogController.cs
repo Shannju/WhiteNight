@@ -71,42 +71,48 @@ public class RandomDialogController : MonoBehaviour
         }
 
         int currentDay = GetCurrentDay();
-        List<DialogEntry> availableDialogs = GetAvailableDialogs(character, currentDay);
+        List<DialogEntry> currentDayDialogs = GetDialogsForDay(character, currentDay);
+        List<DialogEntry> randomPoolDialogs = GetDialogsForDay(character, 0);
+        string currentDayProgressKey = GetProgressKey(character.characterId, currentDay);
+        string randomPoolProgressKey = GetProgressKey(character.characterId, 0);
+        HashSet<string> currentDayPlayedDialogIds = GetOrCreatePlayedDialogIds(currentDayProgressKey);
+        HashSet<string> randomPoolPlayedDialogIds = GetOrCreatePlayedDialogIds(randomPoolProgressKey);
 
-        if (availableDialogs.Count == 0)
+        List<DialogEntry> candidates = GetUnplayedDialogs(currentDayDialogs, currentDayPlayedDialogIds);
+        string selectedProgressKey = currentDayProgressKey;
+
+        if (candidates.Count == 0)
         {
-            return null;
+            candidates = GetUnplayedDialogs(randomPoolDialogs, randomPoolPlayedDialogIds);
+            selectedProgressKey = randomPoolProgressKey;
         }
 
-        string progressKey = GetProgressKey(character.characterId, currentDay);
-
-        if (!playedDialogIdsByDay.TryGetValue(progressKey, out HashSet<string> playedDialogIds))
+        if (candidates.Count == 0 && randomPoolDialogs.Count > 0)
         {
-            playedDialogIds = new HashSet<string>();
-            playedDialogIdsByDay[progressKey] = playedDialogIds;
-        }
-
-        List<DialogEntry> candidates = new List<DialogEntry>();
-
-        foreach (DialogEntry dialog in availableDialogs)
-        {
-            if (!playedDialogIds.Contains(dialog.dialogId))
-            {
-                candidates.Add(dialog);
-            }
+            randomPoolPlayedDialogIds.Clear();
+            candidates.AddRange(randomPoolDialogs);
+            selectedProgressKey = randomPoolProgressKey;
         }
 
         if (candidates.Count == 0)
         {
-            playedDialogIds.Clear();
-            candidates.AddRange(availableDialogs);
+            if (currentDayDialogs.Count > 0)
+            {
+                currentDayPlayedDialogIds.Clear();
+                candidates.AddRange(currentDayDialogs);
+                selectedProgressKey = currentDayProgressKey;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         DialogEntry selectedDialog = candidates[Random.Range(0, candidates.Count)];
 
         if (markAsPlayed)
         {
-            playedDialogIds.Add(selectedDialog.dialogId);
+            MarkDialogAsPlayed(selectedProgressKey, selectedDialog.dialogId);
         }
 
         PrepareDialogForPlayback(selectedDialog);
@@ -141,7 +147,7 @@ public class RandomDialogController : MonoBehaviour
 
         if (markAsPlayed)
         {
-            MarkDialogAsPlayed(character.characterId, currentDay, selectedDialog.dialogId);
+            MarkDialogAsPlayed(character.characterId, selectedDialog.day, selectedDialog.dialogId);
         }
 
         PrepareDialogForPlayback(selectedDialog);
@@ -192,6 +198,47 @@ public class RandomDialogController : MonoBehaviour
         return dialogs;
     }
 
+    private List<DialogEntry> GetDialogsForDay(CharacterDialogConfig character, int day)
+    {
+        List<DialogEntry> dialogs = new List<DialogEntry>();
+
+        foreach (DialogEntry dialog in character.dialogs)
+        {
+            if (dialog.day == day)
+            {
+                dialogs.Add(dialog);
+            }
+        }
+
+        return dialogs;
+    }
+
+    private List<DialogEntry> GetUnplayedDialogs(List<DialogEntry> dialogs, HashSet<string> playedDialogIds)
+    {
+        List<DialogEntry> candidates = new List<DialogEntry>();
+
+        foreach (DialogEntry dialog in dialogs)
+        {
+            if (!playedDialogIds.Contains(dialog.dialogId))
+            {
+                candidates.Add(dialog);
+            }
+        }
+
+        return candidates;
+    }
+
+    private HashSet<string> GetOrCreatePlayedDialogIds(string progressKey)
+    {
+        if (!playedDialogIdsByDay.TryGetValue(progressKey, out HashSet<string> playedDialogIds))
+        {
+            playedDialogIds = new HashSet<string>();
+            playedDialogIdsByDay[progressKey] = playedDialogIds;
+        }
+
+        return playedDialogIds;
+    }
+
     private void PrepareDialogForPlayback(DialogEntry dialog)
     {
         if (dialog?.lines == null)
@@ -205,13 +252,12 @@ public class RandomDialogController : MonoBehaviour
     private void MarkDialogAsPlayed(string characterId, int day, string dialogId)
     {
         string progressKey = GetProgressKey(characterId, day);
+        MarkDialogAsPlayed(progressKey, dialogId);
+    }
 
-        if (!playedDialogIdsByDay.TryGetValue(progressKey, out HashSet<string> playedDialogIds))
-        {
-            playedDialogIds = new HashSet<string>();
-            playedDialogIdsByDay[progressKey] = playedDialogIds;
-        }
-
+    private void MarkDialogAsPlayed(string progressKey, string dialogId)
+    {
+        HashSet<string> playedDialogIds = GetOrCreatePlayedDialogIds(progressKey);
         playedDialogIds.Add(dialogId);
     }
 
