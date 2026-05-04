@@ -23,7 +23,7 @@
                     ]
                 },
                 {
-                    "dialogId": "0_ra_12",
+                    "dialogId": "0_ra_10",
                     "day": 0,
                     "sequenceOrder": 0,
                     "actionPointMin": 0,
@@ -33,7 +33,32 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "(I wish Y-City had white nights. Here, people have to go home by 8 PM, be in bed by 10 PM, and by 11 PM the streets are empty except for lonely wandering souls.)",
+                            "text": "(The hallway is full of the sound of another class being dismissed. Just hearing it makes my legs want to move.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "0_ra_11",
+                    "day": 0,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(During reading comprehension, teachers love telling us to go back and find evidence.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(But when I look back and discover that the clues were already there, I am always startled.)",
                             "pictureId": "1",
                             "playerPicture": ""
                         }
@@ -183,6 +208,23 @@
                     ]
                 },
                 {
+                    "dialogId": "0_ra_9",
+                    "day": 0,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(I wish Y-City had white nights. Here, people have to go home by 8 PM, be in bed by 10 PM, and by 11 PM the streets are empty except for lonely wandering souls.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "1_ra_10",
                     "day": 1,
                     "sequenceOrder": 0,
@@ -293,6 +335,131 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Today, while Julian was talking her ear off, Minna just kept a polite smile. Her eyes were actually on the water cooler at the end of the hallway.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ra_1",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(Some dreams do not die when you grow up. They only)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(turn into nouns you rarely mention.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ra_2",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(Botanist.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(A job that requires crossing mountains and rivers.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ra_3",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(The age of great global discoveries has already passed.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(Physics, chemistry, and biology were better suited to the last century, or the century before that.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(Now those fields only need small repairs.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ra_4",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Is a failed hobby still a hobby?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ra_5",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(I like drawing.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(But like is a very safe word, because it does not have to become what I want to be in the future.)",
                             "pictureId": "1",
                             "playerPicture": ""
                         }

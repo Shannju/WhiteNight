@@ -103,6 +103,112 @@
                     ]
                 },
                 {
+                    "dialogId": "2_ap_2",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 2,
+                    "actionPointMax": 2,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "Wen, which answer should we choose for the homework?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "I chose A.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "Okay, I trust you!",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ap_10",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 10,
+                    "actionPointMax": 10,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "What are you writing?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Drawing.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "I am writing anime.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(Yuanyuan's eyes lit up when she talked about something she liked.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "Your rubber stamps?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 5,
+                            "text": "That is sculpture! It is a kind of art.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 6,
+                            "text": "No, that should be called seal carving.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 7,
+                            "text": "I do not get it.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "1_ap_11",
                     "day": 1,
                     "sequenceOrder": 0,
@@ -146,6 +252,47 @@
                             "characterName": "Cici",
                             "triggerOrder": 4,
                             "text": "Pick B.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ap_12",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 12,
+                    "actionPointMax": 12,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "What is there to observe in Y-City?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "Lotus Pond, McDonald's, milk tea shops.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "And Fallen Street.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "Exactly! I really want fried chicken strips!",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -344,9 +491,25 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_1",
+                            "text": "Good afternoon, everyone.",
                             "pictureId": "4",
                             "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Did everyone finish the homework? I will ask questions in a moment.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(Good thing I read it on the way here, even if it was rushed.)",
+                            "pictureId": "3",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -463,7 +626,31 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_2",
+                            "text": "Today we talk about hobbies.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Hobbies make your life colorful.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "A hobby can help you one day.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 4,
+                            "text": "Not in a practical, worldly sense, but in life.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -497,7 +684,23 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_3",
+                            "text": "Open Lesson Two, The Dead Plants Expert.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Read the passage and answer the question.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "How did Alan's failed hobby help him in the classroom?",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -784,7 +987,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_4",
+                            "text": "Look at your textbook. Prepare to answer.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -818,7 +1021,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_5",
+                            "text": "Wen, look at the passage. Find evidence.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1021,7 +1224,23 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_6",
+                            "text": "All right. Everyone should be done reading.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Alan wished to become a botanist.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "But he was a hopeless gardener.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1274,7 +1493,23 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_7",
+                            "text": "Too much water, poor drainage, root decay.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "The rubber plant was dying.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "Everyone, tell us what hobbies you have.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1390,10 +1625,50 @@
                     "actionPointMax": 8,
                     "lines": [
                         {
+                            "speakerId": "classmate",
+                            "characterName": "classmate",
+                            "triggerOrder": 1,
+                            "text": "Teacher, can K-pop count as a hobby?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "classmate",
+                            "characterName": "classmate",
+                            "triggerOrder": 2,
+                            "text": "(Everyone laughs.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "2_ap_8",
+                            "triggerOrder": 3,
+                            "text": "K-pop is also a very good way to learn English.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "classmate",
+                            "characterName": "classmate",
+                            "triggerOrder": 4,
+                            "text": "Teacher, that is Korean.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 5,
+                            "text": "Language is connected.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 6,
+                            "text": "(Laughter fills the classroom.)",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1605,7 +1880,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_9",
+                            "text": "All right, everyone. Discuss it, then write three sentences about your hobby.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1790,7 +2065,15 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_10",
+                            "text": "Talk. Open your mouth! English gets better the more you speak.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "No Chinese!",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1875,7 +2158,55 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_11",
+                            "text": "All right. Today's class should be ending now.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "English gets better the more you speak!",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "When I studied abroad, I had to speak English every day.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "(Wasn't that inevitable...)",
+                            "pictureId": "3",
+                            "playerPicture": "1"
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 5,
+                            "text": "Do not be shy. Just try!",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 6,
+                            "text": "Next time, observe your city.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 7,
+                            "text": "We will talk about places around us.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2060,7 +2391,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_12",
+                            "text": "After class, do not forget to find Ms. Minna and fill out a form.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }

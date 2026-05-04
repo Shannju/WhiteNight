@@ -242,10 +242,34 @@
                     "actionPointMax": 0,
                     "lines": [
                         {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Being a botanist sounds like it would suit you.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
                             "speakerId": "mate",
                             "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_1",
+                            "triggerOrder": 1,
+                            "text": "Really. When I was little, I thought about becoming a botanist.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(I had only ever seen that job in documentaries.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 3,
+                            "text": "But that idea feels very far away now.",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -259,10 +283,18 @@
                     "actionPointMax": 0,
                     "lines": [
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
+                            "speakerId": "player",
+                            "characterName": "Me",
                             "triggerOrder": 0,
-                            "text": "2_seq_2",
+                            "text": "(Actually, we are allowed to like many things.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(As long as they do not actually change our lives in the end.)",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -276,10 +308,26 @@
                     "actionPointMax": 0,
                     "lines": [
                         {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(The girl in the front row has an EXO sticker tucked inside her English book.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
                             "speakerId": "mate",
                             "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_3",
+                            "triggerOrder": 1,
+                            "text": "Who is that?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "Byun Baekhyun.",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -293,10 +341,18 @@
                     "actionPointMax": 0,
                     "lines": [
                         {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "So killing a lot of plants can also be called experience.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
                             "speakerId": "mate",
                             "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_4",
+                            "triggerOrder": 1,
+                            "text": "That sounds a little scary.",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -310,10 +366,18 @@
                     "actionPointMax": 0,
                     "lines": [
                         {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Roots, rotting.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
                             "speakerId": "mate",
                             "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_5",
+                            "triggerOrder": 1,
+                            "text": "You lose points for that pun.",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -330,7 +394,15 @@
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 0,
-                            "text": "2_seq_6",
+                            "text": "Julian's hairstyle makes him look like he is about to take an ID photo.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Hahahaha.",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -347,160 +419,23 @@
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 0,
-                            "text": "2_seq_7",
+                            "text": "His old look was not this exaggerated.",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_8",
-                    "day": 2,
-                    "sequenceOrder": 8,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_8",
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Really?",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_9",
-                    "day": 2,
-                    "sequenceOrder": 9,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_9",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_10",
-                    "day": 2,
-                    "sequenceOrder": 10,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_10",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_11",
-                    "day": 2,
-                    "sequenceOrder": 11,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_11",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_12",
-                    "day": 2,
-                    "sequenceOrder": 12,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_12",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_13",
-                    "day": 2,
-                    "sequenceOrder": 13,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_13",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_14",
-                    "day": 2,
-                    "sequenceOrder": 14,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_14",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_15",
-                    "day": 2,
-                    "sequenceOrder": 15,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_15",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_seq_16",
-                    "day": 2,
-                    "sequenceOrder": 16,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "2_seq_16",
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(What I did not say was that maybe if it was not exaggerated, no one would believe in his ability.)",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
