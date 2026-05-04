@@ -149,6 +149,39 @@
                     ]
                 },
                 {
+                    "dialogId": "0_ra_16",
+                    "day": 0,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "((Past perfect tense.))",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(Had done.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(English actually allows something to happen in the past of the past.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "0_ra_2",
                     "day": 0,
                     "sequenceOrder": 0,
@@ -939,6 +972,415 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Why do the texts always have strange relatives?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ra_1",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "After the typhoon passed, my mood also improved a lot.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Seeing everything beaten down equally by the rain, losing its order,",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "finally let me put down some of the weight in my heart.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ra_2",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "There is a small puddle of rainwater on the windowsill. It is slowly drying.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ra_3",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "The classroom smells damp.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ra_4",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Summer is already half over,",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "but everything is still at its height, as if it will never end.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "Every morning I wake up to inexhaustible sunlight.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ra_5",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Outdoor work can start before the sun comes up and rest at noon.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "But indoor work cannot do that.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "It can only rely on air conditioning.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ra_6",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Not enough air conditioning is obviously hopeless.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "But too much, like here at Beyond English, is not good either. You have to bring an extra layer when you come in.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ra_7",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Cici is hiding something from me.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "That feeling is awful.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "She is doing a terrible job pretending otherwise.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_1",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "If Cici is gone, who will go to school with me?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_10",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Why complain that studying is tiring?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Do you not understand what happens if you do not study?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "？",
+                            "characterName": "？",
+                            "triggerOrder": 2,
+                            "text": "It is okay to fall apart.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "？",
+                            "characterName": "？",
+                            "triggerOrder": 3,
+                            "text": "I was once like this too.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_2",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "If Cici is gone, who will walk home from school with me?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_3",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "If Cici is gone, who will spend breaks with me?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_4",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "If Cici is gone, who will eat with me?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_5",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "...",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_6",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Why do I always fail to meet friends who are ambitious?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "？",
+                            "characterName": "？",
+                            "triggerOrder": 1,
+                            "text": "You are drawn to their ease.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_7",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Why does every friend I have live so easily...",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "They have never faced a moment of life or death!",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "？",
+                            "characterName": "？",
+                            "triggerOrder": 2,
+                            "text": "Is that not also a kind of happiness? You should bless them.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_8",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "...",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ra_9",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Why not take an expensive cram school seriously? With that money and time, would it not be better to do something else?",
                             "pictureId": "1",
                             "playerPicture": ""
                         }
