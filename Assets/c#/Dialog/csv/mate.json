@@ -452,7 +452,55 @@
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 0,
-                            "text": "3_seq_1",
+                            "text": "Speaking of McDonald's, they have a new product.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "Peach blossom flavored soft serve!",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "But I guess it uses the same recipe as the cherry blossom flavor.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 3,
+                            "text": "They just changed the name and sell it in China.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "Let us go eat it after class.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 5,
+                            "text": "No, no. It is not out yet.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 6,
+                            "text": "It starts selling next week!",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -469,245 +517,55 @@
                             "speakerId": "mate",
                             "characterName": "Cici",
                             "triggerOrder": 0,
-                            "text": "3_seq_2",
+                            "text": "Julian is actually local.",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_3",
-                    "day": 3,
-                    "sequenceOrder": 3,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
                             "speakerId": "mate",
                             "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_3",
+                            "triggerOrder": 1,
+                            "text": "I really do not know why he came back.",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_4",
-                    "day": 3,
-                    "sequenceOrder": 4,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_4",
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "It would be pretty nice to retire here.",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_5",
-                    "day": 3,
-                    "sequenceOrder": 5,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_5",
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(I will probably only stay here until I graduate from high school.)",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_6",
-                    "day": 3,
-                    "sequenceOrder": 6,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_6",
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "(People with promise should leave this place once they go to college.)",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_7",
-                    "day": 3,
-                    "sequenceOrder": 7,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_7",
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 5,
+                            "text": "(I think Cici will be the same. We will probably end up in two huge cities in China.)",
                             "pictureId": "3",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_8",
-                    "day": 3,
-                    "sequenceOrder": 8,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
+                        },
                         {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_8",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_9",
-                    "day": 3,
-                    "sequenceOrder": 9,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_9",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_10",
-                    "day": 3,
-                    "sequenceOrder": 10,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_10",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_11",
-                    "day": 3,
-                    "sequenceOrder": 11,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_11",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_12",
-                    "day": 3,
-                    "sequenceOrder": 12,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_12",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_13",
-                    "day": 3,
-                    "sequenceOrder": 13,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_13",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_14",
-                    "day": 3,
-                    "sequenceOrder": 14,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_14",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_15",
-                    "day": 3,
-                    "sequenceOrder": 15,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_15",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_seq_16",
-                    "day": 3,
-                    "sequenceOrder": 16,
-                    "actionPointMin": 0,
-                    "actionPointMax": 0,
-                    "lines": [
-                        {
-                            "speakerId": "mate",
-                            "characterName": "Cici",
-                            "triggerOrder": 0,
-                            "text": "3_seq_16",
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 6,
+                            "text": "What place did you write about?",
                             "pictureId": "3",
                             "playerPicture": ""
                         }

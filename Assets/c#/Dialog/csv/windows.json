@@ -65,6 +65,48 @@
                     ]
                 },
                 {
+                    "dialogId": "0_ra_12",
+                    "day": 0,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(The shadows of the trees outside the window sway for a moment.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "0_ra_13",
+                    "day": 0,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(Y-City in the afternoon is bright to the point of whiteness, the buildings as if copied once by the sun.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(A copy is always a little paler than the original.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "0_ra_2",
                     "day": 0,
                     "sequenceOrder": 0,
@@ -460,6 +502,188 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(But like is a very safe word, because it does not have to become what I want to be in the future.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ra_1",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(Come to think of it, Y-City is also a UN livable city.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(I do not understand why. If the inspection team had come in summer, they would not have)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(said that.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ra_2",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(If we are talking about new things in Y-City,)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(then it would probably be H Mall.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(H Mall has some brands you used to only see online.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(Starbucks, Uniqlo, and Muji are all here.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "(I do not dislike it either, but after walking around too much, I feel a little lost. After all, we only buy some stationery and leave.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 5,
+                            "text": "(But Cici loves browsing places like this and talks about it with great excitement every time.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ra_3",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Why was Linda unable to buy her apple pie?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(Some things are not missed because I did not try hard enough. It is just that by the time we finally have time,)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(the stall has already closed.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ra_4",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(A tiny miss can lead to a huge mistake.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ra_5",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "(Ordinary can also be an adjective.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ra_6",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Julian asks where I usually go after class.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "I would say home.",
                             "pictureId": "1",
                             "playerPicture": ""
                         }

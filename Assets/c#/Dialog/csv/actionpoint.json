@@ -136,6 +136,154 @@
                     ]
                 },
                 {
+                    "dialogId": "3_ap_4",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 4,
+                    "actionPointMax": 4,
+                    "lines": [
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 0,
+                            "text": "McDonald's suddenly became international.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "(Laughing.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_7",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 0,
+                            "text": "(Bzzzz.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 1,
+                            "text": "(Bzzzz.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "(The phone sound seems to be coming from Cici.)",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 3,
+                            "text": "!",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 4,
+                            "text": "Sorry, everyone. I forgot to turn it off...",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_8",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "How did you forget to turn it off?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "Uhh...",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 2,
+                            "text": "I was actually looking up the answer just now.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 3,
+                            "text": "Then a news notification popped up. So annoying.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_9",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 9,
+                    "actionPointMax": 9,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "What news?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "The meteorological station issued a yellow high-temperature warning. The temperature has already passed 39 degrees.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "Come to think of it, it has not rained in a long time.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "2_ap_10",
                     "day": 2,
                     "sequenceOrder": 0,
@@ -209,6 +357,47 @@
                     ]
                 },
                 {
+                    "dialogId": "3_ap_10",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 10,
+                    "actionPointMax": 10,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Where are you going to write about?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "I am writing about H Mall.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "Why?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 3,
+                            "text": "Because I like the beanbag sofas inside the most!",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "1_ap_11",
                     "day": 1,
                     "sequenceOrder": 0,
@@ -252,6 +441,47 @@
                             "characterName": "Cici",
                             "triggerOrder": 4,
                             "text": "Pick B.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_11",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 11,
+                    "actionPointMax": 11,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "What word should I use to describe the snack street?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 1,
+                            "text": "Noisy.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "That is not fallen enough.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "mate",
+                            "characterName": "Cici",
+                            "triggerOrder": 3,
+                            "text": "Fallen angel! Lucifer.",
                             "pictureId": "3",
                             "playerPicture": ""
                         }
@@ -379,8 +609,8 @@
                     ]
                 },
                 {
-                    "dialogId": "8_ap_1",
-                    "day": 8,
+                    "dialogId": "4_ap_1",
+                    "day": 4,
                     "sequenceOrder": 0,
                     "actionPointMin": 1,
                     "actionPointMax": 1,
@@ -389,24 +619,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "8_ap_1",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_1",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 1,
-                    "actionPointMax": 1,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_1",
+                            "text": "4_ap_1",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -430,40 +643,6 @@
                     ]
                 },
                 {
-                    "dialogId": "5_ap_1",
-                    "day": 5,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 1,
-                    "actionPointMax": 1,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "5_ap_1",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "4_ap_1",
-                    "day": 4,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 1,
-                    "actionPointMax": 1,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "4_ap_1",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "3_ap_1",
                     "day": 3,
                     "sequenceOrder": 0,
@@ -474,7 +653,79 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "3_ap_1",
+                            "text": "Good afternoon, everyone!",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Did you practice English at home?",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "I watched quite a few English videos.",
+                            "pictureId": "3",
+                            "playerPicture": "1"
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 4,
+                            "text": "Not bad, Wen. That is also a way to practice.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 5,
+                            "text": "Were they original videos, or videos with subtitles?",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 6,
+                            "text": "With subtitles.",
+                            "pictureId": "3",
+                            "playerPicture": "1"
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 7,
+                            "text": "Haha. When I was learning English, I would first listen to the original audio once and write down what I heard.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 8,
+                            "text": "Then I would try to dictate it from memory, compare it, and revise it.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 9,
+                            "text": "You can all try it too! It is very helpful for listening and writing!",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 10,
+                            "text": "Today, we will look at places around us.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -514,6 +765,57 @@
                     ]
                 },
                 {
+                    "dialogId": "8_ap_1",
+                    "day": 8,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 1,
+                    "actionPointMax": 1,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "8_ap_1",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ap_1",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 1,
+                    "actionPointMax": 1,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_1",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_ap_1",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 1,
+                    "actionPointMax": 1,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_1",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "8_ap_2",
                     "day": 8,
                     "sequenceOrder": 0,
@@ -525,23 +827,6 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "8_ap_2",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_2",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 2,
-                    "actionPointMax": 2,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_2",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -565,40 +850,6 @@
                     ]
                 },
                 {
-                    "dialogId": "4_ap_2",
-                    "day": 4,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 2,
-                    "actionPointMax": 2,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "4_ap_2",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_2",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 2,
-                    "actionPointMax": 2,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_2",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "5_ap_2",
                     "day": 5,
                     "sequenceOrder": 0,
@@ -610,6 +861,23 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "5_ap_2",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ap_2",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 2,
+                    "actionPointMax": 2,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "4_ap_2",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -657,6 +925,23 @@
                     ]
                 },
                 {
+                    "dialogId": "7_ap_2",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 2,
+                    "actionPointMax": 2,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_2",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "1_ap_2",
                     "day": 1,
                     "sequenceOrder": 0,
@@ -669,6 +954,98 @@
                             "triggerOrder": 1,
                             "text": "Press space to continue",
                             "pictureId": "0",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_2",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 2,
+                    "actionPointMax": 2,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Y-City is my hometown. I left to study, and now I have come back.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Y-City may be small, but every place has a story, right?",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "What is your favorite place here?",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "...",
+                            "pictureId": "3",
+                            "playerPicture": "1"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ap_3",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 3,
+                    "actionPointMax": 3,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "6_ap_3",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ap_3",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 3,
+                    "actionPointMax": 3,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_3",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_ap_3",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 3,
+                    "actionPointMax": 3,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_3",
+                            "pictureId": "4",
                             "playerPicture": ""
                         }
                     ]
@@ -707,40 +1084,6 @@
                     ]
                 },
                 {
-                    "dialogId": "5_ap_3",
-                    "day": 5,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 3,
-                    "actionPointMax": 3,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "5_ap_3",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "6_ap_3",
-                    "day": 6,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 3,
-                    "actionPointMax": 3,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "6_ap_3",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "4_ap_3",
                     "day": 4,
                     "sequenceOrder": 0,
@@ -752,40 +1095,6 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "4_ap_3",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_3",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 3,
-                    "actionPointMax": 3,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_3",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_3",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 3,
-                    "actionPointMax": 3,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_3",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -858,6 +1167,39 @@
                     ]
                 },
                 {
+                    "dialogId": "3_ap_3",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 3,
+                    "actionPointMax": 3,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Park, museum, university, shopping mall.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "classmate",
+                            "characterName": "classmate",
+                            "triggerOrder": 2,
+                            "text": "Does McDonald's count?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "Of course. Global brand.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "5_ap_4",
                     "day": 5,
                     "sequenceOrder": 0,
@@ -869,23 +1211,6 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "5_ap_4",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "6_ap_4",
-                    "day": 6,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 4,
-                    "actionPointMax": 4,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "6_ap_4",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -909,6 +1234,23 @@
                     ]
                 },
                 {
+                    "dialogId": "6_ap_4",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 4,
+                    "actionPointMax": 4,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "6_ap_4",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "1_ap_4",
                     "day": 1,
                     "sequenceOrder": 0,
@@ -926,23 +1268,6 @@
                     ]
                 },
                 {
-                    "dialogId": "3_ap_4",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 4,
-                    "actionPointMax": 4,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_4",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "7_ap_4",
                     "day": 7,
                     "sequenceOrder": 0,
@@ -954,23 +1279,6 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "7_ap_4",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "8_ap_4",
-                    "day": 8,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 4,
-                    "actionPointMax": 4,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "8_ap_4",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -994,25 +1302,50 @@
                     ]
                 },
                 {
-                    "dialogId": "5_ap_5",
-                    "day": 5,
+                    "dialogId": "3_ap_4",
+                    "day": 3,
                     "sequenceOrder": 0,
-                    "actionPointMin": 5,
-                    "actionPointMax": 5,
+                    "actionPointMin": 4,
+                    "actionPointMax": 4,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "5_ap_5",
+                            "text": "Read Lesson Three, The Holiday Treat.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Why was Linda unable to buy her apple pie?",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "2_ap_5",
-                    "day": 2,
+                    "dialogId": "8_ap_4",
+                    "day": 8,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 4,
+                    "actionPointMax": 4,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "8_ap_4",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_5",
+                    "day": 3,
                     "sequenceOrder": 0,
                     "actionPointMin": 5,
                     "actionPointMax": 5,
@@ -1021,7 +1354,24 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "Wen, look at the passage. Find evidence.",
+                            "text": "Wen, look at the passage.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_ap_5",
+                    "day": 8,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 5,
+                    "actionPointMax": 5,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "8_ap_5",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1039,6 +1389,57 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "6_ap_5",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_ap_5",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 5,
+                    "actionPointMax": 5,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_5",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ap_5",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 5,
+                    "actionPointMax": 5,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_5",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ap_5",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 5,
+                    "actionPointMax": 5,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Wen, look at the passage. Find evidence.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1078,23 +1479,6 @@
                     ]
                 },
                 {
-                    "dialogId": "7_ap_5",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 5,
-                    "actionPointMax": 5,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_5",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "4_ap_5",
                     "day": 4,
                     "sequenceOrder": 0,
@@ -1112,34 +1496,17 @@
                     ]
                 },
                 {
-                    "dialogId": "8_ap_5",
-                    "day": 8,
+                    "dialogId": "6_ap_6",
+                    "day": 6,
                     "sequenceOrder": 0,
-                    "actionPointMin": 5,
-                    "actionPointMax": 5,
+                    "actionPointMin": 6,
+                    "actionPointMax": 6,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "8_ap_5",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_5",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 5,
-                    "actionPointMax": 5,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_5",
+                            "text": "6_ap_6",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1163,23 +1530,6 @@
                     ]
                 },
                 {
-                    "dialogId": "5_ap_6",
-                    "day": 5,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 6,
-                    "actionPointMax": 6,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "5_ap_6",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "8_ap_6",
                     "day": 8,
                     "sequenceOrder": 0,
@@ -1197,6 +1547,40 @@
                     ]
                 },
                 {
+                    "dialogId": "5_ap_6",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 6,
+                    "actionPointMax": 6,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_6",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ap_6",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 6,
+                    "actionPointMax": 6,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "4_ap_6",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "3_ap_6",
                     "day": 3,
                     "sequenceOrder": 0,
@@ -1204,45 +1588,20 @@
                     "actionPointMax": 6,
                     "lines": [
                         {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
+                            "speakerId": "player",
+                            "characterName": "Me",
                             "triggerOrder": 1,
-                            "text": "3_ap_6",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ap_6",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 6,
-                    "actionPointMax": 6,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "All right. Everyone should be done reading.",
-                            "pictureId": "4",
-                            "playerPicture": ""
+                            "text": "(Julian looks out the window.)",
+                            "pictureId": "3",
+                            "playerPicture": "1"
                         },
                         {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
+                            "speakerId": "player",
+                            "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "Alan wished to become a botanist.",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 3,
-                            "text": "But he was a hopeless gardener.",
-                            "pictureId": "4",
-                            "playerPicture": ""
+                            "text": "(At noon in the Children's Palace, the sun-bleached garden is completely still. There are only dried-out plants.)",
+                            "pictureId": "3",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -1392,8 +1751,8 @@
                     ]
                 },
                 {
-                    "dialogId": "4_ap_6",
-                    "day": 4,
+                    "dialogId": "2_ap_6",
+                    "day": 2,
                     "sequenceOrder": 0,
                     "actionPointMin": 6,
                     "actionPointMax": 6,
@@ -1402,24 +1761,182 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "4_ap_6",
+                            "text": "All right. Everyone should be done reading.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Alan wished to become a botanist.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "But he was a hopeless gardener.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "6_ap_6",
+                    "dialogId": "6_ap_7",
                     "day": 6,
                     "sequenceOrder": 0,
-                    "actionPointMin": 6,
-                    "actionPointMax": 6,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "6_ap_6",
+                            "text": "6_ap_7",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_ap_7",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_7",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_ap_7",
+                    "day": 8,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "8_ap_7",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_7",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "All right, let us ask a student to answer this question.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 2,
+                            "text": "(Bzzzz.)",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 3,
+                            "text": "(Bzzzz.)",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "Whose phone is ringing?",
+                            "pictureId": "3",
+                            "playerPicture": "1"
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ap_7",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_7",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ap_7",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Too much water, poor drainage, root decay.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "The rubber plant was dying.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 3,
+                            "text": "Everyone, tell us what hobbies you have.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ap_7",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 7,
+                    "actionPointMax": 7,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "4_ap_7",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1483,17 +2000,110 @@
                     ]
                 },
                 {
-                    "dialogId": "2_ap_7",
-                    "day": 2,
+                    "dialogId": "8_ap_8",
+                    "day": 8,
                     "sequenceOrder": 0,
-                    "actionPointMin": 7,
-                    "actionPointMax": 7,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "Too much water, poor drainage, root decay.",
+                            "text": "8_ap_8",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ap_8",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "4_ap_8",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "1_ap_8",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Read the text carefully. I will ask a question in a moment.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "tutorial",
+                            "characterName": "",
+                            "triggerOrder": 2,
+                            "text": "Click on the textbook to select the answer.",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ap_8",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "6_ap_8",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ap_8",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_8",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_8",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Remember to turn it off next time.",
                             "pictureId": "4",
                             "playerPicture": ""
                         },
@@ -1501,7 +2111,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 2,
-                            "text": "The rubber plant was dying.",
+                            "text": "When I studied abroad, classes were also very free.",
                             "pictureId": "4",
                             "playerPicture": ""
                         },
@@ -1509,109 +2119,40 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 3,
-                            "text": "Everyone, tell us what hobbies you have.",
+                            "text": "Some students even had to raise their hands to use the bathroom! In my class, you do not have to. Just go out.",
                             "pictureId": "4",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_7",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 7,
-                    "actionPointMax": 7,
-                    "lines": [
+                        },
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_7",
+                            "triggerOrder": 4,
+                            "text": "You are middle school students now.",
                             "pictureId": "4",
                             "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_7",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 7,
-                    "actionPointMax": 7,
-                    "lines": [
+                        },
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_7",
+                            "triggerOrder": 5,
+                            "text": "But you still need to focus in class.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "6_ap_7",
-                    "day": 6,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 7,
-                    "actionPointMax": 7,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "6_ap_7",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "4_ap_7",
-                    "day": 4,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 7,
-                    "actionPointMax": 7,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "4_ap_7",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "8_ap_7",
-                    "day": 8,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 7,
-                    "actionPointMax": 7,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "8_ap_7",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "5_ap_7",
+                    "dialogId": "5_ap_8",
                     "day": 5,
                     "sequenceOrder": 0,
-                    "actionPointMin": 7,
-                    "actionPointMax": 7,
+                    "actionPointMin": 8,
+                    "actionPointMax": 8,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "5_ap_7",
+                            "text": "5_ap_8",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1675,167 +2216,6 @@
                     ]
                 },
                 {
-                    "dialogId": "8_ap_8",
-                    "day": 8,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 8,
-                    "actionPointMax": 8,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "8_ap_8",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "6_ap_8",
-                    "day": 6,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 8,
-                    "actionPointMax": 8,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "6_ap_8",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "1_ap_8",
-                    "day": 1,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 8,
-                    "actionPointMax": 8,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "Read the text carefully. I will ask a question in a moment.",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "tutorial",
-                            "characterName": "",
-                            "triggerOrder": 2,
-                            "text": "Click on the textbook to select the answer.",
-                            "pictureId": "3",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "5_ap_8",
-                    "day": 5,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 8,
-                    "actionPointMax": 8,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "5_ap_8",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_8",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 8,
-                    "actionPointMax": 8,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_8",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_8",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 8,
-                    "actionPointMax": 8,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_8",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "4_ap_8",
-                    "day": 4,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 8,
-                    "actionPointMax": 8,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "4_ap_8",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_9",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 9,
-                    "actionPointMax": 9,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_9",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "8_ap_9",
-                    "day": 8,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 9,
-                    "actionPointMax": 9,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "8_ap_9",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "6_ap_9",
                     "day": 6,
                     "sequenceOrder": 0,
@@ -1847,23 +2227,6 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "6_ap_9",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "5_ap_9",
-                    "day": 5,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 9,
-                    "actionPointMax": 9,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "5_ap_9",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1887,6 +2250,23 @@
                     ]
                 },
                 {
+                    "dialogId": "7_ap_9",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 9,
+                    "actionPointMax": 9,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_9",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "3_ap_9",
                     "day": 3,
                     "sequenceOrder": 0,
@@ -1897,7 +2277,48 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "3_ap_9",
+                            "text": "Come on, describe your favorite place in Y-City.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "classmate",
+                            "characterName": "classmate",
+                            "triggerOrder": 2,
+                            "text": "Can I write my bed?",
+                            "pictureId": "3",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "(Laughing.)",
+                            "pictureId": "3",
+                            "playerPicture": "1"
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 4,
+                            "text": "If you can make it meaningful.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ap_9",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 9,
+                    "actionPointMax": 9,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "4_ap_9",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -1929,8 +2350,8 @@
                     ]
                 },
                 {
-                    "dialogId": "4_ap_9",
-                    "day": 4,
+                    "dialogId": "5_ap_9",
+                    "day": 5,
                     "sequenceOrder": 0,
                     "actionPointMin": 9,
                     "actionPointMax": 9,
@@ -1939,41 +2360,24 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "4_ap_9",
+                            "text": "5_ap_9",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
                     ]
                 },
                 {
-                    "dialogId": "3_ap_10",
-                    "day": 3,
+                    "dialogId": "8_ap_9",
+                    "day": 8,
                     "sequenceOrder": 0,
-                    "actionPointMin": 10,
-                    "actionPointMax": 10,
+                    "actionPointMin": 9,
+                    "actionPointMax": 9,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "3_ap_10",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "6_ap_10",
-                    "day": 6,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 10,
-                    "actionPointMax": 10,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "6_ap_10",
+                            "text": "8_ap_9",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2038,8 +2442,8 @@
                     ]
                 },
                 {
-                    "dialogId": "7_ap_10",
-                    "day": 7,
+                    "dialogId": "3_ap_10",
+                    "day": 3,
                     "sequenceOrder": 0,
                     "actionPointMin": 10,
                     "actionPointMax": 10,
@@ -2048,7 +2452,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "7_ap_10",
+                            "text": "Do not use very good. Use charming, crowded, ordinary.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2074,6 +2478,23 @@
                             "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "No Chinese!",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ap_10",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 10,
+                    "actionPointMax": 10,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "6_ap_10",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2114,6 +2535,23 @@
                     ]
                 },
                 {
+                    "dialogId": "7_ap_10",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 10,
+                    "actionPointMax": 10,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_10",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "4_ap_11",
                     "day": 4,
                     "sequenceOrder": 0,
@@ -2142,6 +2580,74 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "8_ap_11",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "7_ap_11",
+                    "day": 7,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 11,
+                    "actionPointMax": 11,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "7_ap_11",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "6_ap_11",
+                    "day": 6,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 11,
+                    "actionPointMax": 11,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "6_ap_11",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "3_ap_11",
+                    "day": 3,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 11,
+                    "actionPointMax": 11,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Y-City may be small, but every place has a story.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_ap_11",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 11,
+                    "actionPointMax": 11,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_11",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2213,74 +2719,6 @@
                     ]
                 },
                 {
-                    "dialogId": "6_ap_11",
-                    "day": 6,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 11,
-                    "actionPointMax": 11,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "6_ap_11",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "5_ap_11",
-                    "day": 5,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 11,
-                    "actionPointMax": 11,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "5_ap_11",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_11",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 11,
-                    "actionPointMax": 11,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_11",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_11",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 11,
-                    "actionPointMax": 11,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_11",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "1_ap_11",
                     "day": 1,
                     "sequenceOrder": 0,
@@ -2314,90 +2752,6 @@
                     ]
                 },
                 {
-                    "dialogId": "7_ap_12",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 12,
-                    "actionPointMax": 12,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_12",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_12",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 12,
-                    "actionPointMax": 12,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_12",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "1_ap_12",
-                    "day": 1,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 12,
-                    "actionPointMax": 12,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 0,
-                            "text": "Exactly. Evidence.",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "Class is over. Review Lesson One.",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        },
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 2,
-                            "text": "Next time, remember to bring your Go Beyond English textbook.",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ap_12",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 12,
-                    "actionPointMax": 12,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "After class, do not forget to find Ms. Minna and fill out a form.",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "8_ap_12",
                     "day": 8,
                     "sequenceOrder": 0,
@@ -2415,8 +2769,8 @@
                     ]
                 },
                 {
-                    "dialogId": "5_ap_12",
-                    "day": 5,
+                    "dialogId": "7_ap_12",
+                    "day": 7,
                     "sequenceOrder": 0,
                     "actionPointMin": 12,
                     "actionPointMax": 12,
@@ -2425,7 +2779,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "5_ap_12",
+                            "text": "7_ap_12",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2466,17 +2820,92 @@
                     ]
                 },
                 {
-                    "dialogId": "7_ap_13",
-                    "day": 7,
+                    "dialogId": "3_ap_12",
+                    "day": 3,
                     "sequenceOrder": 0,
-                    "actionPointMin": 13,
-                    "actionPointMax": 13,
+                    "actionPointMin": 12,
+                    "actionPointMax": 12,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "7_ap_13",
+                            "text": "Okay, time is up.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Homework. Write about a place around you.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_ap_12",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 12,
+                    "actionPointMax": 12,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_12",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "2_ap_12",
+                    "day": 2,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 12,
+                    "actionPointMax": 12,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "After class, do not forget to find Ms. Minna and fill out a form.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "1_ap_12",
+                    "day": 1,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 12,
+                    "actionPointMax": 12,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 0,
+                            "text": "Exactly. Evidence.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "Class is over. Review Lesson One.",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 2,
+                            "text": "Next time, remember to bring your Go Beyond English textbook.",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2500,23 +2929,6 @@
                     ]
                 },
                 {
-                    "dialogId": "2_ap_13",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 13,
-                    "actionPointMax": 13,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "2_ap_13",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "8_ap_13",
                     "day": 8,
                     "sequenceOrder": 0,
@@ -2534,8 +2946,8 @@
                     ]
                 },
                 {
-                    "dialogId": "4_ap_13",
-                    "day": 4,
+                    "dialogId": "7_ap_13",
+                    "day": 7,
                     "sequenceOrder": 0,
                     "actionPointMin": 13,
                     "actionPointMax": 13,
@@ -2544,24 +2956,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "4_ap_13",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_13",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 13,
-                    "actionPointMax": 13,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_13",
+                            "text": "7_ap_13",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2585,6 +2980,40 @@
                     ]
                 },
                 {
+                    "dialogId": "4_ap_13",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 13,
+                    "actionPointMax": 13,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "4_ap_13",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "8_ap_14",
+                    "day": 8,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 14,
+                    "actionPointMax": 14,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "8_ap_14",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "4_ap_14",
                     "day": 4,
                     "sequenceOrder": 0,
@@ -2596,6 +3025,23 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "4_ap_14",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "5_ap_14",
+                    "day": 5,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 14,
+                    "actionPointMax": 14,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "5_ap_14",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2636,91 +3082,6 @@
                     ]
                 },
                 {
-                    "dialogId": "8_ap_14",
-                    "day": 8,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 14,
-                    "actionPointMax": 14,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "8_ap_14",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "5_ap_14",
-                    "day": 5,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 14,
-                    "actionPointMax": 14,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "5_ap_14",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "2_ap_14",
-                    "day": 2,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 14,
-                    "actionPointMax": 14,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "2_ap_14",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_14",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 14,
-                    "actionPointMax": 14,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_14",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "4_ap_15",
-                    "day": 4,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 15,
-                    "actionPointMax": 15,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "4_ap_15",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
                     "dialogId": "7_ap_15",
                     "day": 7,
                     "sequenceOrder": 0,
@@ -2755,8 +3116,8 @@
                     ]
                 },
                 {
-                    "dialogId": "2_ap_15",
-                    "day": 2,
+                    "dialogId": "8_ap_15",
+                    "day": 8,
                     "sequenceOrder": 0,
                     "actionPointMin": 15,
                     "actionPointMax": 15,
@@ -2765,7 +3126,7 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_15",
+                            "text": "8_ap_15",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2789,85 +3150,17 @@
                     ]
                 },
                 {
-                    "dialogId": "8_ap_15",
-                    "day": 8,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 15,
-                    "actionPointMax": 15,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "8_ap_15",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_15",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 15,
-                    "actionPointMax": 15,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_15",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "4_ap_16",
+                    "dialogId": "4_ap_15",
                     "day": 4,
                     "sequenceOrder": 0,
-                    "actionPointMin": 16,
-                    "actionPointMax": 16,
+                    "actionPointMin": 15,
+                    "actionPointMax": 15,
                     "lines": [
                         {
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "4_ap_16",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "7_ap_16",
-                    "day": 7,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 16,
-                    "actionPointMax": 16,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "7_ap_16",
-                            "pictureId": "4",
-                            "playerPicture": ""
-                        }
-                    ]
-                },
-                {
-                    "dialogId": "3_ap_16",
-                    "day": 3,
-                    "sequenceOrder": 0,
-                    "actionPointMin": 16,
-                    "actionPointMax": 16,
-                    "lines": [
-                        {
-                            "speakerId": "teacher",
-                            "characterName": "Julian",
-                            "triggerOrder": 1,
-                            "text": "3_ap_16",
+                            "text": "4_ap_15",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
@@ -2908,8 +3201,8 @@
                     ]
                 },
                 {
-                    "dialogId": "2_ap_16",
-                    "day": 2,
+                    "dialogId": "7_ap_16",
+                    "day": 7,
                     "sequenceOrder": 0,
                     "actionPointMin": 16,
                     "actionPointMax": 16,
@@ -2918,7 +3211,24 @@
                             "speakerId": "teacher",
                             "characterName": "Julian",
                             "triggerOrder": 1,
-                            "text": "2_ap_16",
+                            "text": "7_ap_16",
+                            "pictureId": "4",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ap_16",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 16,
+                    "actionPointMax": 16,
+                    "lines": [
+                        {
+                            "speakerId": "teacher",
+                            "characterName": "Julian",
+                            "triggerOrder": 1,
+                            "text": "4_ap_16",
                             "pictureId": "4",
                             "playerPicture": ""
                         }
