@@ -107,6 +107,48 @@
                     ]
                 },
                 {
+                    "dialogId": "0_ra_14",
+                    "day": 0,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "This course is still very expensive. One class costs several hundred.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "That must be a full day's wages for my parents.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "0_ra_15",
+                    "day": 0,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "The air conditioner makes a sound that is working very hard but has no dignity.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
                     "dialogId": "0_ra_2",
                     "day": 0,
                     "sequenceOrder": 0,
@@ -684,6 +726,219 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "I would say home.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ra_1",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Honestly, I do not know how to start writing.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Why do we always have units like this?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "Why are there always forms at school asking for household registration and parents' workplaces?",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "Even if my parents never said it, I know.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "For workplace, write it truthfully. For occupation, just write employee.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 5,
+                            "text": "(Writing it this way is always safe. Teachers and classmates will not be able to guess the details.)",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ra_2",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "My father is strict.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "He always says he is good at math.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "But my math is an absolute mess.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "I always calculate things wrong. I do not know why.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "Good thing his English is good.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 5,
+                            "text": "His English is completely awful.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 6,
+                            "text": "Thinking of that makes me feel much better.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ra_3",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "My mom is supportive, but only of the things she wants to support.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Doctor, teacher, those are all good occupations.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ra_4",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "If I get the chance, I will become a teacher.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 1,
+                            "text": "Too many children need my help.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 2,
+                            "text": "Julian is much more responsible than the teachers at school.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 3,
+                            "text": "The English teachers at school teach English class in Chinese.",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        },
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 4,
+                            "text": "Looking at the answer key is more useful than listening to them...",
+                            "pictureId": "1",
+                            "playerPicture": ""
+                        }
+                    ]
+                },
+                {
+                    "dialogId": "4_ra_5",
+                    "day": 4,
+                    "sequenceOrder": 0,
+                    "actionPointMin": 0,
+                    "actionPointMax": 0,
+                    "lines": [
+                        {
+                            "speakerId": "player",
+                            "characterName": "Me",
+                            "triggerOrder": 0,
+                            "text": "Why do the texts always have strange relatives?",
                             "pictureId": "1",
                             "playerPicture": ""
                         }
