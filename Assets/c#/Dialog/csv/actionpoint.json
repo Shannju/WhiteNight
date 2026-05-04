@@ -4633,7 +4633,7 @@
                             "characterName": "mom",
                             "triggerOrder": 0,
                             "text": "Chen Wen, are you up?",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4641,7 +4641,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "I am up.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4649,7 +4649,7 @@
                             "characterName": "mom",
                             "triggerOrder": 2,
                             "text": "You are not going to class today?",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4657,7 +4657,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "Class is cancelled today because of the typhoon.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4665,7 +4665,7 @@
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "The teacher sent a recording.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4682,7 +4682,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Adults seem to have a hard time believing that class cancelled really means class cancelled.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4690,7 +4690,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(It has to immediately turn into another kind of studying.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4707,7 +4707,7 @@
                             "characterName": "mom",
                             "triggerOrder": 0,
                             "text": "What do you want for lunch?",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4715,7 +4715,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Anything is fine.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4723,7 +4723,7 @@
                             "characterName": "mom",
                             "triggerOrder": 2,
                             "text": "Anything is fine is hard to make.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4740,7 +4740,7 @@
                             "characterName": "Minna",
                             "triggerOrder": 0,
                             "text": "The textbooks have arrived; I'll bring them over later.",
-                            "pictureId": "1",
+                            "pictureId": "5",
                             "playerPicture": ""
                         },
                         {
@@ -4748,7 +4748,7 @@
                             "characterName": "",
                             "triggerOrder": 1,
                             "text": "Press the up key to look at the blackboard.",
-                            "pictureId": "1",
+                            "pictureId": "5",
                             "playerPicture": ""
                         }
                     ]
@@ -4765,7 +4765,7 @@
                             "characterName": "mom",
                             "triggerOrder": 0,
                             "text": "It is already raining, so it is much cooler. Do not keep the air conditioner on all afternoon.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4773,7 +4773,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Got it.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4790,7 +4790,7 @@
                             "characterName": "mom",
                             "triggerOrder": 0,
                             "text": "Also, do not drag your homework into the evening.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4798,7 +4798,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Okay, okay. I am already writing it.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4815,7 +4815,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Mom is cooking. Her workplace is off today too.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4832,7 +4832,7 @@
                             "characterName": "mom",
                             "triggerOrder": 0,
                             "text": "Do not keep looking at your phone.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4840,7 +4840,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "I am asking about homework.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4857,7 +4857,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(There is the sound of a fan in the living room.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4874,7 +4874,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(The bookshelf holds all my textbooks from childhood until now.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4891,7 +4891,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "When we renovated, I asked my parents for this large desk, and they agreed quickly.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4899,7 +4899,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "They were even happy about it.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4907,7 +4907,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "I had hoped the bookshelf would be full of books I liked.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4915,7 +4915,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "But it was quickly filled with textbooks and ugly required reading.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4932,7 +4932,7 @@
                             "characterName": "Minna",
                             "triggerOrder": 0,
                             "text": "Mr. Julian, here is the sign-in sheet.",
-                            "pictureId": "1",
+                            "pictureId": "4",
                             "playerPicture": ""
                         }
                     ]
@@ -4949,7 +4949,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Your dad said he might come back later tonight.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4957,7 +4957,7 @@
                             "characterName": "mom",
                             "triggerOrder": 1,
                             "text": "Dinner is ready.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -4965,7 +4965,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "Coming.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -4982,7 +4982,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Forget it, let me go eat.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]

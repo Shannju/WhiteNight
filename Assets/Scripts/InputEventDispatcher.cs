@@ -18,6 +18,8 @@ public class InputEventDispatcher : MonoBehaviour
     [SerializeField] private bool rightMouseTriggersFriend = true;
 
     [Header("Debug")]
+    [SerializeField] private CanvasManager canvasManager;
+    [SerializeField] private KeyCode debugUiToggleKey = KeyCode.Z;
     [SerializeField] private bool debugDirectionalInput = true;
 
     void Awake()
@@ -31,10 +33,20 @@ public class InputEventDispatcher : MonoBehaviour
         {
             UnlockAllDirectionalInputs();
         }
+
+        if (canvasManager == null)
+        {
+            canvasManager = FindObjectOfType<CanvasManager>();
+        }
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(debugUiToggleKey))
+        {
+            ToggleDebugUi();
+        }
+
         bool boardPressed = Input.GetKeyDown(KeyCode.UpArrow);
         bool friendPressed = IsFriendInputPressed();
         bool windowPressed = Input.GetKeyDown(KeyCode.LeftArrow);
@@ -136,6 +148,22 @@ public class InputEventDispatcher : MonoBehaviour
     public void TriggerDesk()
     {
         onDesk?.Invoke();
+    }
+
+    public void ToggleDebugUi()
+    {
+        if (canvasManager == null)
+        {
+            canvasManager = FindObjectOfType<CanvasManager>();
+        }
+
+        if (canvasManager == null)
+        {
+            Debug.LogWarning("[InputEventDispatcher] CanvasManager was not found, so debug UI cannot be toggled.", this);
+            return;
+        }
+
+        canvasManager.ToggleDebugCanvas();
     }
 
     private bool IsFriendInputPressed()

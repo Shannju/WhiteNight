@@ -1,6 +1,13 @@
+// Comment this define to remove the editor debug preview fields and code.
+#define ENDING_CANVAS_MANAGER_DEBUG_PREVIEW
+
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+
+#if UNITY_EDITOR && ENDING_CANVAS_MANAGER_DEBUG_PREVIEW
+using UnityEditor;
+#endif
 
 [System.Serializable]
 public class EndingCanvasEntry
@@ -32,6 +39,14 @@ public class EndingCanvasManager : MonoBehaviour
     public bool showEndingOnStart = false;
     public int startEndingIndex = 0;
 
+#if UNITY_EDITOR && ENDING_CANVAS_MANAGER_DEBUG_PREVIEW
+    [Header("Editor Debug Preview")]
+    [SerializeField] private bool debugPreviewInEditor = false;
+    [SerializeField] private int debugPreviewEndingIndex = 0;
+    [SerializeField] private float debugPreviewExamScore = 100f;
+    [SerializeField] private bool debugHidePreviewWhenDisabled = false;
+#endif
+
     private int currentEndingIndex = -1;
 
     public int CurrentEndingIndex => currentEndingIndex;
@@ -53,6 +68,63 @@ public class EndingCanvasManager : MonoBehaviour
             ShowEnding(startEndingIndex);
         }
     }
+
+#if UNITY_EDITOR && ENDING_CANVAS_MANAGER_DEBUG_PREVIEW
+    private void OnValidate()
+    {
+        if (Application.isPlaying)
+        {
+            return;
+        }
+
+        EditorApplication.delayCall -= ApplyEditorDebugPreview;
+        EditorApplication.delayCall += ApplyEditorDebugPreview;
+    }
+
+    [ContextMenu("Debug Preview Ending")]
+    private void DebugPreviewEnding()
+    {
+        ApplyEditorDebugPreview(true);
+    }
+
+    [ContextMenu("Debug Hide Ending Preview")]
+    private void DebugHideEndingPreview()
+    {
+        HideEnding();
+    }
+
+    private void ApplyEditorDebugPreview()
+    {
+        ApplyEditorDebugPreview(false);
+    }
+
+    private void ApplyEditorDebugPreview(bool forcePreview)
+    {
+        EditorApplication.delayCall -= ApplyEditorDebugPreview;
+
+        if (this == null || Application.isPlaying)
+        {
+            return;
+        }
+
+        if (!debugPreviewInEditor && !forcePreview)
+        {
+            if (debugHidePreviewWhenDisabled)
+            {
+                HideEnding();
+            }
+
+            return;
+        }
+
+        if (autoCollectImagesOnAwake)
+        {
+            CollectImagesFromImageRoot();
+        }
+
+        ShowEnding(debugPreviewEndingIndex, debugPreviewExamScore);
+    }
+#endif
 
     [ContextMenu("Collect Images From Image Root")]
     public void CollectImagesFromImageRoot()

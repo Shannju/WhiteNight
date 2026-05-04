@@ -111,6 +111,23 @@ public class CanvasManager : MonoBehaviour
         SetEntryActive(entry, isActive);
     }
 
+    public void ToggleCanvas(string key)
+    {
+        ManagedCanvasEntry entry = GetEntry(key);
+        if (entry == null)
+        {
+            Debug.LogWarning($"CanvasManager: canvas key '{key}' was not found.", this);
+            return;
+        }
+
+        if (entry.canvasObject == null)
+        {
+            return;
+        }
+
+        entry.canvasObject.SetActive(!entry.canvasObject.activeSelf);
+    }
+
     public void ShowOnlyCanvas(int index)
     {
         for (int i = 0; i < canvases.Count; i++)
@@ -167,6 +184,11 @@ public class CanvasManager : MonoBehaviour
     public void HideDebugCanvas()
     {
         HideCanvas("Canvas_debug");
+    }
+
+    public void ToggleDebugCanvas()
+    {
+        ToggleCanvas("Canvas_debug");
     }
 
     public void ShowOnlySubtitleCanvas()

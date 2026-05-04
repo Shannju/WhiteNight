@@ -77,8 +77,15 @@ public class DialogPictureController : MonoBehaviour
     {
         // Keep the last visible picture after a dialog ends.
         // The picture will change later when a new state explicitly updates it.
-        RememberCurrentActionPointState();
         isNonActionPointDialogActive = false;
+
+        if (HasActionPointStateChanged())
+        {
+            RefreshActionPointPictureState(true);
+            return;
+        }
+
+        RememberCurrentActionPointState();
     }
 
     public void OnPendingRandomDialogChanged(DialogEntry dialog)
@@ -208,9 +215,20 @@ public class DialogPictureController : MonoBehaviour
 
         AddPictureRequestIfMissing(
             pictureRequests,
-            activeLine != null ? activeLine.speakerId : string.Empty,
+            GetPictureCharacterIdForActiveLine(activeLine),
             activeLine != null ? activeLine.pictureId : string.Empty);
         return pictureRequests;
+    }
+
+    private string GetPictureCharacterIdForActiveLine(DialogLine activeLine)
+    {
+        string currentViewCharacterId = GetCharacterIdForView(GetCurrentCameraViewType());
+        if (!string.IsNullOrEmpty(currentViewCharacterId))
+        {
+            return currentViewCharacterId;
+        }
+
+        return activeLine != null ? activeLine.speakerId : string.Empty;
     }
 
     private void AddActionPointPictureRequestForCharacter(
@@ -282,6 +300,13 @@ public class DialogPictureController : MonoBehaviour
     {
         lastSpentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : -1;
         lastActionPointDay = actionPointDialogController != null ? actionPointDialogController.GetCurrentDay() : -1;
+    }
+
+    private bool HasActionPointStateChanged()
+    {
+        int spentActionPoints = actionPointSystem != null ? actionPointSystem.SpentActionPoints : -1;
+        int currentDay = actionPointDialogController != null ? actionPointDialogController.GetCurrentDay() : -1;
+        return spentActionPoints != lastSpentActionPoints || currentDay != lastActionPointDay;
     }
 
     private CameraViewType GetCurrentCameraViewType()

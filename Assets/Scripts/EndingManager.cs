@@ -8,7 +8,9 @@ public enum EndingValueCheck
 {
     Ignore,
     AtLeast,
-    LessThan
+    LessThan,
+    GreaterThan,
+    AtMost
 }
 
 [Serializable]
@@ -44,8 +46,10 @@ public class EndingManager : MonoBehaviour
     [SerializeField] private bool useBlackFadeBeforeEnding = true;
 
     [Header("Default Thresholds")]
-    [SerializeField] private int highDialogCount = 10;
-    [SerializeField] private float passExamScore = 60f;
+    [SerializeField] private int highDialogCount = 30;
+    [SerializeField] private int highFriendshipDialogCount = 40;
+    [SerializeField] private int lowFriendshipDialogCount = 10;
+    [SerializeField] private float passExamScore = 80f;
 
     [Header("Ending Rules")]
     [SerializeField] private List<EndingRule> endingRules = new List<EndingRule>();
@@ -181,12 +185,12 @@ public class EndingManager : MonoBehaviour
     {
         endingRules = new List<EndingRule>
         {
-            CreateRule(0, EndingValueCheck.AtLeast, highDialogCount, EndingValueCheck.LessThan, highDialogCount, EndingValueCheck.AtLeast, passExamScore),
-            CreateRule(0, EndingValueCheck.AtLeast, highDialogCount, EndingValueCheck.LessThan, highDialogCount, EndingValueCheck.LessThan, passExamScore),
-            CreateRule(0, EndingValueCheck.LessThan, highDialogCount, EndingValueCheck.AtLeast, highDialogCount, EndingValueCheck.AtLeast, passExamScore),
-            CreateRule(0, EndingValueCheck.LessThan, highDialogCount, EndingValueCheck.AtLeast, highDialogCount, EndingValueCheck.LessThan, passExamScore),
-            CreateRule(0, EndingValueCheck.AtLeast, highDialogCount, EndingValueCheck.AtLeast, highDialogCount, EndingValueCheck.AtLeast, passExamScore),
-            CreateRule(0, EndingValueCheck.Ignore, 0, EndingValueCheck.Ignore, 0, EndingValueCheck.Ignore, 0f)
+            CreateRule(4, EndingValueCheck.Ignore, 0, EndingValueCheck.GreaterThan, highFriendshipDialogCount, EndingValueCheck.Ignore, 0f),
+            CreateRule(5, EndingValueCheck.Ignore, 0, EndingValueCheck.LessThan, lowFriendshipDialogCount, EndingValueCheck.Ignore, 0f),
+            CreateRule(0, EndingValueCheck.GreaterThan, highDialogCount, EndingValueCheck.Ignore, 0, EndingValueCheck.GreaterThan, passExamScore),
+            CreateRule(1, EndingValueCheck.AtMost, highDialogCount, EndingValueCheck.Ignore, 0, EndingValueCheck.GreaterThan, passExamScore),
+            CreateRule(2, EndingValueCheck.GreaterThan, highDialogCount, EndingValueCheck.Ignore, 0, EndingValueCheck.AtMost, passExamScore),
+            CreateRule(3, EndingValueCheck.AtMost, highDialogCount, EndingValueCheck.Ignore, 0, EndingValueCheck.AtMost, passExamScore)
         };
     }
 
@@ -284,6 +288,10 @@ public class EndingManager : MonoBehaviour
                 return actualValue >= ruleValue;
             case EndingValueCheck.LessThan:
                 return actualValue < ruleValue;
+            case EndingValueCheck.GreaterThan:
+                return actualValue > ruleValue;
+            case EndingValueCheck.AtMost:
+                return actualValue <= ruleValue;
             default:
                 return true;
         }
@@ -297,6 +305,10 @@ public class EndingManager : MonoBehaviour
                 return actualValue >= ruleValue;
             case EndingValueCheck.LessThan:
                 return actualValue < ruleValue;
+            case EndingValueCheck.GreaterThan:
+                return actualValue > ruleValue;
+            case EndingValueCheck.AtMost:
+                return actualValue <= ruleValue;
             default:
                 return true;
         }

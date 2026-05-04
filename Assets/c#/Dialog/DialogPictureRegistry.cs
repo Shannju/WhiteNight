@@ -31,6 +31,7 @@ public class DialogPictureRegistry : MonoBehaviour
 
     private void Awake()
     {
+        BackfillActionPointPictures();
         ActivateAllDefaultPictures();
     }
 
@@ -236,6 +237,7 @@ public class DialogPictureRegistry : MonoBehaviour
 
     public void ActivateAllDefaultPictures()
     {
+        BackfillActionPointPictures();
         ActivateDefaultPicture(DialogTriggerMode.ActionPoint);
         NormalizePictureGroups(DialogTriggerMode.ActionPoint);
     }
@@ -280,6 +282,66 @@ public class DialogPictureRegistry : MonoBehaviour
         }
 
         ApplyPictureVisibilityForCharacterGroups(triggerMode, activeTargetSet, updatedCharacterIds, updatesAllCharacters);
+    }
+
+    private void BackfillActionPointPictures()
+    {
+        BackfillActionPointPicturesForCharacter("mate", sequencePictures);
+        BackfillActionPointPicturesForCharacter("windows", randomPictures);
+    }
+
+    private void BackfillActionPointPicturesForCharacter(
+        string characterId,
+        IEnumerable<DialogPictureEntry> fallbackPictures)
+    {
+        if (string.IsNullOrEmpty(characterId) || fallbackPictures == null)
+        {
+            return;
+        }
+
+        string normalizedCharacterId = NormalizeCharacterId(characterId);
+
+        foreach (DialogPictureEntry fallbackEntry in fallbackPictures)
+        {
+            if (fallbackEntry?.target == null)
+            {
+                continue;
+            }
+
+            string pictureId = NormalizePictureId(fallbackEntry.pictureId);
+
+            if (string.IsNullOrEmpty(pictureId) ||
+                HasActionPointPicture(normalizedCharacterId, pictureId))
+            {
+                continue;
+            }
+
+            actionPointPictures.Add(new DialogPictureEntry
+            {
+                characterId = characterId,
+                pictureId = pictureId,
+                target = fallbackEntry.target
+            });
+        }
+    }
+
+    private bool HasActionPointPicture(string normalizedCharacterId, string pictureId)
+    {
+        foreach (DialogPictureEntry entry in actionPointPictures)
+        {
+            if (entry?.target == null)
+            {
+                continue;
+            }
+
+            if (NormalizeCharacterId(entry.characterId) == normalizedCharacterId &&
+                NormalizePictureId(entry.pictureId) == pictureId)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void ApplyPictureEntriesForRequests(

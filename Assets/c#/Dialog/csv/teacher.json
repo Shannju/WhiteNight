@@ -26,7 +26,7 @@
                             "triggerOrder": 1,
                             "text": "(After the final exams.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -34,7 +34,7 @@
                             "triggerOrder": 2,
                             "text": "(You get a report card.)",
                             "pictureId": "0",
-                            "playerPicture": "2"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -42,7 +42,7 @@
                             "triggerOrder": 3,
                             "text": "(Some people are affected by it.)",
                             "pictureId": "0",
-                            "playerPicture": "3"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -50,7 +50,7 @@
                             "triggerOrder": 4,
                             "text": "(They feel anxious or frustrated.)",
                             "pictureId": "0",
-                            "playerPicture": "4"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -58,7 +58,7 @@
                             "triggerOrder": 5,
                             "text": "(Some feel relieved.)",
                             "pictureId": "0",
-                            "playerPicture": "5"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -66,7 +66,7 @@
                             "triggerOrder": 6,
                             "text": "(But some people...)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "tutorial",
@@ -351,7 +351,7 @@
                             "triggerOrder": 4,
                             "text": "Sigh.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -384,7 +384,7 @@
                             "triggerOrder": 1,
                             "text": "(Today is just as hot. It has not rained at all in the past week.)",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -392,7 +392,7 @@
                             "triggerOrder": 2,
                             "text": "(Riding a bike in this weather is basically suicide, so even I chose to take the bus.)",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
@@ -515,7 +515,7 @@
                             "triggerOrder": 4,
                             "text": "...",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -606,7 +606,7 @@
                             "triggerOrder": 5,
                             "text": "I am going to do some math homework.",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -713,7 +713,7 @@
                             "triggerOrder": 3,
                             "text": "(A ripple of quiet laughter passes through the class.)",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -1002,7 +1002,7 @@
                             "triggerOrder": 1,
                             "text": "What about you? Where are you?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -1108,7 +1108,7 @@
                             "triggerOrder": 1,
                             "text": "Europe, refugees, Obama.",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -1116,7 +1116,7 @@
                             "triggerOrder": 2,
                             "text": "War, the United Nations.",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -1124,7 +1124,7 @@
                             "triggerOrder": 3,
                             "text": "Concerts, sports.",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -1132,7 +1132,7 @@
                             "triggerOrder": 4,
                             "text": "Traditional Chinese culture going global. Every English-learning newspaper has this kind of content...",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1140,7 +1140,7 @@
                             "triggerOrder": 5,
                             "text": "Are these all real?",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -1406,7 +1406,7 @@
                             "triggerOrder": 1,
                             "text": "Is that a cram school?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "player",
@@ -1414,7 +1414,7 @@
                             "triggerOrder": 2,
                             "text": "Speaking of that, why do you not take classes there?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -1446,7 +1446,7 @@
                             "triggerOrder": 6,
                             "text": "Hahaha.",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         }
                     ]
                 },
@@ -1471,7 +1471,7 @@
                             "triggerOrder": 2,
                             "text": "#NAME?",
                             "pictureId": "3",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         }
                     ]
                 },
@@ -1529,7 +1529,7 @@
                             "triggerOrder": 4,
                             "text": "(Cici is my only and best friend.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1545,7 +1545,7 @@
                             "triggerOrder": 6,
                             "text": "(But if I can see my dearest Cici at school every day...)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1553,7 +1553,7 @@
                             "triggerOrder": 7,
                             "text": "(and do everything together with her...)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1561,7 +1561,7 @@
                             "triggerOrder": 8,
                             "text": "(I feel like I look forward to coming to school every day.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1569,7 +1569,7 @@
                             "triggerOrder": 9,
                             "text": "(I think it is the same for her.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -1694,7 +1694,7 @@
                             "triggerOrder": 1,
                             "text": "(Julian looks out the window.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1702,7 +1702,7 @@
                             "triggerOrder": 2,
                             "text": "(At noon in the Children's Palace, the sun-bleached garden is completely still. There are only dried-out plants.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -1792,7 +1792,7 @@
                             "triggerOrder": 7,
                             "text": "Beyond English.",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -1808,7 +1808,7 @@
                             "triggerOrder": 9,
                             "text": "Beyond Yourself!",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -1832,7 +1832,7 @@
                             "triggerOrder": 12,
                             "text": "Beyond English...",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -1848,7 +1848,7 @@
                             "triggerOrder": 14,
                             "text": "Beyond Yourself!",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "player",
@@ -1856,7 +1856,7 @@
                             "triggerOrder": 15,
                             "text": "Beyond Yourself...",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -1889,7 +1889,7 @@
                             "triggerOrder": 2,
                             "text": "Will have done.",
                             "pictureId": "3",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2014,7 +2014,7 @@
                             "triggerOrder": 2,
                             "text": "Study hard and get into Y High School.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2022,7 +2022,7 @@
                             "triggerOrder": 3,
                             "text": "This is not my dream, but it is the premise for every good beginning.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "？",
@@ -2096,7 +2096,7 @@
                             "triggerOrder": 4,
                             "text": "Whose phone is ringing?",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         }
                     ]
                 },
@@ -2227,7 +2227,7 @@
                             "triggerOrder": 5,
                             "text": "I wish her success.",
                             "pictureId": "2",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2335,7 +2335,7 @@
                             "triggerOrder": 1,
                             "text": "What if class is cancelled tomorrow too?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -2475,7 +2475,7 @@
                             "triggerOrder": 3,
                             "text": "(Laughing.)",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -2532,7 +2532,7 @@
                             "triggerOrder": 5,
                             "text": "I wish you success.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2666,7 +2666,7 @@
                             "triggerOrder": 2,
                             "text": "(My parents...)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2682,7 +2682,7 @@
                             "triggerOrder": 4,
                             "text": "(My father is fairly humorous, and my mother is very optimistic.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2748,7 +2748,7 @@
                             "triggerOrder": 1,
                             "text": "(She is probably busy and does not want to chat anymore.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2848,7 +2848,7 @@
                             "triggerOrder": 3,
                             "text": "(Silence. Cici is zoning out.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2897,7 +2897,7 @@
                             "triggerOrder": 5,
                             "text": "I wish her success.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2971,7 +2971,7 @@
                             "triggerOrder": 4,
                             "text": "Beyond.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -2987,7 +2987,7 @@
                             "triggerOrder": 6,
                             "text": "Go beyond.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -3003,7 +3003,7 @@
                             "triggerOrder": 8,
                             "text": "Whatever.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -3119,7 +3119,7 @@
                             "triggerOrder": 4,
                             "text": "(Wasn't that inevitable...)",
                             "pictureId": "2",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "teacher",
@@ -3185,7 +3185,7 @@
                             "triggerOrder": 1,
                             "text": "(For some reason, today's homework is especially hard to do. I cannot focus on English for a long time.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "3"
                         }
                     ]
                 },
@@ -3218,7 +3218,7 @@
                             "triggerOrder": 3,
                             "text": "(Cici has already gone home. Am I going to eat ice cream alone?)",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "player",
@@ -3307,7 +3307,7 @@
                             "triggerOrder": 9,
                             "text": "......",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -3324,7 +3324,7 @@
                             "triggerOrder": 1,
                             "text": "(The wind suddenly rises. A storm is coming.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -3332,7 +3332,7 @@
                             "triggerOrder": 2,
                             "text": "(The trees outside the window lower their heads, and all their leaves flip over with a rustle.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -3340,7 +3340,7 @@
                             "triggerOrder": 3,
                             "text": "(Trees cannot pull their hands back, so they can only begin to dance slowly.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
@@ -3348,7 +3348,7 @@
                             "triggerOrder": 4,
                             "text": "(Only then do I realize with surprise)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",

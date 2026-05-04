@@ -1023,30 +1023,45 @@ MonoBehaviour:
   endings:
   - index: 0
     imageObject: {fileID: 2801163128566983484}
-    title: 'Good Student '
-    content: You studied hard and received the most red flowers in the class. Teacher
-      Julian invited you to do an interview with him, saying you've already gone
-      beyond English.
+    title: Beyond English
+    content: You study hard and received the most red flowers in the class. Teacher
+      Julian invited you to do an interview with him, saying you've already gone beyond
+      English.
   - index: 1
     imageObject: {fileID: 4205103347847168706}
-    title: Genius
-    content: Genius
+    title: Go West
+    content: You have understood the essence of English all by teaching yourself
+      on the internet. You have never left Y City, yet your pronunciation is standard.
+      Julian says don't waste your talent. This blessing is almost like a curse.
+      In every choice you make later in life, it asks you to go out, and not to
+      stop.
   - index: 2
     imageObject: {fileID: 7595621942585135166}
-    title: Idiot
-    content: Idiot
+    title: Touching Effort
+    content: You finish every exercise, memorize every word, and copy every mistake
+      again in three different colors. Julian says your problem is not attitude,
+      but method. You nod. Somehow, this hurts more than criticism.
   - index: 3
     imageObject: {fileID: 362279778671449139}
-    title: Troublemaker
-    content: Troublemaker
+    title: It's fine to be bad at English.
+    content: Contrary to Julian's imagination, about 6.77 billion people in the
+      world do not use English, accounting for 81.6% of the global population. You
+      never go beyond English, nor beyond yourself. You simply grow up and forget
+      many words in an ordinary way. It's fine to be bad at English. We love our
+      country.
   - index: 4
     imageObject: {fileID: 3141347947787667605}
-    title: Friendship
-    content: Friendship
+    title: The Things That Last
+    content: Three days after the exam, you forgot what you had studied for three
+      years. April is over, April is over. There are all kinds of love in the world,
+      but never the same love twice.
   - index: 5
     imageObject: {fileID: 1779022591729426259}
-    title: Breakup
-    content: Breakup
+    title: Separate Ways
+    content: You never made a solemn farewell. It was just that later, she went
+      to a new school, and you went to your own class. Both of you felt that this
+      did not count as losing each other. Until one day, you remembered something
+      that only she would laugh at, but no longer knew who to share it with.
   autoCollectImagesOnAwake: 1
   showEndingOnStart: 0
   startEndingIndex: 0
