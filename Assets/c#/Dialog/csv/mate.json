@@ -17,7 +17,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Cici is my only and best friend.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -25,7 +25,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(She's the type to be affected by grades too, but she doesn't dwell on it.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -33,7 +33,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(I can talk to other classmates, of course. We say hi when we see each other.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -41,7 +41,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(But if I can see my dearest Cici at school every day...)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -49,7 +49,7 @@
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "(partner with her in P.E. class and line up with her without a second thought...)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -57,7 +57,7 @@
                             "characterName": "Me",
                             "triggerOrder": 5,
                             "text": "(and go home with her after school...)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -65,7 +65,7 @@
                             "characterName": "Me",
                             "triggerOrder": 6,
                             "text": "(and just do homework the rest of the time...)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -73,7 +73,7 @@
                             "characterName": "Me",
                             "triggerOrder": 7,
                             "text": "(Life is so blissful that I have no time to think about anything else.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -90,7 +90,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Of course! Let me play Aoi Prism!",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -98,7 +98,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Last time I opened a music game at home, my mom told me I might as well be playing the piano.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -106,7 +106,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "Haha, that's totally different.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -114,7 +114,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 3,
                             "text": "Maybe she just doesn't like seeing you play games.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -131,7 +131,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "My mom says I should study abroad in the future.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -139,7 +139,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Julian is the founder of this school.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -147,7 +147,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "It wasn't easy to get you into his class.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -155,7 +155,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "I know. Thank you!",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -163,7 +163,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 4,
                             "text": "His teaching style is... insane.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -180,7 +180,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(When Cici chants along, only her mouth moves.)",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -188,7 +188,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(It's more like a silent film performance.)",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -196,7 +196,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(Her mouth shapes are exaggerated, but her voice lacks the enthusiasm Julian expects.)",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -213,7 +213,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "I want to drop this class!",
-                            "pictureId": "3",
+                            "pictureId": "8",
                             "playerPicture": ""
                         },
                         {
@@ -221,7 +221,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Would your mom agree to that?",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -229,7 +229,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(Cici looks out the window, dejected.)",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -246,7 +246,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Being a botanist sounds like it would suit you.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -254,7 +254,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Really. When I was little, I thought about becoming a botanist.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -262,7 +262,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(I had only ever seen that job in documentaries.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -270,7 +270,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 3,
                             "text": "But that idea feels very far away now.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -287,7 +287,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(Actually, we are allowed to like many things.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -295,7 +295,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(As long as they do not actually change our lives in the end.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -312,7 +312,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(The girl in the front row has an EXO sticker tucked inside her English book.)",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         },
                         {
@@ -320,7 +320,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Who is that?",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         },
                         {
@@ -328,7 +328,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "Byun Baekhyun.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -345,7 +345,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "So killing a lot of plants can also be called experience.",
-                            "pictureId": "3",
+                            "pictureId": "8",
                             "playerPicture": ""
                         },
                         {
@@ -353,7 +353,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "That sounds a little scary.",
-                            "pictureId": "3",
+                            "pictureId": "8",
                             "playerPicture": ""
                         }
                     ]
@@ -370,7 +370,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Roots, rotting.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -378,7 +378,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "You lose points for that pun.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -395,7 +395,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Julian's hairstyle makes him look like he is about to take an ID photo.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -403,7 +403,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Hahahaha.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -420,7 +420,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "His old look was not this exaggerated.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -428,7 +428,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Really?",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -436,7 +436,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(What I did not say was that maybe if it was not exaggerated, no one would believe in his ability.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -453,7 +453,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Speaking of McDonald's, they have a new product.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -461,7 +461,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Peach blossom flavored soft serve!",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -469,7 +469,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "But I guess it uses the same recipe as the cherry blossom flavor.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -477,7 +477,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 3,
                             "text": "They just changed the name and sell it in China.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -485,7 +485,7 @@
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "Let us go eat it after class.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -493,7 +493,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 5,
                             "text": "No, no. It is not out yet.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -501,7 +501,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 6,
                             "text": "It starts selling next week!",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -518,7 +518,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Julian is actually local.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -526,7 +526,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "I really do not know why he came back.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -534,7 +534,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "It would be pretty nice to retire here.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -542,7 +542,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(I will probably only stay here until I graduate from high school.)",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -550,7 +550,7 @@
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "(People with promise should leave this place once they go to college.)",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -558,7 +558,7 @@
                             "characterName": "Me",
                             "triggerOrder": 5,
                             "text": "(I think Cici will be the same. We will probably end up in two huge cities in China.)",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -575,7 +575,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "My dad is a doctor, and my mom is a teacher.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -583,7 +583,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "What a standard pairing.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -591,7 +591,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "Standard answers can argue too.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -608,7 +608,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "I really want to just...",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         },
                         {
@@ -616,7 +616,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Just what?",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         },
                         {
@@ -624,7 +624,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "Evaporate.",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         }
                     ]
@@ -641,7 +641,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "What did you do after you came back?",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -649,7 +649,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "I was at home.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -666,7 +666,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Did you not say your mom was home too?",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -674,7 +674,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Yeah, so I was even more at home.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -682,7 +682,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "Why are you suddenly checking up on me?",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -690,7 +690,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "I am not.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -698,7 +698,7 @@
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "(I kind of am.)",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -715,7 +715,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "And later, I went out for a bit.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -723,7 +723,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Just... to take care of something.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -739,7 +739,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(That was supposed to be my line.)",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -756,7 +756,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "...",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -773,7 +773,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "(Laughs.)",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -790,7 +790,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Let us buy ice cream after class.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -798,7 +798,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Are you buying?",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -806,7 +806,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "Why should I?",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -814,7 +814,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "Because you stood me up before.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         }
                     ]
@@ -831,7 +831,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "So you did not go eat afterward?",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -839,7 +839,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "I am not telling you.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -847,7 +847,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "Ice cream is a very temporary thing.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -855,7 +855,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "You feel good for a second and then it is gone.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -872,7 +872,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(What's on her mind?)",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -889,7 +889,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Sorry, Cici. I did not expect the teacher to call me over after class last time.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -897,7 +897,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "I will treat you to ice cream today.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -905,7 +905,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "Fine, I will generously forgive you.",
-                            "pictureId": "3",
+                            "pictureId": "1",
                             "playerPicture": ""
                         },
                         {
@@ -913,7 +913,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "What did he want to talk to you about?",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -921,7 +921,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 4,
                             "text": "It is a long story.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -938,7 +938,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "I might have a chance to go to school in X-City.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -946,7 +946,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "X-City?",
-                            "pictureId": "3",
+                            "pictureId": "8",
                             "playerPicture": ""
                         },
                         {
@@ -954,7 +954,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "It is not certain, though.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -962,7 +962,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 3,
                             "text": "My mom has not decided yet.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -979,7 +979,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Did you know? Ms. Minna seems to be a university student in X-City.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -987,7 +987,7 @@
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "How do you know?",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         },
                         {
@@ -995,7 +995,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "There is a school emblem on her bag. I have seen it.",
-                            "pictureId": "3",
+                            "pictureId": "2",
                             "playerPicture": ""
                         }
                     ]
@@ -1012,7 +1012,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "(Cici's phone vibrates.)",
-                            "pictureId": "3",
+                            "pictureId": "8",
                             "playerPicture": ""
                         },
                         {
@@ -1020,7 +1020,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Sorry.",
-                            "pictureId": "3",
+                            "pictureId": "8",
                             "playerPicture": ""
                         },
                         {
@@ -1028,7 +1028,7 @@
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "...",
-                            "pictureId": "3",
+                            "pictureId": "8",
                             "playerPicture": ""
                         },
                         {
@@ -1036,7 +1036,7 @@
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "She still does not have much classroom discipline.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         },
                         {
@@ -1044,7 +1044,7 @@
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "Why...",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -1061,7 +1061,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "Wen.",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         },
                         {
@@ -1069,7 +1069,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "Are you okay...",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         }
                     ]
@@ -1086,7 +1086,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 0,
                             "text": "I am sorry. I should not have told you this right now.",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         },
                         {
@@ -1094,7 +1094,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 1,
                             "text": "It is not certain yet. I will probably still be here next year...",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         },
                         {
@@ -1102,7 +1102,7 @@
                             "characterName": "Cici",
                             "triggerOrder": 2,
                             "text": "Let us talk after class, okay?",
-                            "pictureId": "3",
+                            "pictureId": "7",
                             "playerPicture": ""
                         }
                     ]
@@ -1119,7 +1119,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Cici didn't show up today.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -1136,7 +1136,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "I wonder if she’s actually busy or just making up excuses.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -1153,7 +1153,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "I shouldn't judge her like that, though.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
@@ -1170,7 +1170,7 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "I’ll reach out to her after the exam.",
-                            "pictureId": "3",
+                            "pictureId": "6",
                             "playerPicture": ""
                         }
                     ]
