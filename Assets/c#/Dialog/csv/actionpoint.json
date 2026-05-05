@@ -17,24 +17,24 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "(The typhoon has not really arrived yet.)",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(Outside the window, it is only very dark. It is afternoon, but the sky is as dark as night.)",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(It feels a little like the end of the world.)",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -51,7 +51,7 @@
                             "triggerOrder": 0,
                             "text": "(Today is just as hot. It has not rained at all in the past week.)",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -59,7 +59,7 @@
                             "triggerOrder": 1,
                             "text": "(Riding a bike in this weather is basically suicide, so even I chose to take the bus.)",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
@@ -67,7 +67,7 @@
                             "triggerOrder": 2,
                             "text": "Let us go eat ice cream today, Cici.",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "mate",
@@ -91,7 +91,7 @@
                             "triggerOrder": 5,
                             "text": "But the second one is half price.",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -107,7 +107,7 @@
                             "triggerOrder": 7,
                             "text": "It is fine. Worst case, I will eat two.",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "3"
                         }
                     ]
                 },
@@ -132,7 +132,7 @@
                             "triggerOrder": 1,
                             "text": "Why are we here?",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -148,7 +148,7 @@
                             "triggerOrder": 3,
                             "text": "(Cici is my only and best friend.)",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -156,7 +156,7 @@
                             "triggerOrder": 4,
                             "text": "(She's the type to be affected by grades too, but she doesn't dwell on it.)",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -164,7 +164,7 @@
                             "triggerOrder": 5,
                             "text": "(It is so nice that I get to attend cram school with her this year.)",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -172,7 +172,7 @@
                             "triggerOrder": 6,
                             "text": "(I will not have to spend summer vacation alone.)",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
@@ -180,7 +180,7 @@
                             "triggerOrder": 7,
                             "text": "(But...)",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "mate",
@@ -220,24 +220,24 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Cici always seems indifferent to everything.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "Actually, I always feel that with her intelligence, she could get much higher scores.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "But her mind does not seem to be here.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -254,7 +254,7 @@
                             "triggerOrder": 0,
                             "text": "But Cici looks fine.",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -262,7 +262,7 @@
                             "triggerOrder": 1,
                             "text": "I sometimes really envy classmates whose parents pick them up and drop them off.",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -286,7 +286,7 @@
                             "triggerOrder": 4,
                             "text": "Not yet. What is it like?",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -319,7 +319,7 @@
                             "triggerOrder": 1,
                             "text": "I chose A.",
                             "pictureId": "7",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -343,24 +343,24 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Yes, I only got into this cram school because I asked through her connections.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "She hesitated before agreeing. After that, it was my mom and her mom who handled it.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "It was my first time asking someone for help with something, and I felt very embarrassed.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "3"
                         }
                     ]
                 },
@@ -385,7 +385,7 @@
                             "triggerOrder": 1,
                             "text": "(Laughing.)",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         }
                     ]
                 },
@@ -401,24 +401,24 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "It is already the summer after eighth grade. Once this is over, next year we will take the high school entrance exam.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "I want to spend the summer relaxing one last time, but I do not dare slack off.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "In the end, I do not rest properly at all. It feels like I am always in class.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "3"
                         }
                     ]
                 },
@@ -434,32 +434,32 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "They call it a week without class, but I still have other classes to make up.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "(Actually, I have math every two days and English once a week.)",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "(There is a faint ring of water on the desk.)",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "(It was left there from an iced Coke before.)",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -484,7 +484,7 @@
                             "triggerOrder": 1,
                             "text": "It feels so artificial, like it was just invented for the exercise.",
                             "pictureId": "3",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -501,7 +501,7 @@
                             "triggerOrder": 0,
                             "text": "Who are you going to write about?",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -517,7 +517,7 @@
                             "triggerOrder": 2,
                             "text": "What is cute about her?",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -541,40 +541,40 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "It does not sound that tiring, but",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "a single two-hour class basically uses up half the day.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "For the rest of the day, I still have to find time to finish homework, so",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 3,
                             "text": "it feels like I am studying all the time,",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 4,
                             "text": "endlessly.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -599,7 +599,7 @@
                             "triggerOrder": 1,
                             "text": "...",
                             "pictureId": "7",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -607,7 +607,7 @@
                             "triggerOrder": 2,
                             "text": "(That sounds a little strange.)",
                             "pictureId": "7",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -615,7 +615,7 @@
                             "triggerOrder": 3,
                             "text": "It is obviously a nice thing to say, but there has to be a comparison...",
                             "pictureId": "7",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "mate",
@@ -672,7 +672,7 @@
                             "triggerOrder": 2,
                             "text": "(The phone sound seems to be coming from Cici.)",
                             "pictureId": "8",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -705,7 +705,7 @@
                             "triggerOrder": 0,
                             "text": "How did you forget to turn it off?",
                             "pictureId": "5",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -754,7 +754,7 @@
                             "triggerOrder": 1,
                             "text": "Cici's phone lights up again.",
                             "pictureId": "8",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -795,7 +795,7 @@
                             "triggerOrder": 0,
                             "text": "What news?",
                             "pictureId": "3",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -811,7 +811,7 @@
                             "triggerOrder": 2,
                             "text": "Come to think of it, it has not rained in a long time.",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -836,7 +836,7 @@
                             "triggerOrder": 1,
                             "text": "Drawing.",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -852,7 +852,7 @@
                             "triggerOrder": 3,
                             "text": "(Yuanyuan's eyes lit up when she talked about something she liked.)",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -860,7 +860,7 @@
                             "triggerOrder": 4,
                             "text": "Your rubber stamps?",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -876,7 +876,7 @@
                             "triggerOrder": 6,
                             "text": "No, that should be called seal carving.",
                             "pictureId": "2",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -901,7 +901,7 @@
                             "triggerOrder": 0,
                             "text": "Where are you going to write about?",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -917,7 +917,7 @@
                             "triggerOrder": 2,
                             "text": "Why?",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -941,24 +941,24 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "A terrible thought flashes through my mind.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 1,
                             "text": "What if she does not need to think about any of this at all...",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
                             "text": "What if she already has another path...",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "2"
                         }
                     ]
                 },
@@ -983,7 +983,7 @@
                             "triggerOrder": 1,
                             "text": "Cici, the teacher called on you.",
                             "pictureId": "5",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -999,7 +999,7 @@
                             "triggerOrder": 3,
                             "text": "B.",
                             "pictureId": "7",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -1023,8 +1023,8 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Forget it, let us go eat.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -1041,7 +1041,7 @@
                             "triggerOrder": 0,
                             "text": "What word should I use to describe the snack street?",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -1057,7 +1057,7 @@
                             "triggerOrder": 2,
                             "text": "That is not fallen enough.",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "mate",
@@ -1081,8 +1081,8 @@
                             "characterName": "Me",
                             "triggerOrder": 0,
                             "text": "Let us... go eat.",
-                            "pictureId": "6",
-                            "playerPicture": ""
+                            "pictureId": "0",
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -1099,7 +1099,7 @@
                             "triggerOrder": 0,
                             "text": "What is there to observe in Y-City?",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "mate",
@@ -1123,7 +1123,7 @@
                             "triggerOrder": 3,
                             "text": "Exactly! I really want fried chicken strips!",
                             "pictureId": "1",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         }
                     ]
                 }
@@ -1155,7 +1155,7 @@
                             "triggerOrder": 1,
                             "text": "(After the final exams.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1163,7 +1163,7 @@
                             "triggerOrder": 2,
                             "text": "(You get a report card.)",
                             "pictureId": "0",
-                            "playerPicture": "2"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -1171,7 +1171,7 @@
                             "triggerOrder": 3,
                             "text": "(Some people are affected by it.)",
                             "pictureId": "0",
-                            "playerPicture": "3"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -1179,7 +1179,7 @@
                             "triggerOrder": 4,
                             "text": "(They feel anxious or frustrated.)",
                             "pictureId": "0",
-                            "playerPicture": "4"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -1187,7 +1187,7 @@
                             "triggerOrder": 5,
                             "text": "(Some feel relieved.)",
                             "pictureId": "0",
-                            "playerPicture": "5"
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -1195,7 +1195,7 @@
                             "triggerOrder": 6,
                             "text": "(But some people...)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "tutorial",
@@ -1316,7 +1316,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "Please study at home.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -1324,7 +1324,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 3,
                             "text": "Weather is also a lesson.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -1332,7 +1332,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 4,
                             "text": "Typhoon, thunderstorm, emergency.",
-                            "pictureId": "5",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -1340,7 +1340,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 5,
                             "text": "Typhoon is the same in Chinese and English.",
-                            "pictureId": "5",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -1348,7 +1348,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 6,
                             "text": "That is why I say English is simple.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -1356,7 +1356,7 @@
                             "characterName": "Me",
                             "triggerOrder": 7,
                             "text": "(Even at a time like this, the teacher is still thinking about studying.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": "1"
                         },
                         {
@@ -1364,7 +1364,7 @@
                             "characterName": "Me",
                             "triggerOrder": 8,
                             "text": "(I have to admit Julian is really dedicated.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": "1"
                         }
                     ]
@@ -1480,7 +1480,7 @@
                             "triggerOrder": 4,
                             "text": "Sigh.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -1513,7 +1513,7 @@
                             "triggerOrder": 1,
                             "text": "(Today is just as hot. It has not rained at all in the past week.)",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1521,7 +1521,7 @@
                             "triggerOrder": 2,
                             "text": "(Riding a bike in this weather is basically suicide, so even I chose to take the bus.)",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
@@ -1644,7 +1644,7 @@
                             "triggerOrder": 4,
                             "text": "...",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -1735,7 +1735,7 @@
                             "triggerOrder": 5,
                             "text": "I am going to do some math homework.",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -1842,7 +1842,7 @@
                             "triggerOrder": 3,
                             "text": "(A ripple of quiet laughter passes through the class.)",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -2105,7 +2105,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "Do not waste your day.",
-                            "pictureId": "4",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -2113,7 +2113,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "A good student can learn anywhere.",
-                            "pictureId": "4",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -2131,7 +2131,7 @@
                             "triggerOrder": 1,
                             "text": "What about you? Where are you?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -2237,7 +2237,7 @@
                             "triggerOrder": 1,
                             "text": "Europe, refugees, Obama.",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -2245,7 +2245,7 @@
                             "triggerOrder": 2,
                             "text": "War, the United Nations.",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -2253,7 +2253,7 @@
                             "triggerOrder": 3,
                             "text": "Concerts, sports.",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         },
                         {
                             "speakerId": "player",
@@ -2261,7 +2261,7 @@
                             "triggerOrder": 4,
                             "text": "Traditional Chinese culture going global. Every English-learning newspaper has this kind of content...",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2269,7 +2269,7 @@
                             "triggerOrder": 5,
                             "text": "Are these all real?",
                             "pictureId": "6",
-                            "playerPicture": ""
+                            "playerPicture": "1"
                         }
                     ]
                 },
@@ -2535,7 +2535,7 @@
                             "triggerOrder": 1,
                             "text": "Is that a cram school?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "player",
@@ -2543,7 +2543,7 @@
                             "triggerOrder": 2,
                             "text": "Speaking of that, why do you not take classes there?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -2575,7 +2575,7 @@
                             "triggerOrder": 6,
                             "text": "Hahaha.",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         }
                     ]
                 },
@@ -2598,9 +2598,9 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "#NAME?",
+                            "text": "Present continuous tense: -ing.",
                             "pictureId": "3",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         }
                     ]
                 },
@@ -2658,7 +2658,7 @@
                             "triggerOrder": 4,
                             "text": "(Cici is my only and best friend.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2674,7 +2674,7 @@
                             "triggerOrder": 6,
                             "text": "(But if I can see my dearest Cici at school every day...)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2682,7 +2682,7 @@
                             "triggerOrder": 7,
                             "text": "(and do everything together with her...)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2690,7 +2690,7 @@
                             "triggerOrder": 8,
                             "text": "(I feel like I look forward to coming to school every day.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2698,7 +2698,7 @@
                             "triggerOrder": 9,
                             "text": "(I think it is the same for her.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2823,7 +2823,7 @@
                             "triggerOrder": 1,
                             "text": "(Julian looks out the window.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -2831,7 +2831,7 @@
                             "triggerOrder": 2,
                             "text": "(At noon in the Children's Palace, the sun-bleached garden is completely still. There are only dried-out plants.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -2921,7 +2921,7 @@
                             "triggerOrder": 7,
                             "text": "Beyond English.",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -2937,7 +2937,7 @@
                             "triggerOrder": 9,
                             "text": "Beyond Yourself!",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -2961,7 +2961,7 @@
                             "triggerOrder": 12,
                             "text": "Beyond English...",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -2977,7 +2977,7 @@
                             "triggerOrder": 14,
                             "text": "Beyond Yourself!",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "player",
@@ -2985,7 +2985,7 @@
                             "triggerOrder": 15,
                             "text": "Beyond Yourself...",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -3018,7 +3018,7 @@
                             "triggerOrder": 2,
                             "text": "Will have done.",
                             "pictureId": "3",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -3143,7 +3143,7 @@
                             "triggerOrder": 2,
                             "text": "Study hard and get into Y High School.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -3151,7 +3151,7 @@
                             "triggerOrder": 3,
                             "text": "This is not my dream, but it is the premise for every good beginning.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "？",
@@ -3183,7 +3183,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "Stay safe, everyone.",
-                            "pictureId": "4",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -3225,7 +3225,7 @@
                             "triggerOrder": 4,
                             "text": "Whose phone is ringing?",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         }
                     ]
                 },
@@ -3356,7 +3356,7 @@
                             "triggerOrder": 5,
                             "text": "I wish her success.",
                             "pictureId": "2",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -3464,7 +3464,7 @@
                             "triggerOrder": 1,
                             "text": "What if class is cancelled tomorrow too?",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "2"
                         },
                         {
                             "speakerId": "mate",
@@ -3604,7 +3604,7 @@
                             "triggerOrder": 3,
                             "text": "(Laughing.)",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -3661,7 +3661,7 @@
                             "triggerOrder": 5,
                             "text": "I wish you success.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -3795,7 +3795,7 @@
                             "triggerOrder": 2,
                             "text": "(My parents...)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -3811,7 +3811,7 @@
                             "triggerOrder": 4,
                             "text": "(My father is fairly humorous, and my mother is very optimistic.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -3877,7 +3877,7 @@
                             "triggerOrder": 1,
                             "text": "(She is probably busy and does not want to chat anymore.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -3977,7 +3977,7 @@
                             "triggerOrder": 3,
                             "text": "(Silence. Cici is zoning out.)",
                             "pictureId": "6",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -4026,7 +4026,7 @@
                             "triggerOrder": 5,
                             "text": "I wish her success.",
                             "pictureId": "1",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -4100,7 +4100,7 @@
                             "triggerOrder": 4,
                             "text": "Beyond.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -4116,7 +4116,7 @@
                             "triggerOrder": 6,
                             "text": "Go beyond.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -4132,7 +4132,7 @@
                             "triggerOrder": 8,
                             "text": "Whatever.",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "teacher",
@@ -4248,7 +4248,7 @@
                             "triggerOrder": 4,
                             "text": "(Wasn't that inevitable...)",
                             "pictureId": "2",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "teacher",
@@ -4314,7 +4314,7 @@
                             "triggerOrder": 1,
                             "text": "(For some reason, today's homework is especially hard to do. I cannot focus on English for a long time.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "3"
                         }
                     ]
                 },
@@ -4347,7 +4347,7 @@
                             "triggerOrder": 3,
                             "text": "(Cici has already gone home. Am I going to eat ice cream alone?)",
                             "pictureId": "4",
-                            "playerPicture": "1"
+                            "playerPicture": "5"
                         },
                         {
                             "speakerId": "player",
@@ -4436,7 +4436,7 @@
                             "triggerOrder": 9,
                             "text": "......",
                             "pictureId": "4",
-                            "playerPicture": ""
+                            "playerPicture": "4"
                         }
                     ]
                 },
@@ -4453,7 +4453,7 @@
                             "triggerOrder": 1,
                             "text": "(The wind suddenly rises. A storm is coming.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -4461,7 +4461,7 @@
                             "triggerOrder": 2,
                             "text": "(The trees outside the window lower their heads, and all their leaves flip over with a rustle.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",
@@ -4469,7 +4469,7 @@
                             "triggerOrder": 3,
                             "text": "(Trees cannot pull their hands back, so they can only begin to dance slowly.)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "3"
                         },
                         {
                             "speakerId": "player",
@@ -4477,7 +4477,7 @@
                             "triggerOrder": 4,
                             "text": "(Only then do I realize with surprise)",
                             "pictureId": "0",
-                            "playerPicture": "1"
+                            "playerPicture": "4"
                         },
                         {
                             "speakerId": "player",

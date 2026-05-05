@@ -187,7 +187,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "Please study at home.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -195,7 +195,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 3,
                             "text": "Weather is also a lesson.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -203,7 +203,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 4,
                             "text": "Typhoon, thunderstorm, emergency.",
-                            "pictureId": "5",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -211,7 +211,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 5,
                             "text": "Typhoon is the same in Chinese and English.",
-                            "pictureId": "5",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -219,7 +219,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 6,
                             "text": "That is why I say English is simple.",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -227,7 +227,7 @@
                             "characterName": "Me",
                             "triggerOrder": 7,
                             "text": "(Even at a time like this, the teacher is still thinking about studying.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": "1"
                         },
                         {
@@ -235,7 +235,7 @@
                             "characterName": "Me",
                             "triggerOrder": 8,
                             "text": "(I have to admit Julian is really dedicated.)",
-                            "pictureId": "1",
+                            "pictureId": "0",
                             "playerPicture": "1"
                         }
                     ]
@@ -976,7 +976,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 1,
                             "text": "Do not waste your day.",
-                            "pictureId": "4",
+                            "pictureId": "0",
                             "playerPicture": ""
                         },
                         {
@@ -984,7 +984,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "A good student can learn anywhere.",
-                            "pictureId": "4",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]
@@ -1469,7 +1469,7 @@
                             "speakerId": "player",
                             "characterName": "Me",
                             "triggerOrder": 2,
-                            "text": "#NAME?",
+                            "text": "Present continuous tense: -ing.",
                             "pictureId": "3",
                             "playerPicture": "5"
                         }
@@ -2054,7 +2054,7 @@
                             "characterName": "Julian",
                             "triggerOrder": 2,
                             "text": "Stay safe, everyone.",
-                            "pictureId": "4",
+                            "pictureId": "0",
                             "playerPicture": ""
                         }
                     ]

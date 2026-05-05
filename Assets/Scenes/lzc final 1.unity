@@ -642,6 +642,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1152277602622735297}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2147483647
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - day: 2
     onStarted:
       m_PersistentCalls:
@@ -5607,6 +5619,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371427939}
   m_CullTransparentMesh: 1
+--- !u!1 &377074053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4096943794514430410, guid: b599c4e8b97cfb549806e92496986c07,
+    type: 3}
+  m_PrefabInstance: {fileID: 4344759911241489357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409744180
 GameObject:
   m_ObjectHideFlags: 3
@@ -11704,7 +11722,7 @@ MonoBehaviour:
   - key: Canvas_start
     canvasObject: {fileID: 1507392836751169353}
   - key: Canvas_end
-    canvasObject: {fileID: 0}
+    canvasObject: {fileID: 377074053}
   - key: Canvas_debug
     canvasObject: {fileID: 1925765611}
   autoCollectDirectChildrenOnAwake: 0
@@ -13591,7 +13609,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4344759911241489357}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 377074053}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20ed5253628c2b64ca7097d0235ae44e, type: 3}
