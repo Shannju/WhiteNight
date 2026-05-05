@@ -25,10 +25,11 @@ public class CanvasBook : MonoBehaviour, IPointerClickHandler
 
     public void FlipForward()
     {
-        Debug.Log($"FlipForward called, isFliping: {_isFliping}, currentIndex: {_currentPageIndex}, pageCount: {pages.Count}");
-        if (_isFliping || _currentPageIndex >= pages.Count)
+        int pageCount = pages != null ? pages.Count : 0;
+        Debug.Log($"FlipForward called, isFliping: {_isFliping}, currentIndex: {_currentPageIndex}, pageCount: {pageCount}");
+        if (_isFliping || pageCount <= 1 || _currentPageIndex >= pageCount - 1)
         {
-            Debug.Log("FlipForward blocked: isFliping=" + _isFliping + ", currentIndex >= pageCount=" + (_currentPageIndex >= pages.Count));
+            Debug.Log("FlipForward blocked: isFliping=" + _isFliping + ", atLastPage=" + (_currentPageIndex >= pageCount - 1));
             return;
         }
         StartCoroutine(RoutineFlip(pages[_currentPageIndex], 1f, -1f, true));
